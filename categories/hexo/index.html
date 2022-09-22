@@ -9,7 +9,7 @@
     
     <title>
         
-            发博文 |
+            分类: hexo |
         
         BBlog
     </title>
@@ -80,7 +80,7 @@
                         </li>
                     
                         <li class="menu-item">
-                            <a class=""
+                            <a class="active"
                                href="/categories"
                             >
                                 分类
@@ -135,7 +135,7 @@
                 </li>
             
                 <li class="drawer-menu-item flex-center">
-                    <a class=""
+                    <a class="active"
                        href="/categories">分类</a>
                 </li>
             
@@ -165,191 +165,56 @@
 
                 
                     <div class="fade-in-down-animation">
-    <div class="article-content-container">
-
-        <div class="article-title">
-            <span class="title-hover-animation">发博文</span>
+    <div class="category-container">
+        <div class="category-name">
+            <i class="fas fa-folder"></i>&nbsp;hexo
         </div>
-
-        
-            <div class="article-header">
-                <div class="avatar">
-                    <img src="/source/img/favicon.jpg">
-                </div>
-                <div class="info">
-                    <div class="author">
-                        <span class="name">warrior</span>
-                        
-                            <span class="author-label">Lv1</span>
-                        
-                    </div>
-                    <div class="meta-info">
-                        <div class="article-meta-info">
-    <span class="article-date article-meta-item">
-        <i class="fas fa-edit"></i>&nbsp;
-        <span class="pc">2022-09-19 14:41:55</span>
-        <span class="mobile">2022-09-19 14:41</span>
-    </span>
-    
-        <span class="article-categories article-meta-item">
-            <i class="fas fa-folder"></i>&nbsp;
-            <ul>
-                
-                    <li>
-                        <a href="/categories/hexo/">hexo</a>&nbsp;
-                    </li>
-                
-            </ul>
-        </span>
-    
-    
-        <span class="article-tags article-meta-item">
-            <i class="fas fa-tags"></i>&nbsp;
-            <ul>
-                
-                    <li>
-                        <a href="/tags/hexo%E5%8F%91%E5%8D%9A%E6%96%87/">hexo发博文</a>&nbsp;
-                    </li>
-                
-            </ul>
-        </span>
-    
-
-    
-    
-    
-    
-        <span class="article-pv article-meta-item">
-            <i class="fas fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
-        </span>
-    
-</div>
-
-                    </div>
-                </div>
-            </div>
-        
-
-        <div class="article-content markdown-body">
-            <h3 id="发博文"><a href="#发博文" class="headerlink" title="发博文"></a>发博文</h3><h5 id="1-使用下面命令创建一个md文档"><a href="#1-使用下面命令创建一个md文档" class="headerlink" title="1.使用下面命令创建一个md文档"></a>1.使用下面命令创建一个md文档</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npx hexo new  <span class="string">&quot;页面名称&quot;</span></span><br></pre></td></tr></table></figure>
-<p>然后在source_posts中可以找到刚刚创建的文档</p>
-<h5 id="写文档"><a href="#写文档" class="headerlink" title="写文档"></a>写文档</h5><p>要实现顶置的文章，需在文章页添加 <code>sticky </code>属性，<code>sticky</code> 值越大，顶置的文章越靠前</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">tile:</span><br><span class="line"><span class="built_in">date</span>:</span><br><span class="line">tages:</span><br><span class="line">categories</span><br><span class="line">sticky: 999</span><br><span class="line">---</span><br><span class="line">在这里开始写博文的正文</span><br></pre></td></tr></table></figure>
-<p>博文是用Markdown语言写的，所以你可以用Markdown编辑器。推荐 Haroopad和MaHua</p>
-<h5 id="发博文-1"><a href="#发博文-1" class="headerlink" title="发博文"></a>发博文</h5><p>只需要输入三个命令就可以了</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">npx hexo clean</span><br><span class="line">npx hexo generate</span><br><span class="line">git config --global user.name <span class="string">&quot;你的GitHub名字&quot;</span></span><br><span class="line">git config --global user.email <span class="string">&quot;你的GitHub邮箱&quot;</span></span><br><span class="line">(若要本地预览就先执行 hexo server)</span><br><span class="line">npx hexo deploy</span><br></pre></td></tr></table></figure>
-        </div>
-
-        
-            <div class="post-copyright-info">
-                <div class="article-copyright-info-container">
-    <ul>
-        <li>本文标题：发博文</li>
-        <li>本文作者：warrior</li>
-        <li>创建时间：2022-09-19 14:41:55</li>
-        <li>
-            本文链接：https://sunset148.github.io/2022/09/19/sendBlog/
-        </li>
-        <li>
-            版权声明：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
-        </li>
-    </ul>
-</div>
-
-            </div>
-        
-
-        
-            <ul class="post-tags-box">
-                
-                    <li class="tag-item">
-                        <a href="/tags/hexo%E5%8F%91%E5%8D%9A%E6%96%87/">#hexo发博文</a>&nbsp;
-                    </li>
-                
-            </ul>
-        
-
-        
-            <div class="article-nav">
-                
-                    <div class="article-prev">
-                        <a class="prev"
-                           rel="prev"
-                           href="/2022/09/20/leetcode9-20/"
-                        >
-                            <span class="left arrow-icon flex-center">
-                              <i class="fas fa-chevron-left"></i>
-                            </span>
-                            <span class="title flex-center">
-                                <span class="post-nav-title-item">leetcode9.20</span>
-                                <span class="post-nav-item">上一篇</span>
-                            </span>
-                        </a>
-                    </div>
-                
-                
-                    <div class="article-next">
-                        <a class="next"
-                           rel="next"
-                           href="/2022/09/19/the-new-day/"
-                        >
-                            <span class="title flex-center">
-                                <span class="post-nav-title-item">first one</span>
-                                <span class="post-nav-item">下一篇</span>
-                            </span>
-                            <span class="right arrow-icon flex-center">
-                              <i class="fas fa-chevron-right"></i>
-                            </span>
-                        </a>
-                    </div>
-                
-            </div>
-        
-
-        
-            <div class="comment-container">
-                <div class="comments-container">
-    <div id="comment-anchor"></div>
-    <div class="comment-area-title">
-        <i class="fas fa-comments">&nbsp;评论</i>
-    </div>
-    
-
-        
+        <div class="category-post-list">
             
-    <div class="twikoo-container">
-        <script 
-                src="//cdn.jsdelivr.net/npm/twikoo@1.6.7/dist/twikoo.all.min.js"
-        ></script>
-        <div id="twikoo-comment"></div>
-        <script >
-            function loadTwikoo() {
-                twikoo.init({
-                    el: '#twikoo-comment',
-                    envId: 'bblog-2gtl61vh2523cb7c',
-                    region: 'ap-shanghai',
-                });
-            }
-
-            if ('false') {
-                const loadTwikooTimeout = setTimeout(() => {
-                    loadTwikoo();
-                    clearTimeout(loadTwikooTimeout);
-                }, 1000);
-            } else {
-                window.addEventListener('DOMContentLoaded', loadTwikoo);
-            }
-        </script>
-    </div>
-
-
-
-        
+<div class="archive-list-container">
+    
+        <section class="archive-item">
+            <div class="archive-item-header">
+                <span class="archive-year">2022</span>
+                <span class="archive-year-post-count">[3]</span>
+            </div>
+            <ul class="article-list">
+                
+                    <li class="article-item">
+                        <a class="article-title"
+                           href="/2022/09/22/newComment/"
+                        >hexo增添评论区</a>
+                        <span class="article-date">09-22</span>
+                    </li>
+                
+                    <li class="article-item">
+                        <a class="article-title"
+                           href="/2022/09/19/sendBlog/"
+                        >发博文</a>
+                        <span class="article-date">09-19</span>
+                    </li>
+                
+                    <li class="article-item">
+                        <a class="article-title"
+                           href="/2022/09/19/hello-world/"
+                        >Hello World</a>
+                        <span class="article-date">09-19</span>
+                    </li>
+                
+            </ul>
+        </section>
     
 </div>
 
-            </div>
-        
+        </div>
+    </div>
+    <div class="category-paginator">
+        <div class="paginator">
+    
+
+    
+</div>
+
     </div>
 </div>
 
@@ -397,27 +262,6 @@
     </div>
 
     
-        <div class="post-tools">
-            <div class="post-tools-container">
-    <ul class="tools-list">
-        <!-- TOC aside toggle -->
-        
-            <li class="tools-item page-aside-toggle">
-                <i class="fas fa-outdent"></i>
-            </li>
-        
-
-        <!-- go comment -->
-        
-            <li class="go-comment">
-                <i class="fas fa-comment"></i>
-            </li>
-        
-    </ul>
-</div>
-
-        </div>
-    
 
     <div class="right-bottom-side-tools">
         <div class="side-tools-container">
@@ -463,14 +307,6 @@
 
     </div>
 
-    
-        <aside class="page-aside">
-            <div class="post-toc-wrap">
-    <div class="post-toc">
-        <ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%91%E5%8D%9A%E6%96%87"><span class="nav-text">发博文</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-%E4%BD%BF%E7%94%A8%E4%B8%8B%E9%9D%A2%E5%91%BD%E4%BB%A4%E5%88%9B%E5%BB%BA%E4%B8%80%E4%B8%AAmd%E6%96%87%E6%A1%A3"><span class="nav-text">1.使用下面命令创建一个md文档</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%86%99%E6%96%87%E6%A1%A3"><span class="nav-text">写文档</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%8F%91%E5%8D%9A%E6%96%87-1"><span class="nav-text">发博文</span></a></li></ol></li></ol></li></ol>
-    </div>
-</div>
-        </aside>
     
 
     <div class="image-viewer-container">
@@ -536,14 +372,6 @@
 
 
 <div class="post-scripts">
-    
-        
-<script src="/js/left-side-toggle.js"></script>
-
-<script src="/js/libs/anime.min.js"></script>
-
-<script src="/js/toc.js"></script>
-
     
 </div>
 
