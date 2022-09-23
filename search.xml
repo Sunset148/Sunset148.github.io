@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title>Hello World</title>
+    <url>/2022/09/19/hello-world/</url>
+    <content><![CDATA[<p>Welcome to <a class="link"   href="https://hexo.io/" >Hexo<i class="fas fa-external-link-alt"></i></a>! This is your very first post. Check <a class="link"   href="https://hexo.io/docs/" >documentation<i class="fas fa-external-link-alt"></i></a> for more info. If you get any problems when using Hexo, you can find the answer in <a class="link"   href="https://hexo.io/docs/troubleshooting.html" >troubleshooting<i class="fas fa-external-link-alt"></i></a> or you can ask me on <a class="link"   href="https://github.com/hexojs/hexo/issues" >GitHub<i class="fas fa-external-link-alt"></i></a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>More info: <a class="link"   href="https://hexo.io/docs/writing.html" >Writing<i class="fas fa-external-link-alt"></i></a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a class="link"   href="https://hexo.io/docs/server.html" >Server<i class="fas fa-external-link-alt"></i></a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a class="link"   href="https://hexo.io/docs/generating.html" >Generating<i class="fas fa-external-link-alt"></i></a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a class="link"   href="https://hexo.io/docs/one-command-deployment.html" >Deployment<i class="fas fa-external-link-alt"></i></a></p>
+]]></content>
+      <categories>
+        <category>hexo</category>
+      </categories>
+      <tags>
+        <tag>hexo命令</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>leetcode9.20</title>
+    <url>/2022/09/20/leetcode9-20/</url>
+    <content><![CDATA[<h2 id="leetcode每日一天（9-20）"><a href="#leetcode每日一天（9-20）" class="headerlink" title="leetcode每日一天（9.20）"></a>leetcode每日一天（9.20）</h2><p><a class="link"   href="https://leetcode.cn/problems/partition-to-k-equal-sum-subsets/" >题目：698. 划分为k个相等的子集<i class="fas fa-external-link-alt"></i></a><br>给定一个整数数组  nums 和一个正整数 k，找出是否有可能把这个数组分成 k 个非空子集，其总和都相等。</p>
+<h6 id="示例1"><a href="#示例1" class="headerlink" title="示例1"></a>示例1</h6><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">输入： nums = [4, 3, 2, 3, 5, 2, 1], k = 4</span><br><span class="line">输出： True</span><br><span class="line">说明： 有可能将其分成 4 个子集（5），（1,4），（2,3），（2,3）等于总和。</span><br></pre></td></tr></table></figure>
+<h6 id="示例2"><a href="#示例2" class="headerlink" title="示例2"></a>示例2</h6><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">输入: nums = [1,2,3,4], k = 3</span><br><span class="line">输出: <span class="literal">false</span></span><br></pre></td></tr></table></figure>
+<h6 id="提示"><a href="#提示" class="headerlink" title="提示"></a>提示</h6><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">1 &lt;= k &lt;= len(nums) &lt;= 16</span><br><span class="line">0 &lt; nums[i] &lt; 10000</span><br><span class="line">每个元素的频率在 [1,4] 范围内</span><br></pre></td></tr></table></figure>
+<hr>
+<h2 id="解答"><a href="#解答" class="headerlink" title="解答"></a>解答</h2><h6 id="思想："><a href="#思想：" class="headerlink" title="思想："></a>思想：</h6><p>我们可以把每个集合看做一个桶，然后我们可以通过dfs和剪枝来模拟每个数值入桶和出桶。</p>
+<h6 id="剪枝："><a href="#剪枝：" class="headerlink" title="剪枝："></a>剪枝：</h6><p>因为我们需要有k个桶且每个桶的值是相等的。以此可以推出给定的值相加一定是桶的值的倍速，并且不会存在比桶值大的数值。最关键的剪枝为，我们在dfs遍历一个桶是否可以装满，如果回溯的时候发现这个桶回到了初始值，则证明这个桶是装不满的。然而，每个桶都是一样的，这个桶装不满则其他桶一样装不满。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">bool canPartitionKSubsets(vector&lt;int&gt;&amp; nums, int k) &#123;</span><br><span class="line">    int <span class="built_in">sum</span>=0,size=nums.size();</span><br><span class="line">    int maxN=-1;</span><br><span class="line">    <span class="keyword">for</span>(int i=0;i&lt;size;i++)</span><br><span class="line">        <span class="built_in">sum</span>+=nums[i],maxN=max(maxN,nums[i]);</span><br><span class="line">    <span class="keyword">if</span>(<span class="built_in">sum</span>%k!=0||maxN&gt;<span class="built_in">sum</span>/k)</span><br><span class="line">        <span class="built_in">return</span> <span class="literal">false</span>;</span><br><span class="line">    <span class="built_in">sum</span>=<span class="built_in">sum</span>/k;</span><br><span class="line">    <span class="built_in">sort</span>(nums.begin(), nums.end());</span><br><span class="line">  //  cout&lt;&lt;<span class="string">nums[0];</span></span><br><span class="line"><span class="string">    vector&lt;int&gt; arr(k,sum);</span></span><br><span class="line"><span class="string">    bool t=false;</span></span><br><span class="line"><span class="string">    t=dfs(nums</span>,arr,size-1,k,size,<span class="built_in">sum</span>);</span><br><span class="line">    <span class="built_in">return</span> t;</span><br><span class="line">&#125;</span><br><span class="line">//nums给定数组 arr模拟每一个桶  cur以此遍历每个数值 k一共有几个桶 size原数组大小 <span class="built_in">sum</span>每个桶的值</span><br><span class="line">bool dfs(vector&lt;int&gt;&amp; nums,vector&lt;int&gt;&amp; arr,int cur,int k,int size,int <span class="built_in">sum</span>)&#123;</span><br><span class="line">    <span class="keyword">if</span>(cur &lt; 0)&#123;</span><br><span class="line">        <span class="keyword">for</span>(int i=0;i&lt;k;i++)</span><br><span class="line">            <span class="keyword">if</span>(arr[i]!=0)</span><br><span class="line">                <span class="built_in">return</span> <span class="literal">false</span>;</span><br><span class="line">        <span class="built_in">return</span> <span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>(int i=0;i&lt;k;i++)&#123;</span><br><span class="line">        <span class="keyword">if</span>(arr[i]-nums[cur]&lt;nums[0]&amp;&amp;arr[i]!=nums[cur])</span><br><span class="line">            <span class="built_in">continue</span>;</span><br><span class="line">        arr[i] -= nums[cur];</span><br><span class="line">        // <span class="keyword">for</span>(int j=0;j&lt;k;j++)</span><br><span class="line">        //     cout&lt;&lt;<span class="string">arr[i]&lt;&lt;&quot; &quot;;</span></span><br><span class="line"><span class="string">        // cout&lt;&lt;endl;</span></span><br><span class="line"><span class="string">        if(dfs(nums,arr</span>,cur-1,k,size,<span class="built_in">sum</span>))</span><br><span class="line">            <span class="built_in">return</span> <span class="literal">true</span>;</span><br><span class="line">        arr[i] += nums[cur];</span><br><span class="line">        <span class="keyword">if</span>(arr[i]==<span class="built_in">sum</span>)</span><br><span class="line">            <span class="built_in">break</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">return</span> <span class="literal">false</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>leetcode</category>
+      </categories>
+      <tags>
+        <tag>八股文</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>hexo增添评论区</title>
+    <url>/2022/09/22/newComment/</url>
+    <content><![CDATA[<p>hexo有三种新增评论的模板分别是：valine、gitalk还有twikoo。我使用的是twikoo。</p>
+<h2 id="Twikoo"><a href="#Twikoo" class="headerlink" title="Twikoo"></a>Twikoo</h2><p>Twikoo是一个静态博客评论系统，除了评论功能，还可以记录文章阅读量。搭建过程包括准备数据库和云函数，还有修改主题配置文件。<br>而配置Twikoo主要是分两种一种是使用腾讯云来布置，一种是使用Mongodb+Vercel部署。</p>
+<h3 id="腾讯云部署"><a href="#腾讯云部署" class="headerlink" title="腾讯云部署"></a>腾讯云部署</h3><h4 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h4><p>注册<a class="link"   href="https://curl.qcloud.com/KnnJtUom" >云开发CloudBase(opens new window)<i class="fas fa-external-link-alt"></i></a><br>进入<a class="link"   href="https://console.cloud.tencent.com/tcb/" >云开发控制台 (opens new window)<i class="fas fa-external-link-alt"></i></a>，新建环境，请按个人需要配置#### 环境</p>
+<ol>
+<li>进入后选择空模板</li>
+<li>安全配置：再登录授权中启用“匿名登录”</li>
+<li>选择安全配置，将网站域名添加到“WEB安全域名”</li>
+<li>进入环境总览中复制环境id（后面要用)</li>
+</ol>
+<h4 id="部署"><a href="#部署" class="headerlink" title="部署"></a>部署</h4><p>我们一般选择手动部署</p>
+<ol>
+<li>新建函数，函数名称填写：<code>twikoo</code>，创建方式选择：<code>空白函数</code>，运行环境选择：<code>Nodejs 10.15</code>（选择最靠近你的运行环境的版本），函数内存请选择：<code>128MB</code></li>
+<li>点击下一步，修改函数代码：<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">exports.main = require(<span class="string">&#x27;twikoo-func&#x27;</span>).main</span><br></pre></td></tr></table></figure></li>
+<li>确定完成后，点击刚才创建的twikoo函数，点击函数代码，创建<code> package.json</code><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">&#123; <span class="string">&quot;dependencies&quot;</span>: &#123; <span class="string">&quot;twikoo-func&quot;</span>: <span class="string">&quot;1.4.9&quot;</span> &#125; &#125;</span><br></pre></td></tr></table></figure>
+twikoo-func填写最新的版本</li>
+</ol>
+<h4 id="命令行环境部署"><a href="#命令行环境部署" class="headerlink" title="命令行环境部署"></a>命令行环境部署</h4><p>以下操作部署，可使用任意环境面板部署，这里使用的是git进行部署</p>
+<ol>
+<li>克隆本仓库<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/imaegoo/twikoo.git</span><br><span class="line"><span class="built_in">cd</span> twikoo</span><br></pre></td></tr></table></figure></li>
+<li>安装依赖项<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm install -g yarn <span class="comment"># 已安装 yarn 可以跳过此步</span></span><br><span class="line">yarn install</span><br></pre></td></tr></table></figure></li>
+<li>授权云开发环境（会自动跳转到授权界面，点击授权即可）<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">yarn run login</span><br></pre></td></tr></table></figure></li>
+<li>自动部署<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">yarn deploy -e 您的环境<span class="built_in">id</span> (就是之前你复制的)</span><br></pre></td></tr></table></figure></li>
+</ol>
+<h4 id="在-Hexo-中使用"><a href="#在-Hexo-中使用" class="headerlink" title="在 Hexo 中使用"></a>在 Hexo 中使用</h4><ol>
+<li>在主题的配置文件中找到comment<br>enable改为true，use为twikoo<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">comment:</span><br><span class="line">  <span class="built_in">enable</span>: <span class="literal">true</span></span><br><span class="line">  use: twikoo <span class="comment"># values: valine | gitalk | twikoo</span></span><br></pre></td></tr></table></figure></li>
+<li>继续往下找寻 twikoo<br>region一定要填写<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">twikoo:</span><br><span class="line">  env_id:  填写你的环境iD  <span class="comment">#https://www.sunset148.top/ Tencent Cloud environment id</span></span><br><span class="line">  region: ap-shanghai <span class="comment"># environment region. If select Guangzhou, fill in &quot;ap-guangzhou&quot;.</span></span><br></pre></td></tr></table></figure>
+到这里在腾讯云的配置就结束了</li>
+</ol>
+<hr>
+<h3 id="Mongodb-Vercel部署"><a href="#Mongodb-Vercel部署" class="headerlink" title="Mongodb+Vercel部署"></a>Mongodb+Vercel部署</h3><h4 id="MongoDB"><a href="#MongoDB" class="headerlink" title="MongoDB"></a>MongoDB</h4><p>我们使用MongoDB存储数据</p>
+<ol>
+<li><a class="link"   href="https://www.mongodb.com/zh-cn/cloud/atlas/register" >注册MongoDB账号<i class="fas fa-external-link-alt"></i></a></li>
+<li>创建免费数据库，类型选择<code>Shared</code>，区域选择 <code>AWS / N. Virginia (us-east-1)</code> </li>
+<li>点击<code>Connect</code>按钮，键入 0.0.0.0&#x2F;0 以允许所有 IP 地址的连接，并创建数据库用户</li>
+<li>连接方式选择中间的<code>Connect your application</code></li>
+<li>记录下连接字符串，等下使用时记得将其中的 <password> 修改为刚刚设置的用户密码（<password>需要整体替换）</li>
+</ol>
+<h4 id="Vercel"><a href="#Vercel" class="headerlink" title="Vercel"></a>Vercel</h4><ol>
+<li>使用<code>Vercel</code>来运行云函数，先注册 <a class="link"   href="https://vercel.com/signup" >vercel 账号<i class="fas fa-external-link-alt"></i></a>，可以选择从<code>GitHub</code>之类的登录，也可以选择通过邮箱注册</li>
+<li>新创建一个库来保存代码（如果你之前用使用该<a class="link"   href="https://twikoo.js.org/quick-start.html#vercel-%E9%83%A8%E7%BD%B2" >链接<i class="fas fa-external-link-alt"></i></a>）</li>
+<li>完成后，在导航栏选择<code>Setting</code>，在左侧选择<code>Environment Variables</code>，添加变量<code>MONGODB_URI</code>，值输入刚才的连接字符串，记得修改 <code>&lt;password&gt;</code> 为数据库用户密码</li>
+<li>导航栏中选择<code>Deployments</code>，重新部署一下</li>
+<li>回到<code>Overview</code>，可以看见<code>云函数运行正常</code>字样，在右边的<code>域名（DOMAINS）</code>里挑一个记录下你的域名,而该域名就是你的环境ID</li>
+</ol>
+<h5 id="Tip："><a href="#Tip：" class="headerlink" title="Tip："></a>Tip：</h5><p>因为 Vercel.app 可能在国内被墙，所以可能需要手动添加一个自己域名。<br>但是解决方法也很简单——准备一个新域名，然后把这个域名指过去</p>
+<ol>
+<li>来到 <code>vercel</code> 控制台，点进去你的实例</li>
+<li>找到 <code>Setting</code> -&gt; <code>Domain</code></li>
+<li>手动添加你的域名进去</li>
+<li>他会给出解析配置，你就去改你的域名解析就好了（在你购买域名的官网会有一个域名解析）</li>
+<li>最后去主题配置文件里更新这个新地址就行</li>
+</ol>
+<h4 id="主题文件配置"><a href="#主题文件配置" class="headerlink" title="主题文件配置"></a>主题文件配置</h4><p>在主题文件中找到配置文件keep\layout_partial\comment</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">twikoo:</span><br><span class="line">  env_id:  你的域名  <span class="comment">#https://www.sunset148.top/ Tencent Cloud environment id</span></span><br><span class="line">  region: ap-shanghai <span class="comment"># environment region. If select Guangzhou, fill in &quot;ap-guangzhou&quot;.</span></span><br></pre></td></tr></table></figure>
+<p>重启Hexo，就能可以看到了。</p>
+<hr>
+<h3 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h3><p>但很有可能你的评论系统打不开，很有可能是因为<code>Butterfly</code>版本过低的问题。<br>博主试了几个Butterfly依旧开不开评论系统，转而投向了keep</p>
+<h5 id="keep安装"><a href="#keep安装" class="headerlink" title="keep安装"></a>keep安装</h5><p>如果你在使用 Hexo 5.0 或更高版本，最简单的安装方式是通过 npm：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> hexo-site</span><br><span class="line">$ npm install hexo-theme-keep</span><br></pre></td></tr></table></figure>
+<p>或者使用 git 克隆整个仓库：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> hexo-site</span><br><span class="line">$ git <span class="built_in">clone</span> https://github.com/XPoet/hexo-theme-keep themes/keep</span><br></pre></td></tr></table></figure>
+<h5 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h5><p>安装完成后，在 Hexo 配置文件中将<code>theme</code>设置为<code> keep</code>。<br>Keep 不定期发布新版本，你可以通过如下命令更新 Keep。</p>
+<h5 id="更新"><a href="#更新" class="headerlink" title="更新"></a>更新</h5><p>通过 npm 安装最新版本：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> hexo-site</span><br><span class="line">$ npm update hexo-theme-keep</span><br></pre></td></tr></table></figure>
+<p>通过 git 更新到最新的 master 分支：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> themes/keep</span><br><span class="line">$ git pull</span><br></pre></td></tr></table></figure>
+<h5 id="Twikoo-1"><a href="#Twikoo-1" class="headerlink" title="Twikoo"></a>Twikoo</h5><p>另外在keep里面的keep\layout_partial\comment的twikoo.ejs里面的版本号更改为最新的就是</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">&lt;script &lt;%= theme.pjax.enable === <span class="literal">true</span> ? <span class="string">&#x27;data-pjax&#x27;</span> : <span class="string">&#x27;&#x27;</span> %&gt;                src=<span class="string">&quot;//cdn.jsdelivr.net/npm/twikoo@1.6.7/dist/twikoo.all.min.js&quot;</span>&gt;&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<p><a class="link"   href="https://keep-docs.xpoet.cn/usage-tutorial/quick-start.html" >keep官方文档<i class="fas fa-external-link-alt"></i></a></p>
+]]></content>
+      <categories>
+        <category>hexo</category>
+      </categories>
+      <tags>
+        <tag>hexo</tag>
+        <tag>hexo新增评论区</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>博客新增了搜索、分类还有标签功能</title>
+    <url>/2022/09/23/newHexoSomeFunction/</url>
+    <content><![CDATA[<p>今天为博客新增了搜索、分类还有标签功能</p>
+<h2 id="搜索功能添加"><a href="#搜索功能添加" class="headerlink" title="搜索功能添加"></a>搜索功能添加</h2><p>本文主要描述了怎么添加hexo博客搜索插件，然后启动搜索功能，对两个本地搜索插件的使用进行了描述，文章可能还有很多不足，请大家谅解，欢迎大佬提意见。</p>
+<h3 id="本文用的东西"><a href="#本文用的东西" class="headerlink" title="本文用的东西"></a>本文用的东西</h3><ol>
+<li>hexo</li>
+<li>电脑</li>
+</ol>
+<h3 id="部署"><a href="#部署" class="headerlink" title="部署"></a>部署</h3><h4 id="插件比较"><a href="#插件比较" class="headerlink" title="插件比较"></a>插件比较</h4><p>“hexo-generator-searchdb”插件功能比较强大，可以替代后面讲的第二个插件“hexo-generator-json-content”插件。而“hexo-generator-json-content”插件只能生产json文件，且不能定义文件名，无法替代“hexo-generator-searchdb”插件，但是“hexo-generator-json-content”可以定义生成的json文件的格式。</p>
+<h4 id="hexo-generator-searchdb插件"><a href="#hexo-generator-searchdb插件" class="headerlink" title="hexo-generator-searchdb插件"></a>hexo-generator-searchdb插件</h4><h5 id="插件原理"><a href="#插件原理" class="headerlink" title="插件原理"></a>插件原理</h5><p>这个插件会扫描博客文章，根据“——config.yml”的配置从文章里获取内容生成一个xml&#x2F;json文件的结果，类似于博客中文章信息的摘要把，搜索的时候就搜索这个文件的内容。</p>
+<h5 id="添加插件"><a href="#添加插件" class="headerlink" title="添加插件"></a>添加插件</h5><ol>
+<li>打开<code>cmd</code></li>
+<li>输入以下命令添加博客搜索插件。<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">//未配置淘宝的数据源</span><br><span class="line">npm install hexo-generator-searchdb --save</span><br><span class="line">//配置淘宝数据源的可以使用这条命令，网络会好一些</span><br><span class="line">cnpm install hexo-generator-searchdb --save</span><br></pre></td></tr></table></figure></li>
+<li>打开博客目录，找到<code>_config.yml</code>文件，添加以下内容。<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">search:</span><br><span class="line">  path: search.xml</span><br><span class="line">  field: post</span><br><span class="line">  content: <span class="literal">true</span></span><br><span class="line">  format: html</span><br></pre></td></tr></table></figure>
+<code>path</code>：表示搜索后生成的文件路径，可以生成xml和json两种格式；将path设置为<code>content.json</code>就可以替代第二个插件。<br><code>field</code>：表示搜索的范围，有<code>post</code>、<code>page</code>和<code>all</code>三种值。<br>    <code>post</code>：所有的文章；<br>    <code>page</code>：所有顶部导航选项的页面；<br>    <code>all</code>：所有的文章和顶部导航选项的页面。<br><code>content</code>：是否包含搜索到的文章的全部内容。如果<code>false</code>，生成的结果只包括标题和创建时间这些信息，没有文章主体。默认情况下是<code>true</code>.<br><code>format</code>：搜索到的内容、选项的格式。<br>    <code>html</code>(默认)：将html原文本缩略。<br>    <code>striptags</code>：将html原文本缩略，并删除所有标记。<br>    <code>raw</code>：记下每一篇文章或每一页的文字。</li>
+</ol>
+<h5 id="使用插件"><a href="#使用插件" class="headerlink" title="使用插件"></a>使用插件</h5><p>打开博客目录目录，找到当前正在使用的主题的<code>_config.yml</code>文件，打开进行编辑，找到<code>local_search</code>，修改<code>enable</code>的值为<code>true</code>。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 本地搜索</span></span><br><span class="line">local_search:</span><br><span class="line">  <span class="built_in">enable</span>: <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+<p>到此即可使用搜索功能了</p>
+<hr>
+<h2 id="分类、标签和留言功能添加"><a href="#分类、标签和留言功能添加" class="headerlink" title="分类、标签和留言功能添加"></a>分类、标签和留言功能添加</h2><p>这三个功能实际上是异曲同工的。使用类似的方法即可添加</p>
+<h4 id="新建标签页"><a href="#新建标签页" class="headerlink" title="新建标签页"></a>新建标签页</h4><p>用命令行新建一个页面：（页面名称可以任意）</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo new page <span class="string">&quot;tages&quot;</span> </span><br></pre></td></tr></table></figure>
+<h4 id="设置其类型-type-值为“tages”"><a href="#设置其类型-type-值为“tages”" class="headerlink" title="设置其类型 type 值为“tages”"></a>设置其类型 type 值为“tages”</h4><p>用命令行新建一个页打开 &#x2F;source&#x2F;tages&#x2F;index.md，设置其类型<code>type</code>值为<code>tages</code>：（页面名称可以任意）</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">title: tags</span><br><span class="line"><span class="built_in">date</span>: 2019-07-26 00:33:58</span><br><span class="line"><span class="built_in">type</span>: <span class="string">&quot;tags&quot;</span></span><br></pre></td></tr></table></figure>
+<p>如果需要多个标签或者分类的话</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">categories:</span><br><span class="line">- 分类</span><br><span class="line">- 子分类</span><br><span class="line">- 子子分类</span><br><span class="line">tags:</span><br><span class="line">- 标签1</span><br><span class="line">- 标签2</span><br></pre></td></tr></table></figure>
+<h4 id="在主题的配置文件更改"><a href="#在主题的配置文件更改" class="headerlink" title="在主题的配置文件更改"></a>在主题的配置文件更改</h4><p>打开 &#x2F;themes&#x2F;主题&#x2F;_config.yml，把tages标签那项取消注释即可，下面的是已经取消注释了的。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">menu:</span><br><span class="line">  主页: /</span><br><span class="line">  <span class="comment">#随笔: /tags/随笔/</span></span><br><span class="line">  <span class="comment">#分类: /categories</span></span><br><span class="line">  <span class="comment">#归档: /archives</span></span><br><span class="line">  标签: /tags</span><br></pre></td></tr></table></figure>
+
+
+
+]]></content>
+      <categories>
+        <category>hexo</category>
+      </categories>
+      <tags>
+        <tag>hexo</tag>
+        <tag>hexo搜索</tag>
+        <tag>hexo分类、标签和留言墙</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>发博文</title>
+    <url>/2022/09/19/sendBlog/</url>
+    <content><![CDATA[<h3 id="发博文"><a href="#发博文" class="headerlink" title="发博文"></a>发博文</h3><h5 id="1-使用下面命令创建一个md文档"><a href="#1-使用下面命令创建一个md文档" class="headerlink" title="1.使用下面命令创建一个md文档"></a>1.使用下面命令创建一个md文档</h5><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ npx hexo new  <span class="string">&quot;页面名称&quot;</span></span><br></pre></td></tr></table></figure>
+<p>然后在source_posts中可以找到刚刚创建的文档</p>
+<h5 id="写文档"><a href="#写文档" class="headerlink" title="写文档"></a>写文档</h5><p>要实现顶置的文章，需在文章页添加 <code>sticky </code>属性，<code>sticky</code> 值越大，顶置的文章越靠前</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">tile:</span><br><span class="line"><span class="built_in">date</span>:</span><br><span class="line">tages:</span><br><span class="line">categories</span><br><span class="line">sticky: 999</span><br><span class="line">---</span><br><span class="line">在这里开始写博文的正文</span><br></pre></td></tr></table></figure>
+<p>博文是用Markdown语言写的，所以你可以用Markdown编辑器。推荐 Haroopad和MaHua</p>
+<h5 id="发博文-1"><a href="#发博文-1" class="headerlink" title="发博文"></a>发博文</h5><p>只需要输入三个命令就可以了</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npx hexo clean</span><br><span class="line">npx hexo generate</span><br><span class="line">git config --global user.name <span class="string">&quot;你的GitHub名字&quot;</span></span><br><span class="line">git config --global user.email <span class="string">&quot;你的GitHub邮箱&quot;</span></span><br><span class="line">(若要本地预览就先执行 hexo server)</span><br><span class="line">npx hexo deploy</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>hexo</category>
+      </categories>
+      <tags>
+        <tag>hexo</tag>
+        <tag>发博文</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>first one</title>
+    <url>/2022/09/19/the-new-day/</url>
+    <content><![CDATA[<h2 id="美好的一天从躺平开始！！"><a href="#美好的一天从躺平开始！！" class="headerlink" title="美好的一天从躺平开始！！"></a>美好的一天从躺平开始！！</h2>]]></content>
+      <categories>
+        <category>日常</category>
+      </categories>
+      <tags>
+        <tag>水文</tag>
+      </tags>
+  </entry>
+</search>
