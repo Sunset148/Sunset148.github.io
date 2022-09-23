@@ -9,7 +9,7 @@
     
     <title>
         
-            博客新增了搜索、分类还有标签功能 |
+            leetcode9-23 |
         
         BBlog
     </title>
@@ -168,7 +168,7 @@
     <div class="article-content-container">
 
         <div class="article-title">
-            <span class="title-hover-animation">博客新增了搜索、分类还有标签功能</span>
+            <span class="title-hover-animation">leetcode9-23</span>
         </div>
 
         
@@ -187,8 +187,8 @@
                         <div class="article-meta-info">
     <span class="article-date article-meta-item">
         <i class="fas fa-edit"></i>&nbsp;
-        <span class="pc">2022-09-23 14:27:58</span>
-        <span class="mobile">2022-09-23 14:27</span>
+        <span class="pc">2022-09-23 17:09:30</span>
+        <span class="mobile">2022-09-23 17:09</span>
     </span>
     
         <span class="article-categories article-meta-item">
@@ -196,7 +196,7 @@
             <ul>
                 
                     <li>
-                        <a href="/categories/hexo/">hexo</a>&nbsp;
+                        <a href="/categories/leetcode/">leetcode</a>&nbsp;
                     </li>
                 
             </ul>
@@ -208,15 +208,7 @@
             <ul>
                 
                     <li>
-                        <a href="/tags/hexo/">hexo</a>&nbsp;
-                    </li>
-                
-                    <li>
-                        | <a href="/tags/hexo%E6%90%9C%E7%B4%A2/">hexo搜索</a>&nbsp;
-                    </li>
-                
-                    <li>
-                        | <a href="/tags/hexo%E5%88%86%E7%B1%BB%E3%80%81%E6%A0%87%E7%AD%BE%E5%92%8C%E7%95%99%E8%A8%80%E5%A2%99/">hexo分类、标签和留言墙</a>&nbsp;
+                        <a href="/tags/%E5%85%AB%E8%82%A1%E6%96%87/">八股文</a>&nbsp;
                     </li>
                 
             </ul>
@@ -239,48 +231,31 @@
         
 
         <div class="article-content markdown-body">
-            <p>今天为博客新增了搜索、分类还有标签功能</p>
-<h2 id="搜索功能添加"><a href="#搜索功能添加" class="headerlink" title="搜索功能添加"></a>搜索功能添加</h2><p>本文主要描述了怎么添加hexo博客搜索插件，然后启动搜索功能，对两个本地搜索插件的使用进行了描述，文章可能还有很多不足，请大家谅解，欢迎大佬提意见。</p>
-<h3 id="本文用的东西"><a href="#本文用的东西" class="headerlink" title="本文用的东西"></a>本文用的东西</h3><ol>
-<li>hexo</li>
-<li>电脑</li>
+            <h2 id="leetcode每日一天（9-23）"><a href="#leetcode每日一天（9-23）" class="headerlink" title="leetcode每日一天（9.23）"></a>leetcode每日一天（9.23）</h2><p><a class="link"   target="_blank" rel="noopener" href="https://leetcode.cn/problems/design-linked-list/" >707. 设计链表<i class="fas fa-external-link-alt"></i></a><br>设计链表的实现。您可以选择使用单链表或双链表。单链表中的节点应该具有两个属性：<code>val</code> 和 <code>next</code>。<code>val</code> 是当前节点的值，<code>next</code> 是指向下一个节点的指针&#x2F;引用。如果要使用双向链表，则还需要一个属性 <code>prev</code> 以指示链表中的上一个节点。假设链表中的所有节点都是 0-index 的。<br>在链表类中实现这些功能：</p>
+<ol>
+<li>get(index)：获取链表中第<code>index</code>个节点的值。如果索引无效，则返回-1。</li>
+<li>addAtHead(val)：在链表的第一个元素之前添加一个值为 <code>val</code> 的节点。插入后，新节点将成为链表的第一个节点。</li>
+<li>addAtHead(val)：在链表的第一个元素之前添加一个值为<code> val</code> 的节点。插入后，新节点将成为链表的第一个节点。</li>
+<li>addAtIndex(index,val)：在链表中的第<code> index </code>个节点之前添加值为<code> val</code>  的节点。如果<code> index </code>等于链表的长度，则该节点将附加到链表的末尾。如果 <code>index</code> 大于链表长度，则不会插入节点。如果<code>index</code>小于0，则在头部插入节点。</li>
+<li>deleteAtIndex(index)：如果索引<code>index</code>有效，则删除链表中的第 <code>index</code> 个节点。</li>
 </ol>
-<h3 id="部署"><a href="#部署" class="headerlink" title="部署"></a>部署</h3><h4 id="插件比较"><a href="#插件比较" class="headerlink" title="插件比较"></a>插件比较</h4><p>“hexo-generator-searchdb”插件功能比较强大，可以替代后面讲的第二个插件“hexo-generator-json-content”插件。而“hexo-generator-json-content”插件只能生产json文件，且不能定义文件名，无法替代“hexo-generator-searchdb”插件，但是“hexo-generator-json-content”可以定义生成的json文件的格式。</p>
-<h4 id="hexo-generator-searchdb插件"><a href="#hexo-generator-searchdb插件" class="headerlink" title="hexo-generator-searchdb插件"></a>hexo-generator-searchdb插件</h4><h5 id="插件原理"><a href="#插件原理" class="headerlink" title="插件原理"></a>插件原理</h5><p>这个插件会扫描博客文章，根据“——config.yml”的配置从文章里获取内容生成一个xml&#x2F;json文件的结果，类似于博客中文章信息的摘要把，搜索的时候就搜索这个文件的内容。</p>
-<h5 id="添加插件"><a href="#添加插件" class="headerlink" title="添加插件"></a>添加插件</h5><ol>
-<li>打开<code>cmd</code></li>
-<li>输入以下命令添加博客搜索插件。<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">//未配置淘宝的数据源</span><br><span class="line">npm install hexo-generator-searchdb --save</span><br><span class="line">//配置淘宝数据源的可以使用这条命令，网络会好一些</span><br><span class="line">cnpm install hexo-generator-searchdb --save</span><br></pre></td></tr></table></figure></li>
-<li>打开博客目录，找到<code>_config.yml</code>文件，添加以下内容。<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">search:</span><br><span class="line">  path: search.xml</span><br><span class="line">  field: post</span><br><span class="line">  content: <span class="literal">true</span></span><br><span class="line">  format: html</span><br></pre></td></tr></table></figure>
-<code>path</code>：表示搜索后生成的文件路径，可以生成xml和json两种格式；将path设置为<code>content.json</code>就可以替代第二个插件。<br><code>field</code>：表示搜索的范围，有<code>post</code>、<code>page</code>和<code>all</code>三种值。<br>    <code>post</code>：所有的文章；<br>    <code>page</code>：所有顶部导航选项的页面；<br>    <code>all</code>：所有的文章和顶部导航选项的页面。<br><code>content</code>：是否包含搜索到的文章的全部内容。如果<code>false</code>，生成的结果只包括标题和创建时间这些信息，没有文章主体。默认情况下是<code>true</code>.<br><code>format</code>：搜索到的内容、选项的格式。<br>    <code>html</code>(默认)：将html原文本缩略。<br>    <code>striptags</code>：将html原文本缩略，并删除所有标记。<br>    <code>raw</code>：记下每一篇文章或每一页的文字。</li>
-</ol>
-<h5 id="使用插件"><a href="#使用插件" class="headerlink" title="使用插件"></a>使用插件</h5><p>打开博客目录目录，找到当前正在使用的主题的<code>_config.yml</code>文件，打开进行编辑，找到<code>local_search</code>，修改<code>enable</code>的值为<code>true</code>。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 本地搜索</span></span><br><span class="line">local_search:</span><br><span class="line">  <span class="built_in">enable</span>: <span class="literal">true</span></span><br></pre></td></tr></table></figure>
-<p>到此即可使用搜索功能了</p>
+<h6 id="示例1"><a href="#示例1" class="headerlink" title="示例1"></a>示例1</h6><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">MyLinkedList linkedList = new MyLinkedList();</span><br><span class="line">linkedList.addAtHead(1);</span><br><span class="line">linkedList.addAtTail(3);</span><br><span class="line">linkedList.addAtIndex(1,2);   //链表变为1-&gt; 2-&gt; 3</span><br><span class="line">linkedList.get(1);            //返回2</span><br><span class="line">linkedList.deleteAtIndex(1);  //现在链表是1-&gt; 3</span><br><span class="line">linkedList.get(1);            //返回3</span><br></pre></td></tr></table></figure>
+<h6 id="提示"><a href="#提示" class="headerlink" title="提示"></a>提示</h6><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">所有val值都在 [1, 1000] 之内。</span><br><span class="line">操作次数将在  [1, 1000] 之内。</span><br><span class="line">请不要使用内置的 LinkedList 库。</span><br></pre></td></tr></table></figure>
 <hr>
-<h2 id="分类、标签和留言功能添加"><a href="#分类、标签和留言功能添加" class="headerlink" title="分类、标签和留言功能添加"></a>分类、标签和留言功能添加</h2><p>这三个功能实际上是异曲同工的。使用类似的方法即可添加</p>
-<h4 id="新建标签页"><a href="#新建标签页" class="headerlink" title="新建标签页"></a>新建标签页</h4><p>用命令行新建一个页面：（页面名称可以任意）</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new page <span class="string">&quot;tages&quot;</span> </span><br></pre></td></tr></table></figure>
-<h4 id="设置其类型-type-值为“tages”"><a href="#设置其类型-type-值为“tages”" class="headerlink" title="设置其类型 type 值为“tages”"></a>设置其类型 type 值为“tages”</h4><p>用命令行新建一个页打开 &#x2F;source&#x2F;tages&#x2F;index.md，设置其类型<code>type</code>值为<code>tages</code>：（页面名称可以任意）</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">title: tags</span><br><span class="line"><span class="built_in">date</span>: 2019-07-26 00:33:58</span><br><span class="line"><span class="built_in">type</span>: <span class="string">&quot;tags&quot;</span></span><br></pre></td></tr></table></figure>
-<p>如果需要多个标签或者分类的话</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">categories:</span><br><span class="line">- 分类</span><br><span class="line">- 子分类</span><br><span class="line">- 子子分类</span><br><span class="line">tags:</span><br><span class="line">- 标签1</span><br><span class="line">- 标签2</span><br></pre></td></tr></table></figure>
-<h4 id="在主题的配置文件更改"><a href="#在主题的配置文件更改" class="headerlink" title="在主题的配置文件更改"></a>在主题的配置文件更改</h4><p>打开 &#x2F;themes&#x2F;主题&#x2F;_config.yml，把tages标签那项取消注释即可，下面的是已经取消注释了的。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">menu:</span><br><span class="line">  主页: /</span><br><span class="line">  <span class="comment">#随笔: /tags/随笔/</span></span><br><span class="line">  <span class="comment">#分类: /categories</span></span><br><span class="line">  <span class="comment">#归档: /archives</span></span><br><span class="line">  标签: /tags</span><br></pre></td></tr></table></figure>
-
-
-
-
+<h2 id="解答"><a href="#解答" class="headerlink" title="解答"></a>解答</h2><h6 id="思想："><a href="#思想：" class="headerlink" title="思想："></a>思想：</h6><p>这是一道水题目，主要是用到数据结构里面的链表，我是用的c++里面的ListNode来解答这题比较轻松。题目要求有三处增加函数，实质上在首部添加数值和在尾部添加数值的操作可以归纳为addAtIndex，则我们在addAtHead和addAtTail可以直接调用addAtIndex用来减少我们的代码量。</p>
+<h6 id="ListNode的结构："><a href="#ListNode的结构：" class="headerlink" title="ListNode的结构："></a>ListNode的结构：</h6><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">struct ListNode &#123;</span><br><span class="line">      int val;  //当前结点的值</span><br><span class="line">      ListNode *next;  //指向下一个结点的指针</span><br><span class="line">      ListNode(int x) : val(x), next(NULL) &#123;&#125;  //初始化当前结点值为x,指针为空</span><br><span class="line">  &#125;;</span><br><span class="line"></span><br><span class="line">ListNode *p=new ListNode(0); //新增一个节点</span><br><span class="line">delete p; //删除一个节点，释放内存</span><br></pre></td></tr></table></figure>
+<h6 id="代码："><a href="#代码：" class="headerlink" title="代码："></a>代码：</h6><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br></pre></td><td class="code"><pre><span class="line">class MyLinkedList &#123;</span><br><span class="line">public:</span><br><span class="line">    <span class="function"><span class="title">MyLinkedList</span></span>() &#123;</span><br><span class="line">        this-&gt;size = 0;</span><br><span class="line">        this-&gt;<span class="built_in">head</span> = new ListNode(0); //首节点，值无意义</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    int get(int index) &#123;</span><br><span class="line">        <span class="keyword">if</span>(index&lt;0||index&gt;=size)</span><br><span class="line">            <span class="built_in">return</span> -1;</span><br><span class="line">        ListNode *cur = <span class="built_in">head</span>;</span><br><span class="line">        <span class="keyword">for</span> (int i = 0; i &lt;= index; i++) &#123;</span><br><span class="line">            cur = cur-&gt;next;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">return</span> cur-&gt;val;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    void addAtHead(int val) &#123;</span><br><span class="line">        addAtIndex(0, val);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    void addAtTail(int val) &#123;</span><br><span class="line">        addAtIndex(size,val);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    void addAtIndex(int index, int val) &#123;</span><br><span class="line">        <span class="keyword">if</span>(index&gt;size)</span><br><span class="line">            <span class="built_in">return</span>;</span><br><span class="line">        index=max(0,index);</span><br><span class="line">        ListNode *cur=<span class="built_in">head</span>;</span><br><span class="line">        <span class="keyword">for</span>(int i=0;i&lt;index;i++)</span><br><span class="line">            cur=cur-&gt;next;</span><br><span class="line">        ListNode *toAdd = new ListNode(val);</span><br><span class="line">        toAdd-&gt;next = cur-&gt;next;</span><br><span class="line">        cur-&gt;next = toAdd;</span><br><span class="line">        size++;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    void deleteAtIndex(int index) &#123;</span><br><span class="line">        <span class="keyword">if</span>(index&lt;0||index&gt;=size)</span><br><span class="line">            <span class="built_in">return</span>;</span><br><span class="line">        ListNode *cur=<span class="built_in">head</span>;</span><br><span class="line">        size--;</span><br><span class="line">        <span class="keyword">for</span>(int i=0;i&lt;index;i++)</span><br><span class="line">            cur=cur-&gt;next;</span><br><span class="line">        ListNode *p = cur-&gt;next;</span><br><span class="line">        cur-&gt;next = cur-&gt;next-&gt;next;</span><br><span class="line">        delete p;</span><br><span class="line">    &#125;</span><br><span class="line">private:</span><br><span class="line">    int size;</span><br><span class="line">    ListNode *<span class="built_in">head</span>;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">/**</span><br><span class="line"> * Your MyLinkedList object will be instantiated and called as such:</span><br><span class="line"> * MyLinkedList* obj = new MyLinkedList();</span><br><span class="line"> * int param_1 = obj-&gt;get(index);</span><br><span class="line"> * obj-&gt;addAtHead(val);</span><br><span class="line"> * obj-&gt;addAtTail(val);</span><br><span class="line"> * obj-&gt;addAtIndex(index,val);</span><br><span class="line"> * obj-&gt;deleteAtIndex(index);</span><br><span class="line"> */</span><br></pre></td></tr></table></figure>
         </div>
 
         
             <div class="post-copyright-info">
                 <div class="article-copyright-info-container">
     <ul>
-        <li>本文标题：博客新增了搜索、分类还有标签功能</li>
+        <li>本文标题：leetcode9-23</li>
         <li>本文作者：warrior</li>
-        <li>创建时间：2022-09-23 14:27:58</li>
+        <li>创建时间：2022-09-23 17:09:30</li>
         <li>
-            本文链接：https://sunset148.github.io/2022/09/23/newHexoSomeFunction/
+            本文链接：https://sunset148.github.io/2022/09/23/leetcode9-23/
         </li>
         <li>
             版权声明：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
@@ -295,15 +270,7 @@
             <ul class="post-tags-box">
                 
                     <li class="tag-item">
-                        <a href="/tags/hexo/">#hexo</a>&nbsp;
-                    </li>
-                
-                    <li class="tag-item">
-                        <a href="/tags/hexo%E6%90%9C%E7%B4%A2/">#hexo搜索</a>&nbsp;
-                    </li>
-                
-                    <li class="tag-item">
-                        <a href="/tags/hexo%E5%88%86%E7%B1%BB%E3%80%81%E6%A0%87%E7%AD%BE%E5%92%8C%E7%95%99%E8%A8%80%E5%A2%99/">#hexo分类、标签和留言墙</a>&nbsp;
+                        <a href="/tags/%E5%85%AB%E8%82%A1%E6%96%87/">#八股文</a>&nbsp;
                     </li>
                 
             </ul>
@@ -312,29 +279,14 @@
         
             <div class="article-nav">
                 
-                    <div class="article-prev">
-                        <a class="prev"
-                           rel="prev"
-                           href="/2022/09/23/leetcode9-23/"
-                        >
-                            <span class="left arrow-icon flex-center">
-                              <i class="fas fa-chevron-left"></i>
-                            </span>
-                            <span class="title flex-center">
-                                <span class="post-nav-title-item">leetcode9-23</span>
-                                <span class="post-nav-item">上一篇</span>
-                            </span>
-                        </a>
-                    </div>
-                
                 
                     <div class="article-next">
                         <a class="next"
                            rel="next"
-                           href="/2022/09/22/newComment/"
+                           href="/2022/09/23/newHexoSomeFunction/"
                         >
                             <span class="title flex-center">
-                                <span class="post-nav-title-item">hexo增添评论区</span>
+                                <span class="post-nav-title-item">博客新增了搜索、分类还有标签功能</span>
                                 <span class="post-nav-item">下一篇</span>
                             </span>
                             <span class="right arrow-icon flex-center">
@@ -507,7 +459,7 @@
         <aside class="page-aside">
             <div class="post-toc-wrap">
     <div class="post-toc">
-        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%90%9C%E7%B4%A2%E5%8A%9F%E8%83%BD%E6%B7%BB%E5%8A%A0"><span class="nav-text">搜索功能添加</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9C%AC%E6%96%87%E7%94%A8%E7%9A%84%E4%B8%9C%E8%A5%BF"><span class="nav-text">本文用的东西</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%83%A8%E7%BD%B2"><span class="nav-text">部署</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%8F%92%E4%BB%B6%E6%AF%94%E8%BE%83"><span class="nav-text">插件比较</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#hexo-generator-searchdb%E6%8F%92%E4%BB%B6"><span class="nav-text">hexo-generator-searchdb插件</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%8F%92%E4%BB%B6%E5%8E%9F%E7%90%86"><span class="nav-text">插件原理</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%B7%BB%E5%8A%A0%E6%8F%92%E4%BB%B6"><span class="nav-text">添加插件</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8%E6%8F%92%E4%BB%B6"><span class="nav-text">使用插件</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%86%E7%B1%BB%E3%80%81%E6%A0%87%E7%AD%BE%E5%92%8C%E7%95%99%E8%A8%80%E5%8A%9F%E8%83%BD%E6%B7%BB%E5%8A%A0"><span class="nav-text">分类、标签和留言功能添加</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%96%B0%E5%BB%BA%E6%A0%87%E7%AD%BE%E9%A1%B5"><span class="nav-text">新建标签页</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%AE%BE%E7%BD%AE%E5%85%B6%E7%B1%BB%E5%9E%8B-type-%E5%80%BC%E4%B8%BA%E2%80%9Ctages%E2%80%9D"><span class="nav-text">设置其类型 type 值为“tages”</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%9C%A8%E4%B8%BB%E9%A2%98%E7%9A%84%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E6%9B%B4%E6%94%B9"><span class="nav-text">在主题的配置文件更改</span></a></li></ol></li></ol></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#leetcode%E6%AF%8F%E6%97%A5%E4%B8%80%E5%A4%A9%EF%BC%889-23%EF%BC%89"><span class="nav-text">leetcode每日一天（9.23）</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#%E7%A4%BA%E4%BE%8B1"><span class="nav-text">示例1</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#%E6%8F%90%E7%A4%BA"><span class="nav-text">提示</span></a></li></ol></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A7%A3%E7%AD%94"><span class="nav-text">解答</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#%E6%80%9D%E6%83%B3%EF%BC%9A"><span class="nav-text">思想：</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#ListNode%E7%9A%84%E7%BB%93%E6%9E%84%EF%BC%9A"><span class="nav-text">ListNode的结构：</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#%E4%BB%A3%E7%A0%81%EF%BC%9A"><span class="nav-text">代码：</span></a></li></ol></li></ol></li></ol></li></ol></li></ol>
     </div>
 </div>
         </aside>
