@@ -9,7 +9,7 @@
     
     <title>
         
-            pytorch安装 |
+            IntranetPenetration |
         
         BBlog
     </title>
@@ -168,7 +168,7 @@
     <div class="article-content-container">
 
         <div class="article-title">
-            <span class="title-hover-animation">pytorch安装</span>
+            <span class="title-hover-animation">IntranetPenetration</span>
         </div>
 
         
@@ -187,8 +187,8 @@
                         <div class="article-meta-info">
     <span class="article-date article-meta-item">
         <i class="fas fa-edit"></i>&nbsp;
-        <span class="pc">2022-10-02 13:25:29</span>
-        <span class="mobile">2022-10-02 13:25</span>
+        <span class="pc">2023-06-26 21:08:05</span>
+        <span class="mobile">2023-06-26 21:08</span>
     </span>
     
         <span class="article-categories article-meta-item">
@@ -196,7 +196,7 @@
             <ul>
                 
                     <li>
-                        <a href="/categories/pytorch/">pytorch</a>&nbsp;
+                        <a href="/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%85%8D%E7%BD%AE/">服务器配置</a>&nbsp;
                     </li>
                 
             </ul>
@@ -208,11 +208,7 @@
             <ul>
                 
                     <li>
-                        <a href="/tags/pytorch%E5%AE%89%E8%A3%85/">pytorch安装</a>&nbsp;
-                    </li>
-                
-                    <li>
-                        | <a href="/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E6%A1%86%E6%9E%B6/">深度学习框架</a>&nbsp;
+                        <a href="/tags/%E4%BD%BF%E7%94%A8-cPolar-%E5%AE%9E%E7%8E%B0%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F/">使用 cPolar 实现内网穿透</a>&nbsp;
                     </li>
                 
             </ul>
@@ -235,24 +231,40 @@
         
 
         <div class="article-content markdown-body">
-            <h2 id="Anaconda的安装以及使用清华源镜像安装pytorch"><a href="#Anaconda的安装以及使用清华源镜像安装pytorch" class="headerlink" title="Anaconda的安装以及使用清华源镜像安装pytorch"></a>Anaconda的安装以及使用清华源镜像安装pytorch</h2><h3 id="Anaconda的安装"><a href="#Anaconda的安装" class="headerlink" title="Anaconda的安装"></a>Anaconda的安装</h3><p>因为在他官网的安装速度缓慢，所以我们选择在清华源镜像站安装<br>这里我选择的是Anaconda3-5.3.1-Windows-x86_64.exe<a class="link"   target="_blank" rel="noopener" href="https://mirrors.tuna.tsinghua.edu.cn/anaconda/archive/Anaconda3-5.3.1-Windows-x86_64.exe" >清华源镜像站anaconda安装包<i class="fas fa-external-link-alt"></i></a><br>其实也可以选择官网然后复制下载链接去迅雷下载<br>下载好安装包之后，双击运行。将会出现下图，点击<code>Next</code>即可：<br>也是点击<code>I Agree</code>即可<br>接下来需要选择<code>All Users</code>，点击<code>Next</code><br>接下来选择自己想要安装的地址，点击<code>Browse</code>，再点击<code>Next</code>即可接下来就是如下图,上面的是环境变量可以勾选，再点击<code>Install</code></p>
-<h3 id="安装pytorch"><a href="#安装pytorch" class="headerlink" title="安装pytorch"></a>安装pytorch</h3><h5 id="创建Pytorch虚拟环境"><a href="#创建Pytorch虚拟环境" class="headerlink" title="创建Pytorch虚拟环境"></a>创建Pytorch虚拟环境</h5><p>打开Anaconda Prompt,输入下列命令：（版本号可以改为自己需要的）<br>  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda create -n pytorch python=3.8</span><br></pre></td></tr></table></figure><br>启用创建的环境：<br>  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda activate pytorch</span><br></pre></td></tr></table></figure></p>
-<h5 id="其他：Anaconda重命名canda虚拟环境（通过复制和删除操作实现）"><a href="#其他：Anaconda重命名canda虚拟环境（通过复制和删除操作实现）" class="headerlink" title="其他：Anaconda重命名canda虚拟环境（通过复制和删除操作实现）"></a>其他：Anaconda重命名canda虚拟环境（通过复制和删除操作实现）</h5><p>首先对要需要重命名的conda环境进行复制<br>  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 这是简化的命令形式</span></span><br><span class="line">conda create -n conda-new --<span class="built_in">clone</span> conda-old</span><br><span class="line"><span class="comment"># 下面是完整的命令形式</span></span><br><span class="line">conda create --name conda-new --<span class="built_in">clone</span> conda-old</span><br></pre></td></tr></table></figure><br>  然后删除原有的conda环境：<br>  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda remove -n conda-old --all</span><br></pre></td></tr></table></figure><br>–all：表示删除整个conda环境；</p>
-<h5 id="PyTorch官网选择配置"><a href="#PyTorch官网选择配置" class="headerlink" title="PyTorch官网选择配置"></a>PyTorch官网选择配置</h5><ul>
-<li>先看你的显卡版本，再去下载Pytorch版本<br><code>win</code>+<code>r</code>打开CMD命令行输入<code>nvidia-smi</code>可以查看自己的版本驱动，务必保证驱动版本大于396.26，且看到自己的CUDA版本号是10.2</li>
-<li>打开Anaconda Prompt<br>在cmd中以此输入一下代码来添加清华镜像源<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/</span><br><span class="line">conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main/</span><br><span class="line">conda config --<span class="built_in">set</span> show_channel_urls <span class="built_in">yes</span></span><br><span class="line">conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/pytorch/ </span><br></pre></td></tr></table></figure>
-查看否修改到通道，输入： <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda config --show channels</span><br></pre></td></tr></table></figure></li>
-<li>可以试试使用conda安装&#x2F;升级pip <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda install pip</span><br></pre></td></tr></table></figure></li>
-<li>查看当前环境 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda info --envs</span><br></pre></td></tr></table></figure></li>
-<li>在Pytorch网站查询需要安装的版本，<a class="link"   target="_blank" rel="noopener" href="https://pytorch.org/get-started/locally/" >官网<i class="fas fa-external-link-alt"></i></a><br>在选择PyTorch Build 中我们一般选择Stable<br>OS 选择你需要装在电脑的系统<br>Package  我使用Conda一直安装不成功，我使用是的Pip<br>Language 自然选择Python<br>Computer Platform  CUDA的版本要根据你的显卡来选择，要选择与你版本最近而不超过的<br>到此时就会出来一段命令。但我们直接输入此命令往往会下载很久且没有结果。这里建议加上清华的镜像网站会快很多。具体操作如下：</li>
-</ul>
-<h5 id="使用国内源下载Pytorch"><a href="#使用国内源下载Pytorch" class="headerlink" title="使用国内源下载Pytorch"></a>使用国内源下载Pytorch</h5><p>我们需要在上步骤的那一段命令加上一句<br> <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">-i https://pypi.tuna.tsinghua.edu.cn/simple some-package</span><br></pre></td></tr></table></figure><br> 最后我们运行的命令为：<br>  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip3 install torch torchvision torchaudio --extra-index-url https://download.pytorch.org/whl/cu113 -i https://pypi.tuna.tsinghua.edu.cn/simple some-package</span><br></pre></td></tr></table></figure><br> 我下载的差不多又六分钟，最后显示下载成功。<br> 当然，我们安装其他库是也可以使用这个命令进行快速下载！！！<br>  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install xxx -i https://pypi.tuna.tsinghua.edu.cn/simple</span><br></pre></td></tr></table></figure><br> 如果这个不成功，就再试试这个！<br> <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install 包名 -i http://pypi.douban.com/simple/ --trusted-host pypi.douban.com</span><br></pre></td></tr></table></figure><br> 把xxx,替换成我们需要的库名就好啦！</p>
-<h6 id="最后验证是否安装成功"><a href="#最后验证是否安装成功" class="headerlink" title="最后验证是否安装成功"></a>最后验证是否安装成功</h6><ul>
-<li>命令行输入python</li>
-<li>输入import torch</li>
-<li>输入torch.cuda.is_available()</li>
-<li>如果显示为True则安装成功了</li>
-</ul>
+            <h2 id="使用-cPolar-实现内网穿透"><a href="#使用-cPolar-实现内网穿透" class="headerlink" title="使用 cPolar 实现内网穿透"></a>使用 cPolar 实现内网穿透</h2><h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p>内网穿透是一种将局域网内的服务暴露到公网的技术，它可以让你在外网访问你内网的服务，例如通过公网访问家庭网络中的摄像头或者办公室网络中的服务器等。cPolar 是一个强大的工具，它可以帮助你实现内网穿透，让你轻松地访问你内网中的服务。</p>
+<h2 id="设备"><a href="#设备" class="headerlink" title="设备"></a>设备</h2><p>一台i10 A4000 4tb装有unbantu操作系</p>
+<h2 id="安装-cPolar"><a href="#安装-cPolar" class="headerlink" title="安装 cPolar"></a>安装 cPolar</h2><p>我们参照的是<a class="link"   target="_blank" rel="noopener" href="https://www.cpolar.com/blog/linux-system-installation-cpolar#%E6%B3%A8_cpolar_%E5%8D%B8%E8%BD%BD%E6%96%B9%E6%B3%95" >官网<i class="fas fa-external-link-alt"></i></a>的安装教程，操作简单且只用使用命令即可。首先你得保证你的服务器是连接了互联网。你可以根据以下命令检查服务器是否连接了互联网。（如有返回则联通了互联网）</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bing www.baidu.com</span><br></pre></td></tr></table></figure>
+
+<h3 id="环境需求"><a href="#环境需求" class="headerlink" title="环境需求"></a>环境需求</h3><p>该脚本适用于Ubuntu16.04&#x2F;18.04&#x2F;20.04及以后，Centos7&#x2F;8及以后版本，树莓派最新官方镜像，及支持systemd的新式Linux操作系统，该脚本会自动判断CPU架构（i386&#x2F;amd64&#x2F;mips&#x2F;arm&#x2F;arm64等等），自动下载对应cpolar客户端，并自动部署安装。</p>
+<h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><p>首先，你需要安装 cPolar 工具。你可以通过以下步骤来安装 cPolar：</p>
+<ol>
+<li><p>cpolar 安装（国内使用）</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl -L https://www.cpolar.com/static/downloads/install-release-cpolar.sh | sudo bash</span><br></pre></td></tr></table></figure>
+<p>或 cpolar短链接安装方式：(国外使用）</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl -sL https://git.io/cpolar | sudo bash</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>查看版本号，有正常显示版本号即为安装成功</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cpolar version</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>token认证<br>登录cpolar<a class="link"   target="_blank" rel="noopener" href="https://dashboard.cpolar.com/get-started" >官网后台<i class="fas fa-external-link-alt"></i></a>，点击左侧的验证，查看自己的认证token，之后将token贴在命令行里(xxxx 在点入官网后台的验证中可复制)</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cpolar authtoken xxxxxxx</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>简单穿透测试</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cpolar http 8080</span><br></pre></td></tr></table></figure>
+<p>按ctrl+c退出</p>
+</li>
+<li><p>向系统添加服务</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo systemctl enable cpolar</span><br></pre></td></tr></table></figure></li>
+<li><p>启动cpolar服务</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo systemctl start cpolar</span><br></pre></td></tr></table></figure></li>
+<li><p>查看服务状态</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo systemctl status cpolar</span><br></pre></td></tr></table></figure>
+<p>当查看到绿色显示为 activae(running) 则成功</p>
+</li>
+<li><p>登录后台，查看隧道在线状态<br><a class="link"   target="_blank" rel="noopener" href="https://dashboard.cpolar.com/status" >https://dashboard.cpolar.com/status<i class="fas fa-external-link-alt"></i></a>。同时因为cPolar如果固定ip是付费的，而免费的在24h内会更改ip地址，所以当ip改变时候我们需要通过后台查看新地址。官网会自动为我们配置两个通过一个是ssh一个是websit。我们通过ssh则可访问服务器了。<br>同时也可用通过服务器后台管理cpolar。例如我的ip为10.23.85.245,通过官方确认的端口号为9200。则可通过10.23.85.245:9200访问后台。可增加新的隧道。</p>
+</li>
+</ol>
 
         </div>
 
@@ -260,11 +272,11 @@
             <div class="post-copyright-info">
                 <div class="article-copyright-info-container">
     <ul>
-        <li>本文标题：pytorch安装</li>
+        <li>本文标题：IntranetPenetration</li>
         <li>本文作者：warrior</li>
-        <li>创建时间：2022-10-02 13:25:29</li>
+        <li>创建时间：2023-06-26 21:08:05</li>
         <li>
-            本文链接：https://sunset148.github.io/2022/10/02/pytorchsetup/
+            本文链接：https://sunset148.github.io/2023/06/26/IntranetPenetration/
         </li>
         <li>
             版权声明：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
@@ -279,11 +291,7 @@
             <ul class="post-tags-box">
                 
                     <li class="tag-item">
-                        <a href="/tags/pytorch%E5%AE%89%E8%A3%85/">#pytorch安装</a>&nbsp;
-                    </li>
-                
-                    <li class="tag-item">
-                        <a href="/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E6%A1%86%E6%9E%B6/">#深度学习框架</a>&nbsp;
+                        <a href="/tags/%E4%BD%BF%E7%94%A8-cPolar-%E5%AE%9E%E7%8E%B0%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F/">#使用 cPolar 实现内网穿透</a>&nbsp;
                     </li>
                 
             </ul>
@@ -292,29 +300,14 @@
         
             <div class="article-nav">
                 
-                    <div class="article-prev">
-                        <a class="prev"
-                           rel="prev"
-                           href="/2023/06/26/IntranetPenetration/"
-                        >
-                            <span class="left arrow-icon flex-center">
-                              <i class="fas fa-chevron-left"></i>
-                            </span>
-                            <span class="title flex-center">
-                                <span class="post-nav-title-item">IntranetPenetration</span>
-                                <span class="post-nav-item">上一篇</span>
-                            </span>
-                        </a>
-                    </div>
-                
                 
                     <div class="article-next">
                         <a class="next"
                            rel="next"
-                           href="/2022/09/29/roadDataset/"
+                           href="/2022/10/02/pytorchsetup/"
                         >
                             <span class="title flex-center">
-                                <span class="post-nav-title-item">遥感影像的路网识别、提取的数据集</span>
+                                <span class="post-nav-title-item">pytorch安装</span>
                                 <span class="post-nav-item">下一篇</span>
                             </span>
                             <span class="right arrow-icon flex-center">
@@ -487,7 +480,7 @@
         <aside class="page-aside">
             <div class="post-toc-wrap">
     <div class="post-toc">
-        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Anaconda%E7%9A%84%E5%AE%89%E8%A3%85%E4%BB%A5%E5%8F%8A%E4%BD%BF%E7%94%A8%E6%B8%85%E5%8D%8E%E6%BA%90%E9%95%9C%E5%83%8F%E5%AE%89%E8%A3%85pytorch"><span class="nav-text">Anaconda的安装以及使用清华源镜像安装pytorch</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Anaconda%E7%9A%84%E5%AE%89%E8%A3%85"><span class="nav-text">Anaconda的安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%89%E8%A3%85pytorch"><span class="nav-text">安装pytorch</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%88%9B%E5%BB%BAPytorch%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83"><span class="nav-text">创建Pytorch虚拟环境</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%85%B6%E4%BB%96%EF%BC%9AAnaconda%E9%87%8D%E5%91%BD%E5%90%8Dcanda%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83%EF%BC%88%E9%80%9A%E8%BF%87%E5%A4%8D%E5%88%B6%E5%92%8C%E5%88%A0%E9%99%A4%E6%93%8D%E4%BD%9C%E5%AE%9E%E7%8E%B0%EF%BC%89"><span class="nav-text">其他：Anaconda重命名canda虚拟环境（通过复制和删除操作实现）</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#PyTorch%E5%AE%98%E7%BD%91%E9%80%89%E6%8B%A9%E9%85%8D%E7%BD%AE"><span class="nav-text">PyTorch官网选择配置</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8%E5%9B%BD%E5%86%85%E6%BA%90%E4%B8%8B%E8%BD%BDPytorch"><span class="nav-text">使用国内源下载Pytorch</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#%E6%9C%80%E5%90%8E%E9%AA%8C%E8%AF%81%E6%98%AF%E5%90%A6%E5%AE%89%E8%A3%85%E6%88%90%E5%8A%9F"><span class="nav-text">最后验证是否安装成功</span></a></li></ol></li></ol></li></ol></li></ol></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8-cPolar-%E5%AE%9E%E7%8E%B0%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F"><span class="nav-text">使用 cPolar 实现内网穿透</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%8B%E7%BB%8D"><span class="nav-text">介绍</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AE%BE%E5%A4%87"><span class="nav-text">设备</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%85-cPolar"><span class="nav-text">安装 cPolar</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%8E%AF%E5%A2%83%E9%9C%80%E6%B1%82"><span class="nav-text">环境需求</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%89%E8%A3%85"><span class="nav-text">安装</span></a></li></ol></li></ol>
     </div>
 </div>
         </aside>

@@ -6,7 +6,7 @@
   <link href="https://sunset148.github.io/atom.xml" rel="self"/>
   
   <link href="https://sunset148.github.io/"/>
-  <updated>2022-10-02T05:57:53.323Z</updated>
+  <updated>2023-06-26T13:36:38.283Z</updated>
   <id>https://sunset148.github.io/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>IntranetPenetration</title>
+    <link href="https://sunset148.github.io/2023/06/26/IntranetPenetration/"/>
+    <id>https://sunset148.github.io/2023/06/26/IntranetPenetration/</id>
+    <published>2023-06-26T13:08:05.000Z</published>
+    <updated>2023-06-26T13:36:38.283Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="使用-cPolar-实现内网穿透"><a href="#使用-cPolar-实现内网穿透" class="headerlink" title="使用 cPolar 实现内网穿透"></a>使用 cPolar 实现内网穿透</h2><h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p>内网穿透是一种将局域网内的服务暴露到公网的技术，它可以让你在外网访问你内网的服务，例如通过公网访问家庭网络中的摄像头或者办公室网络中的服务器等。cPolar 是一个强大的工具，它可以帮助你实现内网穿透，让你轻松地访问你内网中的服务。</p><h2 id="设备"><a href="#设备" class="headerlink" title="设备"></a>设备</h2><p>一台i10 A4000 4tb装有unbantu操作系</p><h2 id="安装-cPolar"><a href="#安装-cPolar" class="headerlink" title="安装 cPolar"></a>安装 cPolar</h2><p>我们参照的是<a class="link"   href="https://www.cpolar.com/blog/linux-system-installation-cpolar#%E6%B3%A8_cpolar_%E5%8D%B8%E8%BD%BD%E6%96%B9%E6%B3%95" >官网<i class="fas fa-external-link-alt"></i></a>的安装教程，操作简单且只用使用命令即可。首先你得保证你的服务器是连接了互联网。你可以根据以下命令检查服务器是否连接了互联网。（如有返回则联通了互联网）</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bing www.baidu.com</span><br></pre></td></tr></table></figure><h3 id="环境需求"><a href="#环境需求" class="headerlink" title="环境需求"></a>环境需求</h3><p>该脚本适用于Ubuntu16.04&#x2F;18.04&#x2F;20.04及以后，Centos7&#x2F;8及以后版本，树莓派最新官方镜像，及支持systemd的新式Linux操作系统，该脚本会自动判断CPU架构（i386&#x2F;amd64&#x2F;mips&#x2F;arm&#x2F;arm64等等），自动下载对应cpolar客户端，并自动部署安装。</p><h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><p>首先，你需要安装 cPolar 工具。你可以通过以下步骤来安装 cPolar：</p><ol><li><p>cpolar 安装（国内使用）</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl -L https://www.cpolar.com/static/downloads/install-release-cpolar.sh | sudo bash</span><br></pre></td></tr></table></figure><p>或 cpolar短链接安装方式：(国外使用）</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl -sL https://git.io/cpolar | sudo bash</span><br></pre></td></tr></table></figure></li><li><p>查看版本号，有正常显示版本号即为安装成功</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cpolar version</span><br></pre></td></tr></table></figure></li><li><p>token认证<br>登录cpolar<a class="link"   href="https://dashboard.cpolar.com/get-started" >官网后台<i class="fas fa-external-link-alt"></i></a>，点击左侧的验证，查看自己的认证token，之后将token贴在命令行里(xxxx 在点入官网后台的验证中可复制)</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cpolar authtoken xxxxxxx</span><br></pre></td></tr></table></figure></li><li><p>简单穿透测试</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cpolar http 8080</span><br></pre></td></tr></table></figure><p>按ctrl+c退出</p></li><li><p>向系统添加服务</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo systemctl enable cpolar</span><br></pre></td></tr></table></figure></li><li><p>启动cpolar服务</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo systemctl start cpolar</span><br></pre></td></tr></table></figure></li><li><p>查看服务状态</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo systemctl status cpolar</span><br></pre></td></tr></table></figure><p>当查看到绿色显示为 activae(running) 则成功</p></li><li><p>登录后台，查看隧道在线状态<br><a class="link"   href="https://dashboard.cpolar.com/status" >https://dashboard.cpolar.com/status<i class="fas fa-external-link-alt"></i></a>。同时因为cPolar如果固定ip是付费的，而免费的在24h内会更改ip地址，所以当ip改变时候我们需要通过后台查看新地址。官网会自动为我们配置两个通过一个是ssh一个是websit。我们通过ssh则可访问服务器了。<br>同时也可用通过服务器后台管理cpolar。例如我的ip为10.23.85.245,通过官方确认的端口号为9200。则可通过10.23.85.245:9200访问后台。可增加新的隧道。</p></li></ol>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h2 id=&quot;使用-cPolar-实现内网穿透&quot;&gt;&lt;a href=&quot;#使用-cPolar-实现内网穿透&quot; class=&quot;headerlink&quot; title=&quot;使用 cPolar 实现内网穿透&quot;&gt;&lt;/a&gt;使用 cPolar 实现内网穿透&lt;/h2&gt;&lt;h2 id=&quot;介绍&quot;&gt;&lt;a hr</summary>
+      
+    
+    
+    
+    <category term="服务器配置" scheme="https://sunset148.github.io/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%85%8D%E7%BD%AE/"/>
+    
+    
+    <category term="使用 cPolar 实现内网穿透" scheme="https://sunset148.github.io/tags/%E4%BD%BF%E7%94%A8-cPolar-%E5%AE%9E%E7%8E%B0%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F/"/>
+    
+  </entry>
   
   <entry>
     <title>pytorch安装</title>
