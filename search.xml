@@ -1,51 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>使用 cPolar 实现内网穿透</title>
-    <url>/2023/06/26/IntranetPenetration/</url>
-    <content><![CDATA[<h2 id="使用-cPolar-实现内网穿透"><a href="#使用-cPolar-实现内网穿透" class="headerlink" title="使用 cPolar 实现内网穿透"></a>使用 cPolar 实现内网穿透</h2><h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p>内网穿透是一种将局域网内的服务暴露到公网的技术，它可以让你在外网访问你内网的服务，例如通过公网访问家庭网络中的摄像头或者办公室网络中的服务器等。cPolar 是一个强大的工具，它可以帮助你实现内网穿透，让你轻松地访问你内网中的服务。</p>
-<h2 id="设备"><a href="#设备" class="headerlink" title="设备"></a>设备</h2><p>一台i10 A4000 4tb装有unbantu操作系</p>
-<h2 id="安装-cPolar"><a href="#安装-cPolar" class="headerlink" title="安装 cPolar"></a>安装 cPolar</h2><p>我们参照的是<a class="link"   href="https://www.cpolar.com/blog/linux-system-installation-cpolar#%E6%B3%A8_cpolar_%E5%8D%B8%E8%BD%BD%E6%96%B9%E6%B3%95" >官网<i class="fas fa-external-link-alt"></i></a>的安装教程，操作简单且只用使用命令即可。首先你得保证你的服务器是连接了互联网。你可以根据以下命令检查服务器是否连接了互联网。（如有返回则联通了互联网）</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">bing www.baidu.com</span><br></pre></td></tr></table></figure>
-
-<h3 id="环境需求"><a href="#环境需求" class="headerlink" title="环境需求"></a>环境需求</h3><p>该脚本适用于Ubuntu16.04&#x2F;18.04&#x2F;20.04及以后，Centos7&#x2F;8及以后版本，树莓派最新官方镜像，及支持systemd的新式Linux操作系统，该脚本会自动判断CPU架构（i386&#x2F;amd64&#x2F;mips&#x2F;arm&#x2F;arm64等等），自动下载对应cpolar客户端，并自动部署安装。</p>
-<h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><p>首先，你需要安装 cPolar 工具。你可以通过以下步骤来安装 cPolar：</p>
-<ol>
-<li><p>cpolar 安装（国内使用）</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">curl -L https://www.cpolar.com/static/downloads/install-release-cpolar.sh | sudo bash</span><br></pre></td></tr></table></figure>
-<p>或 cpolar短链接安装方式：(国外使用）</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">curl -sL https://git.io/cpolar | sudo bash</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>查看版本号，有正常显示版本号即为安装成功</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">cpolar version</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>token认证<br>登录cpolar<a class="link"   href="https://dashboard.cpolar.com/get-started" >官网后台<i class="fas fa-external-link-alt"></i></a>，点击左侧的验证，查看自己的认证token，之后将token贴在命令行里(xxxx 在点入官网后台的验证中可复制)</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">cpolar authtoken xxxxxxx</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>简单穿透测试</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">cpolar http 8080</span><br></pre></td></tr></table></figure>
-<p>按ctrl+c退出</p>
-</li>
-<li><p>向系统添加服务</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo systemctl enable cpolar</span><br></pre></td></tr></table></figure></li>
-<li><p>启动cpolar服务</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo systemctl start cpolar</span><br></pre></td></tr></table></figure></li>
-<li><p>查看服务状态</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo systemctl status cpolar</span><br></pre></td></tr></table></figure>
-<p>当查看到绿色显示为 activae(running) 则成功</p>
-</li>
-<li><p>登录后台，查看隧道在线状态<br><a class="link"   href="https://dashboard.cpolar.com/status" >https://dashboard.cpolar.com/status<i class="fas fa-external-link-alt"></i></a>。同时因为cPolar如果固定ip是付费的，而免费的在24h内会更改ip地址，所以当ip改变时候我们需要通过后台查看新地址。官网会自动为我们配置两个通过一个是ssh一个是websit。我们通过ssh则可访问服务器了。<br>同时也可用通过服务器后台管理cpolar。例如我的ip为10.23.85.245,通过官方确认的端口号为9200。则可通过10.23.85.245:9200访问后台。可增加新的隧道。</p>
-</li>
-</ol>
-]]></content>
-      <categories>
-        <category>内网穿透</category>
-      </categories>
-      <tags>
-        <tag>内网穿透</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>气象论文</title>
     <url>/2023/06/27/MeteorologicalPapers/</url>
     <content><![CDATA[<table>
@@ -330,6 +285,51 @@
       </tags>
   </entry>
   <entry>
+    <title>使用 cPolar 实现内网穿透</title>
+    <url>/2023/06/26/IntranetPenetration/</url>
+    <content><![CDATA[<h2 id="使用-cPolar-实现内网穿透"><a href="#使用-cPolar-实现内网穿透" class="headerlink" title="使用 cPolar 实现内网穿透"></a>使用 cPolar 实现内网穿透</h2><h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p>内网穿透是一种将局域网内的服务暴露到公网的技术，它可以让你在外网访问你内网的服务，例如通过公网访问家庭网络中的摄像头或者办公室网络中的服务器等。cPolar 是一个强大的工具，它可以帮助你实现内网穿透，让你轻松地访问你内网中的服务。</p>
+<h2 id="设备"><a href="#设备" class="headerlink" title="设备"></a>设备</h2><p>一台i10 A4000 4tb装有unbantu操作系</p>
+<h2 id="安装-cPolar"><a href="#安装-cPolar" class="headerlink" title="安装 cPolar"></a>安装 cPolar</h2><p>我们参照的是<a class="link"   href="https://www.cpolar.com/blog/linux-system-installation-cpolar#%E6%B3%A8_cpolar_%E5%8D%B8%E8%BD%BD%E6%96%B9%E6%B3%95" >官网<i class="fas fa-external-link-alt"></i></a>的安装教程，操作简单且只用使用命令即可。首先你得保证你的服务器是连接了互联网。你可以根据以下命令检查服务器是否连接了互联网。（如有返回则联通了互联网）</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">bing www.baidu.com</span><br></pre></td></tr></table></figure>
+
+<h3 id="环境需求"><a href="#环境需求" class="headerlink" title="环境需求"></a>环境需求</h3><p>该脚本适用于Ubuntu16.04&#x2F;18.04&#x2F;20.04及以后，Centos7&#x2F;8及以后版本，树莓派最新官方镜像，及支持systemd的新式Linux操作系统，该脚本会自动判断CPU架构（i386&#x2F;amd64&#x2F;mips&#x2F;arm&#x2F;arm64等等），自动下载对应cpolar客户端，并自动部署安装。</p>
+<h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><p>首先，你需要安装 cPolar 工具。你可以通过以下步骤来安装 cPolar：</p>
+<ol>
+<li><p>cpolar 安装（国内使用）</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">curl -L https://www.cpolar.com/static/downloads/install-release-cpolar.sh | sudo bash</span><br></pre></td></tr></table></figure>
+<p>或 cpolar短链接安装方式：(国外使用）</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">curl -sL https://git.io/cpolar | sudo bash</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>查看版本号，有正常显示版本号即为安装成功</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">cpolar version</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>token认证<br>登录cpolar<a class="link"   href="https://dashboard.cpolar.com/get-started" >官网后台<i class="fas fa-external-link-alt"></i></a>，点击左侧的验证，查看自己的认证token，之后将token贴在命令行里(xxxx 在点入官网后台的验证中可复制)</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">cpolar authtoken xxxxxxx</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>简单穿透测试</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">cpolar http 8080</span><br></pre></td></tr></table></figure>
+<p>按ctrl+c退出</p>
+</li>
+<li><p>向系统添加服务</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo systemctl enable cpolar</span><br></pre></td></tr></table></figure></li>
+<li><p>启动cpolar服务</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo systemctl start cpolar</span><br></pre></td></tr></table></figure></li>
+<li><p>查看服务状态</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo systemctl status cpolar</span><br></pre></td></tr></table></figure>
+<p>当查看到绿色显示为 activae(running) 则成功</p>
+</li>
+<li><p>登录后台，查看隧道在线状态<br><a class="link"   href="https://dashboard.cpolar.com/status" >https://dashboard.cpolar.com/status<i class="fas fa-external-link-alt"></i></a>。同时因为cPolar如果固定ip是付费的，而免费的在24h内会更改ip地址，所以当ip改变时候我们需要通过后台查看新地址。官网会自动为我们配置两个通过一个是ssh一个是websit。我们通过ssh则可访问服务器了。<br>同时也可用通过服务器后台管理cpolar。例如我的ip为10.23.85.245,通过官方确认的端口号为9200。则可通过10.23.85.245:9200访问后台。可增加新的隧道。</p>
+</li>
+</ol>
+]]></content>
+      <categories>
+        <category>内网穿透</category>
+      </categories>
+      <tags>
+        <tag>内网穿透</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Hello World</title>
     <url>/2022/09/19/hello-world/</url>
     <content><![CDATA[<p>Welcome to <a class="link"   href="https://hexo.io/" >Hexo<i class="fas fa-external-link-alt"></i></a>! This is your very first post. Check <a class="link"   href="https://hexo.io/docs/" >documentation<i class="fas fa-external-link-alt"></i></a> for more info. If you get any problems when using Hexo, you can find the answer in <a class="link"   href="https://hexo.io/docs/troubleshooting.html" >troubleshooting<i class="fas fa-external-link-alt"></i></a> or you can ask me on <a class="link"   href="https://github.com/hexojs/hexo/issues" >GitHub<i class="fas fa-external-link-alt"></i></a>.</p>
@@ -354,6 +354,41 @@
       </tags>
   </entry>
   <entry>
+    <title>leetcode6-27</title>
+    <url>/2023/06/27/leetcode6-27/</url>
+    <content><![CDATA[<h2 id="leetcode每日一天（6-24）"><a href="#leetcode每日一天（6-24）" class="headerlink" title="leetcode每日一天（6.24）"></a>leetcode每日一天（6.24）</h2><p><a class="link"   href="https://leetcode.cn/problems/maximum-subarray-sum-with-one-deletion" >1186. 删除一次得到子数组最大和<i class="fas fa-external-link-alt"></i></a><br>给你一个整数数组，返回它的某个 非空 子数组（连续元素）在执行一次可选的删除操作后，所能得到的最大元素总和。换句话说，你可以从原数组中选出一个子数组，并可以决定要不要从中删除一个元素（只能删一次哦），（删除后）子数组中至少应当有一个元素，然后该子数组（剩下）的元素总和是所有子数组之中最大的。</p>
+<p>注意，删除一个元素后，子数组 不能为空。</p>
+<h6 id="示例1"><a href="#示例1" class="headerlink" title="示例1"></a>示例1</h6><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">输入：arr = [1,-2,0,3]</span><br><span class="line">输出：4</span><br><span class="line">解释：我们可以选出 [1, -2, 0, 3]，然后删掉 -2，这样得到 [1, 0, 3]，和最大。</span><br></pre></td></tr></table></figure>
+
+<h6 id="示例2"><a href="#示例2" class="headerlink" title="示例2"></a>示例2</h6><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">输入：arr = [1,-2,-2,3]</span><br><span class="line">输出：3</span><br><span class="line">解释：我们直接选出 [3]，这就是最大和。</span><br></pre></td></tr></table></figure>
+
+<h6 id="示例3"><a href="#示例3" class="headerlink" title="示例3"></a>示例3</h6><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">输入：arr = [-1,-1,-1,-1]</span><br><span class="line">输出：-1</span><br><span class="line">解释：最后得到的子数组不能为空，所以我们不能选择 [-1] 并从中删去 -1 来得到 0。</span><br><span class="line">     我们应该直接选择 [-1]，或者选择 [-1, -1] 再从中删去一个 -1。</span><br></pre></td></tr></table></figure>
+
+<h6 id="提示："><a href="#提示：" class="headerlink" title="提示："></a>提示：</h6><ul>
+<li>1 &lt;&#x3D; arr.length &lt;&#x3D; 10^5</li>
+<li>-10^4 &lt;&#x3D; arr[i] &lt;&#x3D; 10^4</li>
+</ul>
+<hr>
+<h2 id="解答"><a href="#解答" class="headerlink" title="解答"></a>解答</h2><h6 id="思想："><a href="#思想：" class="headerlink" title="思想："></a>思想：</h6><p>动态规划<br>本题是典型的动态规划应用题，我们可以将问题拆分成多个子问题，即求解以 arr[i] 结尾的最多删除一次的非空子数组的最大和。我们以 dp[i][k] 表示以 arr[i]结尾，删除** k ** 次的非空子数组的最大和（删除前的末尾元素为 arr[i]，就视为以 arr[i] 结尾）。初始时 dp[0][0]&#x3D;arr[0]，dp[0][1]＝0<strong>（以 arr[0] 结尾，删除一次的非空子数组不存在，因此 dp[0][1] 不会计入结果）</strong>。当 i&gt;0 时，转移方程如下：</p>
+<center>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">dp[i][0]=max(dp[i−1][0],0)+arr[i]</span><br><span class="line">dp[i][1]=max(dp[i−1][1]+arr[i],dp[i−1][0])</span><br></pre></td></tr></table></figure>
+</center>
+- 第一个转移方程表示在不删除的情况下，以 arr[i]] 为结尾的非空子数组的最大和 dp[i][0]与 dp[i－1][0] 有关，当 dp[i−1][0]>0 时，直接将 arr[i]与 i−1 时的最大非空子数组连接时，取得最大和，否则只选 arr[i] 时，取得最大和。
+- 第二个转移方程表示在删除一次的情况下，以 arr[i] 为结尾的非空子数组有两种情况：
+    1. 不删除 arr[i]，那么选择 arr[i] 与 dp[i−1][1] 对应的子数组（已执行一次删除）。
+    2. 删除 arr[i]，那么选择 dp[i−1][0] 对应的非空子数组（未执行一次删除，但是等同于删除了 arr[i]）。
+dp[i][1] 取以上两种情况的最大和的最大值。
+
+<p><strong>注意到 dp[i][∗]的值只与 dp[i−1][∗] 有关，因此我们可以只使用两个整数来节省空间。</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">public:</span><br><span class="line">    int maximumSum(vector&lt;int&gt;&amp; arr) &#123;</span><br><span class="line">        int dp0=arr[0],dp1=0,res=arr[0];</span><br><span class="line">        int len = arr.size();</span><br><span class="line">        for(int i=1;i&lt;len;i++)&#123;</span><br><span class="line">            dp1 = max(dp0,dp1+arr[i]);</span><br><span class="line">            dp0 = max(dp0,0) + arr[i];</span><br><span class="line">            res = max(res,max(dp0,dp1));</span><br><span class="line">        &#125;</span><br><span class="line">        return res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>leetcode</category>
+      </categories>
+      <tags>
+        <tag>八股文</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>leetcode9.20</title>
     <url>/2022/09/20/leetcode9-20/</url>
     <content><![CDATA[<h2 id="leetcode每日一天（9-20）"><a href="#leetcode每日一天（9-20）" class="headerlink" title="leetcode每日一天（9.20）"></a>leetcode每日一天（9.20）</h2><p><a class="link"   href="https://leetcode.cn/problems/partition-to-k-equal-sum-subsets/" >题目：698. 划分为k个相等的子集<i class="fas fa-external-link-alt"></i></a><br>给定一个整数数组  nums 和一个正整数 k，找出是否有可能把这个数组分成 k 个非空子集，其总和都相等。</p>
@@ -364,6 +399,30 @@
 <h2 id="解答"><a href="#解答" class="headerlink" title="解答"></a>解答</h2><h6 id="思想："><a href="#思想：" class="headerlink" title="思想："></a>思想：</h6><p>我们可以把每个集合看做一个桶，然后我们可以通过dfs和剪枝来模拟每个数值入桶和出桶。</p>
 <h6 id="剪枝："><a href="#剪枝：" class="headerlink" title="剪枝："></a>剪枝：</h6><p>因为我们需要有k个桶且每个桶的值是相等的。以此可以推出给定的值相加一定是桶的值的倍速，并且不会存在比桶值大的数值。最关键的剪枝为，我们在dfs遍历一个桶是否可以装满，如果回溯的时候发现这个桶回到了初始值，则证明这个桶是装不满的。然而，每个桶都是一样的，这个桶装不满则其他桶一样装不满。</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">bool canPartitionKSubsets(vector&lt;int&gt;&amp; nums, int k) &#123;</span><br><span class="line">    int <span class="built_in">sum</span>=0,size=nums.size();</span><br><span class="line">    int maxN=-1;</span><br><span class="line">    <span class="keyword">for</span>(int i=0;i&lt;size;i++)</span><br><span class="line">        <span class="built_in">sum</span>+=nums[i],maxN=max(maxN,nums[i]);</span><br><span class="line">    <span class="keyword">if</span>(<span class="built_in">sum</span>%k!=0||maxN&gt;<span class="built_in">sum</span>/k)</span><br><span class="line">        <span class="built_in">return</span> <span class="literal">false</span>;</span><br><span class="line">    <span class="built_in">sum</span>=<span class="built_in">sum</span>/k;</span><br><span class="line">    <span class="built_in">sort</span>(nums.begin(), nums.end());</span><br><span class="line">  //  cout&lt;&lt;<span class="string">nums[0];</span></span><br><span class="line"><span class="string">    vector&lt;int&gt; arr(k,sum);</span></span><br><span class="line"><span class="string">    bool t=false;</span></span><br><span class="line"><span class="string">    t=dfs(nums</span>,arr,size-1,k,size,<span class="built_in">sum</span>);</span><br><span class="line">    <span class="built_in">return</span> t;</span><br><span class="line">&#125;</span><br><span class="line">//nums给定数组 arr模拟每一个桶  cur以此遍历每个数值 k一共有几个桶 size原数组大小 <span class="built_in">sum</span>每个桶的值</span><br><span class="line">bool dfs(vector&lt;int&gt;&amp; nums,vector&lt;int&gt;&amp; arr,int cur,int k,int size,int <span class="built_in">sum</span>)&#123;</span><br><span class="line">    <span class="keyword">if</span>(cur &lt; 0)&#123;</span><br><span class="line">        <span class="keyword">for</span>(int i=0;i&lt;k;i++)</span><br><span class="line">            <span class="keyword">if</span>(arr[i]!=0)</span><br><span class="line">                <span class="built_in">return</span> <span class="literal">false</span>;</span><br><span class="line">        <span class="built_in">return</span> <span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>(int i=0;i&lt;k;i++)&#123;</span><br><span class="line">        <span class="keyword">if</span>(arr[i]-nums[cur]&lt;nums[0]&amp;&amp;arr[i]!=nums[cur])</span><br><span class="line">            <span class="built_in">continue</span>;</span><br><span class="line">        arr[i] -= nums[cur];</span><br><span class="line">        // <span class="keyword">for</span>(int j=0;j&lt;k;j++)</span><br><span class="line">        //     cout&lt;&lt;<span class="string">arr[i]&lt;&lt;&quot; &quot;;</span></span><br><span class="line"><span class="string">        // cout&lt;&lt;endl;</span></span><br><span class="line"><span class="string">        if(dfs(nums,arr</span>,cur-1,k,size,<span class="built_in">sum</span>))</span><br><span class="line">            <span class="built_in">return</span> <span class="literal">true</span>;</span><br><span class="line">        arr[i] += nums[cur];</span><br><span class="line">        <span class="keyword">if</span>(arr[i]==<span class="built_in">sum</span>)</span><br><span class="line">            <span class="built_in">break</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">return</span> <span class="literal">false</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>leetcode</category>
+      </categories>
+      <tags>
+        <tag>八股文</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>leetcode9-23</title>
+    <url>/2022/09/23/leetcode9-23/</url>
+    <content><![CDATA[<h2 id="leetcode每日一天（9-23）"><a href="#leetcode每日一天（9-23）" class="headerlink" title="leetcode每日一天（9.23）"></a>leetcode每日一天（9.23）</h2><p><a class="link"   href="https://leetcode.cn/problems/design-linked-list/" >707. 设计链表<i class="fas fa-external-link-alt"></i></a><br>设计链表的实现。您可以选择使用单链表或双链表。单链表中的节点应该具有两个属性：<code>val</code> 和 <code>next</code>。<code>val</code> 是当前节点的值，<code>next</code> 是指向下一个节点的指针&#x2F;引用。如果要使用双向链表，则还需要一个属性 <code>prev</code> 以指示链表中的上一个节点。假设链表中的所有节点都是 0-index 的。<br>在链表类中实现这些功能：</p>
+<ol>
+<li>get(index)：获取链表中第<code>index</code>个节点的值。如果索引无效，则返回-1。</li>
+<li>addAtHead(val)：在链表的第一个元素之前添加一个值为 <code>val</code> 的节点。插入后，新节点将成为链表的第一个节点。</li>
+<li>addAtHead(val)：在链表的第一个元素之前添加一个值为<code> val</code> 的节点。插入后，新节点将成为链表的第一个节点。</li>
+<li>addAtIndex(index,val)：在链表中的第<code> index </code>个节点之前添加值为<code> val</code>  的节点。如果<code> index </code>等于链表的长度，则该节点将附加到链表的末尾。如果 <code>index</code> 大于链表长度，则不会插入节点。如果<code>index</code>小于0，则在头部插入节点。</li>
+<li>deleteAtIndex(index)：如果索引<code>index</code>有效，则删除链表中的第 <code>index</code> 个节点。</li>
+</ol>
+<h6 id="示例1"><a href="#示例1" class="headerlink" title="示例1"></a>示例1</h6><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">MyLinkedList linkedList = new MyLinkedList();</span><br><span class="line">linkedList.addAtHead(1);</span><br><span class="line">linkedList.addAtTail(3);</span><br><span class="line">linkedList.addAtIndex(1,2);   //链表变为1-&gt; 2-&gt; 3</span><br><span class="line">linkedList.get(1);            //返回2</span><br><span class="line">linkedList.deleteAtIndex(1);  //现在链表是1-&gt; 3</span><br><span class="line">linkedList.get(1);            //返回3</span><br></pre></td></tr></table></figure>
+<h6 id="提示"><a href="#提示" class="headerlink" title="提示"></a>提示</h6><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">所有val值都在 [1, 1000] 之内。</span><br><span class="line">操作次数将在  [1, 1000] 之内。</span><br><span class="line">请不要使用内置的 LinkedList 库。</span><br></pre></td></tr></table></figure>
+<hr>
+<h2 id="解答"><a href="#解答" class="headerlink" title="解答"></a>解答</h2><h6 id="思想："><a href="#思想：" class="headerlink" title="思想："></a>思想：</h6><p>这是一道水题目，主要是用到数据结构里面的链表，我是用的c++里面的ListNode来解答这题比较轻松。题目要求有三处增加函数，实质上在首部添加数值和在尾部添加数值的操作可以归纳为addAtIndex，则我们在addAtHead和addAtTail可以直接调用addAtIndex用来减少我们的代码量。</p>
+<h6 id="ListNode的结构："><a href="#ListNode的结构：" class="headerlink" title="ListNode的结构："></a>ListNode的结构：</h6><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">struct ListNode &#123;</span><br><span class="line">      int val;  //当前结点的值</span><br><span class="line">      ListNode *next;  //指向下一个结点的指针</span><br><span class="line">      ListNode(int x) : val(x), next(NULL) &#123;&#125;  //初始化当前结点值为x,指针为空</span><br><span class="line">  &#125;;</span><br><span class="line"></span><br><span class="line">ListNode *p=new ListNode(0); //新增一个节点</span><br><span class="line">delete p; //删除一个节点，释放内存</span><br></pre></td></tr></table></figure>
+<h6 id="代码："><a href="#代码：" class="headerlink" title="代码："></a>代码：</h6><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">class MyLinkedList &#123;</span><br><span class="line">public:</span><br><span class="line">    <span class="function"><span class="title">MyLinkedList</span></span>() &#123;</span><br><span class="line">        this-&gt;size = 0;</span><br><span class="line">        this-&gt;<span class="built_in">head</span> = new ListNode(0); //首节点，值无意义</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    int get(int index) &#123;</span><br><span class="line">        <span class="keyword">if</span>(index&lt;0||index&gt;=size)</span><br><span class="line">            <span class="built_in">return</span> -1;</span><br><span class="line">        ListNode *cur = <span class="built_in">head</span>;</span><br><span class="line">        <span class="keyword">for</span> (int i = 0; i &lt;= index; i++) &#123;</span><br><span class="line">            cur = cur-&gt;next;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">return</span> cur-&gt;val;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    void addAtHead(int val) &#123;</span><br><span class="line">        addAtIndex(0, val);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    void addAtTail(int val) &#123;</span><br><span class="line">        addAtIndex(size,val);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    void addAtIndex(int index, int val) &#123;</span><br><span class="line">        <span class="keyword">if</span>(index&gt;size)</span><br><span class="line">            <span class="built_in">return</span>;</span><br><span class="line">        index=max(0,index);</span><br><span class="line">        ListNode *cur=<span class="built_in">head</span>;</span><br><span class="line">        <span class="keyword">for</span>(int i=0;i&lt;index;i++)</span><br><span class="line">            cur=cur-&gt;next;</span><br><span class="line">        ListNode *toAdd = new ListNode(val);</span><br><span class="line">        toAdd-&gt;next = cur-&gt;next;</span><br><span class="line">        cur-&gt;next = toAdd;</span><br><span class="line">        size++;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    void deleteAtIndex(int index) &#123;</span><br><span class="line">        <span class="keyword">if</span>(index&lt;0||index&gt;=size)</span><br><span class="line">            <span class="built_in">return</span>;</span><br><span class="line">        ListNode *cur=<span class="built_in">head</span>;</span><br><span class="line">        size--;</span><br><span class="line">        <span class="keyword">for</span>(int i=0;i&lt;index;i++)</span><br><span class="line">            cur=cur-&gt;next;</span><br><span class="line">        ListNode *p = cur-&gt;next;</span><br><span class="line">        cur-&gt;next = cur-&gt;next-&gt;next;</span><br><span class="line">        delete p;</span><br><span class="line">    &#125;</span><br><span class="line">private:</span><br><span class="line">    int size;</span><br><span class="line">    ListNode *<span class="built_in">head</span>;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">/**</span><br><span class="line"> * Your MyLinkedList object will be instantiated and called as such:</span><br><span class="line"> * MyLinkedList* obj = new MyLinkedList();</span><br><span class="line"> * int param_1 = obj-&gt;get(index);</span><br><span class="line"> * obj-&gt;addAtHead(val);</span><br><span class="line"> * obj-&gt;addAtTail(val);</span><br><span class="line"> * obj-&gt;addAtIndex(index,val);</span><br><span class="line"> * obj-&gt;deleteAtIndex(index);</span><br><span class="line"> */</span><br></pre></td></tr></table></figure>]]></content>
       <categories>
         <category>leetcode</category>
       </categories>
@@ -450,30 +509,6 @@ twikoo-func填写最新的版本</li>
       <tags>
         <tag>hexo</tag>
         <tag>hexo新增评论区</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>leetcode9-23</title>
-    <url>/2022/09/23/leetcode9-23/</url>
-    <content><![CDATA[<h2 id="leetcode每日一天（9-23）"><a href="#leetcode每日一天（9-23）" class="headerlink" title="leetcode每日一天（9.23）"></a>leetcode每日一天（9.23）</h2><p><a class="link"   href="https://leetcode.cn/problems/design-linked-list/" >707. 设计链表<i class="fas fa-external-link-alt"></i></a><br>设计链表的实现。您可以选择使用单链表或双链表。单链表中的节点应该具有两个属性：<code>val</code> 和 <code>next</code>。<code>val</code> 是当前节点的值，<code>next</code> 是指向下一个节点的指针&#x2F;引用。如果要使用双向链表，则还需要一个属性 <code>prev</code> 以指示链表中的上一个节点。假设链表中的所有节点都是 0-index 的。<br>在链表类中实现这些功能：</p>
-<ol>
-<li>get(index)：获取链表中第<code>index</code>个节点的值。如果索引无效，则返回-1。</li>
-<li>addAtHead(val)：在链表的第一个元素之前添加一个值为 <code>val</code> 的节点。插入后，新节点将成为链表的第一个节点。</li>
-<li>addAtHead(val)：在链表的第一个元素之前添加一个值为<code> val</code> 的节点。插入后，新节点将成为链表的第一个节点。</li>
-<li>addAtIndex(index,val)：在链表中的第<code> index </code>个节点之前添加值为<code> val</code>  的节点。如果<code> index </code>等于链表的长度，则该节点将附加到链表的末尾。如果 <code>index</code> 大于链表长度，则不会插入节点。如果<code>index</code>小于0，则在头部插入节点。</li>
-<li>deleteAtIndex(index)：如果索引<code>index</code>有效，则删除链表中的第 <code>index</code> 个节点。</li>
-</ol>
-<h6 id="示例1"><a href="#示例1" class="headerlink" title="示例1"></a>示例1</h6><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">MyLinkedList linkedList = new MyLinkedList();</span><br><span class="line">linkedList.addAtHead(1);</span><br><span class="line">linkedList.addAtTail(3);</span><br><span class="line">linkedList.addAtIndex(1,2);   //链表变为1-&gt; 2-&gt; 3</span><br><span class="line">linkedList.get(1);            //返回2</span><br><span class="line">linkedList.deleteAtIndex(1);  //现在链表是1-&gt; 3</span><br><span class="line">linkedList.get(1);            //返回3</span><br></pre></td></tr></table></figure>
-<h6 id="提示"><a href="#提示" class="headerlink" title="提示"></a>提示</h6><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">所有val值都在 [1, 1000] 之内。</span><br><span class="line">操作次数将在  [1, 1000] 之内。</span><br><span class="line">请不要使用内置的 LinkedList 库。</span><br></pre></td></tr></table></figure>
-<hr>
-<h2 id="解答"><a href="#解答" class="headerlink" title="解答"></a>解答</h2><h6 id="思想："><a href="#思想：" class="headerlink" title="思想："></a>思想：</h6><p>这是一道水题目，主要是用到数据结构里面的链表，我是用的c++里面的ListNode来解答这题比较轻松。题目要求有三处增加函数，实质上在首部添加数值和在尾部添加数值的操作可以归纳为addAtIndex，则我们在addAtHead和addAtTail可以直接调用addAtIndex用来减少我们的代码量。</p>
-<h6 id="ListNode的结构："><a href="#ListNode的结构：" class="headerlink" title="ListNode的结构："></a>ListNode的结构：</h6><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">struct ListNode &#123;</span><br><span class="line">      int val;  //当前结点的值</span><br><span class="line">      ListNode *next;  //指向下一个结点的指针</span><br><span class="line">      ListNode(int x) : val(x), next(NULL) &#123;&#125;  //初始化当前结点值为x,指针为空</span><br><span class="line">  &#125;;</span><br><span class="line"></span><br><span class="line">ListNode *p=new ListNode(0); //新增一个节点</span><br><span class="line">delete p; //删除一个节点，释放内存</span><br></pre></td></tr></table></figure>
-<h6 id="代码："><a href="#代码：" class="headerlink" title="代码："></a>代码：</h6><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">class MyLinkedList &#123;</span><br><span class="line">public:</span><br><span class="line">    <span class="function"><span class="title">MyLinkedList</span></span>() &#123;</span><br><span class="line">        this-&gt;size = 0;</span><br><span class="line">        this-&gt;<span class="built_in">head</span> = new ListNode(0); //首节点，值无意义</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    int get(int index) &#123;</span><br><span class="line">        <span class="keyword">if</span>(index&lt;0||index&gt;=size)</span><br><span class="line">            <span class="built_in">return</span> -1;</span><br><span class="line">        ListNode *cur = <span class="built_in">head</span>;</span><br><span class="line">        <span class="keyword">for</span> (int i = 0; i &lt;= index; i++) &#123;</span><br><span class="line">            cur = cur-&gt;next;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">return</span> cur-&gt;val;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    void addAtHead(int val) &#123;</span><br><span class="line">        addAtIndex(0, val);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    void addAtTail(int val) &#123;</span><br><span class="line">        addAtIndex(size,val);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    void addAtIndex(int index, int val) &#123;</span><br><span class="line">        <span class="keyword">if</span>(index&gt;size)</span><br><span class="line">            <span class="built_in">return</span>;</span><br><span class="line">        index=max(0,index);</span><br><span class="line">        ListNode *cur=<span class="built_in">head</span>;</span><br><span class="line">        <span class="keyword">for</span>(int i=0;i&lt;index;i++)</span><br><span class="line">            cur=cur-&gt;next;</span><br><span class="line">        ListNode *toAdd = new ListNode(val);</span><br><span class="line">        toAdd-&gt;next = cur-&gt;next;</span><br><span class="line">        cur-&gt;next = toAdd;</span><br><span class="line">        size++;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    void deleteAtIndex(int index) &#123;</span><br><span class="line">        <span class="keyword">if</span>(index&lt;0||index&gt;=size)</span><br><span class="line">            <span class="built_in">return</span>;</span><br><span class="line">        ListNode *cur=<span class="built_in">head</span>;</span><br><span class="line">        size--;</span><br><span class="line">        <span class="keyword">for</span>(int i=0;i&lt;index;i++)</span><br><span class="line">            cur=cur-&gt;next;</span><br><span class="line">        ListNode *p = cur-&gt;next;</span><br><span class="line">        cur-&gt;next = cur-&gt;next-&gt;next;</span><br><span class="line">        delete p;</span><br><span class="line">    &#125;</span><br><span class="line">private:</span><br><span class="line">    int size;</span><br><span class="line">    ListNode *<span class="built_in">head</span>;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">/**</span><br><span class="line"> * Your MyLinkedList object will be instantiated and called as such:</span><br><span class="line"> * MyLinkedList* obj = new MyLinkedList();</span><br><span class="line"> * int param_1 = obj-&gt;get(index);</span><br><span class="line"> * obj-&gt;addAtHead(val);</span><br><span class="line"> * obj-&gt;addAtTail(val);</span><br><span class="line"> * obj-&gt;addAtIndex(index,val);</span><br><span class="line"> * obj-&gt;deleteAtIndex(index);</span><br><span class="line"> */</span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>leetcode</category>
-      </categories>
-      <tags>
-        <tag>八股文</tag>
       </tags>
   </entry>
   <entry>
