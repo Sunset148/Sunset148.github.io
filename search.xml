@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>IntranetPenetration</title>
+    <title>使用 cPolar 实现内网穿透</title>
     <url>/2023/06/26/IntranetPenetration/</url>
     <content><![CDATA[<h2 id="使用-cPolar-实现内网穿透"><a href="#使用-cPolar-实现内网穿透" class="headerlink" title="使用 cPolar 实现内网穿透"></a>使用 cPolar 实现内网穿透</h2><h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p>内网穿透是一种将局域网内的服务暴露到公网的技术，它可以让你在外网访问你内网的服务，例如通过公网访问家庭网络中的摄像头或者办公室网络中的服务器等。cPolar 是一个强大的工具，它可以帮助你实现内网穿透，让你轻松地访问你内网中的服务。</p>
 <h2 id="设备"><a href="#设备" class="headerlink" title="设备"></a>设备</h2><p>一台i10 A4000 4tb装有unbantu操作系</p>
@@ -39,10 +39,294 @@
 </ol>
 ]]></content>
       <categories>
-        <category>服务器配置</category>
+        <category>内网穿透</category>
       </categories>
       <tags>
-        <tag>使用 cPolar 实现内网穿透</tag>
+        <tag>内网穿透</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>气象论文</title>
+    <url>/2023/06/27/MeteorologicalPapers/</url>
+    <content><![CDATA[<table>
+<thead>
+<tr>
+<th>方向</th>
+<th>论文名称</th>
+<th>年份</th>
+<th>期刊</th>
+<th>期刊级别</th>
+<th>应用领域</th>
+<th>摘要描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>海洋大气数字孪生</td>
+<td>Using a Digital Twin to Study the Influence of Climatic Changes on High Ozone Levels in Bulgaria and Europe</td>
+<td>2022</td>
+<td>ATMOSPHERE</td>
+<td>中科院3区</td>
+<td>环境科学；气象与大气科学</td>
+<td>通过应用DIGITAL AIR（一个数字孪生工具）成功地处理和解决非常复杂的环境中产生的许多复杂问题</td>
+</tr>
+<tr>
+<td></td>
+<td>Digital Twin of Atmospheric Environment: Sensory Data Fusion for High-Resolution PM2.5 Estimation and Action Policies Recommendation</td>
+<td>2023</td>
+<td>IEEE-INST ELECTRICAL ELECTRONICS ENGINEERS INC</td>
+<td>中科院2区</td>
+<td>计算机科学，信息系统；工程，电器和电子；电信</td>
+<td>应用数字孪生来监测PM2.5</td>
+</tr>
+<tr>
+<td></td>
+<td>Management of Climate Resilience: Exploring the Potential of Digital Twin Technology, 3D City Modelling, and Early Warning Systems</td>
+<td>2023</td>
+<td>SENSORS</td>
+<td>中科院2区</td>
+<td>化学分析；工程，电器和电子；仪器仪表</td>
+<td>系统回顾了3D城市建模、预警系统和数字孪生在通过有效管理智慧城市建立气候适应能力的技术创造中的重要性、潜力和未来方向</td>
+</tr>
+<tr>
+<td></td>
+<td>Digital Twins for Managing Railway Bridge Maintenance, Resilience, and Climate Change Adaptation</td>
+<td>2023</td>
+<td>SENSORS</td>
+<td>中科院2区</td>
+<td>化学分析；工程，电器和电子；仪器仪表</td>
+<td>利用BIM（建筑信息模型）集成开发了一种创新的DT（数字孪生）。澳大利亚Minnamurra铁路桥(MRB)被选为实际用例，以展示BIM(即DT)的扩展应用。此外，通过集成BIM, DT已被用于确定温室气体排放和成本消耗</td>
+</tr>
+<tr>
+<td></td>
+<td>A New Digital Twin for Climate Change Adaptation, Water Management, and Disaster Risk Reduction (HIP Digital Twin)</td>
+<td>2023</td>
+<td>WATER</td>
+<td>中科院2区&#x2F;3区</td>
+<td>水资源&#x2F;环境科学</td>
+<td>分析了被视为“数字双胞胎”的国家dk模型水文信息和预测(HIP)系统和HIP门户，并讨论了利用“外接式数字孪生”为地方流域进一步发展HIP数字孪生的挑战和潜力，包括对国家层面的反馈</td>
+</tr>
+<tr>
+<td></td>
+<td>Amplitude and Phase Computable Ocean Wave Real-Time Modeling with GPU Acceleration</td>
+<td>2022</td>
+<td>MARINE SCIENCE AND ENGINEERING</td>
+<td>中科院1区&#x2F;2区</td>
+<td>海洋</td>
+<td>提出了一种基于小波变换的混合海洋建模方法实现了详细的海面和相干相位相关的波浪效应。完全能够满足CBATS的实时仿真训练要求。因此，它可以在提高视觉系统的性能方面发挥重要作用</td>
+</tr>
+<tr>
+<td></td>
+<td>A high resolution coupled ocean-atmosphere simulation of the regional climate over Central America</td>
+<td>2022</td>
+<td>CLIMATE DYNAMICS</td>
+<td>中科院2区</td>
+<td>气象学、海洋</td>
+<td>这项研究分析了中美洲上空配置的相对高分辨率（15公里网格间距）区域海洋-大气耦合模拟。利用区域光谱模式-区域海洋模式系统（RSM-RMS）进行了为期25年（1986-2010）的全球大气和海洋再分析模拟</td>
+</tr>
+<tr>
+<td></td>
+<td>Real-time in situ prediction of ocean currents</td>
+<td>2021</td>
+<td>OCEAN ENGINEERING</td>
+<td>JCR1区</td>
+<td>深度学习的海洋洋流预测</td>
+<td>我们在本文中提出了两种使用深度学习技术的预测工具，一种是长短期记忆（LSTM）递归神经网络，另一种是Transformer，用于对任何位置的洋流进行实时原位预测</td>
+</tr>
+<tr>
+<td></td>
+<td>Improving Coastal Ocean Wave Height Forecasting during Typhoons by using Local Meteorological and Neighboring Wave Data in Support Vector Regression Models</td>
+<td>2020</td>
+<td>MARINE SCIENCE AND ENGINEERING</td>
+<td>JCR1区</td>
+<td>台湾地区台风期间海洋波高观察</td>
+<td>本研究旨在应用支持向量回归进行台风波高的实时预测，提前时间为1至3小时。台湾东北沿海的两个乘浪浮标为研究提供了实时观测波浪和气象数据</td>
+</tr>
+<tr>
+<td></td>
+<td>Representing the function and sensitivity of coastal interfaces in Earth system models</td>
+<td>2020</td>
+<td>NATURE</td>
+<td>中科院1区</td>
+<td>海岸科学</td>
+<td>我们评估了现有的沿海监测网络和区域模型，以及这些工作中存在的挑战，并建议制定一条更有力地反映沿海界面的全球模型的道路，将海岸界面纳入预测模型</td>
+</tr>
+<tr>
+<td></td>
+<td>Using Machine Learning at scale in numerical simulations with SmartSim: An application to ocean climate modeling</td>
+<td>2022</td>
+<td>COMPUTATIONAL SCIENCE</td>
+<td>JCR1区</td>
+<td>机器学习的海洋气候建模</td>
+<td>示了通过使用SmartSim的深度神经网络（DNN）的分布式在线推理改进的第一个气候尺度的海洋数值模拟。通过使用SmartSim运行一个由12名成员组成的全球规模、高分辨率海洋模拟集合来展示SmartSim的能力</td>
+</tr>
+</tbody></table>
+<ul>
+<li><p>气象数据可视化</p>
+<ul>
+<li>作者：未知</li>
+<li>出版年份：2022</li>
+<li>期刊：COMPUTERS &amp; GRAPHICS-UK</li>
+<li>影响因子：中科院3区</li>
+<li>关键词：可视化技术</li>
+<li>摘要：在本文中，我们改进了一种用于大型时间序列比较的可视化技术。</li>
+</ul>
+</li>
+<li><p>A Brief Review on 4D Weather Visualization</p>
+<ul>
+<li>作者：未知</li>
+<li>出版年份：2022</li>
+<li>期刊：SUSTAINABILITY</li>
+<li>影响因子：中科院2区</li>
+<li>关键词：综述</li>
+<li>摘要：基于对工具和方法的调查，我们考虑了存在表示气象数据和方法的不同方式。但是，获取知识并创建可视化天气数据的方式势在必行。本文找到了 4 个现有的 &lt;&gt;D 气象可视化和气象现象解决方案。</li>
+</ul>
+</li>
+<li><p>Predictions of national-scale river temperatures: A visualisation of complex space-time dynamics</p>
+<ul>
+<li>作者：未知</li>
+<li>出版年份：2020</li>
+<li>期刊：HYDROLOGICAL PROCESSES</li>
+<li>影响因子：中科院3区</li>
+<li>关键词：全国河流温度预测 复杂时空动力学的可视化</li>
+<li>摘要：有效环境数据可视化和科学传播提供了增加在决策过程中采用创新的科学工具。</li>
+</ul>
+</li>
+<li><p>A climate service for ecologists: sharing pre-processed EURO-CORDEX regional climate scenario data using the eLTER Information System</p>
+<ul>
+<li>作者：未知</li>
+<li>出版年份：2021</li>
+<li>期刊：EARTH SYSTEM SCIENCE DATA(ESSD)</li>
+<li>影响因子：中科院1区</li>
+<li>关键词：预处理的EURO-CORDEX区域气候情景数据</li>
+<li>摘要：介绍了eLTER信息系统基础设施如何具有通过气候服务数据产品进行了扩展，提供对专门预处理的区域气候变化情景数据，这些数据来自协调区域最先进的区域气候模型集合702个注册生态的降尺度实验（CORDEX）欧洲各地的研究基地。</li>
+</ul>
+</li>
+<li><p>Integration of Remote Sensing Data into a Composite Voxel Model for Environmental Performance Analysis of Terraced Vineyards in Tuscany, Italy</p>
+<ul>
+<li>作者：未知</li>
+<li>出版年份：2022</li>
+<li>期刊：International Journal of Remote Sensing</li>
+<li>影响因子：中科院2区</li>
+<li>关键词：将遥感数据集成到复合体素模型中，用于意大利托斯卡纳梯田葡萄园的环境绩效分析</li>
+<li>摘要：使用遥感、地理空间分析和模拟技术获取的数据集往往受到狭窄学科边界的限制，因此无法实现跨多个领域和规模的整体方法。在这项工作中，我们展示了一种跨学科数据采集和集成的新工作流程，重点关注意大利托斯卡纳的梯田葡萄园。我们使用多模态数据采集，并通过体素化点云（我们称之为复合体素模型）执行数据集成。后者有助于采用多领域和多尺度数据综合方法，以推进土地知识的发现和恢复。这种方法可以在单个数据结构中集成、关联和分析与不同领域和规模相关的数据。</li>
+</ul>
+</li>
+<li><p>Climate: An R Package to Access Free In-Situ Meteorological and Hydrological Datasets For Environmental Assessment</p>
+<ul>
+<li>作者：未知</li>
+<li>出版年份：2020</li>
+<li>期刊：SUSTAINABILITY</li>
+<li>影响因子：中科院3区</li>
+<li>关键词：气候：用于访问用于环境评估的免费原位气象和水文数据集的R包</li>
+<li>摘要：软件包中包含的自动化程序允许人们以用户定义的时间分辨率（从每小时到每年）、用户定义的时间跨度以及指定的台站或国家组下载数据。该软件包还包含元数据，包括可用台站的列表、其地理空间信息以及带有单位的测量描述。最后，获得的数据集可以在R中进行处理或导出到外部工具（例如，电子表格或GIS软件）。</li>
+</ul>
+</li>
+<li><p>“The R Language as a Tool for Biometeorological Research”</p>
+<ul>
+<li>作者：未知</li>
+<li>出版年份：2020</li>
+<li>期刊：未知</li>
+<li>影响因子：中科院3区</li>
+<li>关键词：R语言作为生物气象学研究的工具</li>
+<li>摘要：简要介绍了一组有用且受欢迎的生物气象研究软件包，以及在R基础上进一步开展科学合作的路线图。本文可以作为生物气象学家对R语言世界的简短介绍性指南。</li>
+</ul>
+</li>
+<li><p>“Consistency of Satellite Climate Data Records for Earth System Monitoring”</p>
+<ul>
+<li>作者：未知</li>
+<li>出版年份：2020</li>
+<li>期刊：Bulletin of the American Meteorological Society</li>
+<li>影响因子：中科院1区</li>
+<li>关键词：用于地球系统监测的卫星气候数据记录的一致性</li>
+<li>摘要：总结了CCI为确保技术层面的一致性而采取的措施，并根据基本的物理知识提出了评估检索和科学层面一致性的概念。最后，本研究介绍了CCI CDR之间一致性的现状以及进一步改进CCI CDR所需的未来努力</li>
+</ul>
+</li>
+<li><p>A Spatio-Temporal Visualization Approach of PM10 Concentration Data in Metropolitan Lima</p>
+<ul>
+<li>作者：未知</li>
+<li>出版年份：2021</li>
+<li>期刊：atmosphere</li>
+<li>影响因子：中科院3区</li>
+<li>关键词：PM的时空可视化方法10利马大都市的浓度数据</li>
+<li>摘要：”所提出的方法公开了一系列步骤，用于根据其相关性制定具有越来越具体时间段的图表，并进行统计分析，例如动态时间相关性，从而可以获得PM时空变化的详细可视化10浓度。此外，得出的结论是，气象变量并不表明与PM有关的因果关系10水平，而是颗粒物质的浓度与每个地区的城市特征有关。”</li>
+</ul>
+</li>
+<li><p>Digital Twin and Cloud BIM-XR Platform Development: From Scan-to-BIM-to-DT Process to a 4D Multi-User Live App to Improve Building Comfort, Efficiency and Costs</p>
+<ul>
+<li>作者：未知</li>
+<li>出版年份：2022</li>
+<li>期刊：energies</li>
+<li>影响因子：中科院3区</li>
+<li>关键词：从扫描到 BIM 再到 DT 流程到 4D 多用户实时应用程序，以提高建筑舒适度、效率和成本</li>
+<li>摘要：实时应用程序的开发显示了不同类型的用户（专业人士和非专家）如何与DT进行交互，以了解环境设计的特征以及环境参数，从提高舒适度，使用，成本，行为的角度来看，提高他们的控制程度，和良好做法。最后，通过一个真实的案例研究验证了整体方法，其中BIM-XR平台是为现有建筑的能源改进和外墙翻新而构建的</li>
+</ul>
+</li>
+<li><p>Future Swedish 3D City Models—Specifications, Test Data, and Evaluation</p>
+<ul>
+<li>作者：未知</li>
+<li>出版年份：2023</li>
+<li>期刊：International Journal of Geo-Information</li>
+<li>影响因子：中科院3区</li>
+<li>关键词：瑞典 3D 城市模型 - 规格、测试数据和评估</li>
+<li>摘要：这些数据在多个地理信息应用领域具有巨大的潜力。我们通过利用ODbL许可证在一个具有多个平台支持的开放数据平台上分发3D城市模型来介绍未来瑞典3D城市模型的详细规格，并提供了供大众使用和评估的测试数据集。通过提供模型和数据的规范，我们为城市建模和规划社区提供了可行的资源，并为市政府、研究人员和创新团队提供了机会，改善基础设施的设计和管理</li>
+</ul>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>方向</th>
+<th>论文名称</th>
+<th>年份</th>
+<th>期刊</th>
+<th>期刊级别</th>
+<th>应用领域</th>
+<th>摘要描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>VRAR天气预报</td>
+<td>Development of three-dimensional visualisation technology of the aerodynamic environment in a greenhouse using CFD and VR technology, part 1: Development of VR a database using CFD</td>
+<td>2021</td>
+<td>BIOSYSTEMS ENGINEERING</td>
+<td>Q1&#x2F;Q2</td>
+<td>JCR</td>
+<td>使用 CFD 和 VR 技术开发温室空气动力环境三维可视化技术，第 1 部分：使用 CFD 开发 VR 数据库</td>
+</tr>
+<tr>
+<td></td>
+<td>Required sampling density of ground-based soil moisture and brightness temperature observations for calibration and validation of L-band satellite observations based on a virtual reality</td>
+<td>2020</td>
+<td>HYDROLOGY AND EARTH SYSTEM SCIENCES</td>
+<td>Q1</td>
+<td>JCR</td>
+<td>基于虚拟现实的 L 波段卫星观测校准和验证所需的地基土壤水分和亮温观测采样密度</td>
+</tr>
+<tr>
+<td></td>
+<td>Walking through the forests of the future: using data-driven virtual reality to visualize forests under climate change</td>
+<td>2021</td>
+<td>INTERNATIONAL JOURNAL OF GEOGRAPHICAL INFORMATION SCIENCE</td>
+<td>Q1</td>
+<td>JCR</td>
+<td>穿越未来的森林：使用数据驱动的虚拟现实可视化气候变化下的森林</td>
+</tr>
+<tr>
+<td></td>
+<td>Seeing Climate Change: A Framework for Understanding Visualizations for Climate Adaptation</td>
+<td>2020</td>
+<td>ISPRS INTERNATIONAL JOURNAL OF GEO-INFORMATION</td>
+<td>Q2&#x2F;Q3</td>
+<td>JCR</td>
+<td>观察气候变化：理解气候适应可视化的框架</td>
+</tr>
+</tbody></table>
+]]></content>
+      <categories>
+        <category>气象论文</category>
+      </categories>
+      <tags>
+        <tag>气象论文</tag>
       </tags>
   </entry>
   <entry>
@@ -85,6 +369,87 @@
       </categories>
       <tags>
         <tag>八股文</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>hexo增添评论区</title>
+    <url>/2022/09/22/newComment/</url>
+    <content><![CDATA[<p>hexo有三种新增评论的模板分别是：valine、gitalk还有twikoo。我使用的是twikoo。</p>
+<h2 id="Twikoo"><a href="#Twikoo" class="headerlink" title="Twikoo"></a>Twikoo</h2><p>Twikoo是一个静态博客评论系统，除了评论功能，还可以记录文章阅读量。搭建过程包括准备数据库和云函数，还有修改主题配置文件。<br>而配置Twikoo主要是分两种一种是使用腾讯云来布置，一种是使用Mongodb+Vercel部署。</p>
+<h3 id="腾讯云部署"><a href="#腾讯云部署" class="headerlink" title="腾讯云部署"></a>腾讯云部署</h3><h4 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h4><p>注册<a class="link"   href="https://curl.qcloud.com/KnnJtUom" >云开发CloudBase(opens new window)<i class="fas fa-external-link-alt"></i></a><br>进入<a class="link"   href="https://console.cloud.tencent.com/tcb/" >云开发控制台 (opens new window)<i class="fas fa-external-link-alt"></i></a>，新建环境，请按个人需要配置#### 环境</p>
+<ol>
+<li>进入后选择空模板</li>
+<li>安全配置：再登录授权中启用“匿名登录”</li>
+<li>选择安全配置，将网站域名添加到“WEB安全域名”</li>
+<li>进入环境总览中复制环境id（后面要用)</li>
+</ol>
+<h4 id="部署"><a href="#部署" class="headerlink" title="部署"></a>部署</h4><p>我们一般选择手动部署</p>
+<ol>
+<li>新建函数，函数名称填写：<code>twikoo</code>，创建方式选择：<code>空白函数</code>，运行环境选择：<code>Nodejs 10.15</code>（选择最靠近你的运行环境的版本），函数内存请选择：<code>128MB</code></li>
+<li>点击下一步，修改函数代码：<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">exports.main = require(<span class="string">&#x27;twikoo-func&#x27;</span>).main</span><br></pre></td></tr></table></figure></li>
+<li>确定完成后，点击刚才创建的twikoo函数，点击函数代码，创建<code> package.json</code><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">&#123; <span class="string">&quot;dependencies&quot;</span>: &#123; <span class="string">&quot;twikoo-func&quot;</span>: <span class="string">&quot;1.4.9&quot;</span> &#125; &#125;</span><br></pre></td></tr></table></figure>
+twikoo-func填写最新的版本</li>
+</ol>
+<h4 id="命令行环境部署"><a href="#命令行环境部署" class="headerlink" title="命令行环境部署"></a>命令行环境部署</h4><p>以下操作部署，可使用任意环境面板部署，这里使用的是git进行部署</p>
+<ol>
+<li>克隆本仓库<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/imaegoo/twikoo.git</span><br><span class="line"><span class="built_in">cd</span> twikoo</span><br></pre></td></tr></table></figure></li>
+<li>安装依赖项<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm install -g yarn <span class="comment"># 已安装 yarn 可以跳过此步</span></span><br><span class="line">yarn install</span><br></pre></td></tr></table></figure></li>
+<li>授权云开发环境（会自动跳转到授权界面，点击授权即可）<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">yarn run login</span><br></pre></td></tr></table></figure></li>
+<li>自动部署<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">yarn deploy -e 您的环境<span class="built_in">id</span> (就是之前你复制的)</span><br></pre></td></tr></table></figure></li>
+</ol>
+<h4 id="在-Hexo-中使用"><a href="#在-Hexo-中使用" class="headerlink" title="在 Hexo 中使用"></a>在 Hexo 中使用</h4><ol>
+<li>在主题的配置文件中找到comment<br>enable改为true，use为twikoo<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">comment:</span><br><span class="line">  <span class="built_in">enable</span>: <span class="literal">true</span></span><br><span class="line">  use: twikoo <span class="comment"># values: valine | gitalk | twikoo</span></span><br></pre></td></tr></table></figure></li>
+<li>继续往下找寻 twikoo<br>region一定要填写<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">twikoo:</span><br><span class="line">  env_id:  填写你的环境iD  <span class="comment">#https://www.sunset148.top/ Tencent Cloud environment id</span></span><br><span class="line">  region: ap-shanghai <span class="comment"># environment region. If select Guangzhou, fill in &quot;ap-guangzhou&quot;.</span></span><br></pre></td></tr></table></figure>
+到这里在腾讯云的配置就结束了</li>
+</ol>
+<hr>
+<h3 id="Mongodb-Vercel部署"><a href="#Mongodb-Vercel部署" class="headerlink" title="Mongodb+Vercel部署"></a>Mongodb+Vercel部署</h3><h4 id="MongoDB"><a href="#MongoDB" class="headerlink" title="MongoDB"></a>MongoDB</h4><p>我们使用MongoDB存储数据</p>
+<ol>
+<li><a class="link"   href="https://www.mongodb.com/zh-cn/cloud/atlas/register" >注册MongoDB账号<i class="fas fa-external-link-alt"></i></a></li>
+<li>创建免费数据库，类型选择<code>Shared</code>，区域选择 <code>AWS / N. Virginia (us-east-1)</code> </li>
+<li>点击<code>Connect</code>按钮，键入 0.0.0.0&#x2F;0 以允许所有 IP 地址的连接，并创建数据库用户</li>
+<li>连接方式选择中间的<code>Connect your application</code></li>
+<li>记录下连接字符串，等下使用时记得将其中的 <password> 修改为刚刚设置的用户密码（<password>需要整体替换）</li>
+</ol>
+<h4 id="Vercel"><a href="#Vercel" class="headerlink" title="Vercel"></a>Vercel</h4><ol>
+<li>使用<code>Vercel</code>来运行云函数，先注册 <a class="link"   href="https://vercel.com/signup" >vercel 账号<i class="fas fa-external-link-alt"></i></a>，可以选择从<code>GitHub</code>之类的登录，也可以选择通过邮箱注册</li>
+<li>新创建一个库来保存代码（如果你之前用使用该<a class="link"   href="https://twikoo.js.org/quick-start.html#vercel-%E9%83%A8%E7%BD%B2" >链接<i class="fas fa-external-link-alt"></i></a>）</li>
+<li>完成后，在导航栏选择<code>Setting</code>，在左侧选择<code>Environment Variables</code>，添加变量<code>MONGODB_URI</code>，值输入刚才的连接字符串，记得修改 <code>&lt;password&gt;</code> 为数据库用户密码</li>
+<li>导航栏中选择<code>Deployments</code>，重新部署一下</li>
+<li>回到<code>Overview</code>，可以看见<code>云函数运行正常</code>字样，在右边的<code>域名（DOMAINS）</code>里挑一个记录下你的域名,而该域名就是你的环境ID</li>
+</ol>
+<h5 id="Tip："><a href="#Tip：" class="headerlink" title="Tip："></a>Tip：</h5><p>因为 Vercel.app 可能在国内被墙，所以可能需要手动添加一个自己域名。<br>但是解决方法也很简单——准备一个新域名，然后把这个域名指过去</p>
+<ol>
+<li>来到 <code>vercel</code> 控制台，点进去你的实例</li>
+<li>找到 <code>Setting</code> -&gt; <code>Domain</code></li>
+<li>手动添加你的域名进去</li>
+<li>他会给出解析配置，你就去改你的域名解析就好了（在你购买域名的官网会有一个域名解析）</li>
+<li>最后去主题配置文件里更新这个新地址就行</li>
+</ol>
+<h4 id="主题文件配置"><a href="#主题文件配置" class="headerlink" title="主题文件配置"></a>主题文件配置</h4><p>在主题文件中找到配置文件keep\layout_partial\comment</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">twikoo:</span><br><span class="line">  env_id:  你的域名  <span class="comment">#https://www.sunset148.top/ Tencent Cloud environment id</span></span><br><span class="line">  region: ap-shanghai <span class="comment"># environment region. If select Guangzhou, fill in &quot;ap-guangzhou&quot;.</span></span><br></pre></td></tr></table></figure>
+<p>重启Hexo，就能可以看到了。</p>
+<hr>
+<h3 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h3><p>但很有可能你的评论系统打不开，很有可能是因为<code>Butterfly</code>版本过低的问题。<br>博主试了几个Butterfly依旧开不开评论系统，转而投向了keep</p>
+<h5 id="keep安装"><a href="#keep安装" class="headerlink" title="keep安装"></a>keep安装</h5><p>如果你在使用 Hexo 5.0 或更高版本，最简单的安装方式是通过 npm：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> hexo-site</span><br><span class="line">$ npm install hexo-theme-keep</span><br></pre></td></tr></table></figure>
+<p>或者使用 git 克隆整个仓库：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> hexo-site</span><br><span class="line">$ git <span class="built_in">clone</span> https://github.com/XPoet/hexo-theme-keep themes/keep</span><br></pre></td></tr></table></figure>
+<h5 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h5><p>安装完成后，在 Hexo 配置文件中将<code>theme</code>设置为<code> keep</code>。<br>Keep 不定期发布新版本，你可以通过如下命令更新 Keep。</p>
+<h5 id="更新"><a href="#更新" class="headerlink" title="更新"></a>更新</h5><p>通过 npm 安装最新版本：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> hexo-site</span><br><span class="line">$ npm update hexo-theme-keep</span><br></pre></td></tr></table></figure>
+<p>通过 git 更新到最新的 master 分支：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> themes/keep</span><br><span class="line">$ git pull</span><br></pre></td></tr></table></figure>
+<h5 id="Twikoo-1"><a href="#Twikoo-1" class="headerlink" title="Twikoo"></a>Twikoo</h5><p>另外在keep里面的keep\layout_partial\comment的twikoo.ejs里面的版本号更改为最新的就是</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">&lt;script &lt;%= theme.pjax.enable === <span class="literal">true</span> ? <span class="string">&#x27;data-pjax&#x27;</span> : <span class="string">&#x27;&#x27;</span> %&gt;                src=<span class="string">&quot;//cdn.jsdelivr.net/npm/twikoo@1.6.7/dist/twikoo.all.min.js&quot;</span>&gt;&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<p><a class="link"   href="https://keep-docs.xpoet.cn/usage-tutorial/quick-start.html" >keep官方文档<i class="fas fa-external-link-alt"></i></a></p>
+]]></content>
+      <categories>
+        <category>hexo</category>
+      </categories>
+      <tags>
+        <tag>hexo</tag>
+        <tag>hexo新增评论区</tag>
       </tags>
   </entry>
   <entry>
@@ -182,87 +547,6 @@
       <tags>
         <tag>pytorch安装</tag>
         <tag>深度学习框架</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>hexo增添评论区</title>
-    <url>/2022/09/22/newComment/</url>
-    <content><![CDATA[<p>hexo有三种新增评论的模板分别是：valine、gitalk还有twikoo。我使用的是twikoo。</p>
-<h2 id="Twikoo"><a href="#Twikoo" class="headerlink" title="Twikoo"></a>Twikoo</h2><p>Twikoo是一个静态博客评论系统，除了评论功能，还可以记录文章阅读量。搭建过程包括准备数据库和云函数，还有修改主题配置文件。<br>而配置Twikoo主要是分两种一种是使用腾讯云来布置，一种是使用Mongodb+Vercel部署。</p>
-<h3 id="腾讯云部署"><a href="#腾讯云部署" class="headerlink" title="腾讯云部署"></a>腾讯云部署</h3><h4 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h4><p>注册<a class="link"   href="https://curl.qcloud.com/KnnJtUom" >云开发CloudBase(opens new window)<i class="fas fa-external-link-alt"></i></a><br>进入<a class="link"   href="https://console.cloud.tencent.com/tcb/" >云开发控制台 (opens new window)<i class="fas fa-external-link-alt"></i></a>，新建环境，请按个人需要配置#### 环境</p>
-<ol>
-<li>进入后选择空模板</li>
-<li>安全配置：再登录授权中启用“匿名登录”</li>
-<li>选择安全配置，将网站域名添加到“WEB安全域名”</li>
-<li>进入环境总览中复制环境id（后面要用)</li>
-</ol>
-<h4 id="部署"><a href="#部署" class="headerlink" title="部署"></a>部署</h4><p>我们一般选择手动部署</p>
-<ol>
-<li>新建函数，函数名称填写：<code>twikoo</code>，创建方式选择：<code>空白函数</code>，运行环境选择：<code>Nodejs 10.15</code>（选择最靠近你的运行环境的版本），函数内存请选择：<code>128MB</code></li>
-<li>点击下一步，修改函数代码：<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">exports.main = require(<span class="string">&#x27;twikoo-func&#x27;</span>).main</span><br></pre></td></tr></table></figure></li>
-<li>确定完成后，点击刚才创建的twikoo函数，点击函数代码，创建<code> package.json</code><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">&#123; <span class="string">&quot;dependencies&quot;</span>: &#123; <span class="string">&quot;twikoo-func&quot;</span>: <span class="string">&quot;1.4.9&quot;</span> &#125; &#125;</span><br></pre></td></tr></table></figure>
-twikoo-func填写最新的版本</li>
-</ol>
-<h4 id="命令行环境部署"><a href="#命令行环境部署" class="headerlink" title="命令行环境部署"></a>命令行环境部署</h4><p>以下操作部署，可使用任意环境面板部署，这里使用的是git进行部署</p>
-<ol>
-<li>克隆本仓库<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/imaegoo/twikoo.git</span><br><span class="line"><span class="built_in">cd</span> twikoo</span><br></pre></td></tr></table></figure></li>
-<li>安装依赖项<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm install -g yarn <span class="comment"># 已安装 yarn 可以跳过此步</span></span><br><span class="line">yarn install</span><br></pre></td></tr></table></figure></li>
-<li>授权云开发环境（会自动跳转到授权界面，点击授权即可）<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">yarn run login</span><br></pre></td></tr></table></figure></li>
-<li>自动部署<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">yarn deploy -e 您的环境<span class="built_in">id</span> (就是之前你复制的)</span><br></pre></td></tr></table></figure></li>
-</ol>
-<h4 id="在-Hexo-中使用"><a href="#在-Hexo-中使用" class="headerlink" title="在 Hexo 中使用"></a>在 Hexo 中使用</h4><ol>
-<li>在主题的配置文件中找到comment<br>enable改为true，use为twikoo<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">comment:</span><br><span class="line">  <span class="built_in">enable</span>: <span class="literal">true</span></span><br><span class="line">  use: twikoo <span class="comment"># values: valine | gitalk | twikoo</span></span><br></pre></td></tr></table></figure></li>
-<li>继续往下找寻 twikoo<br>region一定要填写<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">twikoo:</span><br><span class="line">  env_id:  填写你的环境iD  <span class="comment">#https://www.sunset148.top/ Tencent Cloud environment id</span></span><br><span class="line">  region: ap-shanghai <span class="comment"># environment region. If select Guangzhou, fill in &quot;ap-guangzhou&quot;.</span></span><br></pre></td></tr></table></figure>
-到这里在腾讯云的配置就结束了</li>
-</ol>
-<hr>
-<h3 id="Mongodb-Vercel部署"><a href="#Mongodb-Vercel部署" class="headerlink" title="Mongodb+Vercel部署"></a>Mongodb+Vercel部署</h3><h4 id="MongoDB"><a href="#MongoDB" class="headerlink" title="MongoDB"></a>MongoDB</h4><p>我们使用MongoDB存储数据</p>
-<ol>
-<li><a class="link"   href="https://www.mongodb.com/zh-cn/cloud/atlas/register" >注册MongoDB账号<i class="fas fa-external-link-alt"></i></a></li>
-<li>创建免费数据库，类型选择<code>Shared</code>，区域选择 <code>AWS / N. Virginia (us-east-1)</code> </li>
-<li>点击<code>Connect</code>按钮，键入 0.0.0.0&#x2F;0 以允许所有 IP 地址的连接，并创建数据库用户</li>
-<li>连接方式选择中间的<code>Connect your application</code></li>
-<li>记录下连接字符串，等下使用时记得将其中的 <password> 修改为刚刚设置的用户密码（<password>需要整体替换）</li>
-</ol>
-<h4 id="Vercel"><a href="#Vercel" class="headerlink" title="Vercel"></a>Vercel</h4><ol>
-<li>使用<code>Vercel</code>来运行云函数，先注册 <a class="link"   href="https://vercel.com/signup" >vercel 账号<i class="fas fa-external-link-alt"></i></a>，可以选择从<code>GitHub</code>之类的登录，也可以选择通过邮箱注册</li>
-<li>新创建一个库来保存代码（如果你之前用使用该<a class="link"   href="https://twikoo.js.org/quick-start.html#vercel-%E9%83%A8%E7%BD%B2" >链接<i class="fas fa-external-link-alt"></i></a>）</li>
-<li>完成后，在导航栏选择<code>Setting</code>，在左侧选择<code>Environment Variables</code>，添加变量<code>MONGODB_URI</code>，值输入刚才的连接字符串，记得修改 <code>&lt;password&gt;</code> 为数据库用户密码</li>
-<li>导航栏中选择<code>Deployments</code>，重新部署一下</li>
-<li>回到<code>Overview</code>，可以看见<code>云函数运行正常</code>字样，在右边的<code>域名（DOMAINS）</code>里挑一个记录下你的域名,而该域名就是你的环境ID</li>
-</ol>
-<h5 id="Tip："><a href="#Tip：" class="headerlink" title="Tip："></a>Tip：</h5><p>因为 Vercel.app 可能在国内被墙，所以可能需要手动添加一个自己域名。<br>但是解决方法也很简单——准备一个新域名，然后把这个域名指过去</p>
-<ol>
-<li>来到 <code>vercel</code> 控制台，点进去你的实例</li>
-<li>找到 <code>Setting</code> -&gt; <code>Domain</code></li>
-<li>手动添加你的域名进去</li>
-<li>他会给出解析配置，你就去改你的域名解析就好了（在你购买域名的官网会有一个域名解析）</li>
-<li>最后去主题配置文件里更新这个新地址就行</li>
-</ol>
-<h4 id="主题文件配置"><a href="#主题文件配置" class="headerlink" title="主题文件配置"></a>主题文件配置</h4><p>在主题文件中找到配置文件keep\layout_partial\comment</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">twikoo:</span><br><span class="line">  env_id:  你的域名  <span class="comment">#https://www.sunset148.top/ Tencent Cloud environment id</span></span><br><span class="line">  region: ap-shanghai <span class="comment"># environment region. If select Guangzhou, fill in &quot;ap-guangzhou&quot;.</span></span><br></pre></td></tr></table></figure>
-<p>重启Hexo，就能可以看到了。</p>
-<hr>
-<h3 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h3><p>但很有可能你的评论系统打不开，很有可能是因为<code>Butterfly</code>版本过低的问题。<br>博主试了几个Butterfly依旧开不开评论系统，转而投向了keep</p>
-<h5 id="keep安装"><a href="#keep安装" class="headerlink" title="keep安装"></a>keep安装</h5><p>如果你在使用 Hexo 5.0 或更高版本，最简单的安装方式是通过 npm：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> hexo-site</span><br><span class="line">$ npm install hexo-theme-keep</span><br></pre></td></tr></table></figure>
-<p>或者使用 git 克隆整个仓库：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> hexo-site</span><br><span class="line">$ git <span class="built_in">clone</span> https://github.com/XPoet/hexo-theme-keep themes/keep</span><br></pre></td></tr></table></figure>
-<h5 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h5><p>安装完成后，在 Hexo 配置文件中将<code>theme</code>设置为<code> keep</code>。<br>Keep 不定期发布新版本，你可以通过如下命令更新 Keep。</p>
-<h5 id="更新"><a href="#更新" class="headerlink" title="更新"></a>更新</h5><p>通过 npm 安装最新版本：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> hexo-site</span><br><span class="line">$ npm update hexo-theme-keep</span><br></pre></td></tr></table></figure>
-<p>通过 git 更新到最新的 master 分支：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> themes/keep</span><br><span class="line">$ git pull</span><br></pre></td></tr></table></figure>
-<h5 id="Twikoo-1"><a href="#Twikoo-1" class="headerlink" title="Twikoo"></a>Twikoo</h5><p>另外在keep里面的keep\layout_partial\comment的twikoo.ejs里面的版本号更改为最新的就是</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">&lt;script &lt;%= theme.pjax.enable === <span class="literal">true</span> ? <span class="string">&#x27;data-pjax&#x27;</span> : <span class="string">&#x27;&#x27;</span> %&gt;                src=<span class="string">&quot;//cdn.jsdelivr.net/npm/twikoo@1.6.7/dist/twikoo.all.min.js&quot;</span>&gt;&lt;/script&gt;</span><br></pre></td></tr></table></figure>
-<p><a class="link"   href="https://keep-docs.xpoet.cn/usage-tutorial/quick-start.html" >keep官方文档<i class="fas fa-external-link-alt"></i></a></p>
-]]></content>
-      <categories>
-        <category>hexo</category>
-      </categories>
-      <tags>
-        <tag>hexo</tag>
-        <tag>hexo新增评论区</tag>
       </tags>
   </entry>
   <entry>
