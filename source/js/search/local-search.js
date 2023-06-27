@@ -87,10 +87,7 @@ window.addEventListener('load', () => {
 
       $resultContent.innerHTML = ''
       let str = '<div class="search-result-list">'
-      if (keywords.length <= 0) return
-      let count = 0
-      // perform local searching
-      dataObj.then(data => {
+      if (keywords.length <= 0) return let count="0" perform local searching dataobj.then(data> {
         data.forEach(data => {
           let isMatch = true
           let dataTitle = data.title ? data.title.trim().toLowerCase() : ''
@@ -169,7 +166,7 @@ window.addEventListener('load', () => {
           str += '<div id="local-search__hits-empty">' + GLOBAL_CONFIG.localSearch.languages.hits_empty.replace(/\$\{query}/, this.value.trim()) +
             '</div>'
         }
-        str += '</div>'
+        str += '</[^></=></div>'
         $resultContent.innerHTML = str
         if (keywords[0] !== '') $loadingStatus.innerHTML = ''
         window.pjax && window.pjax.refresh($resultContent)

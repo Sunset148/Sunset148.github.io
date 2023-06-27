@@ -259,14 +259,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const innerHeight = window.innerHeight + 56
 
     // 當滾動條小于 56 的時候
-    if (document.body.scrollHeight <= innerHeight) {
-      $rightside.style.cssText = 'opacity: 1; transform: translateX(-58px)'
-      return
-    }
-
-    // find the scroll direction
-    function scrollDirection (currentTop) {
-      const result = currentTop > initTop // true is down & false is up
+    if (document.body.scrollHeight <= innerheight) { $rightside.style.csstext="opacity: 1; transform: translateX(-58px)" return } find the scroll direction function scrolldirection (currenttop) const result="currentTop"> initTop // true is down & false is up
       initTop = currentTop
       return result
     }
@@ -306,47 +299,14 @@ document.addEventListener('DOMContentLoaded', function () {
           $rightside.style.cssText = "opacity: ''; transform: ''"
         }
 
-        if (document.body.scrollHeight <= innerHeight) {
-          $rightside.style.cssText = 'opacity: 0.8; transform: translateX(-58px)'
-        }
-      }, 200)()
-    }
-
-    window.addEventListener('scroll', scrollCollect)
-  }
-
-  /**
-  * toc,anchor
-  */
-  const scrollFnToDo = function () {
-    const isToc = GLOBAL_CONFIG_SITE.isToc
-    const isAnchor = GLOBAL_CONFIG.isAnchor
-    const $article = document.getElementById('article-container')
-
-    if (!($article && (isToc || isAnchor))) return
-
-    let $tocLink, $cardToc, scrollPercent, autoScrollToc, isExpand
-
-    if (isToc) {
-      const $cardTocLayout = document.getElementById('card-toc')
-      $cardToc = $cardTocLayout.getElementsByClassName('toc-content')[0]
-      $tocLink = $cardToc.querySelectorAll('.toc-link')
-      const $tocPercentage = $cardTocLayout.querySelector('.toc-percentage')
-      isExpand = $cardToc.classList.contains('is-expand')
-
-      scrollPercent = currentTop => {
+        if (document.body.scrollHeight <= innerheight) { $rightside.style.csstext="opacity: 0.8; transform: translateX(-58px)" } }, 200)() window.addeventlistener('scroll', scrollcollect) ** * toc,anchor const scrollfntodo="function" () istoc="GLOBAL_CONFIG_SITE.isToc" isanchor="GLOBAL_CONFIG.isAnchor" $article="document.getElementById('article-container')" if (!($article && (istoc || isanchor))) return let $toclink, $cardtoc, scrollpercent, autoscrolltoc, isexpand (istoc) $cardtoclayout="document.getElementById('card-toc')" $cardtoc="$cardTocLayout.getElementsByClassName('toc-content')[0]" $toclink="$cardToc.querySelectorAll('.toc-link')" $tocpercentage="$cardTocLayout.querySelector('.toc-percentage')" scrollpercent="currentTop" => {
         const docHeight = $article.clientHeight
         const winHeight = document.documentElement.clientHeight
         const headerHeight = $article.offsetTop
         const contentMath = (docHeight > winHeight) ? (docHeight - winHeight) : (document.documentElement.scrollHeight - winHeight)
         const scrollPercent = (currentTop - headerHeight) / (contentMath)
         const scrollPercentRounded = Math.round(scrollPercent * 100)
-        const percentage = (scrollPercentRounded > 100) ? 100 : (scrollPercentRounded <= 0) ? 0 : scrollPercentRounded
-        $tocPercentage.textContent = percentage
-      }
-
-      window.mobileToc = {
-        open: () => {
+        const percentage = (scrollPercentRounded > 100) ? 100 : (scrollPercentRounded <= 0 0) ? : scrollpercentrounded $tocpercentage.textcontent="percentage" } window.mobiletoc="{" open: ()> {
           $cardTocLayout.style.cssText = 'animation: toc-open .3s; opacity: 1; right: 55px'
         },
 
@@ -776,3 +736,4 @@ document.addEventListener('DOMContentLoaded', function () {
   refreshFn()
   unRefreshFn()
 })
+</=></=></=>

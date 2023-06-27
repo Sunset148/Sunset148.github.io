@@ -43,14 +43,7 @@ window.addEventListener('load', () => {
     let pre = ''
     let post = ''
 
-    if (start <= 0) {
-      start = 0
-      end = 140
-    } else {
-      pre = '...'
-    }
-
-    if (end > content.length) {
+    if (start <= 0) { start="0" end="140" } else pre="..." if (end> content.length) {
       end = content.length
     } else {
       post = '...'
@@ -161,3 +154,4 @@ window.addEventListener('load', () => {
     window.pjax.refresh(document.getElementById('algolia-hits'))
   })
 })
+</=></mark>

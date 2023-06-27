@@ -9,7 +9,7 @@
     
     <title>
         
-            使用 cPolar 实现内网穿透 |
+            机器学习课程竞赛心得 |
         
         BBlog
     </title>
@@ -168,7 +168,7 @@
     <div class="article-content-container">
 
         <div class="article-title">
-            <span class="title-hover-animation">使用 cPolar 实现内网穿透</span>
+            <span class="title-hover-animation">机器学习课程竞赛心得</span>
         </div>
 
         
@@ -187,8 +187,8 @@
                         <div class="article-meta-info">
     <span class="article-date article-meta-item">
         <i class="fas fa-edit"></i>&nbsp;
-        <span class="pc">2023-06-26 21:08:05</span>
-        <span class="mobile">2023-06-26 21:08</span>
+        <span class="pc">2023-06-27 15:44:09</span>
+        <span class="mobile">2023-06-27 15:44</span>
     </span>
     
         <span class="article-categories article-meta-item">
@@ -196,7 +196,7 @@
             <ul>
                 
                     <li>
-                        <a href="/categories/%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F/">内网穿透</a>&nbsp;
+                        <a href="/categories/%E7%A7%91%E7%A0%94/">科研</a>&nbsp;
                     </li>
                 
             </ul>
@@ -208,7 +208,7 @@
             <ul>
                 
                     <li>
-                        <a href="/tags/%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F/">内网穿透</a>&nbsp;
+                        <a href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/">机器学习</a>&nbsp;
                     </li>
                 
             </ul>
@@ -231,52 +231,29 @@
         
 
         <div class="article-content markdown-body">
-            <h2 id="使用-cPolar-实现内网穿透"><a href="#使用-cPolar-实现内网穿透" class="headerlink" title="使用 cPolar 实现内网穿透"></a>使用 cPolar 实现内网穿透</h2><h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p>内网穿透是一种将局域网内的服务暴露到公网的技术，它可以让你在外网访问你内网的服务，例如通过公网访问家庭网络中的摄像头或者办公室网络中的服务器等。cPolar 是一个强大的工具，它可以帮助你实现内网穿透，让你轻松地访问你内网中的服务。</p>
-<h2 id="设备"><a href="#设备" class="headerlink" title="设备"></a>设备</h2><p>一台i10 A4000 4tb装有unbantu操作系</p>
-<h2 id="安装-cPolar"><a href="#安装-cPolar" class="headerlink" title="安装 cPolar"></a>安装 cPolar</h2><p>我们参照的是<a class="link" target="_blank" rel="noopener" href="https://www.cpolar.com/blog/linux-system-installation-cpolar#%E6%B3%A8_cpolar_%E5%8D%B8%E8%BD%BD%E6%96%B9%E6%B3%95">官网<i class="fas fa-external-link-alt"></i></a>的安装教程，操作简单且只用使用命令即可。首先你得保证你的服务器是连接了互联网。你可以根据以下命令检查服务器是否连接了互联网。（如有返回则联通了互联网）</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bing www.baidu.com</span><br></pre></td></tr></table></figure>
+            <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>课程竞赛<br>狗狗分类（20分类任务）<br>狗狗分类（20分类任务）<br>第一阶段：4月19日 至 4月30日（2周，占25%）<br>   模型训练、主干网络、调参与调优tricks等基础知识<br>第二阶段：5月1日 至 5月14日（2周，占20%）<br>   数据增强、图像编辑、调参与调优tricks等<br>第三阶段：5月15日 至 5月28日（2周，占20%）<br>   网络攻防、数据增强等<br>提交验证地址：<a class="link" target="_blank" rel="noopener" href="http://cuit.osmagic.com:8888/">http://cuit.osmagic.com:8888<i class="fas fa-external-link-alt"></i></a><br>   学号登录，初始密码“123”<br>期末提交测试代码及模型（占5%），供结果验证<br>按阶段准确率高低计分，最高者100分，最低者40分</p>
+<h3 id="心得"><a href="#心得" class="headerlink" title="心得"></a>心得</h3><p>在第一阶段和第二阶段中我们使用的是Resnet，将epch和leaning rate更改了就提交代码了。在第三阶段在读论文时候发现了新模型Visual Attention Network(VAN)它是22年cvpr发表的。该模型在图像分类、物体检测、语义分割、实例分割、姿势估计等任务都取得了不错的成绩。其中的VAN-B6在ImageNet基准测试中取得了87.8%的准确率，并为全景分割创造了新的最先进的性能（58.PQ）。此外，VAN-B2在ADE20K基准上的语义分割超过Swin-T 4% mIoU（50.1 vs. 46.1），在COCO数据集上的物体检测超过2.6% AP（48.8 vs. 46.2）。因此决定使用该模型在第三阶段测试性能。</p>
+<div align="center">
+<img src="/2023/06/27/MachineLearningCourseCompetition/1.jpg" width="400">
+<img src="/2023/06/27/MachineLearningCourseCompetition/2.jpg" width="400">
+</div>
 
-<h3 id="环境需求"><a href="#环境需求" class="headerlink" title="环境需求"></a>环境需求</h3><p>该脚本适用于Ubuntu16.04&#x2F;18.04&#x2F;20.04及以后，Centos7&#x2F;8及以后版本，树莓派最新官方镜像，及支持systemd的新式Linux操作系统，该脚本会自动判断CPU架构（i386&#x2F;amd64&#x2F;mips&#x2F;arm&#x2F;arm64等等），自动下载对应cpolar客户端，并自动部署安装。</p>
-<h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><p>首先，你需要安装 cPolar 工具。你可以通过以下步骤来安装 cPolar：</p>
-<ol>
-<li><p>cpolar 安装（国内使用）</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl -L https://www.cpolar.com/static/downloads/install-release-cpolar.sh | sudo bash</span><br></pre></td></tr></table></figure>
-<p>或 cpolar短链接安装方式：(国外使用）</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl -sL https://git.io/cpolar | sudo bash</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>查看版本号，有正常显示版本号即为安装成功</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cpolar version</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>token认证<br>登录cpolar<a class="link" target="_blank" rel="noopener" href="https://dashboard.cpolar.com/get-started">官网后台<i class="fas fa-external-link-alt"></i></a>，点击左侧的验证，查看自己的认证token，之后将token贴在命令行里(xxxx 在点入官网后台的验证中可复制)</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cpolar authtoken xxxxxxx</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>简单穿透测试</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cpolar http 8080</span><br></pre></td></tr></table></figure>
-<p>按ctrl+c退出</p>
-</li>
-<li><p>向系统添加服务</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo systemctl enable cpolar</span><br></pre></td></tr></table></figure></li>
-<li><p>启动cpolar服务</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo systemctl start cpolar</span><br></pre></td></tr></table></figure></li>
-<li><p>查看服务状态</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo systemctl status cpolar</span><br></pre></td></tr></table></figure>
-<p>当查看到绿色显示为 activae(running) 则成功</p>
-</li>
-<li><p>登录后台，查看隧道在线状态<br><a class="link" target="_blank" rel="noopener" href="https://dashboard.cpolar.com/status">https://dashboard.cpolar.com/status<i class="fas fa-external-link-alt"></i></a>。同时因为cPolar如果固定ip是付费的，而免费的在24h内会更改ip地址，所以当ip改变时候我们需要通过后台查看新地址。官网会自动为我们配置两个通过一个是ssh一个是websit。我们通过ssh则可访问服务器了。<br>同时也可用通过服务器后台管理cpolar。例如我的ip为10.23.85.245,通过官方确认的端口号为9200。则可通过10.23.85.245:9200访问后台。可增加新的隧道。</p>
-</li>
-</ol>
-
+<p>在训练中发现，所提供的数据集较少，在经过几个epch的训练后训练集的Acc指标可以达到100%且不波动，然而在提交后发现指标却非常低。因此出现了非常严重的过拟合现象。而VAN提供在ImageNet1k上训练的权重，所以我们加载训练权重后训练提交所得到的大概在92%。因VAN提供了多个版本可供选择，我使用了B0<del>B3发现在使用B3时候达到了94%，证明该model在数据集上参数量越大所取得的效果越好。但遗憾的是作者只提供了B0</del>B3在ImageNet1k上训练的权重。学生有使用B6在老师提供的数据集上训练3k轮所取得的效果非常糟糕。如果使用B6的权重训练应该会取得不错的成果。</p>
+<div align="center">
+<img src="/2023/06/27/MachineLearningCourseCompetition/3.jpg" width="900">
+</div>
+模型选择完毕就是炼丹了。因数据集小炼丹相对容易。因数据集较小，为了扩充数据集，减少过拟合，添加了数据增强中的随机水平翻转和随机选择以及随机颜色调整。又因为考虑到训练集很快就过拟合了，因此降低了学习率为1e-5。最后在第三轮取得了96.64%。
         </div>
 
         
             <div class="post-copyright-info">
                 <div class="article-copyright-info-container">
     <ul>
-        <li>本文标题：使用 cPolar 实现内网穿透</li>
+        <li>本文标题：机器学习课程竞赛心得</li>
         <li>本文作者：warrior</li>
-        <li>创建时间：2023-06-26 21:08:05</li>
+        <li>创建时间：2023-06-27 15:44:09</li>
         <li>
-            本文链接：https://sunset148.github.io/2023/06/26/IntranetPenetration/
+            本文链接：https://sunset148.github.io/2023/06/27/MachineLearningCourseCompetition/
         </li>
         <li>
             版权声明：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
@@ -291,7 +268,7 @@
             <ul class="post-tags-box">
                 
                     <li class="tag-item">
-                        <a href="/tags/%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F/">#内网穿透</a>&nbsp;
+                        <a href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/">#机器学习</a>&nbsp;
                     </li>
                 
             </ul>
@@ -300,29 +277,14 @@
         
             <div class="article-nav">
                 
-                    <div class="article-prev">
-                        <a class="prev"
-                           rel="prev"
-                           href="/2023/06/27/MeteorologicalPapers/"
-                        >
-                            <span class="left arrow-icon flex-center">
-                              <i class="fas fa-chevron-left"></i>
-                            </span>
-                            <span class="title flex-center">
-                                <span class="post-nav-title-item">气象论文</span>
-                                <span class="post-nav-item">上一篇</span>
-                            </span>
-                        </a>
-                    </div>
-                
                 
                     <div class="article-next">
                         <a class="next"
                            rel="next"
-                           href="/2022/10/02/pytorchsetup/"
+                           href="/2023/06/27/leetcode6-27/"
                         >
                             <span class="title flex-center">
-                                <span class="post-nav-title-item">pytorch安装</span>
+                                <span class="post-nav-title-item">leetcode6-27</span>
                                 <span class="post-nav-item">下一篇</span>
                             </span>
                             <span class="right arrow-icon flex-center">
@@ -495,7 +457,7 @@
         <aside class="page-aside">
             <div class="post-toc-wrap">
     <div class="post-toc">
-        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8-cPolar-%E5%AE%9E%E7%8E%B0%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F"><span class="nav-text">使用 cPolar 实现内网穿透</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%8B%E7%BB%8D"><span class="nav-text">介绍</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AE%BE%E5%A4%87"><span class="nav-text">设备</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%85-cPolar"><span class="nav-text">安装 cPolar</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%8E%AF%E5%A2%83%E9%9C%80%E6%B1%82"><span class="nav-text">环境需求</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%89%E8%A3%85"><span class="nav-text">安装</span></a></li></ol></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%89%8D%E8%A8%80"><span class="nav-text">前言</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BF%83%E5%BE%97"><span class="nav-text">心得</span></a></li></ol>
     </div>
 </div>
         </aside>
