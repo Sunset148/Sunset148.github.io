@@ -6,7 +6,7 @@
   <link href="https://sunset148.github.io/atom.xml" rel="self"/>
   
   <link href="https://sunset148.github.io/"/>
-  <updated>2023-07-03T09:25:03.362Z</updated>
+  <updated>2023-07-06T13:59:05.139Z</updated>
   <id>https://sunset148.github.io/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>mmcv的安装</title>
+    <link href="https://sunset148.github.io/2023/07/06/InstallMmcv/"/>
+    <id>https://sunset148.github.io/2023/07/06/InstallMmcv/</id>
+    <published>2023-07-06T13:47:09.000Z</published>
+    <updated>2023-07-06T13:59:05.139Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>在使用mmcv中，经常出现mmcv安装失败或者一直卡在安装程序中。为了解决此类问题。我们参考了mmcv的官方文档。<br>且需要注意的是：请按照mmcv-full，如果安装mmcv还是会有报错的情况出现</p><h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><p>笔者配置为<br>torch 1.7.1 cuda 1.1.0</p><p>此时我们点开<a class="link" href="https://mmcv.readthedocs.io/zh_CN/v1.4.0/get_started/installation.html">官网<i class="fas fa-external-link-alt"></i></a>参照自己的torch和cuda版本安装即可<br>查看cuda版本可通过</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nvcc --version</span><br></pre></td></tr></table></figure><p>查看torch版本可通过</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">python</span><br><span class="line">&gt;&gt;import torch</span><br><span class="line">&gt;&gt;<span class="built_in">print</span>(torch.__version__)</span><br></pre></td></tr></table></figure><p>我们通过自己cuda和torch的版本选择安装即可<br><img src="/2023/07/06/InstallMmcv/1.jpg" width="400"></p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h3 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h3&gt;&lt;p&gt;在使用mmcv中，经常出现mmcv安装失败或者一直卡在安装程序中。为了解决此类问题。我们参考了mmcv的官方文档。&lt;br&gt;且需要注意的是：请</summary>
+      
+    
+    
+    
+    <category term="科研" scheme="https://sunset148.github.io/categories/%E7%A7%91%E7%A0%94/"/>
+    
+    
+    <category term="mmcv安装" scheme="https://sunset148.github.io/tags/mmcv%E5%AE%89%E8%A3%85/"/>
+    
+  </entry>
   
   <entry>
     <title>图像增强随机裁剪图片</title>
