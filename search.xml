@@ -25,6 +25,26 @@
       </tags>
   </entry>
   <entry>
+    <title>mmcv的安装</title>
+    <url>/2023/07/06/InstallMmcv/</url>
+    <content><![CDATA[<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>在使用mmcv中，经常出现mmcv安装失败或者一直卡在安装程序中。为了解决此类问题。我们参考了mmcv的官方文档。<br>且需要注意的是：请按照mmcv-full，如果安装mmcv还是会有报错的情况出现</p>
+<h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><p>笔者配置为<br>torch 1.7.1 cuda 1.1.0</p>
+<p>此时我们点开<a class="link" href="https://mmcv.readthedocs.io/zh_CN/v1.4.0/get_started/installation.html">官网<i class="fas fa-external-link-alt"></i></a>参照自己的torch和cuda版本安装即可<br>查看cuda版本可通过</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">nvcc --version</span><br></pre></td></tr></table></figure>
+
+<p>查看torch版本可通过</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">python</span><br><span class="line">&gt;&gt;import torch</span><br><span class="line">&gt;&gt;<span class="built_in">print</span>(torch.__version__)</span><br></pre></td></tr></table></figure>
+
+<p>我们通过自己cuda和torch的版本选择安装即可<br><img src="/2023/07/06/InstallMmcv/1.jpg" width="400"></p>
+]]></content>
+      <categories>
+        <category>科研</category>
+      </categories>
+      <tags>
+        <tag>mmcv安装</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>使用 cPolar 实现内网穿透</title>
     <url>/2023/06/26/IntranetPenetration/</url>
     <content><![CDATA[<h2 id="使用-cPolar-实现内网穿透"><a href="#使用-cPolar-实现内网穿透" class="headerlink" title="使用 cPolar 实现内网穿透"></a>使用 cPolar 实现内网穿透</h2><h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p>内网穿透是一种将局域网内的服务暴露到公网的技术，它可以让你在外网访问你内网的服务，例如通过公网访问家庭网络中的摄像头或者办公室网络中的服务器等。cPolar 是一个强大的工具，它可以帮助你实现内网穿透，让你轻松地访问你内网中的服务。</p>
@@ -67,26 +87,6 @@
       </categories>
       <tags>
         <tag>内网穿透</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>mmcv的安装</title>
-    <url>/2023/07/06/InstallMmcv/</url>
-    <content><![CDATA[<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>在使用mmcv中，经常出现mmcv安装失败或者一直卡在安装程序中。为了解决此类问题。我们参考了mmcv的官方文档。<br>且需要注意的是：请按照mmcv-full，如果安装mmcv还是会有报错的情况出现</p>
-<h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><p>笔者配置为<br>torch 1.7.1 cuda 1.1.0</p>
-<p>此时我们点开<a class="link" href="https://mmcv.readthedocs.io/zh_CN/v1.4.0/get_started/installation.html">官网<i class="fas fa-external-link-alt"></i></a>参照自己的torch和cuda版本安装即可<br>查看cuda版本可通过</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">nvcc --version</span><br></pre></td></tr></table></figure>
-
-<p>查看torch版本可通过</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">python</span><br><span class="line">&gt;&gt;import torch</span><br><span class="line">&gt;&gt;<span class="built_in">print</span>(torch.__version__)</span><br></pre></td></tr></table></figure>
-
-<p>我们通过自己cuda和torch的版本选择安装即可<br><img src="/2023/07/06/InstallMmcv/1.jpg" width="400"></p>
-]]></content>
-      <categories>
-        <category>科研</category>
-      </categories>
-      <tags>
-        <tag>mmcv安装</tag>
       </tags>
   </entry>
   <entry>
@@ -504,73 +504,6 @@ dp[i][1] 取以上两种情况的最大和的最大值。
       </tags>
   </entry>
   <entry>
-    <title>leetcode9-23</title>
-    <url>/2022/09/23/leetcode9-23/</url>
-    <content><![CDATA[<h2 id="leetcode每日一天（9-23）"><a href="#leetcode每日一天（9-23）" class="headerlink" title="leetcode每日一天（9.23）"></a>leetcode每日一天（9.23）</h2><p><a class="link" href="https://leetcode.cn/problems/design-linked-list/">707. 设计链表<i class="fas fa-external-link-alt"></i></a><br>设计链表的实现。您可以选择使用单链表或双链表。单链表中的节点应该具有两个属性：<code>val</code> 和 <code>next</code>。<code>val</code> 是当前节点的值，<code>next</code> 是指向下一个节点的指针&#x2F;引用。如果要使用双向链表，则还需要一个属性 <code>prev</code> 以指示链表中的上一个节点。假设链表中的所有节点都是 0-index 的。<br>在链表类中实现这些功能：</p>
-<ol>
-<li>get(index)：获取链表中第<code>index</code>个节点的值。如果索引无效，则返回-1。</li>
-<li>addAtHead(val)：在链表的第一个元素之前添加一个值为 <code>val</code> 的节点。插入后，新节点将成为链表的第一个节点。</li>
-<li>addAtHead(val)：在链表的第一个元素之前添加一个值为<code> val</code> 的节点。插入后，新节点将成为链表的第一个节点。</li>
-<li>addAtIndex(index,val)：在链表中的第<code> index </code>个节点之前添加值为<code> val</code>  的节点。如果<code> index </code>等于链表的长度，则该节点将附加到链表的末尾。如果 <code>index</code> 大于链表长度，则不会插入节点。如果<code>index</code>小于0，则在头部插入节点。</li>
-<li>deleteAtIndex(index)：如果索引<code>index</code>有效，则删除链表中的第 <code>index</code> 个节点。</li>
-</ol>
-<h6 id="示例1"><a href="#示例1" class="headerlink" title="示例1"></a>示例1</h6><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">MyLinkedList linkedList = new MyLinkedList();</span><br><span class="line">linkedList.addAtHead(1);</span><br><span class="line">linkedList.addAtTail(3);</span><br><span class="line">linkedList.addAtIndex(1,2);   //链表变为1-&gt; 2-&gt; 3</span><br><span class="line">linkedList.get(1);            //返回2</span><br><span class="line">linkedList.deleteAtIndex(1);  //现在链表是1-&gt; 3</span><br><span class="line">linkedList.get(1);            //返回3</span><br></pre></td></tr></table></figure>
-<h6 id="提示"><a href="#提示" class="headerlink" title="提示"></a>提示</h6><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">所有val值都在 [1, 1000] 之内。</span><br><span class="line">操作次数将在  [1, 1000] 之内。</span><br><span class="line">请不要使用内置的 LinkedList 库。</span><br></pre></td></tr></table></figure>
-<hr>
-<h2 id="解答"><a href="#解答" class="headerlink" title="解答"></a>解答</h2><h6 id="思想："><a href="#思想：" class="headerlink" title="思想："></a>思想：</h6><p>这是一道水题目，主要是用到数据结构里面的链表，我是用的c++里面的ListNode来解答这题比较轻松。题目要求有三处增加函数，实质上在首部添加数值和在尾部添加数值的操作可以归纳为addAtIndex，则我们在addAtHead和addAtTail可以直接调用addAtIndex用来减少我们的代码量。</p>
-<h6 id="ListNode的结构："><a href="#ListNode的结构：" class="headerlink" title="ListNode的结构："></a>ListNode的结构：</h6><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">struct ListNode &#123;</span><br><span class="line">      int val;  //当前结点的值</span><br><span class="line">      ListNode *next;  //指向下一个结点的指针</span><br><span class="line">      ListNode(int x) : val(x), next(NULL) &#123;&#125;  //初始化当前结点值为x,指针为空</span><br><span class="line">  &#125;;</span><br><span class="line"></span><br><span class="line">ListNode *p=new ListNode(0); //新增一个节点</span><br><span class="line">delete p; //删除一个节点，释放内存</span><br></pre></td></tr></table></figure>
-<h6 id="代码："><a href="#代码：" class="headerlink" title="代码："></a>代码：</h6><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">class MyLinkedList &#123;</span><br><span class="line">public:</span><br><span class="line">    <span class="function"><span class="title">MyLinkedList</span></span>() &#123;</span><br><span class="line">        this-&gt;size = 0;</span><br><span class="line">        this-&gt;<span class="built_in">head</span> = new ListNode(0); //首节点，值无意义</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    int get(int index) &#123;</span><br><span class="line">        <span class="keyword">if</span>(index&lt;0||index&gt;=size)</span><br><span class="line">            <span class="built_in">return</span> -1;</span><br><span class="line">        ListNode *cur = <span class="built_in">head</span>;</span><br><span class="line">        <span class="keyword">for</span> (int i = 0; i &lt;= index; i++) &#123;</span><br><span class="line">            cur = cur-&gt;next;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">return</span> cur-&gt;val;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    void addAtHead(int val) &#123;</span><br><span class="line">        addAtIndex(0, val);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    void addAtTail(int val) &#123;</span><br><span class="line">        addAtIndex(size,val);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    void addAtIndex(int index, int val) &#123;</span><br><span class="line">        <span class="keyword">if</span>(index&gt;size)</span><br><span class="line">            <span class="built_in">return</span>;</span><br><span class="line">        index=max(0,index);</span><br><span class="line">        ListNode *cur=<span class="built_in">head</span>;</span><br><span class="line">        <span class="keyword">for</span>(int i=0;i&lt;index;i++)</span><br><span class="line">            cur=cur-&gt;next;</span><br><span class="line">        ListNode *toAdd = new ListNode(val);</span><br><span class="line">        toAdd-&gt;next = cur-&gt;next;</span><br><span class="line">        cur-&gt;next = toAdd;</span><br><span class="line">        size++;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    void deleteAtIndex(int index) &#123;</span><br><span class="line">        <span class="keyword">if</span>(index&lt;0||index&gt;=size)</span><br><span class="line">            <span class="built_in">return</span>;</span><br><span class="line">        ListNode *cur=<span class="built_in">head</span>;</span><br><span class="line">        size--;</span><br><span class="line">        <span class="keyword">for</span>(int i=0;i&lt;index;i++)</span><br><span class="line">            cur=cur-&gt;next;</span><br><span class="line">        ListNode *p = cur-&gt;next;</span><br><span class="line">        cur-&gt;next = cur-&gt;next-&gt;next;</span><br><span class="line">        delete p;</span><br><span class="line">    &#125;</span><br><span class="line">private:</span><br><span class="line">    int size;</span><br><span class="line">    ListNode *<span class="built_in">head</span>;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">/**</span><br><span class="line"> * Your MyLinkedList object will be instantiated and called as such:</span><br><span class="line"> * MyLinkedList* obj = new MyLinkedList();</span><br><span class="line"> * int param_1 = obj-&gt;get(index);</span><br><span class="line"> * obj-&gt;addAtHead(val);</span><br><span class="line"> * obj-&gt;addAtTail(val);</span><br><span class="line"> * obj-&gt;addAtIndex(index,val);</span><br><span class="line"> * obj-&gt;deleteAtIndex(index);</span><br><span class="line"> */</span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>leetcode</category>
-      </categories>
-      <tags>
-        <tag>八股文</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>博客新增了搜索、分类还有标签功能</title>
-    <url>/2022/09/23/newHexoSomeFunction/</url>
-    <content><![CDATA[<p>今天为博客新增了搜索、分类还有标签功能</p>
-<h2 id="搜索功能添加"><a href="#搜索功能添加" class="headerlink" title="搜索功能添加"></a>搜索功能添加</h2><p>本文主要描述了怎么添加hexo博客搜索插件，然后启动搜索功能，对两个本地搜索插件的使用进行了描述，文章可能还有很多不足，请大家谅解，欢迎大佬提意见。</p>
-<h3 id="本文用的东西"><a href="#本文用的东西" class="headerlink" title="本文用的东西"></a>本文用的东西</h3><ol>
-<li>hexo</li>
-<li>电脑</li>
-</ol>
-<h3 id="部署"><a href="#部署" class="headerlink" title="部署"></a>部署</h3><h4 id="插件比较"><a href="#插件比较" class="headerlink" title="插件比较"></a>插件比较</h4><p>“hexo-generator-searchdb”插件功能比较强大，可以替代后面讲的第二个插件“hexo-generator-json-content”插件。而“hexo-generator-json-content”插件只能生产json文件，且不能定义文件名，无法替代“hexo-generator-searchdb”插件，但是“hexo-generator-json-content”可以定义生成的json文件的格式。</p>
-<h4 id="hexo-generator-searchdb插件"><a href="#hexo-generator-searchdb插件" class="headerlink" title="hexo-generator-searchdb插件"></a>hexo-generator-searchdb插件</h4><h5 id="插件原理"><a href="#插件原理" class="headerlink" title="插件原理"></a>插件原理</h5><p>这个插件会扫描博客文章，根据“——config.yml”的配置从文章里获取内容生成一个xml&#x2F;json文件的结果，类似于博客中文章信息的摘要把，搜索的时候就搜索这个文件的内容。</p>
-<h5 id="添加插件"><a href="#添加插件" class="headerlink" title="添加插件"></a>添加插件</h5><ol>
-<li>打开<code>cmd</code></li>
-<li>输入以下命令添加博客搜索插件。<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">//未配置淘宝的数据源</span><br><span class="line">npm install hexo-generator-searchdb --save</span><br><span class="line">//配置淘宝数据源的可以使用这条命令，网络会好一些</span><br><span class="line">cnpm install hexo-generator-searchdb --save</span><br></pre></td></tr></table></figure></li>
-<li>打开博客目录，找到<code>_config.yml</code>文件，添加以下内容。<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">search:</span><br><span class="line">  path: search.xml</span><br><span class="line">  field: post</span><br><span class="line">  content: <span class="literal">true</span></span><br><span class="line">  format: html</span><br></pre></td></tr></table></figure>
-<code>path</code>：表示搜索后生成的文件路径，可以生成xml和json两种格式；将path设置为<code>content.json</code>就可以替代第二个插件。<br><code>field</code>：表示搜索的范围，有<code>post</code>、<code>page</code>和<code>all</code>三种值。<br>    <code>post</code>：所有的文章；<br>    <code>page</code>：所有顶部导航选项的页面；<br>    <code>all</code>：所有的文章和顶部导航选项的页面。<br><code>content</code>：是否包含搜索到的文章的全部内容。如果<code>false</code>，生成的结果只包括标题和创建时间这些信息，没有文章主体。默认情况下是<code>true</code>.<br><code>format</code>：搜索到的内容、选项的格式。<br>    <code>html</code>(默认)：将html原文本缩略。<br>    <code>striptags</code>：将html原文本缩略，并删除所有标记。<br>    <code>raw</code>：记下每一篇文章或每一页的文字。</li>
-</ol>
-<h5 id="使用插件"><a href="#使用插件" class="headerlink" title="使用插件"></a>使用插件</h5><p>打开博客目录目录，找到当前正在使用的主题的<code>_config.yml</code>文件，打开进行编辑，找到<code>local_search</code>，修改<code>enable</code>的值为<code>true</code>。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 本地搜索</span></span><br><span class="line">local_search:</span><br><span class="line">  <span class="built_in">enable</span>: <span class="literal">true</span></span><br></pre></td></tr></table></figure>
-<p>到此即可使用搜索功能了</p>
-<hr>
-<h2 id="分类、标签和留言功能添加"><a href="#分类、标签和留言功能添加" class="headerlink" title="分类、标签和留言功能添加"></a>分类、标签和留言功能添加</h2><p>这三个功能实际上是异曲同工的。使用类似的方法即可添加</p>
-<h4 id="新建标签页"><a href="#新建标签页" class="headerlink" title="新建标签页"></a>新建标签页</h4><p>用命令行新建一个页面：（页面名称可以任意）</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo new page <span class="string">&quot;tages&quot;</span> </span><br></pre></td></tr></table></figure>
-<h4 id="设置其类型-type-值为“tages”"><a href="#设置其类型-type-值为“tages”" class="headerlink" title="设置其类型 type 值为“tages”"></a>设置其类型 type 值为“tages”</h4><p>用命令行新建一个页打开 &#x2F;source&#x2F;tages&#x2F;index.md，设置其类型<code>type</code>值为<code>tages</code>：（页面名称可以任意）</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">title: tags</span><br><span class="line"><span class="built_in">date</span>: 2019-07-26 00:33:58</span><br><span class="line"><span class="built_in">type</span>: <span class="string">&quot;tags&quot;</span></span><br></pre></td></tr></table></figure>
-<p>如果需要多个标签或者分类的话</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">categories:</span><br><span class="line">- 分类</span><br><span class="line">- 子分类</span><br><span class="line">- 子子分类</span><br><span class="line">tags:</span><br><span class="line">- 标签1</span><br><span class="line">- 标签2</span><br></pre></td></tr></table></figure>
-<h4 id="在主题的配置文件更改"><a href="#在主题的配置文件更改" class="headerlink" title="在主题的配置文件更改"></a>在主题的配置文件更改</h4><p>打开 &#x2F;themes&#x2F;主题&#x2F;_config.yml，把tages标签那项取消注释即可，下面的是已经取消注释了的。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">menu:</span><br><span class="line">  主页: /</span><br><span class="line">  <span class="comment">#随笔: /tags/随笔/</span></span><br><span class="line">  <span class="comment">#分类: /categories</span></span><br><span class="line">  <span class="comment">#归档: /archives</span></span><br><span class="line">  标签: /tags</span><br></pre></td></tr></table></figure>
-
-
-
-]]></content>
-      <categories>
-        <category>hexo</category>
-      </categories>
-      <tags>
-        <tag>hexo</tag>
-        <tag>hexo搜索</tag>
-        <tag>hexo分类、标签和留言墙</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>hexo增添评论区</title>
     <url>/2022/09/22/newComment/</url>
     <content><![CDATA[<p>hexo有三种新增评论的模板分别是：valine、gitalk还有twikoo。我使用的是twikoo。</p>
@@ -652,33 +585,70 @@ twikoo-func填写最新的版本</li>
       </tags>
   </entry>
   <entry>
-    <title>pytorch安装</title>
-    <url>/2022/10/02/pytorchsetup/</url>
-    <content><![CDATA[<h2 id="Anaconda的安装以及使用清华源镜像安装pytorch"><a href="#Anaconda的安装以及使用清华源镜像安装pytorch" class="headerlink" title="Anaconda的安装以及使用清华源镜像安装pytorch"></a>Anaconda的安装以及使用清华源镜像安装pytorch</h2><h3 id="Anaconda的安装"><a href="#Anaconda的安装" class="headerlink" title="Anaconda的安装"></a>Anaconda的安装</h3><p>因为在他官网的安装速度缓慢，所以我们选择在清华源镜像站安装<br>这里我选择的是Anaconda3-5.3.1-Windows-x86_64.exe<a class="link" href="https://mirrors.tuna.tsinghua.edu.cn/anaconda/archive/Anaconda3-5.3.1-Windows-x86_64.exe">清华源镜像站anaconda安装包<i class="fas fa-external-link-alt"></i></a><br>其实也可以选择官网然后复制下载链接去迅雷下载<br>下载好安装包之后，双击运行。将会出现下图，点击<code>Next</code>即可：<br>也是点击<code>I Agree</code>即可<br>接下来需要选择<code>All Users</code>，点击<code>Next</code><br>接下来选择自己想要安装的地址，点击<code>Browse</code>，再点击<code>Next</code>即可接下来就是如下图,上面的是环境变量可以勾选，再点击<code>Install</code></p>
-<h3 id="安装pytorch"><a href="#安装pytorch" class="headerlink" title="安装pytorch"></a>安装pytorch</h3><h5 id="创建Pytorch虚拟环境"><a href="#创建Pytorch虚拟环境" class="headerlink" title="创建Pytorch虚拟环境"></a>创建Pytorch虚拟环境</h5><p>打开Anaconda Prompt,输入下列命令：（版本号可以改为自己需要的）<br>  <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">conda create -n pytorch python=3.8</span><br></pre></td></tr></table></figure><br>启用创建的环境：<br>  <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">conda activate pytorch</span><br></pre></td></tr></table></figure></p>
-<h5 id="其他：Anaconda重命名canda虚拟环境（通过复制和删除操作实现）"><a href="#其他：Anaconda重命名canda虚拟环境（通过复制和删除操作实现）" class="headerlink" title="其他：Anaconda重命名canda虚拟环境（通过复制和删除操作实现）"></a>其他：Anaconda重命名canda虚拟环境（通过复制和删除操作实现）</h5><p>首先对要需要重命名的conda环境进行复制<br>  <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 这是简化的命令形式</span></span><br><span class="line">conda create -n conda-new --<span class="built_in">clone</span> conda-old</span><br><span class="line"><span class="comment"># 下面是完整的命令形式</span></span><br><span class="line">conda create --name conda-new --<span class="built_in">clone</span> conda-old</span><br></pre></td></tr></table></figure><br>  然后删除原有的conda环境：<br>  <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">conda remove -n conda-old --all</span><br></pre></td></tr></table></figure><br>–all：表示删除整个conda环境；</p>
-<h5 id="PyTorch官网选择配置"><a href="#PyTorch官网选择配置" class="headerlink" title="PyTorch官网选择配置"></a>PyTorch官网选择配置</h5><ul>
-<li>先看你的显卡版本，再去下载Pytorch版本<br><code>win</code>+<code>r</code>打开CMD命令行输入<code>nvidia-smi</code>可以查看自己的版本驱动，务必保证驱动版本大于396.26，且看到自己的CUDA版本号是10.2</li>
-<li>打开Anaconda Prompt<br>在cmd中以此输入一下代码来添加清华镜像源<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/</span><br><span class="line">conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main/</span><br><span class="line">conda config --<span class="built_in">set</span> show_channel_urls <span class="built_in">yes</span></span><br><span class="line">conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/pytorch/ </span><br></pre></td></tr></table></figure>
-查看否修改到通道，输入： <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">conda config --show channels</span><br></pre></td></tr></table></figure></li>
-<li>可以试试使用conda安装&#x2F;升级pip <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">conda install pip</span><br></pre></td></tr></table></figure></li>
-<li>查看当前环境 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">conda info --envs</span><br></pre></td></tr></table></figure></li>
-<li>在Pytorch网站查询需要安装的版本，<a class="link" href="https://pytorch.org/get-started/locally/">官网<i class="fas fa-external-link-alt"></i></a><br>在选择PyTorch Build 中我们一般选择Stable<br>OS 选择你需要装在电脑的系统<br>Package  我使用Conda一直安装不成功，我使用是的Pip<br>Language 自然选择Python<br>Computer Platform  CUDA的版本要根据你的显卡来选择，要选择与你版本最近而不超过的<br>到此时就会出来一段命令。但我们直接输入此命令往往会下载很久且没有结果。这里建议加上清华的镜像网站会快很多。具体操作如下：</li>
-</ul>
-<h5 id="使用国内源下载Pytorch"><a href="#使用国内源下载Pytorch" class="headerlink" title="使用国内源下载Pytorch"></a>使用国内源下载Pytorch</h5><p>我们需要在上步骤的那一段命令加上一句<br> <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">-i https://pypi.tuna.tsinghua.edu.cn/simple some-package</span><br></pre></td></tr></table></figure><br> 最后我们运行的命令为：<br>  <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">pip3 install torch torchvision torchaudio --extra-index-url https://download.pytorch.org/whl/cu113 -i https://pypi.tuna.tsinghua.edu.cn/simple some-package</span><br></pre></td></tr></table></figure><br> 我下载的差不多又六分钟，最后显示下载成功。<br> 当然，我们安装其他库是也可以使用这个命令进行快速下载！！！<br>  <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">pip install xxx -i https://pypi.tuna.tsinghua.edu.cn/simple</span><br></pre></td></tr></table></figure><br> 如果这个不成功，就再试试这个！<br> <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">pip install 包名 -i http://pypi.douban.com/simple/ --trusted-host pypi.douban.com</span><br></pre></td></tr></table></figure><br> 把xxx,替换成我们需要的库名就好啦！</p>
-<h6 id="最后验证是否安装成功"><a href="#最后验证是否安装成功" class="headerlink" title="最后验证是否安装成功"></a>最后验证是否安装成功</h6><ul>
-<li>命令行输入python</li>
-<li>输入import torch</li>
-<li>输入torch.cuda.is_available()</li>
-<li>如果显示为True则安装成功了</li>
-</ul>
+    <title>博客新增了搜索、分类还有标签功能</title>
+    <url>/2022/09/23/newHexoSomeFunction/</url>
+    <content><![CDATA[<p>今天为博客新增了搜索、分类还有标签功能</p>
+<h2 id="搜索功能添加"><a href="#搜索功能添加" class="headerlink" title="搜索功能添加"></a>搜索功能添加</h2><p>本文主要描述了怎么添加hexo博客搜索插件，然后启动搜索功能，对两个本地搜索插件的使用进行了描述，文章可能还有很多不足，请大家谅解，欢迎大佬提意见。</p>
+<h3 id="本文用的东西"><a href="#本文用的东西" class="headerlink" title="本文用的东西"></a>本文用的东西</h3><ol>
+<li>hexo</li>
+<li>电脑</li>
+</ol>
+<h3 id="部署"><a href="#部署" class="headerlink" title="部署"></a>部署</h3><h4 id="插件比较"><a href="#插件比较" class="headerlink" title="插件比较"></a>插件比较</h4><p>“hexo-generator-searchdb”插件功能比较强大，可以替代后面讲的第二个插件“hexo-generator-json-content”插件。而“hexo-generator-json-content”插件只能生产json文件，且不能定义文件名，无法替代“hexo-generator-searchdb”插件，但是“hexo-generator-json-content”可以定义生成的json文件的格式。</p>
+<h4 id="hexo-generator-searchdb插件"><a href="#hexo-generator-searchdb插件" class="headerlink" title="hexo-generator-searchdb插件"></a>hexo-generator-searchdb插件</h4><h5 id="插件原理"><a href="#插件原理" class="headerlink" title="插件原理"></a>插件原理</h5><p>这个插件会扫描博客文章，根据“——config.yml”的配置从文章里获取内容生成一个xml&#x2F;json文件的结果，类似于博客中文章信息的摘要把，搜索的时候就搜索这个文件的内容。</p>
+<h5 id="添加插件"><a href="#添加插件" class="headerlink" title="添加插件"></a>添加插件</h5><ol>
+<li>打开<code>cmd</code></li>
+<li>输入以下命令添加博客搜索插件。<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">//未配置淘宝的数据源</span><br><span class="line">npm install hexo-generator-searchdb --save</span><br><span class="line">//配置淘宝数据源的可以使用这条命令，网络会好一些</span><br><span class="line">cnpm install hexo-generator-searchdb --save</span><br></pre></td></tr></table></figure></li>
+<li>打开博客目录，找到<code>_config.yml</code>文件，添加以下内容。<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">search:</span><br><span class="line">  path: search.xml</span><br><span class="line">  field: post</span><br><span class="line">  content: <span class="literal">true</span></span><br><span class="line">  format: html</span><br></pre></td></tr></table></figure>
+<code>path</code>：表示搜索后生成的文件路径，可以生成xml和json两种格式；将path设置为<code>content.json</code>就可以替代第二个插件。<br><code>field</code>：表示搜索的范围，有<code>post</code>、<code>page</code>和<code>all</code>三种值。<br>    <code>post</code>：所有的文章；<br>    <code>page</code>：所有顶部导航选项的页面；<br>    <code>all</code>：所有的文章和顶部导航选项的页面。<br><code>content</code>：是否包含搜索到的文章的全部内容。如果<code>false</code>，生成的结果只包括标题和创建时间这些信息，没有文章主体。默认情况下是<code>true</code>.<br><code>format</code>：搜索到的内容、选项的格式。<br>    <code>html</code>(默认)：将html原文本缩略。<br>    <code>striptags</code>：将html原文本缩略，并删除所有标记。<br>    <code>raw</code>：记下每一篇文章或每一页的文字。</li>
+</ol>
+<h5 id="使用插件"><a href="#使用插件" class="headerlink" title="使用插件"></a>使用插件</h5><p>打开博客目录目录，找到当前正在使用的主题的<code>_config.yml</code>文件，打开进行编辑，找到<code>local_search</code>，修改<code>enable</code>的值为<code>true</code>。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 本地搜索</span></span><br><span class="line">local_search:</span><br><span class="line">  <span class="built_in">enable</span>: <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+<p>到此即可使用搜索功能了</p>
+<hr>
+<h2 id="分类、标签和留言功能添加"><a href="#分类、标签和留言功能添加" class="headerlink" title="分类、标签和留言功能添加"></a>分类、标签和留言功能添加</h2><p>这三个功能实际上是异曲同工的。使用类似的方法即可添加</p>
+<h4 id="新建标签页"><a href="#新建标签页" class="headerlink" title="新建标签页"></a>新建标签页</h4><p>用命令行新建一个页面：（页面名称可以任意）</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo new page <span class="string">&quot;tages&quot;</span> </span><br></pre></td></tr></table></figure>
+<h4 id="设置其类型-type-值为“tages”"><a href="#设置其类型-type-值为“tages”" class="headerlink" title="设置其类型 type 值为“tages”"></a>设置其类型 type 值为“tages”</h4><p>用命令行新建一个页打开 &#x2F;source&#x2F;tages&#x2F;index.md，设置其类型<code>type</code>值为<code>tages</code>：（页面名称可以任意）</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">title: tags</span><br><span class="line"><span class="built_in">date</span>: 2019-07-26 00:33:58</span><br><span class="line"><span class="built_in">type</span>: <span class="string">&quot;tags&quot;</span></span><br></pre></td></tr></table></figure>
+<p>如果需要多个标签或者分类的话</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">categories:</span><br><span class="line">- 分类</span><br><span class="line">- 子分类</span><br><span class="line">- 子子分类</span><br><span class="line">tags:</span><br><span class="line">- 标签1</span><br><span class="line">- 标签2</span><br></pre></td></tr></table></figure>
+<h4 id="在主题的配置文件更改"><a href="#在主题的配置文件更改" class="headerlink" title="在主题的配置文件更改"></a>在主题的配置文件更改</h4><p>打开 &#x2F;themes&#x2F;主题&#x2F;_config.yml，把tages标签那项取消注释即可，下面的是已经取消注释了的。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">menu:</span><br><span class="line">  主页: /</span><br><span class="line">  <span class="comment">#随笔: /tags/随笔/</span></span><br><span class="line">  <span class="comment">#分类: /categories</span></span><br><span class="line">  <span class="comment">#归档: /archives</span></span><br><span class="line">  标签: /tags</span><br></pre></td></tr></table></figure>
+
+
+
 ]]></content>
       <categories>
-        <category>pytorch</category>
+        <category>hexo</category>
       </categories>
       <tags>
-        <tag>pytorch安装</tag>
-        <tag>深度学习框架</tag>
+        <tag>hexo</tag>
+        <tag>hexo搜索</tag>
+        <tag>hexo分类、标签和留言墙</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>leetcode9-23</title>
+    <url>/2022/09/23/leetcode9-23/</url>
+    <content><![CDATA[<h2 id="leetcode每日一天（9-23）"><a href="#leetcode每日一天（9-23）" class="headerlink" title="leetcode每日一天（9.23）"></a>leetcode每日一天（9.23）</h2><p><a class="link" href="https://leetcode.cn/problems/design-linked-list/">707. 设计链表<i class="fas fa-external-link-alt"></i></a><br>设计链表的实现。您可以选择使用单链表或双链表。单链表中的节点应该具有两个属性：<code>val</code> 和 <code>next</code>。<code>val</code> 是当前节点的值，<code>next</code> 是指向下一个节点的指针&#x2F;引用。如果要使用双向链表，则还需要一个属性 <code>prev</code> 以指示链表中的上一个节点。假设链表中的所有节点都是 0-index 的。<br>在链表类中实现这些功能：</p>
+<ol>
+<li>get(index)：获取链表中第<code>index</code>个节点的值。如果索引无效，则返回-1。</li>
+<li>addAtHead(val)：在链表的第一个元素之前添加一个值为 <code>val</code> 的节点。插入后，新节点将成为链表的第一个节点。</li>
+<li>addAtHead(val)：在链表的第一个元素之前添加一个值为<code> val</code> 的节点。插入后，新节点将成为链表的第一个节点。</li>
+<li>addAtIndex(index,val)：在链表中的第<code> index </code>个节点之前添加值为<code> val</code>  的节点。如果<code> index </code>等于链表的长度，则该节点将附加到链表的末尾。如果 <code>index</code> 大于链表长度，则不会插入节点。如果<code>index</code>小于0，则在头部插入节点。</li>
+<li>deleteAtIndex(index)：如果索引<code>index</code>有效，则删除链表中的第 <code>index</code> 个节点。</li>
+</ol>
+<h6 id="示例1"><a href="#示例1" class="headerlink" title="示例1"></a>示例1</h6><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">MyLinkedList linkedList = new MyLinkedList();</span><br><span class="line">linkedList.addAtHead(1);</span><br><span class="line">linkedList.addAtTail(3);</span><br><span class="line">linkedList.addAtIndex(1,2);   //链表变为1-&gt; 2-&gt; 3</span><br><span class="line">linkedList.get(1);            //返回2</span><br><span class="line">linkedList.deleteAtIndex(1);  //现在链表是1-&gt; 3</span><br><span class="line">linkedList.get(1);            //返回3</span><br></pre></td></tr></table></figure>
+<h6 id="提示"><a href="#提示" class="headerlink" title="提示"></a>提示</h6><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">所有val值都在 [1, 1000] 之内。</span><br><span class="line">操作次数将在  [1, 1000] 之内。</span><br><span class="line">请不要使用内置的 LinkedList 库。</span><br></pre></td></tr></table></figure>
+<hr>
+<h2 id="解答"><a href="#解答" class="headerlink" title="解答"></a>解答</h2><h6 id="思想："><a href="#思想：" class="headerlink" title="思想："></a>思想：</h6><p>这是一道水题目，主要是用到数据结构里面的链表，我是用的c++里面的ListNode来解答这题比较轻松。题目要求有三处增加函数，实质上在首部添加数值和在尾部添加数值的操作可以归纳为addAtIndex，则我们在addAtHead和addAtTail可以直接调用addAtIndex用来减少我们的代码量。</p>
+<h6 id="ListNode的结构："><a href="#ListNode的结构：" class="headerlink" title="ListNode的结构："></a>ListNode的结构：</h6><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">struct ListNode &#123;</span><br><span class="line">      int val;  //当前结点的值</span><br><span class="line">      ListNode *next;  //指向下一个结点的指针</span><br><span class="line">      ListNode(int x) : val(x), next(NULL) &#123;&#125;  //初始化当前结点值为x,指针为空</span><br><span class="line">  &#125;;</span><br><span class="line"></span><br><span class="line">ListNode *p=new ListNode(0); //新增一个节点</span><br><span class="line">delete p; //删除一个节点，释放内存</span><br></pre></td></tr></table></figure>
+<h6 id="代码："><a href="#代码：" class="headerlink" title="代码："></a>代码：</h6><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">class MyLinkedList &#123;</span><br><span class="line">public:</span><br><span class="line">    <span class="function"><span class="title">MyLinkedList</span></span>() &#123;</span><br><span class="line">        this-&gt;size = 0;</span><br><span class="line">        this-&gt;<span class="built_in">head</span> = new ListNode(0); //首节点，值无意义</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    int get(int index) &#123;</span><br><span class="line">        <span class="keyword">if</span>(index&lt;0||index&gt;=size)</span><br><span class="line">            <span class="built_in">return</span> -1;</span><br><span class="line">        ListNode *cur = <span class="built_in">head</span>;</span><br><span class="line">        <span class="keyword">for</span> (int i = 0; i &lt;= index; i++) &#123;</span><br><span class="line">            cur = cur-&gt;next;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">return</span> cur-&gt;val;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    void addAtHead(int val) &#123;</span><br><span class="line">        addAtIndex(0, val);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    void addAtTail(int val) &#123;</span><br><span class="line">        addAtIndex(size,val);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    void addAtIndex(int index, int val) &#123;</span><br><span class="line">        <span class="keyword">if</span>(index&gt;size)</span><br><span class="line">            <span class="built_in">return</span>;</span><br><span class="line">        index=max(0,index);</span><br><span class="line">        ListNode *cur=<span class="built_in">head</span>;</span><br><span class="line">        <span class="keyword">for</span>(int i=0;i&lt;index;i++)</span><br><span class="line">            cur=cur-&gt;next;</span><br><span class="line">        ListNode *toAdd = new ListNode(val);</span><br><span class="line">        toAdd-&gt;next = cur-&gt;next;</span><br><span class="line">        cur-&gt;next = toAdd;</span><br><span class="line">        size++;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    void deleteAtIndex(int index) &#123;</span><br><span class="line">        <span class="keyword">if</span>(index&lt;0||index&gt;=size)</span><br><span class="line">            <span class="built_in">return</span>;</span><br><span class="line">        ListNode *cur=<span class="built_in">head</span>;</span><br><span class="line">        size--;</span><br><span class="line">        <span class="keyword">for</span>(int i=0;i&lt;index;i++)</span><br><span class="line">            cur=cur-&gt;next;</span><br><span class="line">        ListNode *p = cur-&gt;next;</span><br><span class="line">        cur-&gt;next = cur-&gt;next-&gt;next;</span><br><span class="line">        delete p;</span><br><span class="line">    &#125;</span><br><span class="line">private:</span><br><span class="line">    int size;</span><br><span class="line">    ListNode *<span class="built_in">head</span>;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">/**</span><br><span class="line"> * Your MyLinkedList object will be instantiated and called as such:</span><br><span class="line"> * MyLinkedList* obj = new MyLinkedList();</span><br><span class="line"> * int param_1 = obj-&gt;get(index);</span><br><span class="line"> * obj-&gt;addAtHead(val);</span><br><span class="line"> * obj-&gt;addAtTail(val);</span><br><span class="line"> * obj-&gt;addAtIndex(index,val);</span><br><span class="line"> * obj-&gt;deleteAtIndex(index);</span><br><span class="line"> */</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>leetcode</category>
+      </categories>
+      <tags>
+        <tag>八股文</tag>
       </tags>
   </entry>
   <entry>
@@ -858,6 +828,47 @@ twikoo-func填写最新的版本</li>
       </tags>
   </entry>
   <entry>
+    <title>pytorch安装</title>
+    <url>/2022/10/02/pytorchsetup/</url>
+    <content><![CDATA[<h2 id="Anaconda的安装以及使用清华源镜像安装pytorch"><a href="#Anaconda的安装以及使用清华源镜像安装pytorch" class="headerlink" title="Anaconda的安装以及使用清华源镜像安装pytorch"></a>Anaconda的安装以及使用清华源镜像安装pytorch</h2><h3 id="Anaconda的安装"><a href="#Anaconda的安装" class="headerlink" title="Anaconda的安装"></a>Anaconda的安装</h3><p>因为在他官网的安装速度缓慢，所以我们选择在清华源镜像站安装<br>这里我选择的是Anaconda3-5.3.1-Windows-x86_64.exe<a class="link" href="https://mirrors.tuna.tsinghua.edu.cn/anaconda/archive/Anaconda3-5.3.1-Windows-x86_64.exe">清华源镜像站anaconda安装包<i class="fas fa-external-link-alt"></i></a><br>其实也可以选择官网然后复制下载链接去迅雷下载<br>下载好安装包之后，双击运行。将会出现下图，点击<code>Next</code>即可：<br>也是点击<code>I Agree</code>即可<br>接下来需要选择<code>All Users</code>，点击<code>Next</code><br>接下来选择自己想要安装的地址，点击<code>Browse</code>，再点击<code>Next</code>即可接下来就是如下图,上面的是环境变量可以勾选，再点击<code>Install</code></p>
+<h3 id="安装pytorch"><a href="#安装pytorch" class="headerlink" title="安装pytorch"></a>安装pytorch</h3><h5 id="创建Pytorch虚拟环境"><a href="#创建Pytorch虚拟环境" class="headerlink" title="创建Pytorch虚拟环境"></a>创建Pytorch虚拟环境</h5><p>打开Anaconda Prompt,输入下列命令：（版本号可以改为自己需要的）<br>  <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">conda create -n pytorch python=3.8</span><br></pre></td></tr></table></figure><br>启用创建的环境：<br>  <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">conda activate pytorch</span><br></pre></td></tr></table></figure></p>
+<h5 id="其他：Anaconda重命名canda虚拟环境（通过复制和删除操作实现）"><a href="#其他：Anaconda重命名canda虚拟环境（通过复制和删除操作实现）" class="headerlink" title="其他：Anaconda重命名canda虚拟环境（通过复制和删除操作实现）"></a>其他：Anaconda重命名canda虚拟环境（通过复制和删除操作实现）</h5><p>首先对要需要重命名的conda环境进行复制<br>  <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 这是简化的命令形式</span></span><br><span class="line">conda create -n conda-new --<span class="built_in">clone</span> conda-old</span><br><span class="line"><span class="comment"># 下面是完整的命令形式</span></span><br><span class="line">conda create --name conda-new --<span class="built_in">clone</span> conda-old</span><br></pre></td></tr></table></figure><br>  然后删除原有的conda环境：<br>  <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">conda remove -n conda-old --all</span><br></pre></td></tr></table></figure><br>–all：表示删除整个conda环境；</p>
+<h5 id="PyTorch官网选择配置"><a href="#PyTorch官网选择配置" class="headerlink" title="PyTorch官网选择配置"></a>PyTorch官网选择配置</h5><ul>
+<li>先看你的显卡版本，再去下载Pytorch版本<br><code>win</code>+<code>r</code>打开CMD命令行输入<code>nvidia-smi</code>可以查看自己的版本驱动，务必保证驱动版本大于396.26，且看到自己的CUDA版本号是10.2</li>
+<li>打开Anaconda Prompt<br>在cmd中以此输入一下代码来添加清华镜像源<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/</span><br><span class="line">conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main/</span><br><span class="line">conda config --<span class="built_in">set</span> show_channel_urls <span class="built_in">yes</span></span><br><span class="line">conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/pytorch/ </span><br></pre></td></tr></table></figure>
+查看否修改到通道，输入： <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">conda config --show channels</span><br></pre></td></tr></table></figure></li>
+<li>可以试试使用conda安装&#x2F;升级pip <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">conda install pip</span><br></pre></td></tr></table></figure></li>
+<li>查看当前环境 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">conda info --envs</span><br></pre></td></tr></table></figure></li>
+<li>在Pytorch网站查询需要安装的版本，<a class="link" href="https://pytorch.org/get-started/locally/">官网<i class="fas fa-external-link-alt"></i></a><br>在选择PyTorch Build 中我们一般选择Stable<br>OS 选择你需要装在电脑的系统<br>Package  我使用Conda一直安装不成功，我使用是的Pip<br>Language 自然选择Python<br>Computer Platform  CUDA的版本要根据你的显卡来选择，要选择与你版本最近而不超过的<br>到此时就会出来一段命令。但我们直接输入此命令往往会下载很久且没有结果。这里建议加上清华的镜像网站会快很多。具体操作如下：</li>
+</ul>
+<h5 id="使用国内源下载Pytorch"><a href="#使用国内源下载Pytorch" class="headerlink" title="使用国内源下载Pytorch"></a>使用国内源下载Pytorch</h5><p>我们需要在上步骤的那一段命令加上一句<br> <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">-i https://pypi.tuna.tsinghua.edu.cn/simple some-package</span><br></pre></td></tr></table></figure><br> 最后我们运行的命令为：<br>  <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">pip3 install torch torchvision torchaudio --extra-index-url https://download.pytorch.org/whl/cu113 -i https://pypi.tuna.tsinghua.edu.cn/simple some-package</span><br></pre></td></tr></table></figure><br> 我下载的差不多又六分钟，最后显示下载成功。<br> 当然，我们安装其他库是也可以使用这个命令进行快速下载！！！<br>  <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">pip install xxx -i https://pypi.tuna.tsinghua.edu.cn/simple</span><br></pre></td></tr></table></figure><br> 如果这个不成功，就再试试这个！<br> <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">pip install 包名 -i http://pypi.douban.com/simple/ --trusted-host pypi.douban.com</span><br></pre></td></tr></table></figure><br> 把xxx,替换成我们需要的库名就好啦！</p>
+<h6 id="最后验证是否安装成功"><a href="#最后验证是否安装成功" class="headerlink" title="最后验证是否安装成功"></a>最后验证是否安装成功</h6><ul>
+<li>命令行输入python</li>
+<li>输入import torch</li>
+<li>输入torch.cuda.is_available()</li>
+<li>如果显示为True则安装成功了</li>
+</ul>
+]]></content>
+      <categories>
+        <category>pytorch</category>
+      </categories>
+      <tags>
+        <tag>pytorch安装</tag>
+        <tag>深度学习框架</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>first one</title>
+    <url>/2022/09/19/the-new-day/</url>
+    <content><![CDATA[<h2 id="美好的一天从躺平开始！！"><a href="#美好的一天从躺平开始！！" class="headerlink" title="美好的一天从躺平开始！！"></a>美好的一天从躺平开始！！</h2>]]></content>
+      <categories>
+        <category>日常</category>
+      </categories>
+      <tags>
+        <tag>水文</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>发博文</title>
     <url>/2022/09/19/sendBlog/</url>
     <content><![CDATA[<h3 id="发博文"><a href="#发博文" class="headerlink" title="发博文"></a>发博文</h3><h5 id="1-使用下面命令创建一个md文档"><a href="#1-使用下面命令创建一个md文档" class="headerlink" title="1.使用下面命令创建一个md文档"></a>1.使用下面命令创建一个md文档</h5><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ npx hexo new  <span class="string">&quot;页面名称&quot;</span></span><br></pre></td></tr></table></figure>
@@ -873,17 +884,6 @@ twikoo-func填写最新的版本</li>
       <tags>
         <tag>hexo</tag>
         <tag>发博文</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>first one</title>
-    <url>/2022/09/19/the-new-day/</url>
-    <content><![CDATA[<h2 id="美好的一天从躺平开始！！"><a href="#美好的一天从躺平开始！！" class="headerlink" title="美好的一天从躺平开始！！"></a>美好的一天从躺平开始！！</h2>]]></content>
-      <categories>
-        <category>日常</category>
-      </categories>
-      <tags>
-        <tag>水文</tag>
       </tags>
   </entry>
 </search>
