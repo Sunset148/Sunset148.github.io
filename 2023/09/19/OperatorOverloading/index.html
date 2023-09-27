@@ -9,7 +9,7 @@
     
     <title>
         
-            mmcv的安装 |
+            OperatorOverloading |
         
         BBlog
     </title>
@@ -168,7 +168,7 @@
     <div class="article-content-container">
 
         <div class="article-title">
-            <span class="title-hover-animation">mmcv的安装</span>
+            <span class="title-hover-animation">OperatorOverloading</span>
         </div>
 
         
@@ -187,8 +187,8 @@
                         <div class="article-meta-info">
     <span class="article-date article-meta-item">
         <i class="fas fa-edit"></i>&nbsp;
-        <span class="pc">2023-07-06 21:47:09</span>
-        <span class="mobile">2023-07-06 21:47</span>
+        <span class="pc">2023-09-19 22:05:31</span>
+        <span class="mobile">2023-09-19 22:05</span>
     </span>
     
         <span class="article-categories article-meta-item">
@@ -196,7 +196,7 @@
             <ul>
                 
                     <li>
-                        <a href="/categories/%E7%A7%91%E7%A0%94/">科研</a>&nbsp;
+                        <a href="/categories/C-%E8%AF%AD%E8%A8%80/">C++语言</a>&nbsp;
                     </li>
                 
             </ul>
@@ -208,7 +208,7 @@
             <ul>
                 
                     <li>
-                        <a href="/tags/mmcv%E5%AE%89%E8%A3%85/">mmcv安装</a>&nbsp;
+                        <a href="/tags/C-%E8%AF%AD%E8%A8%80%E5%9F%BA%E7%A1%80/">C++语言基础</a>&nbsp;
                     </li>
                 
             </ul>
@@ -231,15 +231,13 @@
         
 
         <div class="article-content markdown-body">
-            <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>在使用mmcv中，经常出现mmcv安装失败或者一直卡在安装程序中。为了解决此类问题。我们参考了mmcv的官方文档。<br>且需要注意的是：请按照mmcv-full，如果安装mmcv还是会有报错的情况出现</p>
-<h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><p>笔者配置为<br>torch 1.7.1 cuda 1.1.0</p>
-<p>此时我们点开<a class="link" target="_blank" rel="noopener" href="https://mmcv.readthedocs.io/zh_CN/v1.4.0/get_started/installation.html">官网<i class="fas fa-external-link-alt"></i></a>参照自己的torch和cuda版本安装即可<br>查看cuda版本可通过</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nvcc --version</span><br></pre></td></tr></table></figure>
+            <h4 id="运算符重载"><a href="#运算符重载" class="headerlink" title="运算符重载"></a>运算符重载</h4><p>作用： 通过重载递增运算符，实现自己的整型数据</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">MyInteger</span> &#123;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">friend</span> ostream&amp; <span class="keyword">operator</span>&lt;&lt;(ostream&amp; out, MyInteger myint);</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	<span class="built_in">MyInteger</span>() &#123;</span><br><span class="line">		m_Num = <span class="number">0</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="comment">//前置++</span></span><br><span class="line">	MyInteger&amp; <span class="keyword">operator</span>++() &#123;</span><br><span class="line">		<span class="comment">//先++</span></span><br><span class="line">		m_Num++;</span><br><span class="line">		<span class="comment">//再返回</span></span><br><span class="line">		<span class="keyword">return</span> *<span class="keyword">this</span>;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="comment">//后置++</span></span><br><span class="line">	MyInteger <span class="keyword">operator</span>++(<span class="type">int</span>) &#123;</span><br><span class="line">		<span class="comment">//先返回</span></span><br><span class="line">		MyInteger temp = *<span class="keyword">this</span>; <span class="comment">//记录当前本身的值，然后让本身的值加1，但是返回的是以前的值，达到先返回后++；</span></span><br><span class="line">		m_Num++;</span><br><span class="line">		<span class="keyword">return</span> temp;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">	<span class="type">int</span> m_Num;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">ostream&amp; <span class="keyword">operator</span>&lt;&lt;(ostream&amp; out, MyInteger myint) &#123;</span><br><span class="line">	out &lt;&lt; myint.m_Num;</span><br><span class="line">	<span class="keyword">return</span> out;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//前置++ 先++ 再返回</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">test01</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	MyInteger myInt;</span><br><span class="line">	cout &lt;&lt; ++myInt &lt;&lt; endl;</span><br><span class="line">	cout &lt;&lt; myInt &lt;&lt; endl;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//后置++ 先返回 再++</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">test02</span><span class="params">()</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	MyInteger myInt;</span><br><span class="line">	cout &lt;&lt; myInt++ &lt;&lt; endl;</span><br><span class="line">	cout &lt;&lt; myInt &lt;&lt; endl;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="built_in">test01</span>();</span><br><span class="line">	<span class="comment">//test02();</span></span><br><span class="line"></span><br><span class="line">	<span class="built_in">system</span>(<span class="string">&quot;pause&quot;</span>);</span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p>查看torch版本可通过</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">python</span><br><span class="line">&gt;&gt;import torch</span><br><span class="line">&gt;&gt;<span class="built_in">print</span>(torch.__version__)</span><br></pre></td></tr></table></figure>
 
-<p>我们通过自己cuda和torch的版本选择安装即可<br><img src="/2023/07/06/InstallMmcv/1.jpg" width="400"></p>
+<p>总结： 前置递增返回引用，后置递增返回值</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Person</span></span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	<span class="built_in">Person</span>() &#123;&#125;</span><br><span class="line">	<span class="built_in">Person</span>(<span class="type">int</span> age, string name) &#123;</span><br><span class="line">		<span class="keyword">this</span>-&gt;age = age;</span><br><span class="line">		<span class="keyword">this</span>-&gt;name = name;</span><br><span class="line">	&#125;</span><br><span class="line">	~<span class="built_in">Person</span>() &#123;</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">friend</span> ostream&amp; <span class="keyword">operator</span>&lt;&lt;(ostream&amp; os, <span class="type">const</span> Person&amp; p)</span><br><span class="line">	&#123;</span><br><span class="line">		os &lt;&lt; <span class="string">&quot;姓名: &quot;</span> &lt;&lt; p.name &lt;&lt; <span class="string">&quot; 年纪: &quot;</span> &lt;&lt; p.age &lt;&lt; endl;</span><br><span class="line">		<span class="keyword">return</span> os;</span><br><span class="line">	&#125;</span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">	<span class="type">int</span> age;</span><br><span class="line">	string name;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
 
         </div>
 
@@ -247,11 +245,11 @@
             <div class="post-copyright-info">
                 <div class="article-copyright-info-container">
     <ul>
-        <li>本文标题：mmcv的安装</li>
+        <li>本文标题：OperatorOverloading</li>
         <li>本文作者：warrior</li>
-        <li>创建时间：2023-07-06 21:47:09</li>
+        <li>创建时间：2023-09-19 22:05:31</li>
         <li>
-            本文链接：https://sunset148.github.io/2023/07/06/InstallMmcv/
+            本文链接：https://sunset148.github.io/2023/09/19/OperatorOverloading/
         </li>
         <li>
             版权声明：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
@@ -266,7 +264,7 @@
             <ul class="post-tags-box">
                 
                     <li class="tag-item">
-                        <a href="/tags/mmcv%E5%AE%89%E8%A3%85/">#mmcv安装</a>&nbsp;
+                        <a href="/tags/C-%E8%AF%AD%E8%A8%80%E5%9F%BA%E7%A1%80/">#C++语言基础</a>&nbsp;
                     </li>
                 
             </ul>
@@ -278,13 +276,13 @@
                     <div class="article-prev">
                         <a class="prev"
                            rel="prev"
-                           href="/2023/09/19/OperatorOverloading/"
+                           href="/2023/09/27/IdentifyApplets/"
                         >
                             <span class="left arrow-icon flex-center">
                               <i class="fas fa-chevron-left"></i>
                             </span>
                             <span class="title flex-center">
-                                <span class="post-nav-title-item">OperatorOverloading</span>
+                                <span class="post-nav-title-item">IdentifyApplets</span>
                                 <span class="post-nav-item">上一篇</span>
                             </span>
                         </a>
@@ -294,10 +292,10 @@
                     <div class="article-next">
                         <a class="next"
                            rel="next"
-                           href="/2023/07/03/ImageEnhancementCropPicturesRandomly/"
+                           href="/2023/07/06/InstallMmcv/"
                         >
                             <span class="title flex-center">
-                                <span class="post-nav-title-item">图像增强随机裁剪图片</span>
+                                <span class="post-nav-title-item">mmcv的安装</span>
                                 <span class="post-nav-item">下一篇</span>
                             </span>
                             <span class="right arrow-icon flex-center">
@@ -470,7 +468,7 @@
         <aside class="page-aside">
             <div class="post-toc-wrap">
     <div class="post-toc">
-        <ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%89%8D%E8%A8%80"><span class="nav-text">前言</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%89%E8%A3%85"><span class="nav-text">安装</span></a></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%BF%90%E7%AE%97%E7%AC%A6%E9%87%8D%E8%BD%BD"><span class="nav-text">运算符重载</span></a></li></ol>
     </div>
 </div>
         </aside>
