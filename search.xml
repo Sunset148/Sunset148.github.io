@@ -167,26 +167,6 @@
       </tags>
   </entry>
   <entry>
-    <title>mmcv的安装</title>
-    <url>/2023/07/06/InstallMmcv/</url>
-    <content><![CDATA[<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>在使用mmcv中，经常出现mmcv安装失败或者一直卡在安装程序中。为了解决此类问题。我们参考了mmcv的官方文档。<br>且需要注意的是：请按照mmcv-full，如果安装mmcv还是会有报错的情况出现</p>
-<h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><p>笔者配置为<br>torch 1.7.1 cuda 1.1.0</p>
-<p>此时我们点开<a class="link" href="https://mmcv.readthedocs.io/zh_CN/v1.4.0/get_started/installation.html">官网<i class="fas fa-external-link-alt"></i></a>参照自己的torch和cuda版本安装即可<br>查看cuda版本可通过</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">nvcc --version</span><br></pre></td></tr></table></figure>
-
-<p>查看torch版本可通过</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">python</span><br><span class="line">&gt;&gt;import torch</span><br><span class="line">&gt;&gt;<span class="built_in">print</span>(torch.__version__)</span><br></pre></td></tr></table></figure>
-
-<p>我们通过自己cuda和torch的版本选择安装即可<br><img src="/2023/07/06/InstallMmcv/1.jpg" width="400"></p>
-]]></content>
-      <categories>
-        <category>科研</category>
-      </categories>
-      <tags>
-        <tag>mmcv安装</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>图像增强随机裁剪图片</title>
     <url>/2023/07/03/ImageEnhancementCropPicturesRandomly/</url>
     <content><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>在深度学习图片分割领域，经常使用数据增强的方法扩充自己的数据集。然而在语义分割中需要保证img和lable所随机裁剪的区域相同。所以我们需要设定随机种子</p>
@@ -241,6 +221,26 @@
       </categories>
       <tags>
         <tag>内网穿透</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>mmcv的安装</title>
+    <url>/2023/07/06/InstallMmcv/</url>
+    <content><![CDATA[<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>在使用mmcv中，经常出现mmcv安装失败或者一直卡在安装程序中。为了解决此类问题。我们参考了mmcv的官方文档。<br>且需要注意的是：请按照mmcv-full，如果安装mmcv还是会有报错的情况出现</p>
+<h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><p>笔者配置为<br>torch 1.7.1 cuda 1.1.0</p>
+<p>此时我们点开<a class="link" href="https://mmcv.readthedocs.io/zh_CN/v1.4.0/get_started/installation.html">官网<i class="fas fa-external-link-alt"></i></a>参照自己的torch和cuda版本安装即可<br>查看cuda版本可通过</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">nvcc --version</span><br></pre></td></tr></table></figure>
+
+<p>查看torch版本可通过</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">python</span><br><span class="line">&gt;&gt;import torch</span><br><span class="line">&gt;&gt;<span class="built_in">print</span>(torch.__version__)</span><br></pre></td></tr></table></figure>
+
+<p>我们通过自己cuda和torch的版本选择安装即可<br><img src="/2023/07/06/InstallMmcv/1.jpg" width="400"></p>
+]]></content>
+      <categories>
+        <category>科研</category>
+      </categories>
+      <tags>
+        <tag>mmcv安装</tag>
       </tags>
   </entry>
   <entry>
@@ -555,24 +555,6 @@
       </tags>
   </entry>
   <entry>
-    <title>OperatorOverloading</title>
-    <url>/2023/09/19/OperatorOverloading/</url>
-    <content><![CDATA[<h4 id="运算符重载"><a href="#运算符重载" class="headerlink" title="运算符重载"></a>运算符重载</h4><p>作用： 通过重载递增运算符，实现自己的整型数据</p>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">MyInteger</span> &#123;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">friend</span> ostream&amp; <span class="keyword">operator</span>&lt;&lt;(ostream&amp; out, MyInteger myint);</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	<span class="built_in">MyInteger</span>() &#123;</span><br><span class="line">		m_Num = <span class="number">0</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="comment">//前置++</span></span><br><span class="line">	MyInteger&amp; <span class="keyword">operator</span>++() &#123;</span><br><span class="line">		<span class="comment">//先++</span></span><br><span class="line">		m_Num++;</span><br><span class="line">		<span class="comment">//再返回</span></span><br><span class="line">		<span class="keyword">return</span> *<span class="keyword">this</span>;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="comment">//后置++</span></span><br><span class="line">	MyInteger <span class="keyword">operator</span>++(<span class="type">int</span>) &#123;</span><br><span class="line">		<span class="comment">//先返回</span></span><br><span class="line">		MyInteger temp = *<span class="keyword">this</span>; <span class="comment">//记录当前本身的值，然后让本身的值加1，但是返回的是以前的值，达到先返回后++；</span></span><br><span class="line">		m_Num++;</span><br><span class="line">		<span class="keyword">return</span> temp;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">	<span class="type">int</span> m_Num;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">ostream&amp; <span class="keyword">operator</span>&lt;&lt;(ostream&amp; out, MyInteger myint) &#123;</span><br><span class="line">	out &lt;&lt; myint.m_Num;</span><br><span class="line">	<span class="keyword">return</span> out;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//前置++ 先++ 再返回</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">test01</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	MyInteger myInt;</span><br><span class="line">	cout &lt;&lt; ++myInt &lt;&lt; endl;</span><br><span class="line">	cout &lt;&lt; myInt &lt;&lt; endl;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//后置++ 先返回 再++</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">test02</span><span class="params">()</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	MyInteger myInt;</span><br><span class="line">	cout &lt;&lt; myInt++ &lt;&lt; endl;</span><br><span class="line">	cout &lt;&lt; myInt &lt;&lt; endl;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="built_in">test01</span>();</span><br><span class="line">	<span class="comment">//test02();</span></span><br><span class="line"></span><br><span class="line">	<span class="built_in">system</span>(<span class="string">&quot;pause&quot;</span>);</span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-<p>总结： 前置递增返回引用，后置递增返回值</p>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Person</span></span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	<span class="built_in">Person</span>() &#123;&#125;</span><br><span class="line">	<span class="built_in">Person</span>(<span class="type">int</span> age, string name) &#123;</span><br><span class="line">		<span class="keyword">this</span>-&gt;age = age;</span><br><span class="line">		<span class="keyword">this</span>-&gt;name = name;</span><br><span class="line">	&#125;</span><br><span class="line">	~<span class="built_in">Person</span>() &#123;</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">friend</span> ostream&amp; <span class="keyword">operator</span>&lt;&lt;(ostream&amp; os, <span class="type">const</span> Person&amp; p)</span><br><span class="line">	&#123;</span><br><span class="line">		os &lt;&lt; <span class="string">&quot;姓名: &quot;</span> &lt;&lt; p.name &lt;&lt; <span class="string">&quot; 年纪: &quot;</span> &lt;&lt; p.age &lt;&lt; endl;</span><br><span class="line">		<span class="keyword">return</span> os;</span><br><span class="line">	&#125;</span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">	<span class="type">int</span> age;</span><br><span class="line">	string name;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <categories>
-        <category>C++语言</category>
-      </categories>
-      <tags>
-        <tag>C++语言基础</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Hello World</title>
     <url>/2022/09/19/hello-world/</url>
     <content><![CDATA[<p>Welcome to <a class="link" href="https://hexo.io/">Hexo<i class="fas fa-external-link-alt"></i></a>! This is your very first post. Check <a class="link" href="https://hexo.io/docs/">documentation<i class="fas fa-external-link-alt"></i></a> for more info. If you get any problems when using Hexo, you can find the answer in <a class="link" href="https://hexo.io/docs/troubleshooting.html">troubleshooting<i class="fas fa-external-link-alt"></i></a> or you can ask me on <a class="link" href="https://github.com/hexojs/hexo/issues">GitHub<i class="fas fa-external-link-alt"></i></a>.</p>
@@ -620,6 +602,55 @@
       <tags>
         <tag>hexo</tag>
         <tag>hexo新增图片</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>OperatorOverloading</title>
+    <url>/2023/09/19/OperatorOverloading/</url>
+    <content><![CDATA[<h4 id="运算符重载"><a href="#运算符重载" class="headerlink" title="运算符重载"></a>运算符重载</h4><p>作用： 通过重载递增运算符，实现自己的整型数据</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">MyInteger</span> &#123;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">friend</span> ostream&amp; <span class="keyword">operator</span>&lt;&lt;(ostream&amp; out, MyInteger myint);</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	<span class="built_in">MyInteger</span>() &#123;</span><br><span class="line">		m_Num = <span class="number">0</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="comment">//前置++</span></span><br><span class="line">	MyInteger&amp; <span class="keyword">operator</span>++() &#123;</span><br><span class="line">		<span class="comment">//先++</span></span><br><span class="line">		m_Num++;</span><br><span class="line">		<span class="comment">//再返回</span></span><br><span class="line">		<span class="keyword">return</span> *<span class="keyword">this</span>;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="comment">//后置++</span></span><br><span class="line">	MyInteger <span class="keyword">operator</span>++(<span class="type">int</span>) &#123;</span><br><span class="line">		<span class="comment">//先返回</span></span><br><span class="line">		MyInteger temp = *<span class="keyword">this</span>; <span class="comment">//记录当前本身的值，然后让本身的值加1，但是返回的是以前的值，达到先返回后++；</span></span><br><span class="line">		m_Num++;</span><br><span class="line">		<span class="keyword">return</span> temp;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">	<span class="type">int</span> m_Num;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">ostream&amp; <span class="keyword">operator</span>&lt;&lt;(ostream&amp; out, MyInteger myint) &#123;</span><br><span class="line">	out &lt;&lt; myint.m_Num;</span><br><span class="line">	<span class="keyword">return</span> out;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//前置++ 先++ 再返回</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">test01</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	MyInteger myInt;</span><br><span class="line">	cout &lt;&lt; ++myInt &lt;&lt; endl;</span><br><span class="line">	cout &lt;&lt; myInt &lt;&lt; endl;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//后置++ 先返回 再++</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">test02</span><span class="params">()</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	MyInteger myInt;</span><br><span class="line">	cout &lt;&lt; myInt++ &lt;&lt; endl;</span><br><span class="line">	cout &lt;&lt; myInt &lt;&lt; endl;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="built_in">test01</span>();</span><br><span class="line">	<span class="comment">//test02();</span></span><br><span class="line"></span><br><span class="line">	<span class="built_in">system</span>(<span class="string">&quot;pause&quot;</span>);</span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+<p>总结： 前置递增返回引用，后置递增返回值</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Person</span></span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	<span class="built_in">Person</span>() &#123;&#125;</span><br><span class="line">	<span class="built_in">Person</span>(<span class="type">int</span> age, string name) &#123;</span><br><span class="line">		<span class="keyword">this</span>-&gt;age = age;</span><br><span class="line">		<span class="keyword">this</span>-&gt;name = name;</span><br><span class="line">	&#125;</span><br><span class="line">	~<span class="built_in">Person</span>() &#123;</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">friend</span> ostream&amp; <span class="keyword">operator</span>&lt;&lt;(ostream&amp; os, <span class="type">const</span> Person&amp; p)</span><br><span class="line">	&#123;</span><br><span class="line">		os &lt;&lt; <span class="string">&quot;姓名: &quot;</span> &lt;&lt; p.name &lt;&lt; <span class="string">&quot; 年纪: &quot;</span> &lt;&lt; p.age &lt;&lt; endl;</span><br><span class="line">		<span class="keyword">return</span> os;</span><br><span class="line">	&#125;</span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">	<span class="type">int</span> age;</span><br><span class="line">	string name;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>C++语言</category>
+      </categories>
+      <tags>
+        <tag>C++语言基础</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>leetcode11-16</title>
+    <url>/2023/11/16/leetcode11-16/</url>
+    <content><![CDATA[<h2 id="leetcode每日一天（11-16）"><a href="#leetcode每日一天（11-16）" class="headerlink" title="leetcode每日一天（11.16）"></a>leetcode每日一天（11.16）</h2><p><a class="link" href="https://leetcode.cn/problems/find-the-city-with-the-smallest-number-of-neighbors-at-a-threshold-distance/">1334. 阈值距离内邻居最少的城市 - 力扣（LeetCode）<i class="fas fa-external-link-alt"></i></a></p>
+<p>有 <code>n</code> 个城市，按从 <code>0</code> 到 <code>n-1</code> 编号。给你一个边数组 <code>edges</code>，其中 <code>edges[i] = [fromi, toi, weighti]</code> 代表 <code>fromi</code> 和 <code>toi</code> 两个城市之间的双向加权边，距离阈值是一个整数 <code>distanceThreshold</code>。</p>
+<p>返回能通过某些路径到达其他城市数目最少、且路径距离 <strong>最大</strong> 为 <code>distanceThreshold</code> 的城市。如果有多个这样的城市，则返回编号最大的城市。</p>
+<p>注意，连接城市 <em><strong>i</strong></em> 和 <em><strong>j</strong></em> 的路径的距离等于沿该路径的所有边的权重之和。</p>
+<p><strong>示例 1：</strong></p>
+<img src="/2023/11/16/leetcode11-16/find_the_city_01.png" style="zoom:50%;">
+
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">输入：n = 4, edges = [[0,1,3],[1,2,1],[1,3,4],[2,3,1]], distanceThreshold = 4</span><br><span class="line">输出：3</span><br><span class="line">解释：城市分布图如上。</span><br><span class="line">每个城市阈值距离 distanceThreshold = 4 内的邻居城市分别是：</span><br><span class="line">城市 0 -&gt; [城市 1, 城市 2] </span><br><span class="line">城市 1 -&gt; [城市 0, 城市 2, 城市 3] </span><br><span class="line">城市 2 -&gt; [城市 0, 城市 1, 城市 3] </span><br><span class="line">城市 3 -&gt; [城市 1, 城市 2] </span><br><span class="line">城市 0 和 3 在阈值距离 4 以内都有 2 个邻居城市，但是我们必须返回城市 3，因为它的编号最大。</span><br></pre></td></tr></table></figure>
+
+<p><strong>示例 2：</strong></p>
+<img src="/2023/11/16/leetcode11-16/find_the_city_02.png" style="zoom:50%;">
+
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">输入：n = 5, edges = [[0,1,2],[0,4,8],[1,2,3],[1,4,2],[2,3,1],[3,4,1]], distanceThreshold = 2</span><br><span class="line">输出：0</span><br><span class="line">解释：城市分布图如上。 </span><br><span class="line">每个城市阈值距离 distanceThreshold = 2 内的邻居城市分别是：</span><br><span class="line">城市 0 -&gt; [城市 1] </span><br><span class="line">城市 1 -&gt; [城市 0, 城市 4] </span><br><span class="line">城市 2 -&gt; [城市 3, 城市 4] </span><br><span class="line">城市 3 -&gt; [城市 2, 城市 4]</span><br><span class="line">城市 4 -&gt; [城市 1, 城市 2, 城市 3] </span><br><span class="line">城市 0 在阈值距离 2 以内只有 1 个邻居城市。</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="解答"><a href="#解答" class="headerlink" title="解答"></a>解答</h2><h6 id="思想："><a href="#思想：" class="headerlink" title="思想："></a>思想：</h6><p>我们需要找到 <code>n</code>个节点中，拥有距离在 <code>distanceThreshold</code> 以内的邻居数量最小、且编号最大的节点。</p>
+<p>我使用的为Floyd算法<br>我们可以求出每一个节点 <code>p</code> 到其它节点的最短路，然后查看与 <code>p</code>距离在 <code>distanceThreshold</code>以内的邻居数量最小的节点。</p>
+<p>我们可以使用 Floyd 算法得到任意两点之间的最短路，然后统计满足条件的邻居数量。</p>
+<p><strong>注意的是，全片使用一个二维数组，该二维数组维护两点直接的最短路径，同时使用了三重循环，最外围的循环代表的更新该点的值进入最短路径中。</strong></p>
+<h6 id="代码："><a href="#代码：" class="headerlink" title="代码："></a>代码：</h6><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">public:</span><br><span class="line">    int findTheCity(int n, vector&lt;vector&lt;int&gt;&gt;&amp; edges, int distanceThreshold) &#123;</span><br><span class="line">        long long map[105][105];</span><br><span class="line">        memset(map,1e4+5,sizeof(map));</span><br><span class="line">        memset(dp,1e4+5,sizeof(dp));</span><br><span class="line">        int len=edges.size();</span><br><span class="line">        <span class="keyword">for</span>(int i=0;i&lt;len;i++)</span><br><span class="line">            map[edges[i][0]][edges[i][1]]=map[edges[i][1]][edges[i][0]]=edges[i][2];</span><br><span class="line">        <span class="keyword">for</span>(int i=0;i&lt;n;i++)&#123;</span><br><span class="line">            map[i][i]=0;</span><br><span class="line">        &#125;</span><br><span class="line">        /*k是代表更新到此顶点*/</span><br><span class="line">        <span class="keyword">for</span>(int k=0;k&lt;n;k++)&#123;</span><br><span class="line">            dp[k][k]=0;</span><br><span class="line">            <span class="keyword">for</span>(int i=0;i&lt;n;i++)&#123;</span><br><span class="line">                <span class="keyword">for</span>(int j=0;j&lt;n;j++)</span><br><span class="line">                    map[i][j]=min(map[i][j],map[i][k]+map[k][j]);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        int index = -1,minCnt=n+1;</span><br><span class="line">        <span class="keyword">for</span>(int k=0;k&lt;n;k++)&#123;</span><br><span class="line">            int cnt = -1;</span><br><span class="line">            <span class="keyword">for</span>(int i=0;i&lt;n;i++)&#123;</span><br><span class="line">                cout&lt;&lt;<span class="string">dp[k][i]&lt;&lt;&quot; &quot;;</span></span><br><span class="line"><span class="string">                if(map[k][i]&lt;=distanceThreshold)&#123;</span></span><br><span class="line"><span class="string">                    // cout&lt;&lt;k&lt;&lt; &quot; &quot;&lt;&lt;i&lt;&lt;endl;</span></span><br><span class="line"><span class="string">                    cnt++;</span></span><br><span class="line"><span class="string">                &#125;</span></span><br><span class="line"><span class="string">            &#125;</span></span><br><span class="line"><span class="string">            // cout&lt;&lt;&quot;k:&quot;&lt;&lt; k &lt;&lt;&quot;cnt:&quot;&lt;&lt;cnt&lt;&lt;endl;</span></span><br><span class="line"><span class="string">            if(minCnt&gt;=cnt)</span></span><br><span class="line"><span class="string">                index = k,minCnt=cnt;   </span></span><br><span class="line"><span class="string">            cout&lt;&lt;endl;</span></span><br><span class="line"><span class="string">        &#125;</span></span><br><span class="line"><span class="string">        return index;</span></span><br><span class="line"><span class="string">    &#125;</span></span><br><span class="line"><span class="string">&#125;;</span></span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>leetcode</category>
+      </categories>
+      <tags>
+        <tag>八股文</tag>
       </tags>
   </entry>
   <entry>
@@ -697,49 +728,6 @@ dp[i][1] 取以上两种情况的最大和的最大值。
       </categories>
       <tags>
         <tag>八股文</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>博客新增了搜索、分类还有标签功能</title>
-    <url>/2022/09/23/newHexoSomeFunction/</url>
-    <content><![CDATA[<p>今天为博客新增了搜索、分类还有标签功能</p>
-<h2 id="搜索功能添加"><a href="#搜索功能添加" class="headerlink" title="搜索功能添加"></a>搜索功能添加</h2><p>本文主要描述了怎么添加hexo博客搜索插件，然后启动搜索功能，对两个本地搜索插件的使用进行了描述，文章可能还有很多不足，请大家谅解，欢迎大佬提意见。</p>
-<h3 id="本文用的东西"><a href="#本文用的东西" class="headerlink" title="本文用的东西"></a>本文用的东西</h3><ol>
-<li>hexo</li>
-<li>电脑</li>
-</ol>
-<h3 id="部署"><a href="#部署" class="headerlink" title="部署"></a>部署</h3><h4 id="插件比较"><a href="#插件比较" class="headerlink" title="插件比较"></a>插件比较</h4><p>“hexo-generator-searchdb”插件功能比较强大，可以替代后面讲的第二个插件“hexo-generator-json-content”插件。而“hexo-generator-json-content”插件只能生产json文件，且不能定义文件名，无法替代“hexo-generator-searchdb”插件，但是“hexo-generator-json-content”可以定义生成的json文件的格式。</p>
-<h4 id="hexo-generator-searchdb插件"><a href="#hexo-generator-searchdb插件" class="headerlink" title="hexo-generator-searchdb插件"></a>hexo-generator-searchdb插件</h4><h5 id="插件原理"><a href="#插件原理" class="headerlink" title="插件原理"></a>插件原理</h5><p>这个插件会扫描博客文章，根据“——config.yml”的配置从文章里获取内容生成一个xml&#x2F;json文件的结果，类似于博客中文章信息的摘要把，搜索的时候就搜索这个文件的内容。</p>
-<h5 id="添加插件"><a href="#添加插件" class="headerlink" title="添加插件"></a>添加插件</h5><ol>
-<li>打开<code>cmd</code></li>
-<li>输入以下命令添加博客搜索插件。<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">//未配置淘宝的数据源</span><br><span class="line">npm install hexo-generator-searchdb --save</span><br><span class="line">//配置淘宝数据源的可以使用这条命令，网络会好一些</span><br><span class="line">cnpm install hexo-generator-searchdb --save</span><br></pre></td></tr></table></figure></li>
-<li>打开博客目录，找到<code>_config.yml</code>文件，添加以下内容。<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">search:</span><br><span class="line">  path: search.xml</span><br><span class="line">  field: post</span><br><span class="line">  content: <span class="literal">true</span></span><br><span class="line">  format: html</span><br></pre></td></tr></table></figure>
-<code>path</code>：表示搜索后生成的文件路径，可以生成xml和json两种格式；将path设置为<code>content.json</code>就可以替代第二个插件。<br><code>field</code>：表示搜索的范围，有<code>post</code>、<code>page</code>和<code>all</code>三种值。<br>    <code>post</code>：所有的文章；<br>    <code>page</code>：所有顶部导航选项的页面；<br>    <code>all</code>：所有的文章和顶部导航选项的页面。<br><code>content</code>：是否包含搜索到的文章的全部内容。如果<code>false</code>，生成的结果只包括标题和创建时间这些信息，没有文章主体。默认情况下是<code>true</code>.<br><code>format</code>：搜索到的内容、选项的格式。<br>    <code>html</code>(默认)：将html原文本缩略。<br>    <code>striptags</code>：将html原文本缩略，并删除所有标记。<br>    <code>raw</code>：记下每一篇文章或每一页的文字。</li>
-</ol>
-<h5 id="使用插件"><a href="#使用插件" class="headerlink" title="使用插件"></a>使用插件</h5><p>打开博客目录目录，找到当前正在使用的主题的<code>_config.yml</code>文件，打开进行编辑，找到<code>local_search</code>，修改<code>enable</code>的值为<code>true</code>。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 本地搜索</span></span><br><span class="line">local_search:</span><br><span class="line">  <span class="built_in">enable</span>: <span class="literal">true</span></span><br></pre></td></tr></table></figure>
-<p>到此即可使用搜索功能了</p>
-<hr>
-<h2 id="分类、标签和留言功能添加"><a href="#分类、标签和留言功能添加" class="headerlink" title="分类、标签和留言功能添加"></a>分类、标签和留言功能添加</h2><p>这三个功能实际上是异曲同工的。使用类似的方法即可添加</p>
-<h4 id="新建标签页"><a href="#新建标签页" class="headerlink" title="新建标签页"></a>新建标签页</h4><p>用命令行新建一个页面：（页面名称可以任意）</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo new page <span class="string">&quot;tages&quot;</span> </span><br></pre></td></tr></table></figure>
-<h4 id="设置其类型-type-值为“tages”"><a href="#设置其类型-type-值为“tages”" class="headerlink" title="设置其类型 type 值为“tages”"></a>设置其类型 type 值为“tages”</h4><p>用命令行新建一个页打开 &#x2F;source&#x2F;tages&#x2F;index.md，设置其类型<code>type</code>值为<code>tages</code>：（页面名称可以任意）</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">title: tags</span><br><span class="line"><span class="built_in">date</span>: 2019-07-26 00:33:58</span><br><span class="line"><span class="built_in">type</span>: <span class="string">&quot;tags&quot;</span></span><br></pre></td></tr></table></figure>
-<p>如果需要多个标签或者分类的话</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">categories:</span><br><span class="line">- 分类</span><br><span class="line">- 子分类</span><br><span class="line">- 子子分类</span><br><span class="line">tags:</span><br><span class="line">- 标签1</span><br><span class="line">- 标签2</span><br></pre></td></tr></table></figure>
-<h4 id="在主题的配置文件更改"><a href="#在主题的配置文件更改" class="headerlink" title="在主题的配置文件更改"></a>在主题的配置文件更改</h4><p>打开 &#x2F;themes&#x2F;主题&#x2F;_config.yml，把tages标签那项取消注释即可，下面的是已经取消注释了的。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">menu:</span><br><span class="line">  主页: /</span><br><span class="line">  <span class="comment">#随笔: /tags/随笔/</span></span><br><span class="line">  <span class="comment">#分类: /categories</span></span><br><span class="line">  <span class="comment">#归档: /archives</span></span><br><span class="line">  标签: /tags</span><br></pre></td></tr></table></figure>
-
-
-
-]]></content>
-      <categories>
-        <category>hexo</category>
-      </categories>
-      <tags>
-        <tag>hexo</tag>
-        <tag>hexo搜索</tag>
-        <tag>hexo分类、标签和留言墙</tag>
       </tags>
   </entry>
   <entry>
@@ -824,33 +812,46 @@ twikoo-func填写最新的版本</li>
       </tags>
   </entry>
   <entry>
-    <title>pytorch安装</title>
-    <url>/2022/10/02/pytorchsetup/</url>
-    <content><![CDATA[<h2 id="Anaconda的安装以及使用清华源镜像安装pytorch"><a href="#Anaconda的安装以及使用清华源镜像安装pytorch" class="headerlink" title="Anaconda的安装以及使用清华源镜像安装pytorch"></a>Anaconda的安装以及使用清华源镜像安装pytorch</h2><h3 id="Anaconda的安装"><a href="#Anaconda的安装" class="headerlink" title="Anaconda的安装"></a>Anaconda的安装</h3><p>因为在他官网的安装速度缓慢，所以我们选择在清华源镜像站安装<br>这里我选择的是Anaconda3-5.3.1-Windows-x86_64.exe<a class="link" href="https://mirrors.tuna.tsinghua.edu.cn/anaconda/archive/Anaconda3-5.3.1-Windows-x86_64.exe">清华源镜像站anaconda安装包<i class="fas fa-external-link-alt"></i></a><br>其实也可以选择官网然后复制下载链接去迅雷下载<br>下载好安装包之后，双击运行。将会出现下图，点击<code>Next</code>即可：<br>也是点击<code>I Agree</code>即可<br>接下来需要选择<code>All Users</code>，点击<code>Next</code><br>接下来选择自己想要安装的地址，点击<code>Browse</code>，再点击<code>Next</code>即可接下来就是如下图,上面的是环境变量可以勾选，再点击<code>Install</code></p>
-<h3 id="安装pytorch"><a href="#安装pytorch" class="headerlink" title="安装pytorch"></a>安装pytorch</h3><h5 id="创建Pytorch虚拟环境"><a href="#创建Pytorch虚拟环境" class="headerlink" title="创建Pytorch虚拟环境"></a>创建Pytorch虚拟环境</h5><p>打开Anaconda Prompt,输入下列命令：（版本号可以改为自己需要的）<br>  <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">conda create -n pytorch python=3.8</span><br></pre></td></tr></table></figure><br>启用创建的环境：<br>  <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">conda activate pytorch</span><br></pre></td></tr></table></figure></p>
-<h5 id="其他：Anaconda重命名canda虚拟环境（通过复制和删除操作实现）"><a href="#其他：Anaconda重命名canda虚拟环境（通过复制和删除操作实现）" class="headerlink" title="其他：Anaconda重命名canda虚拟环境（通过复制和删除操作实现）"></a>其他：Anaconda重命名canda虚拟环境（通过复制和删除操作实现）</h5><p>首先对要需要重命名的conda环境进行复制<br>  <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 这是简化的命令形式</span></span><br><span class="line">conda create -n conda-new --<span class="built_in">clone</span> conda-old</span><br><span class="line"><span class="comment"># 下面是完整的命令形式</span></span><br><span class="line">conda create --name conda-new --<span class="built_in">clone</span> conda-old</span><br></pre></td></tr></table></figure><br>  然后删除原有的conda环境：<br>  <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">conda remove -n conda-old --all</span><br></pre></td></tr></table></figure><br>–all：表示删除整个conda环境；</p>
-<h5 id="PyTorch官网选择配置"><a href="#PyTorch官网选择配置" class="headerlink" title="PyTorch官网选择配置"></a>PyTorch官网选择配置</h5><ul>
-<li>先看你的显卡版本，再去下载Pytorch版本<br><code>win</code>+<code>r</code>打开CMD命令行输入<code>nvidia-smi</code>可以查看自己的版本驱动，务必保证驱动版本大于396.26，且看到自己的CUDA版本号是10.2</li>
-<li>打开Anaconda Prompt<br>在cmd中以此输入一下代码来添加清华镜像源<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/</span><br><span class="line">conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main/</span><br><span class="line">conda config --<span class="built_in">set</span> show_channel_urls <span class="built_in">yes</span></span><br><span class="line">conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/pytorch/ </span><br></pre></td></tr></table></figure>
-查看否修改到通道，输入： <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">conda config --show channels</span><br></pre></td></tr></table></figure></li>
-<li>可以试试使用conda安装&#x2F;升级pip <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">conda install pip</span><br></pre></td></tr></table></figure></li>
-<li>查看当前环境 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">conda info --envs</span><br></pre></td></tr></table></figure></li>
-<li>在Pytorch网站查询需要安装的版本，<a class="link" href="https://pytorch.org/get-started/locally/">官网<i class="fas fa-external-link-alt"></i></a><br>在选择PyTorch Build 中我们一般选择Stable<br>OS 选择你需要装在电脑的系统<br>Package  我使用Conda一直安装不成功，我使用是的Pip<br>Language 自然选择Python<br>Computer Platform  CUDA的版本要根据你的显卡来选择，要选择与你版本最近而不超过的<br>到此时就会出来一段命令。但我们直接输入此命令往往会下载很久且没有结果。这里建议加上清华的镜像网站会快很多。具体操作如下：</li>
-</ul>
-<h5 id="使用国内源下载Pytorch"><a href="#使用国内源下载Pytorch" class="headerlink" title="使用国内源下载Pytorch"></a>使用国内源下载Pytorch</h5><p>我们需要在上步骤的那一段命令加上一句<br> <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">-i https://pypi.tuna.tsinghua.edu.cn/simple some-package</span><br></pre></td></tr></table></figure><br> 最后我们运行的命令为：<br>  <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">pip3 install torch torchvision torchaudio --extra-index-url https://download.pytorch.org/whl/cu113 -i https://pypi.tuna.tsinghua.edu.cn/simple some-package</span><br></pre></td></tr></table></figure><br> 我下载的差不多又六分钟，最后显示下载成功。<br> 当然，我们安装其他库是也可以使用这个命令进行快速下载！！！<br>  <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">pip install xxx -i https://pypi.tuna.tsinghua.edu.cn/simple</span><br></pre></td></tr></table></figure><br> 如果这个不成功，就再试试这个！<br> <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">pip install 包名 -i http://pypi.douban.com/simple/ --trusted-host pypi.douban.com</span><br></pre></td></tr></table></figure><br> 把xxx,替换成我们需要的库名就好啦！</p>
-<h6 id="最后验证是否安装成功"><a href="#最后验证是否安装成功" class="headerlink" title="最后验证是否安装成功"></a>最后验证是否安装成功</h6><ul>
-<li>命令行输入python</li>
-<li>输入import torch</li>
-<li>输入torch.cuda.is_available()</li>
-<li>如果显示为True则安装成功了</li>
-</ul>
+    <title>博客新增了搜索、分类还有标签功能</title>
+    <url>/2022/09/23/newHexoSomeFunction/</url>
+    <content><![CDATA[<p>今天为博客新增了搜索、分类还有标签功能</p>
+<h2 id="搜索功能添加"><a href="#搜索功能添加" class="headerlink" title="搜索功能添加"></a>搜索功能添加</h2><p>本文主要描述了怎么添加hexo博客搜索插件，然后启动搜索功能，对两个本地搜索插件的使用进行了描述，文章可能还有很多不足，请大家谅解，欢迎大佬提意见。</p>
+<h3 id="本文用的东西"><a href="#本文用的东西" class="headerlink" title="本文用的东西"></a>本文用的东西</h3><ol>
+<li>hexo</li>
+<li>电脑</li>
+</ol>
+<h3 id="部署"><a href="#部署" class="headerlink" title="部署"></a>部署</h3><h4 id="插件比较"><a href="#插件比较" class="headerlink" title="插件比较"></a>插件比较</h4><p>“hexo-generator-searchdb”插件功能比较强大，可以替代后面讲的第二个插件“hexo-generator-json-content”插件。而“hexo-generator-json-content”插件只能生产json文件，且不能定义文件名，无法替代“hexo-generator-searchdb”插件，但是“hexo-generator-json-content”可以定义生成的json文件的格式。</p>
+<h4 id="hexo-generator-searchdb插件"><a href="#hexo-generator-searchdb插件" class="headerlink" title="hexo-generator-searchdb插件"></a>hexo-generator-searchdb插件</h4><h5 id="插件原理"><a href="#插件原理" class="headerlink" title="插件原理"></a>插件原理</h5><p>这个插件会扫描博客文章，根据“——config.yml”的配置从文章里获取内容生成一个xml&#x2F;json文件的结果，类似于博客中文章信息的摘要把，搜索的时候就搜索这个文件的内容。</p>
+<h5 id="添加插件"><a href="#添加插件" class="headerlink" title="添加插件"></a>添加插件</h5><ol>
+<li>打开<code>cmd</code></li>
+<li>输入以下命令添加博客搜索插件。<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">//未配置淘宝的数据源</span><br><span class="line">npm install hexo-generator-searchdb --save</span><br><span class="line">//配置淘宝数据源的可以使用这条命令，网络会好一些</span><br><span class="line">cnpm install hexo-generator-searchdb --save</span><br></pre></td></tr></table></figure></li>
+<li>打开博客目录，找到<code>_config.yml</code>文件，添加以下内容。<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">search:</span><br><span class="line">  path: search.xml</span><br><span class="line">  field: post</span><br><span class="line">  content: <span class="literal">true</span></span><br><span class="line">  format: html</span><br></pre></td></tr></table></figure>
+<code>path</code>：表示搜索后生成的文件路径，可以生成xml和json两种格式；将path设置为<code>content.json</code>就可以替代第二个插件。<br><code>field</code>：表示搜索的范围，有<code>post</code>、<code>page</code>和<code>all</code>三种值。<br>    <code>post</code>：所有的文章；<br>    <code>page</code>：所有顶部导航选项的页面；<br>    <code>all</code>：所有的文章和顶部导航选项的页面。<br><code>content</code>：是否包含搜索到的文章的全部内容。如果<code>false</code>，生成的结果只包括标题和创建时间这些信息，没有文章主体。默认情况下是<code>true</code>.<br><code>format</code>：搜索到的内容、选项的格式。<br>    <code>html</code>(默认)：将html原文本缩略。<br>    <code>striptags</code>：将html原文本缩略，并删除所有标记。<br>    <code>raw</code>：记下每一篇文章或每一页的文字。</li>
+</ol>
+<h5 id="使用插件"><a href="#使用插件" class="headerlink" title="使用插件"></a>使用插件</h5><p>打开博客目录目录，找到当前正在使用的主题的<code>_config.yml</code>文件，打开进行编辑，找到<code>local_search</code>，修改<code>enable</code>的值为<code>true</code>。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 本地搜索</span></span><br><span class="line">local_search:</span><br><span class="line">  <span class="built_in">enable</span>: <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+<p>到此即可使用搜索功能了</p>
+<hr>
+<h2 id="分类、标签和留言功能添加"><a href="#分类、标签和留言功能添加" class="headerlink" title="分类、标签和留言功能添加"></a>分类、标签和留言功能添加</h2><p>这三个功能实际上是异曲同工的。使用类似的方法即可添加</p>
+<h4 id="新建标签页"><a href="#新建标签页" class="headerlink" title="新建标签页"></a>新建标签页</h4><p>用命令行新建一个页面：（页面名称可以任意）</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo new page <span class="string">&quot;tages&quot;</span> </span><br></pre></td></tr></table></figure>
+<h4 id="设置其类型-type-值为“tages”"><a href="#设置其类型-type-值为“tages”" class="headerlink" title="设置其类型 type 值为“tages”"></a>设置其类型 type 值为“tages”</h4><p>用命令行新建一个页打开 &#x2F;source&#x2F;tages&#x2F;index.md，设置其类型<code>type</code>值为<code>tages</code>：（页面名称可以任意）</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">title: tags</span><br><span class="line"><span class="built_in">date</span>: 2019-07-26 00:33:58</span><br><span class="line"><span class="built_in">type</span>: <span class="string">&quot;tags&quot;</span></span><br></pre></td></tr></table></figure>
+<p>如果需要多个标签或者分类的话</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">categories:</span><br><span class="line">- 分类</span><br><span class="line">- 子分类</span><br><span class="line">- 子子分类</span><br><span class="line">tags:</span><br><span class="line">- 标签1</span><br><span class="line">- 标签2</span><br></pre></td></tr></table></figure>
+<h4 id="在主题的配置文件更改"><a href="#在主题的配置文件更改" class="headerlink" title="在主题的配置文件更改"></a>在主题的配置文件更改</h4><p>打开 &#x2F;themes&#x2F;主题&#x2F;_config.yml，把tages标签那项取消注释即可，下面的是已经取消注释了的。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">menu:</span><br><span class="line">  主页: /</span><br><span class="line">  <span class="comment">#随笔: /tags/随笔/</span></span><br><span class="line">  <span class="comment">#分类: /categories</span></span><br><span class="line">  <span class="comment">#归档: /archives</span></span><br><span class="line">  标签: /tags</span><br></pre></td></tr></table></figure>
+
+
+
 ]]></content>
       <categories>
-        <category>pytorch</category>
+        <category>hexo</category>
       </categories>
       <tags>
-        <tag>pytorch安装</tag>
-        <tag>深度学习框架</tag>
+        <tag>hexo</tag>
+        <tag>hexo搜索</tag>
+        <tag>hexo分类、标签和留言墙</tag>
       </tags>
   </entry>
   <entry>
@@ -1056,6 +1057,36 @@ twikoo-func填写最新的版本</li>
       </categories>
       <tags>
         <tag>水文</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>pytorch安装</title>
+    <url>/2022/10/02/pytorchsetup/</url>
+    <content><![CDATA[<h2 id="Anaconda的安装以及使用清华源镜像安装pytorch"><a href="#Anaconda的安装以及使用清华源镜像安装pytorch" class="headerlink" title="Anaconda的安装以及使用清华源镜像安装pytorch"></a>Anaconda的安装以及使用清华源镜像安装pytorch</h2><h3 id="Anaconda的安装"><a href="#Anaconda的安装" class="headerlink" title="Anaconda的安装"></a>Anaconda的安装</h3><p>因为在他官网的安装速度缓慢，所以我们选择在清华源镜像站安装<br>这里我选择的是Anaconda3-5.3.1-Windows-x86_64.exe<a class="link" href="https://mirrors.tuna.tsinghua.edu.cn/anaconda/archive/Anaconda3-5.3.1-Windows-x86_64.exe">清华源镜像站anaconda安装包<i class="fas fa-external-link-alt"></i></a><br>其实也可以选择官网然后复制下载链接去迅雷下载<br>下载好安装包之后，双击运行。将会出现下图，点击<code>Next</code>即可：<br>也是点击<code>I Agree</code>即可<br>接下来需要选择<code>All Users</code>，点击<code>Next</code><br>接下来选择自己想要安装的地址，点击<code>Browse</code>，再点击<code>Next</code>即可接下来就是如下图,上面的是环境变量可以勾选，再点击<code>Install</code></p>
+<h3 id="安装pytorch"><a href="#安装pytorch" class="headerlink" title="安装pytorch"></a>安装pytorch</h3><h5 id="创建Pytorch虚拟环境"><a href="#创建Pytorch虚拟环境" class="headerlink" title="创建Pytorch虚拟环境"></a>创建Pytorch虚拟环境</h5><p>打开Anaconda Prompt,输入下列命令：（版本号可以改为自己需要的）<br>  <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">conda create -n pytorch python=3.8</span><br></pre></td></tr></table></figure><br>启用创建的环境：<br>  <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">conda activate pytorch</span><br></pre></td></tr></table></figure></p>
+<h5 id="其他：Anaconda重命名canda虚拟环境（通过复制和删除操作实现）"><a href="#其他：Anaconda重命名canda虚拟环境（通过复制和删除操作实现）" class="headerlink" title="其他：Anaconda重命名canda虚拟环境（通过复制和删除操作实现）"></a>其他：Anaconda重命名canda虚拟环境（通过复制和删除操作实现）</h5><p>首先对要需要重命名的conda环境进行复制<br>  <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 这是简化的命令形式</span></span><br><span class="line">conda create -n conda-new --<span class="built_in">clone</span> conda-old</span><br><span class="line"><span class="comment"># 下面是完整的命令形式</span></span><br><span class="line">conda create --name conda-new --<span class="built_in">clone</span> conda-old</span><br></pre></td></tr></table></figure><br>  然后删除原有的conda环境：<br>  <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">conda remove -n conda-old --all</span><br></pre></td></tr></table></figure><br>–all：表示删除整个conda环境；</p>
+<h5 id="PyTorch官网选择配置"><a href="#PyTorch官网选择配置" class="headerlink" title="PyTorch官网选择配置"></a>PyTorch官网选择配置</h5><ul>
+<li>先看你的显卡版本，再去下载Pytorch版本<br><code>win</code>+<code>r</code>打开CMD命令行输入<code>nvidia-smi</code>可以查看自己的版本驱动，务必保证驱动版本大于396.26，且看到自己的CUDA版本号是10.2</li>
+<li>打开Anaconda Prompt<br>在cmd中以此输入一下代码来添加清华镜像源<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/</span><br><span class="line">conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main/</span><br><span class="line">conda config --<span class="built_in">set</span> show_channel_urls <span class="built_in">yes</span></span><br><span class="line">conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/pytorch/ </span><br></pre></td></tr></table></figure>
+查看否修改到通道，输入： <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">conda config --show channels</span><br></pre></td></tr></table></figure></li>
+<li>可以试试使用conda安装&#x2F;升级pip <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">conda install pip</span><br></pre></td></tr></table></figure></li>
+<li>查看当前环境 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">conda info --envs</span><br></pre></td></tr></table></figure></li>
+<li>在Pytorch网站查询需要安装的版本，<a class="link" href="https://pytorch.org/get-started/locally/">官网<i class="fas fa-external-link-alt"></i></a><br>在选择PyTorch Build 中我们一般选择Stable<br>OS 选择你需要装在电脑的系统<br>Package  我使用Conda一直安装不成功，我使用是的Pip<br>Language 自然选择Python<br>Computer Platform  CUDA的版本要根据你的显卡来选择，要选择与你版本最近而不超过的<br>到此时就会出来一段命令。但我们直接输入此命令往往会下载很久且没有结果。这里建议加上清华的镜像网站会快很多。具体操作如下：</li>
+</ul>
+<h5 id="使用国内源下载Pytorch"><a href="#使用国内源下载Pytorch" class="headerlink" title="使用国内源下载Pytorch"></a>使用国内源下载Pytorch</h5><p>我们需要在上步骤的那一段命令加上一句<br> <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">-i https://pypi.tuna.tsinghua.edu.cn/simple some-package</span><br></pre></td></tr></table></figure><br> 最后我们运行的命令为：<br>  <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">pip3 install torch torchvision torchaudio --extra-index-url https://download.pytorch.org/whl/cu113 -i https://pypi.tuna.tsinghua.edu.cn/simple some-package</span><br></pre></td></tr></table></figure><br> 我下载的差不多又六分钟，最后显示下载成功。<br> 当然，我们安装其他库是也可以使用这个命令进行快速下载！！！<br>  <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">pip install xxx -i https://pypi.tuna.tsinghua.edu.cn/simple</span><br></pre></td></tr></table></figure><br> 如果这个不成功，就再试试这个！<br> <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">pip install 包名 -i http://pypi.douban.com/simple/ --trusted-host pypi.douban.com</span><br></pre></td></tr></table></figure><br> 把xxx,替换成我们需要的库名就好啦！</p>
+<h6 id="最后验证是否安装成功"><a href="#最后验证是否安装成功" class="headerlink" title="最后验证是否安装成功"></a>最后验证是否安装成功</h6><ul>
+<li>命令行输入python</li>
+<li>输入import torch</li>
+<li>输入torch.cuda.is_available()</li>
+<li>如果显示为True则安装成功了</li>
+</ul>
+]]></content>
+      <categories>
+        <category>pytorch</category>
+      </categories>
+      <tags>
+        <tag>pytorch安装</tag>
+        <tag>深度学习框架</tag>
       </tags>
   </entry>
 </search>
