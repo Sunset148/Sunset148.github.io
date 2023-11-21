@@ -1,18 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>图片等比裁剪</title>
-    <url>/2023/06/29/ImageCropping/</url>
-    <content><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>在深度学习预处理图片数据中，往往我们的数据集并不算富裕，我们将一张大图以此裁剪为modle输入的图片大小。而一张大图往往不能恰好分为所需的小图，所以我们在边缘进行了处理，在不满足其裁切小图的大小时往中间进行填充，以达到输入图片的要求。</p>
-<h2 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Path: 处理图片路径   SavePath: 保存图片路径 CropSize:裁剪大小 filename:保存图片名字前缀</span></span><br><span class="line">def Crop(Path, SavePath, CropSize, RepetitionRate,filename):</span><br><span class="line">    dataset_img = Image.open(Path)</span><br><span class="line">    width = dataset_img.size[0]</span><br><span class="line">    height = dataset_img.size[1]</span><br><span class="line">    img = np.asarray(dataset_img)  <span class="comment"># 获取数据</span></span><br><span class="line">    filename = filename[0:-4]</span><br><span class="line">    <span class="comment">#  获取当前文件夹的文件个数len,并以len+1命名即将裁剪得到的图像</span></span><br><span class="line">    new_name =  1</span><br><span class="line">    <span class="comment">#  裁剪图片,重复率为RepetitionRate</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(int((height - CropSize * RepetitionRate) / (CropSize * (1 - RepetitionRate)))):</span><br><span class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> range(int((width - CropSize * RepetitionRate) / (CropSize * (1 - RepetitionRate)))):</span><br><span class="line">            <span class="comment">#  如果图像是单波段</span></span><br><span class="line">            <span class="keyword">if</span> (len(img.shape) == 2):</span><br><span class="line">                cropped = img[</span><br><span class="line">                          int(i * CropSize * (1 - RepetitionRate)): int(i * CropSize * (1 - RepetitionRate)) + CropSize,</span><br><span class="line">                          int(j * CropSize * (1 - RepetitionRate)): int(j * CropSize * (1 - RepetitionRate)) + CropSize]</span><br><span class="line">            <span class="comment">#  如果图像是多波段</span></span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                cropped = img[</span><br><span class="line">                          int(i * CropSize * (1 - RepetitionRate)): int(i * CropSize * (1 - RepetitionRate)) + CropSize,</span><br><span class="line">                          int(j * CropSize * (1 - RepetitionRate)): int(j * CropSize * (1 - RepetitionRate)) + CropSize,:]</span><br><span class="line">            <span class="comment">#  写图像</span></span><br><span class="line">            cropped = Image.fromarray(cropped)</span><br><span class="line">            cropped.save(SavePath + filename+<span class="string">&quot;_%d.png&quot;</span> % new_name)</span><br><span class="line">            <span class="comment">#  文件名 + 1</span></span><br><span class="line">            new_name = new_name + 1</span><br><span class="line">    <span class="comment">#  向前裁剪最后一列</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(int((height - CropSize * RepetitionRate) / (CropSize * (1 - RepetitionRate)))):</span><br><span class="line">        <span class="keyword">if</span> (len(img.shape) == 2):</span><br><span class="line">            cropped = img[int(i * CropSize * (1 - RepetitionRate)): int(i * CropSize * (1 - RepetitionRate)) + CropSize,</span><br><span class="line">                      (width - CropSize): width]</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            cropped = img[</span><br><span class="line">                      int(i * CropSize * (1 - RepetitionRate)): int(i * CropSize * (1 - RepetitionRate)) + CropSize,</span><br><span class="line">                      (width - CropSize): width,:]</span><br><span class="line">        <span class="comment">#  写图像</span></span><br><span class="line">        cropped = Image.fromarray(cropped)</span><br><span class="line">        cropped.save(SavePath + <span class="string">&quot;/%d.png&quot;</span> % new_name)</span><br><span class="line">        new_name = new_name + 1</span><br><span class="line">    <span class="comment">#  向前裁剪最后一行</span></span><br><span class="line">    <span class="keyword">for</span> j <span class="keyword">in</span> range(int((width - CropSize * RepetitionRate) / (CropSize * (1 - RepetitionRate)))):</span><br><span class="line">        <span class="keyword">if</span> (len(img.shape) == 2):</span><br><span class="line">            cropped = img[(height - CropSize): height,</span><br><span class="line">                      int(j * CropSize * (1 - RepetitionRate)): int(j * CropSize * (1 - RepetitionRate)) + CropSize]</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            cropped = img[</span><br><span class="line">                      (height - CropSize): height,</span><br><span class="line">                      int(j * CropSize * (1 - RepetitionRate)): int(j * CropSize * (1 - RepetitionRate)) + CropSize,:]</span><br><span class="line">        cropped = Image.fromarray(cropped)</span><br><span class="line">        cropped.save(SavePath + <span class="string">&quot;/%d.png&quot;</span> % new_name)</span><br><span class="line">        <span class="comment">#  文件名 + 1</span></span><br><span class="line">        new_name = new_name + 1</span><br><span class="line">    <span class="comment">#  裁剪右下角</span></span><br><span class="line">    <span class="keyword">if</span> (len(img.shape) == 2):</span><br><span class="line">        cropped = img[(height - CropSize): height,</span><br><span class="line">                  (width - CropSize): width]</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        cropped = img[</span><br><span class="line">                  (height - CropSize): height,</span><br><span class="line">                  (width - CropSize): width,:]</span><br><span class="line">    cropped = Image.fromarray(cropped)</span><br><span class="line">    cropped.save(SavePath + <span class="string">&quot;/%d.png&quot;</span> % new_name)</span><br><span class="line"><span class="keyword">for</span> <span class="built_in">dirname</span>, _, filenames <span class="keyword">in</span> os.walk(<span class="string">&#x27;./inciseImg/&#x27;</span>):</span><br><span class="line">    <span class="keyword">for</span> filename <span class="keyword">in</span> filenames:</span><br><span class="line">        img_path = os.path.join(<span class="string">&quot;./img/&quot;</span>, filename)</span><br><span class="line">        lable_path = os.path.join(<span class="string">&quot;../dataset/sealand/label/&quot;</span>,filename)</span><br><span class="line">        Crop(img_path,<span class="string">&quot;./inciseImg/&quot;</span>,256,0.1,filename)</span><br><span class="line">        Crop(lable_path,<span class="string">&quot;./inciseLable/&quot;</span>,256,0.1,filename)</span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>pytorch</category>
-      </categories>
-      <tags>
-        <tag>数据预处理</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>IdentifyApplets</title>
     <url>/2023/09/27/IdentifyApplets/</url>
     <content><![CDATA[<h2 id="微信手写识别-x2F-银行卡卡号识别-x2F-身份证识别"><a href="#微信手写识别-x2F-银行卡卡号识别-x2F-身份证识别" class="headerlink" title="微信手写识别&#x2F;银行卡卡号识别&#x2F;身份证识别"></a>微信手写识别&#x2F;银行卡卡号识别&#x2F;身份证识别</h2><h3 id="项目介绍"><a href="#项目介绍" class="headerlink" title="项目介绍"></a>项目介绍</h3><p>此项目仅提供个人使用未上线未开源，开发平台为微信开发者工具，使用了云函数，百度云API调用接口实现识别，在识别后显示到屏幕中可修改，最后可导出为excel表格。</p>
@@ -167,6 +155,18 @@
       </tags>
   </entry>
   <entry>
+    <title>图片等比裁剪</title>
+    <url>/2023/06/29/ImageCropping/</url>
+    <content><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>在深度学习预处理图片数据中，往往我们的数据集并不算富裕，我们将一张大图以此裁剪为modle输入的图片大小。而一张大图往往不能恰好分为所需的小图，所以我们在边缘进行了处理，在不满足其裁切小图的大小时往中间进行填充，以达到输入图片的要求。</p>
+<h2 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Path: 处理图片路径   SavePath: 保存图片路径 CropSize:裁剪大小 filename:保存图片名字前缀</span></span><br><span class="line">def Crop(Path, SavePath, CropSize, RepetitionRate,filename):</span><br><span class="line">    dataset_img = Image.open(Path)</span><br><span class="line">    width = dataset_img.size[0]</span><br><span class="line">    height = dataset_img.size[1]</span><br><span class="line">    img = np.asarray(dataset_img)  <span class="comment"># 获取数据</span></span><br><span class="line">    filename = filename[0:-4]</span><br><span class="line">    <span class="comment">#  获取当前文件夹的文件个数len,并以len+1命名即将裁剪得到的图像</span></span><br><span class="line">    new_name =  1</span><br><span class="line">    <span class="comment">#  裁剪图片,重复率为RepetitionRate</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(int((height - CropSize * RepetitionRate) / (CropSize * (1 - RepetitionRate)))):</span><br><span class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> range(int((width - CropSize * RepetitionRate) / (CropSize * (1 - RepetitionRate)))):</span><br><span class="line">            <span class="comment">#  如果图像是单波段</span></span><br><span class="line">            <span class="keyword">if</span> (len(img.shape) == 2):</span><br><span class="line">                cropped = img[</span><br><span class="line">                          int(i * CropSize * (1 - RepetitionRate)): int(i * CropSize * (1 - RepetitionRate)) + CropSize,</span><br><span class="line">                          int(j * CropSize * (1 - RepetitionRate)): int(j * CropSize * (1 - RepetitionRate)) + CropSize]</span><br><span class="line">            <span class="comment">#  如果图像是多波段</span></span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                cropped = img[</span><br><span class="line">                          int(i * CropSize * (1 - RepetitionRate)): int(i * CropSize * (1 - RepetitionRate)) + CropSize,</span><br><span class="line">                          int(j * CropSize * (1 - RepetitionRate)): int(j * CropSize * (1 - RepetitionRate)) + CropSize,:]</span><br><span class="line">            <span class="comment">#  写图像</span></span><br><span class="line">            cropped = Image.fromarray(cropped)</span><br><span class="line">            cropped.save(SavePath + filename+<span class="string">&quot;_%d.png&quot;</span> % new_name)</span><br><span class="line">            <span class="comment">#  文件名 + 1</span></span><br><span class="line">            new_name = new_name + 1</span><br><span class="line">    <span class="comment">#  向前裁剪最后一列</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(int((height - CropSize * RepetitionRate) / (CropSize * (1 - RepetitionRate)))):</span><br><span class="line">        <span class="keyword">if</span> (len(img.shape) == 2):</span><br><span class="line">            cropped = img[int(i * CropSize * (1 - RepetitionRate)): int(i * CropSize * (1 - RepetitionRate)) + CropSize,</span><br><span class="line">                      (width - CropSize): width]</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            cropped = img[</span><br><span class="line">                      int(i * CropSize * (1 - RepetitionRate)): int(i * CropSize * (1 - RepetitionRate)) + CropSize,</span><br><span class="line">                      (width - CropSize): width,:]</span><br><span class="line">        <span class="comment">#  写图像</span></span><br><span class="line">        cropped = Image.fromarray(cropped)</span><br><span class="line">        cropped.save(SavePath + <span class="string">&quot;/%d.png&quot;</span> % new_name)</span><br><span class="line">        new_name = new_name + 1</span><br><span class="line">    <span class="comment">#  向前裁剪最后一行</span></span><br><span class="line">    <span class="keyword">for</span> j <span class="keyword">in</span> range(int((width - CropSize * RepetitionRate) / (CropSize * (1 - RepetitionRate)))):</span><br><span class="line">        <span class="keyword">if</span> (len(img.shape) == 2):</span><br><span class="line">            cropped = img[(height - CropSize): height,</span><br><span class="line">                      int(j * CropSize * (1 - RepetitionRate)): int(j * CropSize * (1 - RepetitionRate)) + CropSize]</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            cropped = img[</span><br><span class="line">                      (height - CropSize): height,</span><br><span class="line">                      int(j * CropSize * (1 - RepetitionRate)): int(j * CropSize * (1 - RepetitionRate)) + CropSize,:]</span><br><span class="line">        cropped = Image.fromarray(cropped)</span><br><span class="line">        cropped.save(SavePath + <span class="string">&quot;/%d.png&quot;</span> % new_name)</span><br><span class="line">        <span class="comment">#  文件名 + 1</span></span><br><span class="line">        new_name = new_name + 1</span><br><span class="line">    <span class="comment">#  裁剪右下角</span></span><br><span class="line">    <span class="keyword">if</span> (len(img.shape) == 2):</span><br><span class="line">        cropped = img[(height - CropSize): height,</span><br><span class="line">                  (width - CropSize): width]</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        cropped = img[</span><br><span class="line">                  (height - CropSize): height,</span><br><span class="line">                  (width - CropSize): width,:]</span><br><span class="line">    cropped = Image.fromarray(cropped)</span><br><span class="line">    cropped.save(SavePath + <span class="string">&quot;/%d.png&quot;</span> % new_name)</span><br><span class="line"><span class="keyword">for</span> <span class="built_in">dirname</span>, _, filenames <span class="keyword">in</span> os.walk(<span class="string">&#x27;./inciseImg/&#x27;</span>):</span><br><span class="line">    <span class="keyword">for</span> filename <span class="keyword">in</span> filenames:</span><br><span class="line">        img_path = os.path.join(<span class="string">&quot;./img/&quot;</span>, filename)</span><br><span class="line">        lable_path = os.path.join(<span class="string">&quot;../dataset/sealand/label/&quot;</span>,filename)</span><br><span class="line">        Crop(img_path,<span class="string">&quot;./inciseImg/&quot;</span>,256,0.1,filename)</span><br><span class="line">        Crop(lable_path,<span class="string">&quot;./inciseLable/&quot;</span>,256,0.1,filename)</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>pytorch</category>
+      </categories>
+      <tags>
+        <tag>数据预处理</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>图像增强随机裁剪图片</title>
     <url>/2023/07/03/ImageEnhancementCropPicturesRandomly/</url>
     <content><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>在深度学习图片分割领域，经常使用数据增强的方法扩充自己的数据集。然而在语义分割中需要保证img和lable所随机裁剪的区域相同。所以我们需要设定随机种子</p>
@@ -241,6 +241,33 @@
       </categories>
       <tags>
         <tag>内网穿透</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>机器学习课程竞赛心得</title>
+    <url>/2023/06/27/MachineLearningCourseCompetition/</url>
+    <content><![CDATA[<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>课程竞赛<br>狗狗分类（20分类任务）<br>狗狗分类（20分类任务）</p>
+<ul>
+<li>第一阶段：4月19日 至 4月30日（2周，占25%）<br> 模型训练、主干网络、调参与调优tricks等基础知识</li>
+<li>第二阶段：5月1日 至 5月14日（2周，占20%）<br> 数据增强、图像编辑、调参与调优tricks等</li>
+<li>第三阶段：5月15日 至 5月28日（2周，占20%）<br> 网络攻防、数据增强等<br>提交验证地址：<a class="link" href="http://cuit.osmagic.com:8888/">http://cuit.osmagic.com:8888<i class="fas fa-external-link-alt"></i></a><br> 学号登录，初始密码“123”<br>期末提交测试代码及模型（占5%），供结果验证<br>按阶段准确率高低计分，最高者100分，最低者40分</li>
+</ul>
+<h3 id="心得"><a href="#心得" class="headerlink" title="心得"></a>心得</h3><p>在第一阶段和第二阶段中我们使用的是Resnet，将epch和leaning rate更改了就提交代码了。在第三阶段在读论文时候发现了新模型Visual Attention Network(VAN)它是22年cvpr发表的。该模型在图像分类、物体检测、语义分割、实例分割、姿势估计等任务都取得了不错的成绩。其中的VAN-B6在ImageNet基准测试中取得了87.8%的准确率，并为全景分割创造了新的最先进的性能（58.PQ）。此外，VAN-B2在ADE20K基准上的语义分割超过Swin-T 4% mIoU（50.1 vs. 46.1），在COCO数据集上的物体检测超过2.6% AP（48.8 vs. 46.2）。因此决定使用该模型在第三阶段测试性能。</p>
+<div align="center">
+<img src="/2023/06/27/MachineLearningCourseCompetition/1.jpg" width="400">
+<img src="/2023/06/27/MachineLearningCourseCompetition/2.jpg" width="400">
+</div>
+
+<p>在训练中发现，所提供的数据集较少，在经过几个epch的训练后训练集的Acc指标可以达到100%且不波动，然而在提交后发现指标却非常低。因此出现了非常严重的过拟合现象。而VAN提供在ImageNet1k上训练的权重，所以我们加载训练权重后训练提交所得到的大概在92%。因VAN提供了多个版本可供选择，我使用了B0-B3发现在使用B3时候达到了94%，证明该model在数据集上参数量越大所取得的效果越好。但遗憾的是作者只提供了B0-B3在ImageNet1k上训练的权重。学生有使用B6在老师提供的数据集上训练3k轮所取得的效果非常糟糕。如果使用B6的权重训练应该会取得不错的成果。</p>
+<div align="center">
+<img src="/2023/06/27/MachineLearningCourseCompetition/3.jpg" width="900">
+</div>
+  模型选择完毕就是炼丹了。因数据集小炼丹相对容易。因数据集较小，为了扩充数据集，减少过拟合，添加了数据增强中的随机水平翻转和随机选择以及随机颜色调整。又因为考虑到训练集很快就过拟合了，因此降低了学习率为1e-5。最后在第三轮取得了96.64%。]]></content>
+      <categories>
+        <category>科研</category>
+      </categories>
+      <tags>
+        <tag>机器学习</tag>
       </tags>
   </entry>
   <entry>
@@ -528,33 +555,6 @@
       </tags>
   </entry>
   <entry>
-    <title>机器学习课程竞赛心得</title>
-    <url>/2023/06/27/MachineLearningCourseCompetition/</url>
-    <content><![CDATA[<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>课程竞赛<br>狗狗分类（20分类任务）<br>狗狗分类（20分类任务）</p>
-<ul>
-<li>第一阶段：4月19日 至 4月30日（2周，占25%）<br> 模型训练、主干网络、调参与调优tricks等基础知识</li>
-<li>第二阶段：5月1日 至 5月14日（2周，占20%）<br> 数据增强、图像编辑、调参与调优tricks等</li>
-<li>第三阶段：5月15日 至 5月28日（2周，占20%）<br> 网络攻防、数据增强等<br>提交验证地址：<a class="link" href="http://cuit.osmagic.com:8888/">http://cuit.osmagic.com:8888<i class="fas fa-external-link-alt"></i></a><br> 学号登录，初始密码“123”<br>期末提交测试代码及模型（占5%），供结果验证<br>按阶段准确率高低计分，最高者100分，最低者40分</li>
-</ul>
-<h3 id="心得"><a href="#心得" class="headerlink" title="心得"></a>心得</h3><p>在第一阶段和第二阶段中我们使用的是Resnet，将epch和leaning rate更改了就提交代码了。在第三阶段在读论文时候发现了新模型Visual Attention Network(VAN)它是22年cvpr发表的。该模型在图像分类、物体检测、语义分割、实例分割、姿势估计等任务都取得了不错的成绩。其中的VAN-B6在ImageNet基准测试中取得了87.8%的准确率，并为全景分割创造了新的最先进的性能（58.PQ）。此外，VAN-B2在ADE20K基准上的语义分割超过Swin-T 4% mIoU（50.1 vs. 46.1），在COCO数据集上的物体检测超过2.6% AP（48.8 vs. 46.2）。因此决定使用该模型在第三阶段测试性能。</p>
-<div align="center">
-<img src="/2023/06/27/MachineLearningCourseCompetition/1.jpg" width="400">
-<img src="/2023/06/27/MachineLearningCourseCompetition/2.jpg" width="400">
-</div>
-
-<p>在训练中发现，所提供的数据集较少，在经过几个epch的训练后训练集的Acc指标可以达到100%且不波动，然而在提交后发现指标却非常低。因此出现了非常严重的过拟合现象。而VAN提供在ImageNet1k上训练的权重，所以我们加载训练权重后训练提交所得到的大概在92%。因VAN提供了多个版本可供选择，我使用了B0-B3发现在使用B3时候达到了94%，证明该model在数据集上参数量越大所取得的效果越好。但遗憾的是作者只提供了B0-B3在ImageNet1k上训练的权重。学生有使用B6在老师提供的数据集上训练3k轮所取得的效果非常糟糕。如果使用B6的权重训练应该会取得不错的成果。</p>
-<div align="center">
-<img src="/2023/06/27/MachineLearningCourseCompetition/3.jpg" width="900">
-</div>
-  模型选择完毕就是炼丹了。因数据集小炼丹相对容易。因数据集较小，为了扩充数据集，减少过拟合，添加了数据增强中的随机水平翻转和随机选择以及随机颜色调整。又因为考虑到训练集很快就过拟合了，因此降低了学习率为1e-5。最后在第三轮取得了96.64%。]]></content>
-      <categories>
-        <category>科研</category>
-      </categories>
-      <tags>
-        <tag>机器学习</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>OperatorOverloading</title>
     <url>/2023/09/19/OperatorOverloading/</url>
     <content><![CDATA[<h4 id="运算符重载"><a href="#运算符重载" class="headerlink" title="运算符重载"></a>运算符重载</h4><p>作用： 通过重载递增运算符，实现自己的整型数据</p>
@@ -623,37 +623,6 @@
       </tags>
   </entry>
   <entry>
-    <title>leetcode11-16</title>
-    <url>/2023/11/16/leetcode11-16/</url>
-    <content><![CDATA[<h2 id="leetcode每日一天（11-16）"><a href="#leetcode每日一天（11-16）" class="headerlink" title="leetcode每日一天（11.16）"></a>leetcode每日一天（11.16）</h2><p><a class="link" href="https://leetcode.cn/problems/find-the-city-with-the-smallest-number-of-neighbors-at-a-threshold-distance/">1334. 阈值距离内邻居最少的城市 - 力扣（LeetCode）<i class="fas fa-external-link-alt"></i></a></p>
-<p>有 <code>n</code> 个城市，按从 <code>0</code> 到 <code>n-1</code> 编号。给你一个边数组 <code>edges</code>，其中 <code>edges[i] = [fromi, toi, weighti]</code> 代表 <code>fromi</code> 和 <code>toi</code> 两个城市之间的双向加权边，距离阈值是一个整数 <code>distanceThreshold</code>。</p>
-<p>返回能通过某些路径到达其他城市数目最少、且路径距离 <strong>最大</strong> 为 <code>distanceThreshold</code> 的城市。如果有多个这样的城市，则返回编号最大的城市。</p>
-<p>注意，连接城市 <em><strong>i</strong></em> 和 <em><strong>j</strong></em> 的路径的距离等于沿该路径的所有边的权重之和。</p>
-<p><strong>示例 1：</strong></p>
-<img src="/2023/11/16/leetcode11-16/find_the_city_01.png" style="zoom:50%;">
-
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">输入：n = 4, edges = [[0,1,3],[1,2,1],[1,3,4],[2,3,1]], distanceThreshold = 4</span><br><span class="line">输出：3</span><br><span class="line">解释：城市分布图如上。</span><br><span class="line">每个城市阈值距离 distanceThreshold = 4 内的邻居城市分别是：</span><br><span class="line">城市 0 -&gt; [城市 1, 城市 2] </span><br><span class="line">城市 1 -&gt; [城市 0, 城市 2, 城市 3] </span><br><span class="line">城市 2 -&gt; [城市 0, 城市 1, 城市 3] </span><br><span class="line">城市 3 -&gt; [城市 1, 城市 2] </span><br><span class="line">城市 0 和 3 在阈值距离 4 以内都有 2 个邻居城市，但是我们必须返回城市 3，因为它的编号最大。</span><br></pre></td></tr></table></figure>
-
-<p><strong>示例 2：</strong></p>
-<img src="/2023/11/16/leetcode11-16/find_the_city_02.png" style="zoom:50%;">
-
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">输入：n = 5, edges = [[0,1,2],[0,4,8],[1,2,3],[1,4,2],[2,3,1],[3,4,1]], distanceThreshold = 2</span><br><span class="line">输出：0</span><br><span class="line">解释：城市分布图如上。 </span><br><span class="line">每个城市阈值距离 distanceThreshold = 2 内的邻居城市分别是：</span><br><span class="line">城市 0 -&gt; [城市 1] </span><br><span class="line">城市 1 -&gt; [城市 0, 城市 4] </span><br><span class="line">城市 2 -&gt; [城市 3, 城市 4] </span><br><span class="line">城市 3 -&gt; [城市 2, 城市 4]</span><br><span class="line">城市 4 -&gt; [城市 1, 城市 2, 城市 3] </span><br><span class="line">城市 0 在阈值距离 2 以内只有 1 个邻居城市。</span><br></pre></td></tr></table></figure>
-
-<hr>
-<h2 id="解答"><a href="#解答" class="headerlink" title="解答"></a>解答</h2><h6 id="思想："><a href="#思想：" class="headerlink" title="思想："></a>思想：</h6><p>我们需要找到 <code>n</code>个节点中，拥有距离在 <code>distanceThreshold</code> 以内的邻居数量最小、且编号最大的节点。</p>
-<p>我使用的为Floyd算法<br>我们可以求出每一个节点 <code>p</code> 到其它节点的最短路，然后查看与 <code>p</code>距离在 <code>distanceThreshold</code>以内的邻居数量最小的节点。</p>
-<p>我们可以使用 Floyd 算法得到任意两点之间的最短路，然后统计满足条件的邻居数量。</p>
-<p><strong>注意的是，全片使用一个二维数组，该二维数组维护两点直接的最短路径，同时使用了三重循环，最外围的循环代表的更新该点的值进入最短路径中。</strong></p>
-<h6 id="代码："><a href="#代码：" class="headerlink" title="代码："></a>代码：</h6><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">public:</span><br><span class="line">    int findTheCity(int n, vector&lt;vector&lt;int&gt;&gt;&amp; edges, int distanceThreshold) &#123;</span><br><span class="line">        long long map[105][105];</span><br><span class="line">        memset(map,1e4+5,sizeof(map));</span><br><span class="line">        memset(dp,1e4+5,sizeof(dp));</span><br><span class="line">        int len=edges.size();</span><br><span class="line">        <span class="keyword">for</span>(int i=0;i&lt;len;i++)</span><br><span class="line">            map[edges[i][0]][edges[i][1]]=map[edges[i][1]][edges[i][0]]=edges[i][2];</span><br><span class="line">        <span class="keyword">for</span>(int i=0;i&lt;n;i++)&#123;</span><br><span class="line">            map[i][i]=0;</span><br><span class="line">        &#125;</span><br><span class="line">        /*k是代表更新到此顶点*/</span><br><span class="line">        <span class="keyword">for</span>(int k=0;k&lt;n;k++)&#123;</span><br><span class="line">            dp[k][k]=0;</span><br><span class="line">            <span class="keyword">for</span>(int i=0;i&lt;n;i++)&#123;</span><br><span class="line">                <span class="keyword">for</span>(int j=0;j&lt;n;j++)</span><br><span class="line">                    map[i][j]=min(map[i][j],map[i][k]+map[k][j]);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        int index = -1,minCnt=n+1;</span><br><span class="line">        <span class="keyword">for</span>(int k=0;k&lt;n;k++)&#123;</span><br><span class="line">            int cnt = -1;</span><br><span class="line">            <span class="keyword">for</span>(int i=0;i&lt;n;i++)&#123;</span><br><span class="line">                cout&lt;&lt;<span class="string">dp[k][i]&lt;&lt;&quot; &quot;;</span></span><br><span class="line"><span class="string">                if(map[k][i]&lt;=distanceThreshold)&#123;</span></span><br><span class="line"><span class="string">                    // cout&lt;&lt;k&lt;&lt; &quot; &quot;&lt;&lt;i&lt;&lt;endl;</span></span><br><span class="line"><span class="string">                    cnt++;</span></span><br><span class="line"><span class="string">                &#125;</span></span><br><span class="line"><span class="string">            &#125;</span></span><br><span class="line"><span class="string">            // cout&lt;&lt;&quot;k:&quot;&lt;&lt; k &lt;&lt;&quot;cnt:&quot;&lt;&lt;cnt&lt;&lt;endl;</span></span><br><span class="line"><span class="string">            if(minCnt&gt;=cnt)</span></span><br><span class="line"><span class="string">                index = k,minCnt=cnt;   </span></span><br><span class="line"><span class="string">            cout&lt;&lt;endl;</span></span><br><span class="line"><span class="string">        &#125;</span></span><br><span class="line"><span class="string">        return index;</span></span><br><span class="line"><span class="string">    &#125;</span></span><br><span class="line"><span class="string">&#125;;</span></span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>leetcode</category>
-      </categories>
-      <tags>
-        <tag>八股文</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>leetcode11-20</title>
     <url>/2023/11/20/leetcode11-20/</url>
     <content><![CDATA[<h2 id="leetcode每日一天（11-20）"><a href="#leetcode每日一天（11-20）" class="headerlink" title="leetcode每日一天（11.20）"></a>leetcode每日一天（11.20）</h2><h3 id="53-最大子数组和"><a href="#53-最大子数组和" class="headerlink" title="53. 最大子数组和"></a><em><a class="link" href="https://leetcode.cn/problems/maximum-subarray/">53. 最大子数组和<i class="fas fa-external-link-alt"></i></a></em></h3><p>给你一个整数数组 <code>nums</code> ，请你找出一个具有最大和的连续子数组（子数组最少包含一个元素），返回其最大和。</p>
@@ -692,8 +661,95 @@
 <p>这里状态的定义不是题目中的问题的定义，不能直接将最后一个状态返回回去；</p>
 <p>这里状态的定义不是题目中的问题的定义，不能直接将最后一个状态返回回去；</p>
 <p>这里状态的定义不是题目中的问题的定义，不能直接将最后一个状态返回回去。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">public:</span><br><span class="line">    int maxSubArray(vector&lt;int&gt;&amp; nums) &#123;</span><br><span class="line">        int num = nums[0],len = nums.size();</span><br><span class="line">        int <span class="built_in">sum</span>=0;</span><br><span class="line">        vector&lt;int&gt; dp(len,0);</span><br><span class="line">        dp[0]=nums[0];</span><br><span class="line">        <span class="keyword">for</span>(int i=1;i&lt;len;i++)&#123;</span><br><span class="line">            dp[i]=max(nums[i],dp[i-1]+nums[i]);</span><br><span class="line">            num = max(dp[i],num);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">return</span> num;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">maxSubArray</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">        <span class="type">int</span> num = nums[<span class="number">0</span>],len = nums.<span class="built_in">size</span>();</span><br><span class="line">        <span class="type">int</span> sum=<span class="number">0</span>;</span><br><span class="line">        <span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">dp</span><span class="params">(len,<span class="number">0</span>)</span></span>;</span><br><span class="line">        dp[<span class="number">0</span>]=nums[<span class="number">0</span>];</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;len;i++)&#123;</span><br><span class="line">            dp[i]=<span class="built_in">max</span>(nums[i],dp[i<span class="number">-1</span>]+nums[i]);</span><br><span class="line">            num = <span class="built_in">max</span>(dp[i],num);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> num;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 ]]></content>
+      <categories>
+        <category>leetcode</category>
+      </categories>
+      <tags>
+        <tag>八股文</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>leetcode11-16</title>
+    <url>/2023/11/16/leetcode11-16/</url>
+    <content><![CDATA[<h2 id="leetcode每日一天（11-16）"><a href="#leetcode每日一天（11-16）" class="headerlink" title="leetcode每日一天（11.16）"></a>leetcode每日一天（11.16）</h2><p><a class="link" href="https://leetcode.cn/problems/find-the-city-with-the-smallest-number-of-neighbors-at-a-threshold-distance/">1334. 阈值距离内邻居最少的城市 - 力扣（LeetCode）<i class="fas fa-external-link-alt"></i></a></p>
+<p>有 <code>n</code> 个城市，按从 <code>0</code> 到 <code>n-1</code> 编号。给你一个边数组 <code>edges</code>，其中 <code>edges[i] = [fromi, toi, weighti]</code> 代表 <code>fromi</code> 和 <code>toi</code> 两个城市之间的双向加权边，距离阈值是一个整数 <code>distanceThreshold</code>。</p>
+<p>返回能通过某些路径到达其他城市数目最少、且路径距离 <strong>最大</strong> 为 <code>distanceThreshold</code> 的城市。如果有多个这样的城市，则返回编号最大的城市。</p>
+<p>注意，连接城市 <em><strong>i</strong></em> 和 <em><strong>j</strong></em> 的路径的距离等于沿该路径的所有边的权重之和。</p>
+<p><strong>示例 1：</strong></p>
+<img src="/2023/11/16/leetcode11-16/find_the_city_01.png" style="zoom:50%;">
+
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">输入：n = 4, edges = [[0,1,3],[1,2,1],[1,3,4],[2,3,1]], distanceThreshold = 4</span><br><span class="line">输出：3</span><br><span class="line">解释：城市分布图如上。</span><br><span class="line">每个城市阈值距离 distanceThreshold = 4 内的邻居城市分别是：</span><br><span class="line">城市 0 -&gt; [城市 1, 城市 2] </span><br><span class="line">城市 1 -&gt; [城市 0, 城市 2, 城市 3] </span><br><span class="line">城市 2 -&gt; [城市 0, 城市 1, 城市 3] </span><br><span class="line">城市 3 -&gt; [城市 1, 城市 2] </span><br><span class="line">城市 0 和 3 在阈值距离 4 以内都有 2 个邻居城市，但是我们必须返回城市 3，因为它的编号最大。</span><br></pre></td></tr></table></figure>
+
+<p><strong>示例 2：</strong></p>
+<img src="/2023/11/16/leetcode11-16/find_the_city_02.png" style="zoom:50%;">
+
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">输入：n = 5, edges = [[0,1,2],[0,4,8],[1,2,3],[1,4,2],[2,3,1],[3,4,1]], distanceThreshold = 2</span><br><span class="line">输出：0</span><br><span class="line">解释：城市分布图如上。 </span><br><span class="line">每个城市阈值距离 distanceThreshold = 2 内的邻居城市分别是：</span><br><span class="line">城市 0 -&gt; [城市 1] </span><br><span class="line">城市 1 -&gt; [城市 0, 城市 4] </span><br><span class="line">城市 2 -&gt; [城市 3, 城市 4] </span><br><span class="line">城市 3 -&gt; [城市 2, 城市 4]</span><br><span class="line">城市 4 -&gt; [城市 1, 城市 2, 城市 3] </span><br><span class="line">城市 0 在阈值距离 2 以内只有 1 个邻居城市。</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="解答"><a href="#解答" class="headerlink" title="解答"></a>解答</h2><h6 id="思想："><a href="#思想：" class="headerlink" title="思想："></a>思想：</h6><p>我们需要找到 <code>n</code>个节点中，拥有距离在 <code>distanceThreshold</code> 以内的邻居数量最小、且编号最大的节点。</p>
+<p>我使用的为Floyd算法<br>我们可以求出每一个节点 <code>p</code> 到其它节点的最短路，然后查看与 <code>p</code>距离在 <code>distanceThreshold</code>以内的邻居数量最小的节点。</p>
+<p>我们可以使用 Floyd 算法得到任意两点之间的最短路，然后统计满足条件的邻居数量。</p>
+<p><strong>注意的是，全片使用一个二维数组，该二维数组维护两点直接的最短路径，同时使用了三重循环，最外围的循环代表的更新该点的值进入最短路径中。</strong></p>
+<h6 id="代码："><a href="#代码：" class="headerlink" title="代码："></a>代码：</h6><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">findTheCity</span><span class="params">(<span class="type">int</span> n, vector&lt;vector&lt;<span class="type">int</span>&gt;&gt;&amp; edges, <span class="type">int</span> distanceThreshold)</span> </span>&#123;</span><br><span class="line">        <span class="type">long</span> <span class="type">long</span> map[<span class="number">105</span>][<span class="number">105</span>];</span><br><span class="line">        <span class="built_in">memset</span>(map,<span class="number">1e4</span>+<span class="number">5</span>,<span class="built_in">sizeof</span>(map));</span><br><span class="line">        <span class="built_in">memset</span>(dp,<span class="number">1e4</span>+<span class="number">5</span>,<span class="built_in">sizeof</span>(dp));</span><br><span class="line">        <span class="type">int</span> len=edges.<span class="built_in">size</span>();</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;len;i++)</span><br><span class="line">            map[edges[i][<span class="number">0</span>]][edges[i][<span class="number">1</span>]]=map[edges[i][<span class="number">1</span>]][edges[i][<span class="number">0</span>]]=edges[i][<span class="number">2</span>];</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;n;i++)&#123;</span><br><span class="line">            map[i][i]=<span class="number">0</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">/*k是代表更新到此顶点*/</span></span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> k=<span class="number">0</span>;k&lt;n;k++)&#123;</span><br><span class="line">            dp[k][k]=<span class="number">0</span>;</span><br><span class="line">            <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;n;i++)&#123;</span><br><span class="line">                <span class="keyword">for</span>(<span class="type">int</span> j=<span class="number">0</span>;j&lt;n;j++)</span><br><span class="line">                    map[i][j]=<span class="built_in">min</span>(map[i][j],map[i][k]+map[k][j]);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="type">int</span> index = <span class="number">-1</span>,minCnt=n+<span class="number">1</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> k=<span class="number">0</span>;k&lt;n;k++)&#123;</span><br><span class="line">            <span class="type">int</span> cnt = <span class="number">-1</span>;</span><br><span class="line">            <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;n;i++)&#123;</span><br><span class="line">                cout&lt;&lt;dp[k][i]&lt;&lt;<span class="string">&quot; &quot;</span>;</span><br><span class="line">                <span class="keyword">if</span>(map[k][i]&lt;=distanceThreshold)&#123;</span><br><span class="line">                    <span class="comment">// cout&lt;&lt;k&lt;&lt; &quot; &quot;&lt;&lt;i&lt;&lt;endl;</span></span><br><span class="line">                    cnt++;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="comment">// cout&lt;&lt;&quot;k:&quot;&lt;&lt; k &lt;&lt;&quot;cnt:&quot;&lt;&lt;cnt&lt;&lt;endl;</span></span><br><span class="line">            <span class="keyword">if</span>(minCnt&gt;=cnt)</span><br><span class="line">                index = k,minCnt=cnt;   </span><br><span class="line">            cout&lt;&lt;endl;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> index;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>leetcode</category>
+      </categories>
+      <tags>
+        <tag>八股文</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>leetcode11-21</title>
+    <url>/2023/11/21/leetcode11-21/</url>
+    <content><![CDATA[<h2 id="leetcode每日一天（11-21）"><a href="#leetcode每日一天（11-21）" class="headerlink" title="leetcode每日一天（11.21）"></a>leetcode每日一天（11.21）</h2><h3 id="2216-美化数组的最少删除数"><a href="#2216-美化数组的最少删除数" class="headerlink" title="2216. 美化数组的最少删除数"></a><a class="link" href="https://leetcode.cn/problems/minimum-deletions-to-make-array-beautiful/">2216. 美化数组的最少删除数<i class="fas fa-external-link-alt"></i></a></h3><p>给你一个下标从 <strong>0</strong> 开始的整数数组 <code>nums</code> ，如果满足下述条件，则认为数组 <code>nums</code> 是一个 <strong>美丽数组</strong> ：</p>
+<ul>
+<li><code>nums.length</code> 为偶数</li>
+<li>对所有满足 <code>i % 2 == 0</code> 的下标 <code>i</code> ，<code>nums[i] != nums[i + 1]</code> 均成立</li>
+</ul>
+<p>注意，空数组同样认为是美丽数组。</p>
+<p>你可以从 <code>nums</code> 中删除任意数量的元素。当你删除一个元素时，被删除元素右侧的所有元素将会向左移动一个单位以填补空缺，而左侧的元素将会保持 <strong>不变</strong> 。</p>
+<p>返回使 <code>nums</code> 变为美丽数组所需删除的 <strong>最少</strong> 元素数目<em>。</em></p>
+<p><strong>示例 1：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">输入：nums = [1,1,2,3,5]</span><br><span class="line">输出：1</span><br><span class="line">解释：可以删除 nums[0] 或 nums[1] ，这样得到的 nums = [1,2,3,5] 是一个美丽数组。可以证明，要想使 nums 变为美丽数组，至少需要删除 1 个元素。</span><br></pre></td></tr></table></figure>
+
+<p><strong>示例 2：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">输入：nums = [1,1,2,2,3,3]</span><br><span class="line">输出：2</span><br><span class="line">解释：可以删除 nums[0] 和 nums[5] ，这样得到的 nums = [1,2,2,3] 是一个美丽数组。可以证明，要想使 nums 变为美丽数组，至少需要删除 2 个元素。</span><br></pre></td></tr></table></figure>
+
+<p> <strong>提示：</strong></p>
+<ul>
+<li><code>1 &lt;= nums.length &lt;= 105</code></li>
+<li><code>0 &lt;= nums[i] &lt;= 105</code></li>
+</ul>
+<hr>
+<h2 id="解答"><a href="#解答" class="headerlink" title="解答"></a>解答</h2><h6 id="思想：贪心"><a href="#思想：贪心" class="headerlink" title="思想：贪心"></a>思想：贪心</h6><p>这是一道典型的使用<strong>贪心</strong>解决的问题。</p>
+<p><strong>关键 1：理解题意</strong></p>
+<p>题目要我们找出需要删掉多少个数字达到美化数组。</p>
+<p>题目只要求返回结果，不要求得到美化数组。我们就可以通过思路计算即可。</p>
+<p><strong>关键 2：思路</strong></p>
+<p>设计状态思路：思考题意，完美数组的长度为<strong>偶数</strong>，且要求位于偶数位的数字与<strong>接邻</strong>的数字不相同。<br>既然是可以删掉数字，然后原数组位于奇数位置还是偶数位置并不重要，我们仅仅需要得到的美化数组是这样的规则即可， 那<strong>我们可以直接从原数组找寻两个相邻数字不同的保留即可</strong>，遍历一遍后记录保留的数字个数，用原数组长度减去则得到删掉的个数。</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">minDeletion</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">        <span class="type">int</span> len=nums.<span class="built_in">size</span>(),num=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;len<span class="number">-1</span>;i++)</span><br><span class="line">            <span class="keyword">if</span>(nums[i]!=nums[i+<span class="number">1</span>])</span><br><span class="line">                num++,i++;</span><br><span class="line">        <span class="keyword">return</span> len<span class="number">-2</span>*num;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>leetcode</category>
+      </categories>
+      <tags>
+        <tag>八股文</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>leetcode9.20</title>
+    <url>/2022/09/20/leetcode9-20/</url>
+    <content><![CDATA[<h2 id="leetcode每日一天（9-20）"><a href="#leetcode每日一天（9-20）" class="headerlink" title="leetcode每日一天（9.20）"></a>leetcode每日一天（9.20）</h2><p><a class="link" href="https://leetcode.cn/problems/partition-to-k-equal-sum-subsets/">题目：698. 划分为k个相等的子集<i class="fas fa-external-link-alt"></i></a><br>给定一个整数数组  nums 和一个正整数 k，找出是否有可能把这个数组分成 k 个非空子集，其总和都相等。</p>
+<h6 id="示例1"><a href="#示例1" class="headerlink" title="示例1"></a>示例1</h6><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">输入： nums = [4, 3, 2, 3, 5, 2, 1], k = 4</span><br><span class="line">输出： True</span><br><span class="line">说明： 有可能将其分成 4 个子集（5），（1,4），（2,3），（2,3）等于总和。</span><br></pre></td></tr></table></figure>
+<h6 id="示例2"><a href="#示例2" class="headerlink" title="示例2"></a>示例2</h6><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">输入: nums = [1,2,3,4], k = 3</span><br><span class="line">输出: <span class="literal">false</span></span><br></pre></td></tr></table></figure>
+<h6 id="提示"><a href="#提示" class="headerlink" title="提示"></a>提示</h6><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">1 &lt;= k &lt;= len(nums) &lt;= 16</span><br><span class="line">0 &lt; nums[i] &lt; 10000</span><br><span class="line">每个元素的频率在 [1,4] 范围内</span><br></pre></td></tr></table></figure>
+<hr>
+<h2 id="解答"><a href="#解答" class="headerlink" title="解答"></a>解答</h2><h6 id="思想："><a href="#思想：" class="headerlink" title="思想："></a>思想：</h6><p>我们可以把每个集合看做一个桶，然后我们可以通过dfs和剪枝来模拟每个数值入桶和出桶。</p>
+<h6 id="剪枝："><a href="#剪枝：" class="headerlink" title="剪枝："></a>剪枝：</h6><p>因为我们需要有k个桶且每个桶的值是相等的。以此可以推出给定的值相加一定是桶的值的倍速，并且不会存在比桶值大的数值。最关键的剪枝为，我们在dfs遍历一个桶是否可以装满，如果回溯的时候发现这个桶回到了初始值，则证明这个桶是装不满的。然而，每个桶都是一样的，这个桶装不满则其他桶一样装不满。</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">bool</span> <span class="title">canPartitionKSubsets</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; nums, <span class="type">int</span> k)</span> </span>&#123;</span><br><span class="line">    <span class="type">int</span> sum=<span class="number">0</span>,size=nums.<span class="built_in">size</span>();</span><br><span class="line">    <span class="type">int</span> maxN=<span class="number">-1</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;size;i++)</span><br><span class="line">        sum+=nums[i],maxN=<span class="built_in">max</span>(maxN,nums[i]);</span><br><span class="line">    <span class="keyword">if</span>(sum%k!=<span class="number">0</span>||maxN&gt;sum/k)</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    sum=sum/k;</span><br><span class="line">    <span class="built_in">sort</span>(nums.<span class="built_in">begin</span>(), nums.<span class="built_in">end</span>());</span><br><span class="line">  <span class="comment">//  cout&lt;&lt;nums[0];</span></span><br><span class="line">    <span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">arr</span><span class="params">(k,sum)</span></span>;</span><br><span class="line">    <span class="type">bool</span> t=<span class="literal">false</span>;</span><br><span class="line">    t=<span class="built_in">dfs</span>(nums,arr,size<span class="number">-1</span>,k,size,sum);</span><br><span class="line">    <span class="keyword">return</span> t;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//nums给定数组 arr模拟每一个桶  cur以此遍历每个数值 k一共有几个桶 size原数组大小 sum每个桶的值</span></span><br><span class="line"><span class="function"><span class="type">bool</span> <span class="title">dfs</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; nums,vector&lt;<span class="type">int</span>&gt;&amp; arr,<span class="type">int</span> cur,<span class="type">int</span> k,<span class="type">int</span> size,<span class="type">int</span> sum)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(cur &lt; <span class="number">0</span>)&#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;k;i++)</span><br><span class="line">            <span class="keyword">if</span>(arr[i]!=<span class="number">0</span>)</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;k;i++)&#123;</span><br><span class="line">        <span class="keyword">if</span>(arr[i]-nums[cur]&lt;nums[<span class="number">0</span>]&amp;&amp;arr[i]!=nums[cur])</span><br><span class="line">            <span class="keyword">continue</span>;</span><br><span class="line">        arr[i] -= nums[cur];</span><br><span class="line">        <span class="comment">// for(int j=0;j&lt;k;j++)</span></span><br><span class="line">        <span class="comment">//     cout&lt;&lt;arr[i]&lt;&lt;&quot; &quot;;</span></span><br><span class="line">        <span class="comment">// cout&lt;&lt;endl;</span></span><br><span class="line">        <span class="keyword">if</span>(<span class="built_in">dfs</span>(nums,arr,cur<span class="number">-1</span>,k,size,sum))</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">        arr[i] += nums[cur];</span><br><span class="line">        <span class="keyword">if</span>(arr[i]==sum)</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
       <categories>
         <category>leetcode</category>
       </categories>
@@ -725,10 +781,10 @@
 - 第二个转移方程表示在删除一次的情况下，以 arr[i] 为结尾的非空子数组有两种情况：
     1. 不删除 arr[i]，那么选择 arr[i] 与 dp[i−1][1] 对应的子数组（已执行一次删除）。
     2. 删除 arr[i]，那么选择 dp[i−1][0] 对应的非空子数组（未执行一次删除，但是等同于删除了 arr[i]）。
-dp[i][1] 取以上两种情况的最大和的最大值。
+    dp[i][1] 取以上两种情况的最大和的最大值。
 
 <p><strong>注意到 dp[i][∗]的值只与 dp[i−1][∗] 有关，因此我们可以只使用两个整数来节省空间。</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">public:</span><br><span class="line">    int maximumSum(vector&lt;int&gt;&amp; arr) &#123;</span><br><span class="line">        int dp0=arr[0],dp1=0,res=arr[0];</span><br><span class="line">        int len = arr.size();</span><br><span class="line">        for(int i=1;i&lt;len;i++)&#123;</span><br><span class="line">            dp1 = max(dp0,dp1+arr[i]);</span><br><span class="line">            dp0 = max(dp0,0) + arr[i];</span><br><span class="line">            res = max(res,max(dp0,dp1));</span><br><span class="line">        &#125;</span><br><span class="line">        return res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>]]></content>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">maximumSum</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; arr)</span> </span>&#123;</span><br><span class="line">        <span class="type">int</span> dp0=arr[<span class="number">0</span>],dp1=<span class="number">0</span>,res=arr[<span class="number">0</span>];</span><br><span class="line">        <span class="type">int</span> len = arr.<span class="built_in">size</span>();</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;len;i++)&#123;</span><br><span class="line">            dp1 = <span class="built_in">max</span>(dp0,dp1+arr[i]);</span><br><span class="line">            dp0 = <span class="built_in">max</span>(dp0,<span class="number">0</span>) + arr[i];</span><br><span class="line">            res = <span class="built_in">max</span>(res,<span class="built_in">max</span>(dp0,dp1));</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>]]></content>
       <categories>
         <category>leetcode</category>
       </categories>
@@ -752,73 +808,12 @@ dp[i][1] 取以上两种情况的最大和的最大值。
 <hr>
 <h2 id="解答"><a href="#解答" class="headerlink" title="解答"></a>解答</h2><h6 id="思想："><a href="#思想：" class="headerlink" title="思想："></a>思想：</h6><p>这是一道水题目，主要是用到数据结构里面的链表，我是用的c++里面的ListNode来解答这题比较轻松。题目要求有三处增加函数，实质上在首部添加数值和在尾部添加数值的操作可以归纳为addAtIndex，则我们在addAtHead和addAtTail可以直接调用addAtIndex用来减少我们的代码量。</p>
 <h6 id="ListNode的结构："><a href="#ListNode的结构：" class="headerlink" title="ListNode的结构："></a>ListNode的结构：</h6><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">struct ListNode &#123;</span><br><span class="line">      int val;  //当前结点的值</span><br><span class="line">      ListNode *next;  //指向下一个结点的指针</span><br><span class="line">      ListNode(int x) : val(x), next(NULL) &#123;&#125;  //初始化当前结点值为x,指针为空</span><br><span class="line">  &#125;;</span><br><span class="line"></span><br><span class="line">ListNode *p=new ListNode(0); //新增一个节点</span><br><span class="line">delete p; //删除一个节点，释放内存</span><br></pre></td></tr></table></figure>
-<h6 id="代码："><a href="#代码：" class="headerlink" title="代码："></a>代码：</h6><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">class MyLinkedList &#123;</span><br><span class="line">public:</span><br><span class="line">    <span class="function"><span class="title">MyLinkedList</span></span>() &#123;</span><br><span class="line">        this-&gt;size = 0;</span><br><span class="line">        this-&gt;<span class="built_in">head</span> = new ListNode(0); //首节点，值无意义</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    int get(int index) &#123;</span><br><span class="line">        <span class="keyword">if</span>(index&lt;0||index&gt;=size)</span><br><span class="line">            <span class="built_in">return</span> -1;</span><br><span class="line">        ListNode *cur = <span class="built_in">head</span>;</span><br><span class="line">        <span class="keyword">for</span> (int i = 0; i &lt;= index; i++) &#123;</span><br><span class="line">            cur = cur-&gt;next;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">return</span> cur-&gt;val;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    void addAtHead(int val) &#123;</span><br><span class="line">        addAtIndex(0, val);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    void addAtTail(int val) &#123;</span><br><span class="line">        addAtIndex(size,val);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    void addAtIndex(int index, int val) &#123;</span><br><span class="line">        <span class="keyword">if</span>(index&gt;size)</span><br><span class="line">            <span class="built_in">return</span>;</span><br><span class="line">        index=max(0,index);</span><br><span class="line">        ListNode *cur=<span class="built_in">head</span>;</span><br><span class="line">        <span class="keyword">for</span>(int i=0;i&lt;index;i++)</span><br><span class="line">            cur=cur-&gt;next;</span><br><span class="line">        ListNode *toAdd = new ListNode(val);</span><br><span class="line">        toAdd-&gt;next = cur-&gt;next;</span><br><span class="line">        cur-&gt;next = toAdd;</span><br><span class="line">        size++;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    void deleteAtIndex(int index) &#123;</span><br><span class="line">        <span class="keyword">if</span>(index&lt;0||index&gt;=size)</span><br><span class="line">            <span class="built_in">return</span>;</span><br><span class="line">        ListNode *cur=<span class="built_in">head</span>;</span><br><span class="line">        size--;</span><br><span class="line">        <span class="keyword">for</span>(int i=0;i&lt;index;i++)</span><br><span class="line">            cur=cur-&gt;next;</span><br><span class="line">        ListNode *p = cur-&gt;next;</span><br><span class="line">        cur-&gt;next = cur-&gt;next-&gt;next;</span><br><span class="line">        delete p;</span><br><span class="line">    &#125;</span><br><span class="line">private:</span><br><span class="line">    int size;</span><br><span class="line">    ListNode *<span class="built_in">head</span>;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">/**</span><br><span class="line"> * Your MyLinkedList object will be instantiated and called as such:</span><br><span class="line"> * MyLinkedList* obj = new MyLinkedList();</span><br><span class="line"> * int param_1 = obj-&gt;get(index);</span><br><span class="line"> * obj-&gt;addAtHead(val);</span><br><span class="line"> * obj-&gt;addAtTail(val);</span><br><span class="line"> * obj-&gt;addAtIndex(index,val);</span><br><span class="line"> * obj-&gt;deleteAtIndex(index);</span><br><span class="line"> */</span><br></pre></td></tr></table></figure>]]></content>
+<h6 id="代码："><a href="#代码：" class="headerlink" title="代码："></a>代码：</h6><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">MyLinkedList</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="built_in">MyLinkedList</span>() &#123;</span><br><span class="line">        <span class="keyword">this</span>-&gt;size = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">this</span>-&gt;head = <span class="keyword">new</span> <span class="built_in">ListNode</span>(<span class="number">0</span>); <span class="comment">//首节点，值无意义</span></span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">get</span><span class="params">(<span class="type">int</span> index)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(index&lt;<span class="number">0</span>||index&gt;=size)</span><br><span class="line">            <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">        ListNode *cur = head;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt;= index; i++) &#123;</span><br><span class="line">            cur = cur-&gt;next;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> cur-&gt;val;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">addAtHead</span><span class="params">(<span class="type">int</span> val)</span> </span>&#123;</span><br><span class="line">        <span class="built_in">addAtIndex</span>(<span class="number">0</span>, val);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">addAtTail</span><span class="params">(<span class="type">int</span> val)</span> </span>&#123;</span><br><span class="line">        <span class="built_in">addAtIndex</span>(size,val);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">addAtIndex</span><span class="params">(<span class="type">int</span> index, <span class="type">int</span> val)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(index&gt;size)</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        index=<span class="built_in">max</span>(<span class="number">0</span>,index);</span><br><span class="line">        ListNode *cur=head;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;index;i++)</span><br><span class="line">            cur=cur-&gt;next;</span><br><span class="line">        ListNode *toAdd = <span class="keyword">new</span> <span class="built_in">ListNode</span>(val);</span><br><span class="line">        toAdd-&gt;next = cur-&gt;next;</span><br><span class="line">        cur-&gt;next = toAdd;</span><br><span class="line">        size++;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">deleteAtIndex</span><span class="params">(<span class="type">int</span> index)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(index&lt;<span class="number">0</span>||index&gt;=size)</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        ListNode *cur=head;</span><br><span class="line">        size--;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;index;i++)</span><br><span class="line">            cur=cur-&gt;next;</span><br><span class="line">        ListNode *p = cur-&gt;next;</span><br><span class="line">        cur-&gt;next = cur-&gt;next-&gt;next;</span><br><span class="line">        <span class="keyword">delete</span> p;</span><br><span class="line">    &#125;</span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">    <span class="type">int</span> size;</span><br><span class="line">    ListNode *head;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Your MyLinkedList object will be instantiated and called as such:</span></span><br><span class="line"><span class="comment"> * MyLinkedList* obj = new MyLinkedList();</span></span><br><span class="line"><span class="comment"> * int param_1 = obj-&gt;get(index);</span></span><br><span class="line"><span class="comment"> * obj-&gt;addAtHead(val);</span></span><br><span class="line"><span class="comment"> * obj-&gt;addAtTail(val);</span></span><br><span class="line"><span class="comment"> * obj-&gt;addAtIndex(index,val);</span></span><br><span class="line"><span class="comment"> * obj-&gt;deleteAtIndex(index);</span></span><br><span class="line"><span class="comment"> */</span></span><br></pre></td></tr></table></figure>]]></content>
       <categories>
         <category>leetcode</category>
       </categories>
       <tags>
         <tag>八股文</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>leetcode9.20</title>
-    <url>/2022/09/20/leetcode9-20/</url>
-    <content><![CDATA[<h2 id="leetcode每日一天（9-20）"><a href="#leetcode每日一天（9-20）" class="headerlink" title="leetcode每日一天（9.20）"></a>leetcode每日一天（9.20）</h2><p><a class="link" href="https://leetcode.cn/problems/partition-to-k-equal-sum-subsets/">题目：698. 划分为k个相等的子集<i class="fas fa-external-link-alt"></i></a><br>给定一个整数数组  nums 和一个正整数 k，找出是否有可能把这个数组分成 k 个非空子集，其总和都相等。</p>
-<h6 id="示例1"><a href="#示例1" class="headerlink" title="示例1"></a>示例1</h6><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">输入： nums = [4, 3, 2, 3, 5, 2, 1], k = 4</span><br><span class="line">输出： True</span><br><span class="line">说明： 有可能将其分成 4 个子集（5），（1,4），（2,3），（2,3）等于总和。</span><br></pre></td></tr></table></figure>
-<h6 id="示例2"><a href="#示例2" class="headerlink" title="示例2"></a>示例2</h6><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">输入: nums = [1,2,3,4], k = 3</span><br><span class="line">输出: <span class="literal">false</span></span><br></pre></td></tr></table></figure>
-<h6 id="提示"><a href="#提示" class="headerlink" title="提示"></a>提示</h6><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">1 &lt;= k &lt;= len(nums) &lt;= 16</span><br><span class="line">0 &lt; nums[i] &lt; 10000</span><br><span class="line">每个元素的频率在 [1,4] 范围内</span><br></pre></td></tr></table></figure>
-<hr>
-<h2 id="解答"><a href="#解答" class="headerlink" title="解答"></a>解答</h2><h6 id="思想："><a href="#思想：" class="headerlink" title="思想："></a>思想：</h6><p>我们可以把每个集合看做一个桶，然后我们可以通过dfs和剪枝来模拟每个数值入桶和出桶。</p>
-<h6 id="剪枝："><a href="#剪枝：" class="headerlink" title="剪枝："></a>剪枝：</h6><p>因为我们需要有k个桶且每个桶的值是相等的。以此可以推出给定的值相加一定是桶的值的倍速，并且不会存在比桶值大的数值。最关键的剪枝为，我们在dfs遍历一个桶是否可以装满，如果回溯的时候发现这个桶回到了初始值，则证明这个桶是装不满的。然而，每个桶都是一样的，这个桶装不满则其他桶一样装不满。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">bool canPartitionKSubsets(vector&lt;int&gt;&amp; nums, int k) &#123;</span><br><span class="line">    int <span class="built_in">sum</span>=0,size=nums.size();</span><br><span class="line">    int maxN=-1;</span><br><span class="line">    <span class="keyword">for</span>(int i=0;i&lt;size;i++)</span><br><span class="line">        <span class="built_in">sum</span>+=nums[i],maxN=max(maxN,nums[i]);</span><br><span class="line">    <span class="keyword">if</span>(<span class="built_in">sum</span>%k!=0||maxN&gt;<span class="built_in">sum</span>/k)</span><br><span class="line">        <span class="built_in">return</span> <span class="literal">false</span>;</span><br><span class="line">    <span class="built_in">sum</span>=<span class="built_in">sum</span>/k;</span><br><span class="line">    <span class="built_in">sort</span>(nums.begin(), nums.end());</span><br><span class="line">  //  cout&lt;&lt;<span class="string">nums[0];</span></span><br><span class="line"><span class="string">    vector&lt;int&gt; arr(k,sum);</span></span><br><span class="line"><span class="string">    bool t=false;</span></span><br><span class="line"><span class="string">    t=dfs(nums</span>,arr,size-1,k,size,<span class="built_in">sum</span>);</span><br><span class="line">    <span class="built_in">return</span> t;</span><br><span class="line">&#125;</span><br><span class="line">//nums给定数组 arr模拟每一个桶  cur以此遍历每个数值 k一共有几个桶 size原数组大小 <span class="built_in">sum</span>每个桶的值</span><br><span class="line">bool dfs(vector&lt;int&gt;&amp; nums,vector&lt;int&gt;&amp; arr,int cur,int k,int size,int <span class="built_in">sum</span>)&#123;</span><br><span class="line">    <span class="keyword">if</span>(cur &lt; 0)&#123;</span><br><span class="line">        <span class="keyword">for</span>(int i=0;i&lt;k;i++)</span><br><span class="line">            <span class="keyword">if</span>(arr[i]!=0)</span><br><span class="line">                <span class="built_in">return</span> <span class="literal">false</span>;</span><br><span class="line">        <span class="built_in">return</span> <span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>(int i=0;i&lt;k;i++)&#123;</span><br><span class="line">        <span class="keyword">if</span>(arr[i]-nums[cur]&lt;nums[0]&amp;&amp;arr[i]!=nums[cur])</span><br><span class="line">            <span class="built_in">continue</span>;</span><br><span class="line">        arr[i] -= nums[cur];</span><br><span class="line">        // <span class="keyword">for</span>(int j=0;j&lt;k;j++)</span><br><span class="line">        //     cout&lt;&lt;<span class="string">arr[i]&lt;&lt;&quot; &quot;;</span></span><br><span class="line"><span class="string">        // cout&lt;&lt;endl;</span></span><br><span class="line"><span class="string">        if(dfs(nums,arr</span>,cur-1,k,size,<span class="built_in">sum</span>))</span><br><span class="line">            <span class="built_in">return</span> <span class="literal">true</span>;</span><br><span class="line">        arr[i] += nums[cur];</span><br><span class="line">        <span class="keyword">if</span>(arr[i]==<span class="built_in">sum</span>)</span><br><span class="line">            <span class="built_in">break</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">return</span> <span class="literal">false</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>leetcode</category>
-      </categories>
-      <tags>
-        <tag>八股文</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>博客新增了搜索、分类还有标签功能</title>
-    <url>/2022/09/23/newHexoSomeFunction/</url>
-    <content><![CDATA[<p>今天为博客新增了搜索、分类还有标签功能</p>
-<h2 id="搜索功能添加"><a href="#搜索功能添加" class="headerlink" title="搜索功能添加"></a>搜索功能添加</h2><p>本文主要描述了怎么添加hexo博客搜索插件，然后启动搜索功能，对两个本地搜索插件的使用进行了描述，文章可能还有很多不足，请大家谅解，欢迎大佬提意见。</p>
-<h3 id="本文用的东西"><a href="#本文用的东西" class="headerlink" title="本文用的东西"></a>本文用的东西</h3><ol>
-<li>hexo</li>
-<li>电脑</li>
-</ol>
-<h3 id="部署"><a href="#部署" class="headerlink" title="部署"></a>部署</h3><h4 id="插件比较"><a href="#插件比较" class="headerlink" title="插件比较"></a>插件比较</h4><p>“hexo-generator-searchdb”插件功能比较强大，可以替代后面讲的第二个插件“hexo-generator-json-content”插件。而“hexo-generator-json-content”插件只能生产json文件，且不能定义文件名，无法替代“hexo-generator-searchdb”插件，但是“hexo-generator-json-content”可以定义生成的json文件的格式。</p>
-<h4 id="hexo-generator-searchdb插件"><a href="#hexo-generator-searchdb插件" class="headerlink" title="hexo-generator-searchdb插件"></a>hexo-generator-searchdb插件</h4><h5 id="插件原理"><a href="#插件原理" class="headerlink" title="插件原理"></a>插件原理</h5><p>这个插件会扫描博客文章，根据“——config.yml”的配置从文章里获取内容生成一个xml&#x2F;json文件的结果，类似于博客中文章信息的摘要把，搜索的时候就搜索这个文件的内容。</p>
-<h5 id="添加插件"><a href="#添加插件" class="headerlink" title="添加插件"></a>添加插件</h5><ol>
-<li>打开<code>cmd</code></li>
-<li>输入以下命令添加博客搜索插件。<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">//未配置淘宝的数据源</span><br><span class="line">npm install hexo-generator-searchdb --save</span><br><span class="line">//配置淘宝数据源的可以使用这条命令，网络会好一些</span><br><span class="line">cnpm install hexo-generator-searchdb --save</span><br></pre></td></tr></table></figure></li>
-<li>打开博客目录，找到<code>_config.yml</code>文件，添加以下内容。<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">search:</span><br><span class="line">  path: search.xml</span><br><span class="line">  field: post</span><br><span class="line">  content: <span class="literal">true</span></span><br><span class="line">  format: html</span><br></pre></td></tr></table></figure>
-<code>path</code>：表示搜索后生成的文件路径，可以生成xml和json两种格式；将path设置为<code>content.json</code>就可以替代第二个插件。<br><code>field</code>：表示搜索的范围，有<code>post</code>、<code>page</code>和<code>all</code>三种值。<br>    <code>post</code>：所有的文章；<br>    <code>page</code>：所有顶部导航选项的页面；<br>    <code>all</code>：所有的文章和顶部导航选项的页面。<br><code>content</code>：是否包含搜索到的文章的全部内容。如果<code>false</code>，生成的结果只包括标题和创建时间这些信息，没有文章主体。默认情况下是<code>true</code>.<br><code>format</code>：搜索到的内容、选项的格式。<br>    <code>html</code>(默认)：将html原文本缩略。<br>    <code>striptags</code>：将html原文本缩略，并删除所有标记。<br>    <code>raw</code>：记下每一篇文章或每一页的文字。</li>
-</ol>
-<h5 id="使用插件"><a href="#使用插件" class="headerlink" title="使用插件"></a>使用插件</h5><p>打开博客目录目录，找到当前正在使用的主题的<code>_config.yml</code>文件，打开进行编辑，找到<code>local_search</code>，修改<code>enable</code>的值为<code>true</code>。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 本地搜索</span></span><br><span class="line">local_search:</span><br><span class="line">  <span class="built_in">enable</span>: <span class="literal">true</span></span><br></pre></td></tr></table></figure>
-<p>到此即可使用搜索功能了</p>
-<hr>
-<h2 id="分类、标签和留言功能添加"><a href="#分类、标签和留言功能添加" class="headerlink" title="分类、标签和留言功能添加"></a>分类、标签和留言功能添加</h2><p>这三个功能实际上是异曲同工的。使用类似的方法即可添加</p>
-<h4 id="新建标签页"><a href="#新建标签页" class="headerlink" title="新建标签页"></a>新建标签页</h4><p>用命令行新建一个页面：（页面名称可以任意）</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo new page <span class="string">&quot;tages&quot;</span> </span><br></pre></td></tr></table></figure>
-<h4 id="设置其类型-type-值为“tages”"><a href="#设置其类型-type-值为“tages”" class="headerlink" title="设置其类型 type 值为“tages”"></a>设置其类型 type 值为“tages”</h4><p>用命令行新建一个页打开 &#x2F;source&#x2F;tages&#x2F;index.md，设置其类型<code>type</code>值为<code>tages</code>：（页面名称可以任意）</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">title: tags</span><br><span class="line"><span class="built_in">date</span>: 2019-07-26 00:33:58</span><br><span class="line"><span class="built_in">type</span>: <span class="string">&quot;tags&quot;</span></span><br></pre></td></tr></table></figure>
-<p>如果需要多个标签或者分类的话</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">categories:</span><br><span class="line">- 分类</span><br><span class="line">- 子分类</span><br><span class="line">- 子子分类</span><br><span class="line">tags:</span><br><span class="line">- 标签1</span><br><span class="line">- 标签2</span><br></pre></td></tr></table></figure>
-<h4 id="在主题的配置文件更改"><a href="#在主题的配置文件更改" class="headerlink" title="在主题的配置文件更改"></a>在主题的配置文件更改</h4><p>打开 &#x2F;themes&#x2F;主题&#x2F;_config.yml，把tages标签那项取消注释即可，下面的是已经取消注释了的。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">menu:</span><br><span class="line">  主页: /</span><br><span class="line">  <span class="comment">#随笔: /tags/随笔/</span></span><br><span class="line">  <span class="comment">#分类: /categories</span></span><br><span class="line">  <span class="comment">#归档: /archives</span></span><br><span class="line">  标签: /tags</span><br></pre></td></tr></table></figure>
-
-
-
-]]></content>
-      <categories>
-        <category>hexo</category>
-      </categories>
-      <tags>
-        <tag>hexo</tag>
-        <tag>hexo搜索</tag>
-        <tag>hexo分类、标签和留言墙</tag>
       </tags>
   </entry>
   <entry>
@@ -903,6 +898,49 @@ twikoo-func填写最新的版本</li>
       </tags>
   </entry>
   <entry>
+    <title>博客新增了搜索、分类还有标签功能</title>
+    <url>/2022/09/23/newHexoSomeFunction/</url>
+    <content><![CDATA[<p>今天为博客新增了搜索、分类还有标签功能</p>
+<h2 id="搜索功能添加"><a href="#搜索功能添加" class="headerlink" title="搜索功能添加"></a>搜索功能添加</h2><p>本文主要描述了怎么添加hexo博客搜索插件，然后启动搜索功能，对两个本地搜索插件的使用进行了描述，文章可能还有很多不足，请大家谅解，欢迎大佬提意见。</p>
+<h3 id="本文用的东西"><a href="#本文用的东西" class="headerlink" title="本文用的东西"></a>本文用的东西</h3><ol>
+<li>hexo</li>
+<li>电脑</li>
+</ol>
+<h3 id="部署"><a href="#部署" class="headerlink" title="部署"></a>部署</h3><h4 id="插件比较"><a href="#插件比较" class="headerlink" title="插件比较"></a>插件比较</h4><p>“hexo-generator-searchdb”插件功能比较强大，可以替代后面讲的第二个插件“hexo-generator-json-content”插件。而“hexo-generator-json-content”插件只能生产json文件，且不能定义文件名，无法替代“hexo-generator-searchdb”插件，但是“hexo-generator-json-content”可以定义生成的json文件的格式。</p>
+<h4 id="hexo-generator-searchdb插件"><a href="#hexo-generator-searchdb插件" class="headerlink" title="hexo-generator-searchdb插件"></a>hexo-generator-searchdb插件</h4><h5 id="插件原理"><a href="#插件原理" class="headerlink" title="插件原理"></a>插件原理</h5><p>这个插件会扫描博客文章，根据“——config.yml”的配置从文章里获取内容生成一个xml&#x2F;json文件的结果，类似于博客中文章信息的摘要把，搜索的时候就搜索这个文件的内容。</p>
+<h5 id="添加插件"><a href="#添加插件" class="headerlink" title="添加插件"></a>添加插件</h5><ol>
+<li>打开<code>cmd</code></li>
+<li>输入以下命令添加博客搜索插件。<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">//未配置淘宝的数据源</span><br><span class="line">npm install hexo-generator-searchdb --save</span><br><span class="line">//配置淘宝数据源的可以使用这条命令，网络会好一些</span><br><span class="line">cnpm install hexo-generator-searchdb --save</span><br></pre></td></tr></table></figure></li>
+<li>打开博客目录，找到<code>_config.yml</code>文件，添加以下内容。<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">search:</span><br><span class="line">  path: search.xml</span><br><span class="line">  field: post</span><br><span class="line">  content: <span class="literal">true</span></span><br><span class="line">  format: html</span><br></pre></td></tr></table></figure>
+<code>path</code>：表示搜索后生成的文件路径，可以生成xml和json两种格式；将path设置为<code>content.json</code>就可以替代第二个插件。<br><code>field</code>：表示搜索的范围，有<code>post</code>、<code>page</code>和<code>all</code>三种值。<br>    <code>post</code>：所有的文章；<br>    <code>page</code>：所有顶部导航选项的页面；<br>    <code>all</code>：所有的文章和顶部导航选项的页面。<br><code>content</code>：是否包含搜索到的文章的全部内容。如果<code>false</code>，生成的结果只包括标题和创建时间这些信息，没有文章主体。默认情况下是<code>true</code>.<br><code>format</code>：搜索到的内容、选项的格式。<br>    <code>html</code>(默认)：将html原文本缩略。<br>    <code>striptags</code>：将html原文本缩略，并删除所有标记。<br>    <code>raw</code>：记下每一篇文章或每一页的文字。</li>
+</ol>
+<h5 id="使用插件"><a href="#使用插件" class="headerlink" title="使用插件"></a>使用插件</h5><p>打开博客目录目录，找到当前正在使用的主题的<code>_config.yml</code>文件，打开进行编辑，找到<code>local_search</code>，修改<code>enable</code>的值为<code>true</code>。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 本地搜索</span></span><br><span class="line">local_search:</span><br><span class="line">  <span class="built_in">enable</span>: <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+<p>到此即可使用搜索功能了</p>
+<hr>
+<h2 id="分类、标签和留言功能添加"><a href="#分类、标签和留言功能添加" class="headerlink" title="分类、标签和留言功能添加"></a>分类、标签和留言功能添加</h2><p>这三个功能实际上是异曲同工的。使用类似的方法即可添加</p>
+<h4 id="新建标签页"><a href="#新建标签页" class="headerlink" title="新建标签页"></a>新建标签页</h4><p>用命令行新建一个页面：（页面名称可以任意）</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo new page <span class="string">&quot;tages&quot;</span> </span><br></pre></td></tr></table></figure>
+<h4 id="设置其类型-type-值为“tages”"><a href="#设置其类型-type-值为“tages”" class="headerlink" title="设置其类型 type 值为“tages”"></a>设置其类型 type 值为“tages”</h4><p>用命令行新建一个页打开 &#x2F;source&#x2F;tages&#x2F;index.md，设置其类型<code>type</code>值为<code>tages</code>：（页面名称可以任意）</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">title: tags</span><br><span class="line"><span class="built_in">date</span>: 2019-07-26 00:33:58</span><br><span class="line"><span class="built_in">type</span>: <span class="string">&quot;tags&quot;</span></span><br></pre></td></tr></table></figure>
+<p>如果需要多个标签或者分类的话</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">categories:</span><br><span class="line">- 分类</span><br><span class="line">- 子分类</span><br><span class="line">- 子子分类</span><br><span class="line">tags:</span><br><span class="line">- 标签1</span><br><span class="line">- 标签2</span><br></pre></td></tr></table></figure>
+<h4 id="在主题的配置文件更改"><a href="#在主题的配置文件更改" class="headerlink" title="在主题的配置文件更改"></a>在主题的配置文件更改</h4><p>打开 &#x2F;themes&#x2F;主题&#x2F;_config.yml，把tages标签那项取消注释即可，下面的是已经取消注释了的。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">menu:</span><br><span class="line">  主页: /</span><br><span class="line">  <span class="comment">#随笔: /tags/随笔/</span></span><br><span class="line">  <span class="comment">#分类: /categories</span></span><br><span class="line">  <span class="comment">#归档: /archives</span></span><br><span class="line">  标签: /tags</span><br></pre></td></tr></table></figure>
+
+
+
+]]></content>
+      <categories>
+        <category>hexo</category>
+      </categories>
+      <tags>
+        <tag>hexo</tag>
+        <tag>hexo搜索</tag>
+        <tag>hexo分类、标签和留言墙</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>pytorch安装</title>
     <url>/2022/10/02/pytorchsetup/</url>
     <content><![CDATA[<h2 id="Anaconda的安装以及使用清华源镜像安装pytorch"><a href="#Anaconda的安装以及使用清华源镜像安装pytorch" class="headerlink" title="Anaconda的安装以及使用清华源镜像安装pytorch"></a>Anaconda的安装以及使用清华源镜像安装pytorch</h2><h3 id="Anaconda的安装"><a href="#Anaconda的安装" class="headerlink" title="Anaconda的安装"></a>Anaconda的安装</h3><p>因为在他官网的安装速度缓慢，所以我们选择在清华源镜像站安装<br>这里我选择的是Anaconda3-5.3.1-Windows-x86_64.exe<a class="link" href="https://mirrors.tuna.tsinghua.edu.cn/anaconda/archive/Anaconda3-5.3.1-Windows-x86_64.exe">清华源镜像站anaconda安装包<i class="fas fa-external-link-alt"></i></a><br>其实也可以选择官网然后复制下载链接去迅雷下载<br>下载好安装包之后，双击运行。将会出现下图，点击<code>Next</code>即可：<br>也是点击<code>I Agree</code>即可<br>接下来需要选择<code>All Users</code>，点击<code>Next</code><br>接下来选择自己想要安装的地址，点击<code>Browse</code>，再点击<code>Next</code>即可接下来就是如下图,上面的是环境变量可以勾选，再点击<code>Install</code></p>
@@ -930,6 +968,24 @@ twikoo-func填写最新的版本</li>
       <tags>
         <tag>pytorch安装</tag>
         <tag>深度学习框架</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>发博文</title>
+    <url>/2022/09/19/sendBlog/</url>
+    <content><![CDATA[<h3 id="发博文"><a href="#发博文" class="headerlink" title="发博文"></a>发博文</h3><h5 id="1-使用下面命令创建一个md文档"><a href="#1-使用下面命令创建一个md文档" class="headerlink" title="1.使用下面命令创建一个md文档"></a>1.使用下面命令创建一个md文档</h5><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ npx hexo new  <span class="string">&quot;页面名称&quot;</span></span><br></pre></td></tr></table></figure>
+<p>然后在source_posts中可以找到刚刚创建的文档</p>
+<h5 id="写文档"><a href="#写文档" class="headerlink" title="写文档"></a>写文档</h5><p>要实现顶置的文章，需在文章页添加 <code>sticky </code>属性，<code>sticky</code> 值越大，顶置的文章越靠前</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">tile:</span><br><span class="line"><span class="built_in">date</span>:</span><br><span class="line">tages:</span><br><span class="line">categories</span><br><span class="line">sticky: 999</span><br><span class="line">---</span><br><span class="line">在这里开始写博文的正文</span><br></pre></td></tr></table></figure>
+<p>博文是用Markdown语言写的，所以你可以用Markdown编辑器。推荐 Haroopad和MaHua</p>
+<h5 id="发博文-1"><a href="#发博文-1" class="headerlink" title="发博文"></a>发博文</h5><p>只需要输入三个命令就可以了</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npx hexo clean</span><br><span class="line">npx hexo generate</span><br><span class="line">git config --global user.name <span class="string">&quot;你的GitHub名字&quot;</span></span><br><span class="line">git config --global user.email <span class="string">&quot;你的GitHub邮箱&quot;</span></span><br><span class="line">(若要本地预览就先执行 hexo server)</span><br><span class="line">npx hexo deploy</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>hexo</category>
+      </categories>
+      <tags>
+        <tag>hexo</tag>
+        <tag>发博文</tag>
       </tags>
   </entry>
   <entry>
@@ -1106,24 +1162,6 @@ twikoo-func填写最新的版本</li>
       <tags>
         <tag>路网识别</tag>
         <tag>数据集</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>发博文</title>
-    <url>/2022/09/19/sendBlog/</url>
-    <content><![CDATA[<h3 id="发博文"><a href="#发博文" class="headerlink" title="发博文"></a>发博文</h3><h5 id="1-使用下面命令创建一个md文档"><a href="#1-使用下面命令创建一个md文档" class="headerlink" title="1.使用下面命令创建一个md文档"></a>1.使用下面命令创建一个md文档</h5><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ npx hexo new  <span class="string">&quot;页面名称&quot;</span></span><br></pre></td></tr></table></figure>
-<p>然后在source_posts中可以找到刚刚创建的文档</p>
-<h5 id="写文档"><a href="#写文档" class="headerlink" title="写文档"></a>写文档</h5><p>要实现顶置的文章，需在文章页添加 <code>sticky </code>属性，<code>sticky</code> 值越大，顶置的文章越靠前</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">tile:</span><br><span class="line"><span class="built_in">date</span>:</span><br><span class="line">tages:</span><br><span class="line">categories</span><br><span class="line">sticky: 999</span><br><span class="line">---</span><br><span class="line">在这里开始写博文的正文</span><br></pre></td></tr></table></figure>
-<p>博文是用Markdown语言写的，所以你可以用Markdown编辑器。推荐 Haroopad和MaHua</p>
-<h5 id="发博文-1"><a href="#发博文-1" class="headerlink" title="发博文"></a>发博文</h5><p>只需要输入三个命令就可以了</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npx hexo clean</span><br><span class="line">npx hexo generate</span><br><span class="line">git config --global user.name <span class="string">&quot;你的GitHub名字&quot;</span></span><br><span class="line">git config --global user.email <span class="string">&quot;你的GitHub邮箱&quot;</span></span><br><span class="line">(若要本地预览就先执行 hexo server)</span><br><span class="line">npx hexo deploy</span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>hexo</category>
-      </categories>
-      <tags>
-        <tag>hexo</tag>
-        <tag>发博文</tag>
       </tags>
   </entry>
   <entry>
