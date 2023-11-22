@@ -6,7 +6,7 @@
   <link href="https://sunset148.github.io/atom.xml" rel="self"/>
   
   <link href="https://sunset148.github.io/"/>
-  <updated>2023-11-21T03:29:09.908Z</updated>
+  <updated>2023-11-22T09:18:42.612Z</updated>
   <id>https://sunset148.github.io/</id>
   
   <author>
@@ -15,6 +15,26 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title></title>
+    <link href="https://sunset148.github.io/2023/11/22/leetcode11-22/"/>
+    <id>https://sunset148.github.io/2023/11/22/leetcode11-22/</id>
+    <published>2023-11-22T09:05:03.000Z</published>
+    <updated>2023-11-22T09:18:42.612Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="leetcode每日一天（11-22）"><a href="#leetcode每日一天（11-22）" class="headerlink" title="leetcode每日一天（11.22）"></a>leetcode每日一天（11.22）</h2><p><a class="link" href="https://leetcode.cn/problems/minimum-path-cost-in-a-grid/">2304. 网格中的最小路径代价<i class="fas fa-external-link-alt"></i></a></p><p>给你一个下标从 <strong>0</strong> 开始的整数矩阵 <code>grid</code> ，矩阵大小为 <code>m x n</code> ，由从 <code>0</code> 到 <code>m * n - 1</code> 的不同整数组成。你可以在此矩阵中，从一个单元格移动到 <strong>下一行</strong> 的任何其他单元格。如果你位于单元格 <code>(x, y)</code> ，且满足 <code>x &lt; m - 1</code> ，你可以移动到 <code>(x + 1, 0)</code>, <code>(x + 1, 1)</code>, …, <code>(x + 1, n - 1)</code> 中的任何一个单元格。<strong>注意：</strong> 在最后一行中的单元格不能触发移动。</p><p>每次可能的移动都需要付出对应的代价，代价用一个下标从 <strong>0</strong> 开始的二维数组 <code>moveCost</code> 表示，该数组大小为 <code>(m * n) x n</code> ，其中 <code>moveCost[i][j]</code> 是从值为 <code>i</code> 的单元格移动到下一行第 <code>j</code> 列单元格的代价。从 <code>grid</code> 最后一行的单元格移动的代价可以忽略。</p><p><code>grid</code> 一条路径的代价是：所有路径经过的单元格的 <strong>值之和</strong> 加上 所有移动的 <strong>代价之和</strong> 。从 <strong>第一行</strong> 任意单元格出发，返回到达 <strong>最后一行</strong> 任意单元格的最小路径代价<em>。</em></p><p><strong>示例 1：</strong></p><img src="/2023/11/22/leetcode11-22/griddrawio-2.png" style="zoom:100%;"><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">输入：grid = [[5,3],[4,0],[2,1]], moveCost = [[9,8],[1,5],[10,12],[18,6],[2,4],[14,3]]</span><br><span class="line">输出：17</span><br><span class="line">解释：最小代价的路径是 5 -&gt; 0 -&gt; 1 。</span><br><span class="line">- 路径途经单元格值之和 5 + 0 + 1 = 6 。</span><br><span class="line">- 从 5 移动到 0 的代价为 3 。</span><br><span class="line">- 从 0 移动到 1 的代价为 8 。</span><br><span class="line">路径总代价为 6 + 3 + 8 = 17 。</span><br><span class="line">示例 2：</span><br></pre></td></tr></table></figure><p><strong>示例 2：</strong></p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">输入：grid = [[5,1,2],[4,0,3]], moveCost = [[12,10,15],[20,23,8],[21,7,1],[8,1,13],[9,10,25],[5,3,2]]</span><br><span class="line">输出：6</span><br><span class="line">解释：</span><br><span class="line">最小代价的路径是 2 -&gt; 3 。 </span><br><span class="line">- 路径途经单元格值之和 2 + 3 = 5 。 </span><br><span class="line">- 从 2 移动到 3 的代价为 1 。 </span><br><span class="line">路径总代价为 5 + 1 = 6 。</span><br></pre></td></tr></table></figure><hr><p><strong>提示：</strong></p><ul><li><code>m == grid.length</code></li><li><code>n == grid[i].length</code></li><li><code>2 &lt;= m, n &lt;= 50</code></li><li><code>grid</code> 由从 <code>0</code> 到 <code>m * n - 1</code> 的不同整数组成</li><li><code>moveCost.length == m * n</code></li><li><code>moveCost[i].length == n</code></li><li><code>1 &lt;= moveCost[i][j] &lt;= 100</code></li></ul><hr><h2 id="解答"><a href="#解答" class="headerlink" title="解答"></a>解答</h2><h6 id="思想："><a href="#思想：" class="headerlink" title="思想："></a>思想：</h6><p>我们使用 dp【i】【j】表示从第 0 行的任意单元格出发，到达第i 行j 列的单元格的最小路径代价，那么转移方程为：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dp[next][j]=min(dp[next][j],dp[cur][k]+grid[i][j]+moveCost[grid[i-1][k]][j]);</span><br></pre></td></tr></table></figure><p>注意：</p><p>使用了 Floyd-Warshall 算法，这个算法的时间复杂度为 O(N^3)，其中 N 是节点的数量。会超时。</p><p><strong>因为我们的路径必须是从上到下依次路过，则我们只用开辟一个2*n的数组大小。</strong></p><p><strong>同样因为我们从头到尾结束，所以我们不必在意真实标号为多少直接用序号代替即可</strong></p><p><strong>我们选择路径的依次是：该条路径的cost以及达到点的值。因此我们需先把头节点的大小加入即可</strong></p><p><strong>三重for循环中i和j表示该点，k表示选择的路径</strong></p><h6 id="代码："><a href="#代码：" class="headerlink" title="代码："></a>代码：</h6><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">minPathCost</span><span class="params">(vector&lt;vector&lt;<span class="type">int</span>&gt;&gt;&amp; grid, vector&lt;vector&lt;<span class="type">int</span>&gt;&gt;&amp; moveCost)</span> </span>&#123;</span><br><span class="line">        <span class="type">int</span> m = grid.<span class="built_in">size</span>(),n = grid[<span class="number">0</span>].<span class="built_in">size</span>();</span><br><span class="line">        vector&lt;vector&lt;<span class="type">int</span>&gt;&gt; <span class="built_in">dp</span>(<span class="number">2</span>,<span class="built_in">vector</span>&lt;<span class="type">int</span>&gt;(n));</span><br><span class="line">        dp[<span class="number">0</span>]=grid[<span class="number">0</span>];</span><br><span class="line">        <span class="type">int</span> cur = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;m;i++)&#123;</span><br><span class="line">            <span class="type">int</span> next = <span class="number">1</span> - cur;</span><br><span class="line">            <span class="keyword">for</span>(<span class="type">int</span> j=<span class="number">0</span>;j&lt;n;j++)&#123;</span><br><span class="line">                dp[next][j]=<span class="number">1e6</span>;</span><br><span class="line">                <span class="keyword">for</span>(<span class="type">int</span> k=<span class="number">0</span>;k&lt;n;k++)&#123;</span><br><span class="line">                    dp[next][j]=<span class="built_in">min</span>(dp[next][j],dp[cur][k]+grid[i][j]+moveCost[grid[i<span class="number">-1</span>][k]][j]);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            cur = next;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="type">int</span> minNum = dp[cur][<span class="number">0</span>];</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;n;i++)</span><br><span class="line">            minNum = <span class="built_in">min</span>(minNum,dp[cur][i]);</span><br><span class="line">        <span class="keyword">return</span> minNum;       </span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h2 id=&quot;leetcode每日一天（11-22）&quot;&gt;&lt;a href=&quot;#leetcode每日一天（11-22）&quot; class=&quot;headerlink&quot; title=&quot;leetcode每日一天（11.22）&quot;&gt;&lt;/a&gt;leetcode每日一天（11.22）&lt;/h2&gt;&lt;p&gt;&lt;a</summary>
+      
+    
+    
+    
+    
+  </entry>
   
   <entry>
     <title>leetcode11-21</title>
@@ -498,32 +518,6 @@
     
     
     <category term="八股文" scheme="https://sunset148.github.io/tags/%E5%85%AB%E8%82%A1%E6%96%87/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>发博文</title>
-    <link href="https://sunset148.github.io/2022/09/19/sendBlog/"/>
-    <id>https://sunset148.github.io/2022/09/19/sendBlog/</id>
-    <published>2022-09-19T06:41:55.000Z</published>
-    <updated>2022-09-23T07:06:49.389Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="发博文"><a href="#发博文" class="headerlink" title="发博文"></a>发博文</h3><h5 id="1-使用下面命令创建一个md文档"><a href="#1-使用下面命令创建一个md文档" class="headerlink" title="1.使用下面命令创建一个md文档"></a>1.使用下面命令创建一个md文档</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npx hexo new  <span class="string">&quot;页面名称&quot;</span></span><br></pre></td></tr></table></figure><p>然后在source_posts中可以找到刚刚创建的文档</p><h5 id="写文档"><a href="#写文档" class="headerlink" title="写文档"></a>写文档</h5><p>要实现顶置的文章，需在文章页添加 <code>sticky </code>属性，<code>sticky</code> 值越大，顶置的文章越靠前</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">tile:</span><br><span class="line"><span class="built_in">date</span>:</span><br><span class="line">tages:</span><br><span class="line">categories</span><br><span class="line">sticky: 999</span><br><span class="line">---</span><br><span class="line">在这里开始写博文的正文</span><br></pre></td></tr></table></figure><p>博文是用Markdown语言写的，所以你可以用Markdown编辑器。推荐 Haroopad和MaHua</p><h5 id="发博文-1"><a href="#发博文-1" class="headerlink" title="发博文"></a>发博文</h5><p>只需要输入三个命令就可以了</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">npx hexo clean</span><br><span class="line">npx hexo generate</span><br><span class="line">git config --global user.name <span class="string">&quot;你的GitHub名字&quot;</span></span><br><span class="line">git config --global user.email <span class="string">&quot;你的GitHub邮箱&quot;</span></span><br><span class="line">(若要本地预览就先执行 hexo server)</span><br><span class="line">npx hexo deploy</span><br></pre></td></tr></table></figure>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h3 id=&quot;发博文&quot;&gt;&lt;a href=&quot;#发博文&quot; class=&quot;headerlink&quot; title=&quot;发博文&quot;&gt;&lt;/a&gt;发博文&lt;/h3&gt;&lt;h5 id=&quot;1-使用下面命令创建一个md文档&quot;&gt;&lt;a href=&quot;#1-使用下面命令创建一个md文档&quot; class=&quot;headerli</summary>
-      
-    
-    
-    
-    <category term="hexo" scheme="https://sunset148.github.io/categories/hexo/"/>
-    
-    
-    <category term="hexo" scheme="https://sunset148.github.io/tags/hexo/"/>
-    
-    <category term="发博文" scheme="https://sunset148.github.io/tags/%E5%8F%91%E5%8D%9A%E6%96%87/"/>
     
   </entry>
   

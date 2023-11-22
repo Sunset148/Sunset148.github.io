@@ -179,26 +179,6 @@
       </tags>
   </entry>
   <entry>
-    <title>mmcv的安装</title>
-    <url>/2023/07/06/InstallMmcv/</url>
-    <content><![CDATA[<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>在使用mmcv中，经常出现mmcv安装失败或者一直卡在安装程序中。为了解决此类问题。我们参考了mmcv的官方文档。<br>且需要注意的是：请按照mmcv-full，如果安装mmcv还是会有报错的情况出现</p>
-<h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><p>笔者配置为<br>torch 1.7.1 cuda 1.1.0</p>
-<p>此时我们点开<a class="link" href="https://mmcv.readthedocs.io/zh_CN/v1.4.0/get_started/installation.html">官网<i class="fas fa-external-link-alt"></i></a>参照自己的torch和cuda版本安装即可<br>查看cuda版本可通过</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">nvcc --version</span><br></pre></td></tr></table></figure>
-
-<p>查看torch版本可通过</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">python</span><br><span class="line">&gt;&gt;import torch</span><br><span class="line">&gt;&gt;<span class="built_in">print</span>(torch.__version__)</span><br></pre></td></tr></table></figure>
-
-<p>我们通过自己cuda和torch的版本选择安装即可<br><img src="/2023/07/06/InstallMmcv/1.jpg" width="400"></p>
-]]></content>
-      <categories>
-        <category>科研</category>
-      </categories>
-      <tags>
-        <tag>mmcv安装</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>使用 cPolar 实现内网穿透</title>
     <url>/2023/06/26/IntranetPenetration/</url>
     <content><![CDATA[<h2 id="使用-cPolar-实现内网穿透"><a href="#使用-cPolar-实现内网穿透" class="headerlink" title="使用 cPolar 实现内网穿透"></a>使用 cPolar 实现内网穿透</h2><h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p>内网穿透是一种将局域网内的服务暴露到公网的技术，它可以让你在外网访问你内网的服务，例如通过公网访问家庭网络中的摄像头或者办公室网络中的服务器等。cPolar 是一个强大的工具，它可以帮助你实现内网穿透，让你轻松地访问你内网中的服务。</p>
@@ -241,6 +221,26 @@
       </categories>
       <tags>
         <tag>内网穿透</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>mmcv的安装</title>
+    <url>/2023/07/06/InstallMmcv/</url>
+    <content><![CDATA[<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>在使用mmcv中，经常出现mmcv安装失败或者一直卡在安装程序中。为了解决此类问题。我们参考了mmcv的官方文档。<br>且需要注意的是：请按照mmcv-full，如果安装mmcv还是会有报错的情况出现</p>
+<h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><p>笔者配置为<br>torch 1.7.1 cuda 1.1.0</p>
+<p>此时我们点开<a class="link" href="https://mmcv.readthedocs.io/zh_CN/v1.4.0/get_started/installation.html">官网<i class="fas fa-external-link-alt"></i></a>参照自己的torch和cuda版本安装即可<br>查看cuda版本可通过</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">nvcc --version</span><br></pre></td></tr></table></figure>
+
+<p>查看torch版本可通过</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">python</span><br><span class="line">&gt;&gt;import torch</span><br><span class="line">&gt;&gt;<span class="built_in">print</span>(torch.__version__)</span><br></pre></td></tr></table></figure>
+
+<p>我们通过自己cuda和torch的版本选择安装即可<br><img src="/2023/07/06/InstallMmcv/1.jpg" width="400"></p>
+]]></content>
+      <categories>
+        <category>科研</category>
+      </categories>
+      <tags>
+        <tag>mmcv安装</tag>
       </tags>
   </entry>
   <entry>
@@ -573,30 +573,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Hello World</title>
-    <url>/2022/09/19/hello-world/</url>
-    <content><![CDATA[<p>Welcome to <a class="link" href="https://hexo.io/">Hexo<i class="fas fa-external-link-alt"></i></a>! This is your very first post. Check <a class="link" href="https://hexo.io/docs/">documentation<i class="fas fa-external-link-alt"></i></a> for more info. If you get any problems when using Hexo, you can find the answer in <a class="link" href="https://hexo.io/docs/troubleshooting.html">troubleshooting<i class="fas fa-external-link-alt"></i></a> or you can ask me on <a class="link" href="https://github.com/hexojs/hexo/issues">GitHub<i class="fas fa-external-link-alt"></i></a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a class="link" href="https://hexo.io/docs/writing.html">Writing<i class="fas fa-external-link-alt"></i></a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a class="link" href="https://hexo.io/docs/server.html">Server<i class="fas fa-external-link-alt"></i></a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a class="link" href="https://hexo.io/docs/generating.html">Generating<i class="fas fa-external-link-alt"></i></a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a class="link" href="https://hexo.io/docs/one-command-deployment.html">Deployment<i class="fas fa-external-link-alt"></i></a></p>
-]]></content>
-      <categories>
-        <category>hexo</category>
-      </categories>
-      <tags>
-        <tag>hexo命令</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>hexo新增加图片功能</title>
     <url>/2023/06/27/hexoAddPictures/</url>
     <content><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>在书写博客的时候，图片是更容易概况的。然而hexo在引入图片时总会出现各种问题。<br>在官方文档给的</p>
@@ -620,6 +596,30 @@
       <tags>
         <tag>hexo</tag>
         <tag>hexo新增图片</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hello World</title>
+    <url>/2022/09/19/hello-world/</url>
+    <content><![CDATA[<p>Welcome to <a class="link" href="https://hexo.io/">Hexo<i class="fas fa-external-link-alt"></i></a>! This is your very first post. Check <a class="link" href="https://hexo.io/docs/">documentation<i class="fas fa-external-link-alt"></i></a> for more info. If you get any problems when using Hexo, you can find the answer in <a class="link" href="https://hexo.io/docs/troubleshooting.html">troubleshooting<i class="fas fa-external-link-alt"></i></a> or you can ask me on <a class="link" href="https://github.com/hexojs/hexo/issues">GitHub<i class="fas fa-external-link-alt"></i></a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>More info: <a class="link" href="https://hexo.io/docs/writing.html">Writing<i class="fas fa-external-link-alt"></i></a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a class="link" href="https://hexo.io/docs/server.html">Server<i class="fas fa-external-link-alt"></i></a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a class="link" href="https://hexo.io/docs/generating.html">Generating<i class="fas fa-external-link-alt"></i></a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a class="link" href="https://hexo.io/docs/one-command-deployment.html">Deployment<i class="fas fa-external-link-alt"></i></a></p>
+]]></content>
+      <categories>
+        <category>hexo</category>
+      </categories>
+      <tags>
+        <tag>hexo命令</tag>
       </tags>
   </entry>
   <entry>
@@ -740,22 +740,43 @@
       </tags>
   </entry>
   <entry>
-    <title>leetcode9.20</title>
-    <url>/2022/09/20/leetcode9-20/</url>
-    <content><![CDATA[<h2 id="leetcode每日一天（9-20）"><a href="#leetcode每日一天（9-20）" class="headerlink" title="leetcode每日一天（9.20）"></a>leetcode每日一天（9.20）</h2><p><a class="link" href="https://leetcode.cn/problems/partition-to-k-equal-sum-subsets/">题目：698. 划分为k个相等的子集<i class="fas fa-external-link-alt"></i></a><br>给定一个整数数组  nums 和一个正整数 k，找出是否有可能把这个数组分成 k 个非空子集，其总和都相等。</p>
-<h6 id="示例1"><a href="#示例1" class="headerlink" title="示例1"></a>示例1</h6><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">输入： nums = [4, 3, 2, 3, 5, 2, 1], k = 4</span><br><span class="line">输出： True</span><br><span class="line">说明： 有可能将其分成 4 个子集（5），（1,4），（2,3），（2,3）等于总和。</span><br></pre></td></tr></table></figure>
-<h6 id="示例2"><a href="#示例2" class="headerlink" title="示例2"></a>示例2</h6><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">输入: nums = [1,2,3,4], k = 3</span><br><span class="line">输出: <span class="literal">false</span></span><br></pre></td></tr></table></figure>
-<h6 id="提示"><a href="#提示" class="headerlink" title="提示"></a>提示</h6><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">1 &lt;= k &lt;= len(nums) &lt;= 16</span><br><span class="line">0 &lt; nums[i] &lt; 10000</span><br><span class="line">每个元素的频率在 [1,4] 范围内</span><br></pre></td></tr></table></figure>
+    <title></title>
+    <url>/2023/11/22/leetcode11-22/</url>
+    <content><![CDATA[<h2 id="leetcode每日一天（11-22）"><a href="#leetcode每日一天（11-22）" class="headerlink" title="leetcode每日一天（11.22）"></a>leetcode每日一天（11.22）</h2><p><a class="link" href="https://leetcode.cn/problems/minimum-path-cost-in-a-grid/">2304. 网格中的最小路径代价<i class="fas fa-external-link-alt"></i></a></p>
+<p>给你一个下标从 <strong>0</strong> 开始的整数矩阵 <code>grid</code> ，矩阵大小为 <code>m x n</code> ，由从 <code>0</code> 到 <code>m * n - 1</code> 的不同整数组成。你可以在此矩阵中，从一个单元格移动到 <strong>下一行</strong> 的任何其他单元格。如果你位于单元格 <code>(x, y)</code> ，且满足 <code>x &lt; m - 1</code> ，你可以移动到 <code>(x + 1, 0)</code>, <code>(x + 1, 1)</code>, …, <code>(x + 1, n - 1)</code> 中的任何一个单元格。<strong>注意：</strong> 在最后一行中的单元格不能触发移动。</p>
+<p>每次可能的移动都需要付出对应的代价，代价用一个下标从 <strong>0</strong> 开始的二维数组 <code>moveCost</code> 表示，该数组大小为 <code>(m * n) x n</code> ，其中 <code>moveCost[i][j]</code> 是从值为 <code>i</code> 的单元格移动到下一行第 <code>j</code> 列单元格的代价。从 <code>grid</code> 最后一行的单元格移动的代价可以忽略。</p>
+<p><code>grid</code> 一条路径的代价是：所有路径经过的单元格的 <strong>值之和</strong> 加上 所有移动的 <strong>代价之和</strong> 。从 <strong>第一行</strong> 任意单元格出发，返回到达 <strong>最后一行</strong> 任意单元格的最小路径代价<em>。</em></p>
+<p><strong>示例 1：</strong></p>
+<img src="/2023/11/22/leetcode11-22/griddrawio-2.png" style="zoom:100%;">
+
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">输入：grid = [[5,3],[4,0],[2,1]], moveCost = [[9,8],[1,5],[10,12],[18,6],[2,4],[14,3]]</span><br><span class="line">输出：17</span><br><span class="line">解释：最小代价的路径是 5 -&gt; 0 -&gt; 1 。</span><br><span class="line">- 路径途经单元格值之和 5 + 0 + 1 = 6 。</span><br><span class="line">- 从 5 移动到 0 的代价为 3 。</span><br><span class="line">- 从 0 移动到 1 的代价为 8 。</span><br><span class="line">路径总代价为 6 + 3 + 8 = 17 。</span><br><span class="line">示例 2：</span><br></pre></td></tr></table></figure>
+
+<p><strong>示例 2：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">输入：grid = [[5,1,2],[4,0,3]], moveCost = [[12,10,15],[20,23,8],[21,7,1],[8,1,13],[9,10,25],[5,3,2]]</span><br><span class="line">输出：6</span><br><span class="line">解释：</span><br><span class="line">最小代价的路径是 2 -&gt; 3 。 </span><br><span class="line">- 路径途经单元格值之和 2 + 3 = 5 。 </span><br><span class="line">- 从 2 移动到 3 的代价为 1 。 </span><br><span class="line">路径总代价为 5 + 1 = 6 。</span><br></pre></td></tr></table></figure>
+
 <hr>
-<h2 id="解答"><a href="#解答" class="headerlink" title="解答"></a>解答</h2><h6 id="思想："><a href="#思想：" class="headerlink" title="思想："></a>思想：</h6><p>我们可以把每个集合看做一个桶，然后我们可以通过dfs和剪枝来模拟每个数值入桶和出桶。</p>
-<h6 id="剪枝："><a href="#剪枝：" class="headerlink" title="剪枝："></a>剪枝：</h6><p>因为我们需要有k个桶且每个桶的值是相等的。以此可以推出给定的值相加一定是桶的值的倍速，并且不会存在比桶值大的数值。最关键的剪枝为，我们在dfs遍历一个桶是否可以装满，如果回溯的时候发现这个桶回到了初始值，则证明这个桶是装不满的。然而，每个桶都是一样的，这个桶装不满则其他桶一样装不满。</p>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">bool</span> <span class="title">canPartitionKSubsets</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; nums, <span class="type">int</span> k)</span> </span>&#123;</span><br><span class="line">    <span class="type">int</span> sum=<span class="number">0</span>,size=nums.<span class="built_in">size</span>();</span><br><span class="line">    <span class="type">int</span> maxN=<span class="number">-1</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;size;i++)</span><br><span class="line">        sum+=nums[i],maxN=<span class="built_in">max</span>(maxN,nums[i]);</span><br><span class="line">    <span class="keyword">if</span>(sum%k!=<span class="number">0</span>||maxN&gt;sum/k)</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    sum=sum/k;</span><br><span class="line">    <span class="built_in">sort</span>(nums.<span class="built_in">begin</span>(), nums.<span class="built_in">end</span>());</span><br><span class="line">  <span class="comment">//  cout&lt;&lt;nums[0];</span></span><br><span class="line">    <span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">arr</span><span class="params">(k,sum)</span></span>;</span><br><span class="line">    <span class="type">bool</span> t=<span class="literal">false</span>;</span><br><span class="line">    t=<span class="built_in">dfs</span>(nums,arr,size<span class="number">-1</span>,k,size,sum);</span><br><span class="line">    <span class="keyword">return</span> t;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//nums给定数组 arr模拟每一个桶  cur以此遍历每个数值 k一共有几个桶 size原数组大小 sum每个桶的值</span></span><br><span class="line"><span class="function"><span class="type">bool</span> <span class="title">dfs</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; nums,vector&lt;<span class="type">int</span>&gt;&amp; arr,<span class="type">int</span> cur,<span class="type">int</span> k,<span class="type">int</span> size,<span class="type">int</span> sum)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(cur &lt; <span class="number">0</span>)&#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;k;i++)</span><br><span class="line">            <span class="keyword">if</span>(arr[i]!=<span class="number">0</span>)</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;k;i++)&#123;</span><br><span class="line">        <span class="keyword">if</span>(arr[i]-nums[cur]&lt;nums[<span class="number">0</span>]&amp;&amp;arr[i]!=nums[cur])</span><br><span class="line">            <span class="keyword">continue</span>;</span><br><span class="line">        arr[i] -= nums[cur];</span><br><span class="line">        <span class="comment">// for(int j=0;j&lt;k;j++)</span></span><br><span class="line">        <span class="comment">//     cout&lt;&lt;arr[i]&lt;&lt;&quot; &quot;;</span></span><br><span class="line">        <span class="comment">// cout&lt;&lt;endl;</span></span><br><span class="line">        <span class="keyword">if</span>(<span class="built_in">dfs</span>(nums,arr,cur<span class="number">-1</span>,k,size,sum))</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">        arr[i] += nums[cur];</span><br><span class="line">        <span class="keyword">if</span>(arr[i]==sum)</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>leetcode</category>
-      </categories>
-      <tags>
-        <tag>八股文</tag>
-      </tags>
+<p><strong>提示：</strong></p>
+<ul>
+<li><code>m == grid.length</code></li>
+<li><code>n == grid[i].length</code></li>
+<li><code>2 &lt;= m, n &lt;= 50</code></li>
+<li><code>grid</code> 由从 <code>0</code> 到 <code>m * n - 1</code> 的不同整数组成</li>
+<li><code>moveCost.length == m * n</code></li>
+<li><code>moveCost[i].length == n</code></li>
+<li><code>1 &lt;= moveCost[i][j] &lt;= 100</code></li>
+</ul>
+<hr>
+<h2 id="解答"><a href="#解答" class="headerlink" title="解答"></a>解答</h2><h6 id="思想："><a href="#思想：" class="headerlink" title="思想："></a>思想：</h6><p>我们使用 dp【i】【j】表示从第 0 行的任意单元格出发，到达第i 行j 列的单元格的最小路径代价，那么转移方程为：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">dp[next][j]=min(dp[next][j],dp[cur][k]+grid[i][j]+moveCost[grid[i-1][k]][j]);</span><br></pre></td></tr></table></figure>
+
+<p>注意：</p>
+<p>使用了 Floyd-Warshall 算法，这个算法的时间复杂度为 O(N^3)，其中 N 是节点的数量。会超时。</p>
+<p><strong>因为我们的路径必须是从上到下依次路过，则我们只用开辟一个2*n的数组大小。</strong></p>
+<p><strong>同样因为我们从头到尾结束，所以我们不必在意真实标号为多少直接用序号代替即可</strong></p>
+<p><strong>我们选择路径的依次是：该条路径的cost以及达到点的值。因此我们需先把头节点的大小加入即可</strong></p>
+<p><strong>三重for循环中i和j表示该点，k表示选择的路径</strong></p>
+<h6 id="代码："><a href="#代码：" class="headerlink" title="代码："></a>代码：</h6><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">minPathCost</span><span class="params">(vector&lt;vector&lt;<span class="type">int</span>&gt;&gt;&amp; grid, vector&lt;vector&lt;<span class="type">int</span>&gt;&gt;&amp; moveCost)</span> </span>&#123;</span><br><span class="line">        <span class="type">int</span> m = grid.<span class="built_in">size</span>(),n = grid[<span class="number">0</span>].<span class="built_in">size</span>();</span><br><span class="line">        vector&lt;vector&lt;<span class="type">int</span>&gt;&gt; <span class="built_in">dp</span>(<span class="number">2</span>,<span class="built_in">vector</span>&lt;<span class="type">int</span>&gt;(n));</span><br><span class="line">        dp[<span class="number">0</span>]=grid[<span class="number">0</span>];</span><br><span class="line">        <span class="type">int</span> cur = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;m;i++)&#123;</span><br><span class="line">            <span class="type">int</span> next = <span class="number">1</span> - cur;</span><br><span class="line">            <span class="keyword">for</span>(<span class="type">int</span> j=<span class="number">0</span>;j&lt;n;j++)&#123;</span><br><span class="line">                dp[next][j]=<span class="number">1e6</span>;</span><br><span class="line">                <span class="keyword">for</span>(<span class="type">int</span> k=<span class="number">0</span>;k&lt;n;k++)&#123;</span><br><span class="line">                    dp[next][j]=<span class="built_in">min</span>(dp[next][j],dp[cur][k]+grid[i][j]+moveCost[grid[i<span class="number">-1</span>][k]][j]);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            cur = next;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="type">int</span> minNum = dp[cur][<span class="number">0</span>];</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;n;i++)</span><br><span class="line">            minNum = <span class="built_in">min</span>(minNum,dp[cur][i]);</span><br><span class="line">        <span class="keyword">return</span> minNum;       </span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+]]></content>
   </entry>
   <entry>
     <title>leetcode6-27</title>
@@ -785,6 +806,24 @@
 
 <p><strong>注意到 dp[i][∗]的值只与 dp[i−1][∗] 有关，因此我们可以只使用两个整数来节省空间。</strong></p>
 <figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">maximumSum</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; arr)</span> </span>&#123;</span><br><span class="line">        <span class="type">int</span> dp0=arr[<span class="number">0</span>],dp1=<span class="number">0</span>,res=arr[<span class="number">0</span>];</span><br><span class="line">        <span class="type">int</span> len = arr.<span class="built_in">size</span>();</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;len;i++)&#123;</span><br><span class="line">            dp1 = <span class="built_in">max</span>(dp0,dp1+arr[i]);</span><br><span class="line">            dp0 = <span class="built_in">max</span>(dp0,<span class="number">0</span>) + arr[i];</span><br><span class="line">            res = <span class="built_in">max</span>(res,<span class="built_in">max</span>(dp0,dp1));</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>leetcode</category>
+      </categories>
+      <tags>
+        <tag>八股文</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>leetcode9.20</title>
+    <url>/2022/09/20/leetcode9-20/</url>
+    <content><![CDATA[<h2 id="leetcode每日一天（9-20）"><a href="#leetcode每日一天（9-20）" class="headerlink" title="leetcode每日一天（9.20）"></a>leetcode每日一天（9.20）</h2><p><a class="link" href="https://leetcode.cn/problems/partition-to-k-equal-sum-subsets/">题目：698. 划分为k个相等的子集<i class="fas fa-external-link-alt"></i></a><br>给定一个整数数组  nums 和一个正整数 k，找出是否有可能把这个数组分成 k 个非空子集，其总和都相等。</p>
+<h6 id="示例1"><a href="#示例1" class="headerlink" title="示例1"></a>示例1</h6><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">输入： nums = [4, 3, 2, 3, 5, 2, 1], k = 4</span><br><span class="line">输出： True</span><br><span class="line">说明： 有可能将其分成 4 个子集（5），（1,4），（2,3），（2,3）等于总和。</span><br></pre></td></tr></table></figure>
+<h6 id="示例2"><a href="#示例2" class="headerlink" title="示例2"></a>示例2</h6><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">输入: nums = [1,2,3,4], k = 3</span><br><span class="line">输出: <span class="literal">false</span></span><br></pre></td></tr></table></figure>
+<h6 id="提示"><a href="#提示" class="headerlink" title="提示"></a>提示</h6><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">1 &lt;= k &lt;= len(nums) &lt;= 16</span><br><span class="line">0 &lt; nums[i] &lt; 10000</span><br><span class="line">每个元素的频率在 [1,4] 范围内</span><br></pre></td></tr></table></figure>
+<hr>
+<h2 id="解答"><a href="#解答" class="headerlink" title="解答"></a>解答</h2><h6 id="思想："><a href="#思想：" class="headerlink" title="思想："></a>思想：</h6><p>我们可以把每个集合看做一个桶，然后我们可以通过dfs和剪枝来模拟每个数值入桶和出桶。</p>
+<h6 id="剪枝："><a href="#剪枝：" class="headerlink" title="剪枝："></a>剪枝：</h6><p>因为我们需要有k个桶且每个桶的值是相等的。以此可以推出给定的值相加一定是桶的值的倍速，并且不会存在比桶值大的数值。最关键的剪枝为，我们在dfs遍历一个桶是否可以装满，如果回溯的时候发现这个桶回到了初始值，则证明这个桶是装不满的。然而，每个桶都是一样的，这个桶装不满则其他桶一样装不满。</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">bool</span> <span class="title">canPartitionKSubsets</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; nums, <span class="type">int</span> k)</span> </span>&#123;</span><br><span class="line">    <span class="type">int</span> sum=<span class="number">0</span>,size=nums.<span class="built_in">size</span>();</span><br><span class="line">    <span class="type">int</span> maxN=<span class="number">-1</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;size;i++)</span><br><span class="line">        sum+=nums[i],maxN=<span class="built_in">max</span>(maxN,nums[i]);</span><br><span class="line">    <span class="keyword">if</span>(sum%k!=<span class="number">0</span>||maxN&gt;sum/k)</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    sum=sum/k;</span><br><span class="line">    <span class="built_in">sort</span>(nums.<span class="built_in">begin</span>(), nums.<span class="built_in">end</span>());</span><br><span class="line">  <span class="comment">//  cout&lt;&lt;nums[0];</span></span><br><span class="line">    <span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">arr</span><span class="params">(k,sum)</span></span>;</span><br><span class="line">    <span class="type">bool</span> t=<span class="literal">false</span>;</span><br><span class="line">    t=<span class="built_in">dfs</span>(nums,arr,size<span class="number">-1</span>,k,size,sum);</span><br><span class="line">    <span class="keyword">return</span> t;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//nums给定数组 arr模拟每一个桶  cur以此遍历每个数值 k一共有几个桶 size原数组大小 sum每个桶的值</span></span><br><span class="line"><span class="function"><span class="type">bool</span> <span class="title">dfs</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; nums,vector&lt;<span class="type">int</span>&gt;&amp; arr,<span class="type">int</span> cur,<span class="type">int</span> k,<span class="type">int</span> size,<span class="type">int</span> sum)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(cur &lt; <span class="number">0</span>)&#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;k;i++)</span><br><span class="line">            <span class="keyword">if</span>(arr[i]!=<span class="number">0</span>)</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;k;i++)&#123;</span><br><span class="line">        <span class="keyword">if</span>(arr[i]-nums[cur]&lt;nums[<span class="number">0</span>]&amp;&amp;arr[i]!=nums[cur])</span><br><span class="line">            <span class="keyword">continue</span>;</span><br><span class="line">        arr[i] -= nums[cur];</span><br><span class="line">        <span class="comment">// for(int j=0;j&lt;k;j++)</span></span><br><span class="line">        <span class="comment">//     cout&lt;&lt;arr[i]&lt;&lt;&quot; &quot;;</span></span><br><span class="line">        <span class="comment">// cout&lt;&lt;endl;</span></span><br><span class="line">        <span class="keyword">if</span>(<span class="built_in">dfs</span>(nums,arr,cur<span class="number">-1</span>,k,size,sum))</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">        arr[i] += nums[cur];</span><br><span class="line">        <span class="keyword">if</span>(arr[i]==sum)</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
       <categories>
         <category>leetcode</category>
       </categories>
@@ -968,24 +1007,6 @@ twikoo-func填写最新的版本</li>
       <tags>
         <tag>pytorch安装</tag>
         <tag>深度学习框架</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>发博文</title>
-    <url>/2022/09/19/sendBlog/</url>
-    <content><![CDATA[<h3 id="发博文"><a href="#发博文" class="headerlink" title="发博文"></a>发博文</h3><h5 id="1-使用下面命令创建一个md文档"><a href="#1-使用下面命令创建一个md文档" class="headerlink" title="1.使用下面命令创建一个md文档"></a>1.使用下面命令创建一个md文档</h5><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ npx hexo new  <span class="string">&quot;页面名称&quot;</span></span><br></pre></td></tr></table></figure>
-<p>然后在source_posts中可以找到刚刚创建的文档</p>
-<h5 id="写文档"><a href="#写文档" class="headerlink" title="写文档"></a>写文档</h5><p>要实现顶置的文章，需在文章页添加 <code>sticky </code>属性，<code>sticky</code> 值越大，顶置的文章越靠前</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">tile:</span><br><span class="line"><span class="built_in">date</span>:</span><br><span class="line">tages:</span><br><span class="line">categories</span><br><span class="line">sticky: 999</span><br><span class="line">---</span><br><span class="line">在这里开始写博文的正文</span><br></pre></td></tr></table></figure>
-<p>博文是用Markdown语言写的，所以你可以用Markdown编辑器。推荐 Haroopad和MaHua</p>
-<h5 id="发博文-1"><a href="#发博文-1" class="headerlink" title="发博文"></a>发博文</h5><p>只需要输入三个命令就可以了</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npx hexo clean</span><br><span class="line">npx hexo generate</span><br><span class="line">git config --global user.name <span class="string">&quot;你的GitHub名字&quot;</span></span><br><span class="line">git config --global user.email <span class="string">&quot;你的GitHub邮箱&quot;</span></span><br><span class="line">(若要本地预览就先执行 hexo server)</span><br><span class="line">npx hexo deploy</span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>hexo</category>
-      </categories>
-      <tags>
-        <tag>hexo</tag>
-        <tag>发博文</tag>
       </tags>
   </entry>
   <entry>
@@ -1173,6 +1194,24 @@ twikoo-func填写最新的版本</li>
       </categories>
       <tags>
         <tag>水文</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>发博文</title>
+    <url>/2022/09/19/sendBlog/</url>
+    <content><![CDATA[<h3 id="发博文"><a href="#发博文" class="headerlink" title="发博文"></a>发博文</h3><h5 id="1-使用下面命令创建一个md文档"><a href="#1-使用下面命令创建一个md文档" class="headerlink" title="1.使用下面命令创建一个md文档"></a>1.使用下面命令创建一个md文档</h5><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ npx hexo new  <span class="string">&quot;页面名称&quot;</span></span><br></pre></td></tr></table></figure>
+<p>然后在source_posts中可以找到刚刚创建的文档</p>
+<h5 id="写文档"><a href="#写文档" class="headerlink" title="写文档"></a>写文档</h5><p>要实现顶置的文章，需在文章页添加 <code>sticky </code>属性，<code>sticky</code> 值越大，顶置的文章越靠前</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">tile:</span><br><span class="line"><span class="built_in">date</span>:</span><br><span class="line">tages:</span><br><span class="line">categories</span><br><span class="line">sticky: 999</span><br><span class="line">---</span><br><span class="line">在这里开始写博文的正文</span><br></pre></td></tr></table></figure>
+<p>博文是用Markdown语言写的，所以你可以用Markdown编辑器。推荐 Haroopad和MaHua</p>
+<h5 id="发博文-1"><a href="#发博文-1" class="headerlink" title="发博文"></a>发博文</h5><p>只需要输入三个命令就可以了</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npx hexo clean</span><br><span class="line">npx hexo generate</span><br><span class="line">git config --global user.name <span class="string">&quot;你的GitHub名字&quot;</span></span><br><span class="line">git config --global user.email <span class="string">&quot;你的GitHub邮箱&quot;</span></span><br><span class="line">(若要本地预览就先执行 hexo server)</span><br><span class="line">npx hexo deploy</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>hexo</category>
+      </categories>
+      <tags>
+        <tag>hexo</tag>
+        <tag>发博文</tag>
       </tags>
   </entry>
 </search>
