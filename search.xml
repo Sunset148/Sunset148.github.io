@@ -179,6 +179,26 @@
       </tags>
   </entry>
   <entry>
+    <title>mmcv的安装</title>
+    <url>/2023/07/06/InstallMmcv/</url>
+    <content><![CDATA[<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>在使用mmcv中，经常出现mmcv安装失败或者一直卡在安装程序中。为了解决此类问题。我们参考了mmcv的官方文档。<br>且需要注意的是：请按照mmcv-full，如果安装mmcv还是会有报错的情况出现</p>
+<h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><p>笔者配置为<br>torch 1.7.1 cuda 1.1.0</p>
+<p>此时我们点开<a class="link" href="https://mmcv.readthedocs.io/zh_CN/v1.4.0/get_started/installation.html">官网<i class="fas fa-external-link-alt"></i></a>参照自己的torch和cuda版本安装即可<br>查看cuda版本可通过</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">nvcc --version</span><br></pre></td></tr></table></figure>
+
+<p>查看torch版本可通过</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">python</span><br><span class="line">&gt;&gt;import torch</span><br><span class="line">&gt;&gt;<span class="built_in">print</span>(torch.__version__)</span><br></pre></td></tr></table></figure>
+
+<p>我们通过自己cuda和torch的版本选择安装即可<br><img src="/2023/07/06/InstallMmcv/1.jpg" width="400"></p>
+]]></content>
+      <categories>
+        <category>科研</category>
+      </categories>
+      <tags>
+        <tag>mmcv安装</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>使用 cPolar 实现内网穿透</title>
     <url>/2023/06/26/IntranetPenetration/</url>
     <content><![CDATA[<h2 id="使用-cPolar-实现内网穿透"><a href="#使用-cPolar-实现内网穿透" class="headerlink" title="使用 cPolar 实现内网穿透"></a>使用 cPolar 实现内网穿透</h2><h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p>内网穿透是一种将局域网内的服务暴露到公网的技术，它可以让你在外网访问你内网的服务，例如通过公网访问家庭网络中的摄像头或者办公室网络中的服务器等。cPolar 是一个强大的工具，它可以帮助你实现内网穿透，让你轻松地访问你内网中的服务。</p>
@@ -221,53 +241,6 @@
       </categories>
       <tags>
         <tag>内网穿透</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>mmcv的安装</title>
-    <url>/2023/07/06/InstallMmcv/</url>
-    <content><![CDATA[<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>在使用mmcv中，经常出现mmcv安装失败或者一直卡在安装程序中。为了解决此类问题。我们参考了mmcv的官方文档。<br>且需要注意的是：请按照mmcv-full，如果安装mmcv还是会有报错的情况出现</p>
-<h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><p>笔者配置为<br>torch 1.7.1 cuda 1.1.0</p>
-<p>此时我们点开<a class="link" href="https://mmcv.readthedocs.io/zh_CN/v1.4.0/get_started/installation.html">官网<i class="fas fa-external-link-alt"></i></a>参照自己的torch和cuda版本安装即可<br>查看cuda版本可通过</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">nvcc --version</span><br></pre></td></tr></table></figure>
-
-<p>查看torch版本可通过</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">python</span><br><span class="line">&gt;&gt;import torch</span><br><span class="line">&gt;&gt;<span class="built_in">print</span>(torch.__version__)</span><br></pre></td></tr></table></figure>
-
-<p>我们通过自己cuda和torch的版本选择安装即可<br><img src="/2023/07/06/InstallMmcv/1.jpg" width="400"></p>
-]]></content>
-      <categories>
-        <category>科研</category>
-      </categories>
-      <tags>
-        <tag>mmcv安装</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>机器学习课程竞赛心得</title>
-    <url>/2023/06/27/MachineLearningCourseCompetition/</url>
-    <content><![CDATA[<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>课程竞赛<br>狗狗分类（20分类任务）<br>狗狗分类（20分类任务）</p>
-<ul>
-<li>第一阶段：4月19日 至 4月30日（2周，占25%）<br> 模型训练、主干网络、调参与调优tricks等基础知识</li>
-<li>第二阶段：5月1日 至 5月14日（2周，占20%）<br> 数据增强、图像编辑、调参与调优tricks等</li>
-<li>第三阶段：5月15日 至 5月28日（2周，占20%）<br> 网络攻防、数据增强等<br>提交验证地址：<a class="link" href="http://cuit.osmagic.com:8888/">http://cuit.osmagic.com:8888<i class="fas fa-external-link-alt"></i></a><br> 学号登录，初始密码“123”<br>期末提交测试代码及模型（占5%），供结果验证<br>按阶段准确率高低计分，最高者100分，最低者40分</li>
-</ul>
-<h3 id="心得"><a href="#心得" class="headerlink" title="心得"></a>心得</h3><p>在第一阶段和第二阶段中我们使用的是Resnet，将epch和leaning rate更改了就提交代码了。在第三阶段在读论文时候发现了新模型Visual Attention Network(VAN)它是22年cvpr发表的。该模型在图像分类、物体检测、语义分割、实例分割、姿势估计等任务都取得了不错的成绩。其中的VAN-B6在ImageNet基准测试中取得了87.8%的准确率，并为全景分割创造了新的最先进的性能（58.PQ）。此外，VAN-B2在ADE20K基准上的语义分割超过Swin-T 4% mIoU（50.1 vs. 46.1），在COCO数据集上的物体检测超过2.6% AP（48.8 vs. 46.2）。因此决定使用该模型在第三阶段测试性能。</p>
-<div align="center">
-<img src="/2023/06/27/MachineLearningCourseCompetition/1.jpg" width="400">
-<img src="/2023/06/27/MachineLearningCourseCompetition/2.jpg" width="400">
-</div>
-
-<p>在训练中发现，所提供的数据集较少，在经过几个epch的训练后训练集的Acc指标可以达到100%且不波动，然而在提交后发现指标却非常低。因此出现了非常严重的过拟合现象。而VAN提供在ImageNet1k上训练的权重，所以我们加载训练权重后训练提交所得到的大概在92%。因VAN提供了多个版本可供选择，我使用了B0-B3发现在使用B3时候达到了94%，证明该model在数据集上参数量越大所取得的效果越好。但遗憾的是作者只提供了B0-B3在ImageNet1k上训练的权重。学生有使用B6在老师提供的数据集上训练3k轮所取得的效果非常糟糕。如果使用B6的权重训练应该会取得不错的成果。</p>
-<div align="center">
-<img src="/2023/06/27/MachineLearningCourseCompetition/3.jpg" width="900">
-</div>
-  模型选择完毕就是炼丹了。因数据集小炼丹相对容易。因数据集较小，为了扩充数据集，减少过拟合，添加了数据增强中的随机水平翻转和随机选择以及随机颜色调整。又因为考虑到训练集很快就过拟合了，因此降低了学习率为1e-5。最后在第三轮取得了96.64%。]]></content>
-      <categories>
-        <category>科研</category>
-      </categories>
-      <tags>
-        <tag>机器学习</tag>
       </tags>
   </entry>
   <entry>
@@ -555,6 +528,33 @@
       </tags>
   </entry>
   <entry>
+    <title>机器学习课程竞赛心得</title>
+    <url>/2023/06/27/MachineLearningCourseCompetition/</url>
+    <content><![CDATA[<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>课程竞赛<br>狗狗分类（20分类任务）<br>狗狗分类（20分类任务）</p>
+<ul>
+<li>第一阶段：4月19日 至 4月30日（2周，占25%）<br> 模型训练、主干网络、调参与调优tricks等基础知识</li>
+<li>第二阶段：5月1日 至 5月14日（2周，占20%）<br> 数据增强、图像编辑、调参与调优tricks等</li>
+<li>第三阶段：5月15日 至 5月28日（2周，占20%）<br> 网络攻防、数据增强等<br>提交验证地址：<a class="link" href="http://cuit.osmagic.com:8888/">http://cuit.osmagic.com:8888<i class="fas fa-external-link-alt"></i></a><br> 学号登录，初始密码“123”<br>期末提交测试代码及模型（占5%），供结果验证<br>按阶段准确率高低计分，最高者100分，最低者40分</li>
+</ul>
+<h3 id="心得"><a href="#心得" class="headerlink" title="心得"></a>心得</h3><p>在第一阶段和第二阶段中我们使用的是Resnet，将epch和leaning rate更改了就提交代码了。在第三阶段在读论文时候发现了新模型Visual Attention Network(VAN)它是22年cvpr发表的。该模型在图像分类、物体检测、语义分割、实例分割、姿势估计等任务都取得了不错的成绩。其中的VAN-B6在ImageNet基准测试中取得了87.8%的准确率，并为全景分割创造了新的最先进的性能（58.PQ）。此外，VAN-B2在ADE20K基准上的语义分割超过Swin-T 4% mIoU（50.1 vs. 46.1），在COCO数据集上的物体检测超过2.6% AP（48.8 vs. 46.2）。因此决定使用该模型在第三阶段测试性能。</p>
+<div align="center">
+<img src="/2023/06/27/MachineLearningCourseCompetition/1.jpg" width="400">
+<img src="/2023/06/27/MachineLearningCourseCompetition/2.jpg" width="400">
+</div>
+
+<p>在训练中发现，所提供的数据集较少，在经过几个epch的训练后训练集的Acc指标可以达到100%且不波动，然而在提交后发现指标却非常低。因此出现了非常严重的过拟合现象。而VAN提供在ImageNet1k上训练的权重，所以我们加载训练权重后训练提交所得到的大概在92%。因VAN提供了多个版本可供选择，我使用了B0-B3发现在使用B3时候达到了94%，证明该model在数据集上参数量越大所取得的效果越好。但遗憾的是作者只提供了B0-B3在ImageNet1k上训练的权重。学生有使用B6在老师提供的数据集上训练3k轮所取得的效果非常糟糕。如果使用B6的权重训练应该会取得不错的成果。</p>
+<div align="center">
+<img src="/2023/06/27/MachineLearningCourseCompetition/3.jpg" width="900">
+</div>
+  模型选择完毕就是炼丹了。因数据集小炼丹相对容易。因数据集较小，为了扩充数据集，减少过拟合，添加了数据增强中的随机水平翻转和随机选择以及随机颜色调整。又因为考虑到训练集很快就过拟合了，因此降低了学习率为1e-5。最后在第三轮取得了96.64%。]]></content>
+      <categories>
+        <category>科研</category>
+      </categories>
+      <tags>
+        <tag>机器学习</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>OperatorOverloading</title>
     <url>/2023/09/19/OperatorOverloading/</url>
     <content><![CDATA[<h4 id="运算符重载"><a href="#运算符重载" class="headerlink" title="运算符重载"></a>运算符重载</h4><p>作用： 通过重载递增运算符，实现自己的整型数据</p>
@@ -570,6 +570,30 @@
       </categories>
       <tags>
         <tag>C++语言基础</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hello World</title>
+    <url>/2022/09/19/hello-world/</url>
+    <content><![CDATA[<p>Welcome to <a class="link" href="https://hexo.io/">Hexo<i class="fas fa-external-link-alt"></i></a>! This is your very first post. Check <a class="link" href="https://hexo.io/docs/">documentation<i class="fas fa-external-link-alt"></i></a> for more info. If you get any problems when using Hexo, you can find the answer in <a class="link" href="https://hexo.io/docs/troubleshooting.html">troubleshooting<i class="fas fa-external-link-alt"></i></a> or you can ask me on <a class="link" href="https://github.com/hexojs/hexo/issues">GitHub<i class="fas fa-external-link-alt"></i></a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>More info: <a class="link" href="https://hexo.io/docs/writing.html">Writing<i class="fas fa-external-link-alt"></i></a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a class="link" href="https://hexo.io/docs/server.html">Server<i class="fas fa-external-link-alt"></i></a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a class="link" href="https://hexo.io/docs/generating.html">Generating<i class="fas fa-external-link-alt"></i></a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a class="link" href="https://hexo.io/docs/one-command-deployment.html">Deployment<i class="fas fa-external-link-alt"></i></a></p>
+]]></content>
+      <categories>
+        <category>hexo</category>
+      </categories>
+      <tags>
+        <tag>hexo命令</tag>
       </tags>
   </entry>
   <entry>
@@ -599,27 +623,34 @@
       </tags>
   </entry>
   <entry>
-    <title>Hello World</title>
-    <url>/2022/09/19/hello-world/</url>
-    <content><![CDATA[<p>Welcome to <a class="link" href="https://hexo.io/">Hexo<i class="fas fa-external-link-alt"></i></a>! This is your very first post. Check <a class="link" href="https://hexo.io/docs/">documentation<i class="fas fa-external-link-alt"></i></a> for more info. If you get any problems when using Hexo, you can find the answer in <a class="link" href="https://hexo.io/docs/troubleshooting.html">troubleshooting<i class="fas fa-external-link-alt"></i></a> or you can ask me on <a class="link" href="https://github.com/hexojs/hexo/issues">GitHub<i class="fas fa-external-link-alt"></i></a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+    <title>leetcode11-16</title>
+    <url>/2023/11/16/leetcode11-16/</url>
+    <content><![CDATA[<h2 id="leetcode每日一天（11-16）"><a href="#leetcode每日一天（11-16）" class="headerlink" title="leetcode每日一天（11.16）"></a>leetcode每日一天（11.16）</h2><p><a class="link" href="https://leetcode.cn/problems/find-the-city-with-the-smallest-number-of-neighbors-at-a-threshold-distance/">1334. 阈值距离内邻居最少的城市 - 力扣（LeetCode）<i class="fas fa-external-link-alt"></i></a></p>
+<p>有 <code>n</code> 个城市，按从 <code>0</code> 到 <code>n-1</code> 编号。给你一个边数组 <code>edges</code>，其中 <code>edges[i] = [fromi, toi, weighti]</code> 代表 <code>fromi</code> 和 <code>toi</code> 两个城市之间的双向加权边，距离阈值是一个整数 <code>distanceThreshold</code>。</p>
+<p>返回能通过某些路径到达其他城市数目最少、且路径距离 <strong>最大</strong> 为 <code>distanceThreshold</code> 的城市。如果有多个这样的城市，则返回编号最大的城市。</p>
+<p>注意，连接城市 <em><strong>i</strong></em> 和 <em><strong>j</strong></em> 的路径的距离等于沿该路径的所有边的权重之和。</p>
+<p><strong>示例 1：</strong></p>
+<img src="/2023/11/16/leetcode11-16/find_the_city_01.png" style="zoom:50%;">
 
-<p>More info: <a class="link" href="https://hexo.io/docs/writing.html">Writing<i class="fas fa-external-link-alt"></i></a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">输入：n = 4, edges = [[0,1,3],[1,2,1],[1,3,4],[2,3,1]], distanceThreshold = 4</span><br><span class="line">输出：3</span><br><span class="line">解释：城市分布图如上。</span><br><span class="line">每个城市阈值距离 distanceThreshold = 4 内的邻居城市分别是：</span><br><span class="line">城市 0 -&gt; [城市 1, 城市 2] </span><br><span class="line">城市 1 -&gt; [城市 0, 城市 2, 城市 3] </span><br><span class="line">城市 2 -&gt; [城市 0, 城市 1, 城市 3] </span><br><span class="line">城市 3 -&gt; [城市 1, 城市 2] </span><br><span class="line">城市 0 和 3 在阈值距离 4 以内都有 2 个邻居城市，但是我们必须返回城市 3，因为它的编号最大。</span><br></pre></td></tr></table></figure>
 
-<p>More info: <a class="link" href="https://hexo.io/docs/server.html">Server<i class="fas fa-external-link-alt"></i></a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+<p><strong>示例 2：</strong></p>
+<img src="/2023/11/16/leetcode11-16/find_the_city_02.png" style="zoom:50%;">
 
-<p>More info: <a class="link" href="https://hexo.io/docs/generating.html">Generating<i class="fas fa-external-link-alt"></i></a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">输入：n = 5, edges = [[0,1,2],[0,4,8],[1,2,3],[1,4,2],[2,3,1],[3,4,1]], distanceThreshold = 2</span><br><span class="line">输出：0</span><br><span class="line">解释：城市分布图如上。 </span><br><span class="line">每个城市阈值距离 distanceThreshold = 2 内的邻居城市分别是：</span><br><span class="line">城市 0 -&gt; [城市 1] </span><br><span class="line">城市 1 -&gt; [城市 0, 城市 4] </span><br><span class="line">城市 2 -&gt; [城市 3, 城市 4] </span><br><span class="line">城市 3 -&gt; [城市 2, 城市 4]</span><br><span class="line">城市 4 -&gt; [城市 1, 城市 2, 城市 3] </span><br><span class="line">城市 0 在阈值距离 2 以内只有 1 个邻居城市。</span><br></pre></td></tr></table></figure>
 
-<p>More info: <a class="link" href="https://hexo.io/docs/one-command-deployment.html">Deployment<i class="fas fa-external-link-alt"></i></a></p>
+<hr>
+<h2 id="解答"><a href="#解答" class="headerlink" title="解答"></a>解答</h2><h6 id="思想："><a href="#思想：" class="headerlink" title="思想："></a>思想：</h6><p>我们需要找到 <code>n</code>个节点中，拥有距离在 <code>distanceThreshold</code> 以内的邻居数量最小、且编号最大的节点。</p>
+<p>我使用的为Floyd算法<br>我们可以求出每一个节点 <code>p</code> 到其它节点的最短路，然后查看与 <code>p</code>距离在 <code>distanceThreshold</code>以内的邻居数量最小的节点。</p>
+<p>我们可以使用 Floyd 算法得到任意两点之间的最短路，然后统计满足条件的邻居数量。</p>
+<p><strong>注意的是，全片使用一个二维数组，该二维数组维护两点直接的最短路径，同时使用了三重循环，最外围的循环代表的更新该点的值进入最短路径中。</strong></p>
+<h6 id="代码："><a href="#代码：" class="headerlink" title="代码："></a>代码：</h6><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">findTheCity</span><span class="params">(<span class="type">int</span> n, vector&lt;vector&lt;<span class="type">int</span>&gt;&gt;&amp; edges, <span class="type">int</span> distanceThreshold)</span> </span>&#123;</span><br><span class="line">        <span class="type">long</span> <span class="type">long</span> map[<span class="number">105</span>][<span class="number">105</span>];</span><br><span class="line">        <span class="built_in">memset</span>(map,<span class="number">1e4</span>+<span class="number">5</span>,<span class="built_in">sizeof</span>(map));</span><br><span class="line">        <span class="built_in">memset</span>(dp,<span class="number">1e4</span>+<span class="number">5</span>,<span class="built_in">sizeof</span>(dp));</span><br><span class="line">        <span class="type">int</span> len=edges.<span class="built_in">size</span>();</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;len;i++)</span><br><span class="line">            map[edges[i][<span class="number">0</span>]][edges[i][<span class="number">1</span>]]=map[edges[i][<span class="number">1</span>]][edges[i][<span class="number">0</span>]]=edges[i][<span class="number">2</span>];</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;n;i++)&#123;</span><br><span class="line">            map[i][i]=<span class="number">0</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">/*k是代表更新到此顶点*/</span></span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> k=<span class="number">0</span>;k&lt;n;k++)&#123;</span><br><span class="line">            dp[k][k]=<span class="number">0</span>;</span><br><span class="line">            <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;n;i++)&#123;</span><br><span class="line">                <span class="keyword">for</span>(<span class="type">int</span> j=<span class="number">0</span>;j&lt;n;j++)</span><br><span class="line">                    map[i][j]=<span class="built_in">min</span>(map[i][j],map[i][k]+map[k][j]);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="type">int</span> index = <span class="number">-1</span>,minCnt=n+<span class="number">1</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> k=<span class="number">0</span>;k&lt;n;k++)&#123;</span><br><span class="line">            <span class="type">int</span> cnt = <span class="number">-1</span>;</span><br><span class="line">            <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;n;i++)&#123;</span><br><span class="line">                cout&lt;&lt;dp[k][i]&lt;&lt;<span class="string">&quot; &quot;</span>;</span><br><span class="line">                <span class="keyword">if</span>(map[k][i]&lt;=distanceThreshold)&#123;</span><br><span class="line">                    <span class="comment">// cout&lt;&lt;k&lt;&lt; &quot; &quot;&lt;&lt;i&lt;&lt;endl;</span></span><br><span class="line">                    cnt++;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="comment">// cout&lt;&lt;&quot;k:&quot;&lt;&lt; k &lt;&lt;&quot;cnt:&quot;&lt;&lt;cnt&lt;&lt;endl;</span></span><br><span class="line">            <span class="keyword">if</span>(minCnt&gt;=cnt)</span><br><span class="line">                index = k,minCnt=cnt;   </span><br><span class="line">            cout&lt;&lt;endl;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> index;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 ]]></content>
       <categories>
-        <category>hexo</category>
+        <category>leetcode</category>
       </categories>
       <tags>
-        <tag>hexo命令</tag>
+        <tag>八股文</tag>
       </tags>
   </entry>
   <entry>
@@ -671,37 +702,6 @@
       </tags>
   </entry>
   <entry>
-    <title>leetcode11-16</title>
-    <url>/2023/11/16/leetcode11-16/</url>
-    <content><![CDATA[<h2 id="leetcode每日一天（11-16）"><a href="#leetcode每日一天（11-16）" class="headerlink" title="leetcode每日一天（11.16）"></a>leetcode每日一天（11.16）</h2><p><a class="link" href="https://leetcode.cn/problems/find-the-city-with-the-smallest-number-of-neighbors-at-a-threshold-distance/">1334. 阈值距离内邻居最少的城市 - 力扣（LeetCode）<i class="fas fa-external-link-alt"></i></a></p>
-<p>有 <code>n</code> 个城市，按从 <code>0</code> 到 <code>n-1</code> 编号。给你一个边数组 <code>edges</code>，其中 <code>edges[i] = [fromi, toi, weighti]</code> 代表 <code>fromi</code> 和 <code>toi</code> 两个城市之间的双向加权边，距离阈值是一个整数 <code>distanceThreshold</code>。</p>
-<p>返回能通过某些路径到达其他城市数目最少、且路径距离 <strong>最大</strong> 为 <code>distanceThreshold</code> 的城市。如果有多个这样的城市，则返回编号最大的城市。</p>
-<p>注意，连接城市 <em><strong>i</strong></em> 和 <em><strong>j</strong></em> 的路径的距离等于沿该路径的所有边的权重之和。</p>
-<p><strong>示例 1：</strong></p>
-<img src="/2023/11/16/leetcode11-16/find_the_city_01.png" style="zoom:50%;">
-
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">输入：n = 4, edges = [[0,1,3],[1,2,1],[1,3,4],[2,3,1]], distanceThreshold = 4</span><br><span class="line">输出：3</span><br><span class="line">解释：城市分布图如上。</span><br><span class="line">每个城市阈值距离 distanceThreshold = 4 内的邻居城市分别是：</span><br><span class="line">城市 0 -&gt; [城市 1, 城市 2] </span><br><span class="line">城市 1 -&gt; [城市 0, 城市 2, 城市 3] </span><br><span class="line">城市 2 -&gt; [城市 0, 城市 1, 城市 3] </span><br><span class="line">城市 3 -&gt; [城市 1, 城市 2] </span><br><span class="line">城市 0 和 3 在阈值距离 4 以内都有 2 个邻居城市，但是我们必须返回城市 3，因为它的编号最大。</span><br></pre></td></tr></table></figure>
-
-<p><strong>示例 2：</strong></p>
-<img src="/2023/11/16/leetcode11-16/find_the_city_02.png" style="zoom:50%;">
-
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">输入：n = 5, edges = [[0,1,2],[0,4,8],[1,2,3],[1,4,2],[2,3,1],[3,4,1]], distanceThreshold = 2</span><br><span class="line">输出：0</span><br><span class="line">解释：城市分布图如上。 </span><br><span class="line">每个城市阈值距离 distanceThreshold = 2 内的邻居城市分别是：</span><br><span class="line">城市 0 -&gt; [城市 1] </span><br><span class="line">城市 1 -&gt; [城市 0, 城市 4] </span><br><span class="line">城市 2 -&gt; [城市 3, 城市 4] </span><br><span class="line">城市 3 -&gt; [城市 2, 城市 4]</span><br><span class="line">城市 4 -&gt; [城市 1, 城市 2, 城市 3] </span><br><span class="line">城市 0 在阈值距离 2 以内只有 1 个邻居城市。</span><br></pre></td></tr></table></figure>
-
-<hr>
-<h2 id="解答"><a href="#解答" class="headerlink" title="解答"></a>解答</h2><h6 id="思想："><a href="#思想：" class="headerlink" title="思想："></a>思想：</h6><p>我们需要找到 <code>n</code>个节点中，拥有距离在 <code>distanceThreshold</code> 以内的邻居数量最小、且编号最大的节点。</p>
-<p>我使用的为Floyd算法<br>我们可以求出每一个节点 <code>p</code> 到其它节点的最短路，然后查看与 <code>p</code>距离在 <code>distanceThreshold</code>以内的邻居数量最小的节点。</p>
-<p>我们可以使用 Floyd 算法得到任意两点之间的最短路，然后统计满足条件的邻居数量。</p>
-<p><strong>注意的是，全片使用一个二维数组，该二维数组维护两点直接的最短路径，同时使用了三重循环，最外围的循环代表的更新该点的值进入最短路径中。</strong></p>
-<h6 id="代码："><a href="#代码：" class="headerlink" title="代码："></a>代码：</h6><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">findTheCity</span><span class="params">(<span class="type">int</span> n, vector&lt;vector&lt;<span class="type">int</span>&gt;&gt;&amp; edges, <span class="type">int</span> distanceThreshold)</span> </span>&#123;</span><br><span class="line">        <span class="type">long</span> <span class="type">long</span> map[<span class="number">105</span>][<span class="number">105</span>];</span><br><span class="line">        <span class="built_in">memset</span>(map,<span class="number">1e4</span>+<span class="number">5</span>,<span class="built_in">sizeof</span>(map));</span><br><span class="line">        <span class="built_in">memset</span>(dp,<span class="number">1e4</span>+<span class="number">5</span>,<span class="built_in">sizeof</span>(dp));</span><br><span class="line">        <span class="type">int</span> len=edges.<span class="built_in">size</span>();</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;len;i++)</span><br><span class="line">            map[edges[i][<span class="number">0</span>]][edges[i][<span class="number">1</span>]]=map[edges[i][<span class="number">1</span>]][edges[i][<span class="number">0</span>]]=edges[i][<span class="number">2</span>];</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;n;i++)&#123;</span><br><span class="line">            map[i][i]=<span class="number">0</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">/*k是代表更新到此顶点*/</span></span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> k=<span class="number">0</span>;k&lt;n;k++)&#123;</span><br><span class="line">            dp[k][k]=<span class="number">0</span>;</span><br><span class="line">            <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;n;i++)&#123;</span><br><span class="line">                <span class="keyword">for</span>(<span class="type">int</span> j=<span class="number">0</span>;j&lt;n;j++)</span><br><span class="line">                    map[i][j]=<span class="built_in">min</span>(map[i][j],map[i][k]+map[k][j]);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="type">int</span> index = <span class="number">-1</span>,minCnt=n+<span class="number">1</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> k=<span class="number">0</span>;k&lt;n;k++)&#123;</span><br><span class="line">            <span class="type">int</span> cnt = <span class="number">-1</span>;</span><br><span class="line">            <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;n;i++)&#123;</span><br><span class="line">                cout&lt;&lt;dp[k][i]&lt;&lt;<span class="string">&quot; &quot;</span>;</span><br><span class="line">                <span class="keyword">if</span>(map[k][i]&lt;=distanceThreshold)&#123;</span><br><span class="line">                    <span class="comment">// cout&lt;&lt;k&lt;&lt; &quot; &quot;&lt;&lt;i&lt;&lt;endl;</span></span><br><span class="line">                    cnt++;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="comment">// cout&lt;&lt;&quot;k:&quot;&lt;&lt; k &lt;&lt;&quot;cnt:&quot;&lt;&lt;cnt&lt;&lt;endl;</span></span><br><span class="line">            <span class="keyword">if</span>(minCnt&gt;=cnt)</span><br><span class="line">                index = k,minCnt=cnt;   </span><br><span class="line">            cout&lt;&lt;endl;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> index;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>leetcode</category>
-      </categories>
-      <tags>
-        <tag>八股文</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>leetcode11-21</title>
     <url>/2023/11/21/leetcode11-21/</url>
     <content><![CDATA[<h2 id="leetcode每日一天（11-21）"><a href="#leetcode每日一天（11-21）" class="headerlink" title="leetcode每日一天（11.21）"></a>leetcode每日一天（11.21）</h2><h3 id="2216-美化数组的最少删除数"><a href="#2216-美化数组的最少删除数" class="headerlink" title="2216. 美化数组的最少删除数"></a><a class="link" href="https://leetcode.cn/problems/minimum-deletions-to-make-array-beautiful/">2216. 美化数组的最少删除数<i class="fas fa-external-link-alt"></i></a></h3><p>给你一个下标从 <strong>0</strong> 开始的整数数组 <code>nums</code> ，如果满足下述条件，则认为数组 <code>nums</code> 是一个 <strong>美丽数组</strong> ：</p>
@@ -740,7 +740,7 @@
       </tags>
   </entry>
   <entry>
-    <title></title>
+    <title>leetcode11-22</title>
     <url>/2023/11/22/leetcode11-22/</url>
     <content><![CDATA[<h2 id="leetcode每日一天（11-22）"><a href="#leetcode每日一天（11-22）" class="headerlink" title="leetcode每日一天（11.22）"></a>leetcode每日一天（11.22）</h2><p><a class="link" href="https://leetcode.cn/problems/minimum-path-cost-in-a-grid/">2304. 网格中的最小路径代价<i class="fas fa-external-link-alt"></i></a></p>
 <p>给你一个下标从 <strong>0</strong> 开始的整数矩阵 <code>grid</code> ，矩阵大小为 <code>m x n</code> ，由从 <code>0</code> 到 <code>m * n - 1</code> 的不同整数组成。你可以在此矩阵中，从一个单元格移动到 <strong>下一行</strong> 的任何其他单元格。如果你位于单元格 <code>(x, y)</code> ，且满足 <code>x &lt; m - 1</code> ，你可以移动到 <code>(x + 1, 0)</code>, <code>(x + 1, 1)</code>, …, <code>(x + 1, n - 1)</code> 中的任何一个单元格。<strong>注意：</strong> 在最后一行中的单元格不能触发移动。</p>
@@ -777,6 +777,63 @@
 <p><strong>三重for循环中i和j表示该点，k表示选择的路径</strong></p>
 <h6 id="代码："><a href="#代码：" class="headerlink" title="代码："></a>代码：</h6><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">minPathCost</span><span class="params">(vector&lt;vector&lt;<span class="type">int</span>&gt;&gt;&amp; grid, vector&lt;vector&lt;<span class="type">int</span>&gt;&gt;&amp; moveCost)</span> </span>&#123;</span><br><span class="line">        <span class="type">int</span> m = grid.<span class="built_in">size</span>(),n = grid[<span class="number">0</span>].<span class="built_in">size</span>();</span><br><span class="line">        vector&lt;vector&lt;<span class="type">int</span>&gt;&gt; <span class="built_in">dp</span>(<span class="number">2</span>,<span class="built_in">vector</span>&lt;<span class="type">int</span>&gt;(n));</span><br><span class="line">        dp[<span class="number">0</span>]=grid[<span class="number">0</span>];</span><br><span class="line">        <span class="type">int</span> cur = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;m;i++)&#123;</span><br><span class="line">            <span class="type">int</span> next = <span class="number">1</span> - cur;</span><br><span class="line">            <span class="keyword">for</span>(<span class="type">int</span> j=<span class="number">0</span>;j&lt;n;j++)&#123;</span><br><span class="line">                dp[next][j]=<span class="number">1e6</span>;</span><br><span class="line">                <span class="keyword">for</span>(<span class="type">int</span> k=<span class="number">0</span>;k&lt;n;k++)&#123;</span><br><span class="line">                    dp[next][j]=<span class="built_in">min</span>(dp[next][j],dp[cur][k]+grid[i][j]+moveCost[grid[i<span class="number">-1</span>][k]][j]);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            cur = next;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="type">int</span> minNum = dp[cur][<span class="number">0</span>];</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;n;i++)</span><br><span class="line">            minNum = <span class="built_in">min</span>(minNum,dp[cur][i]);</span><br><span class="line">        <span class="keyword">return</span> minNum;       </span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 ]]></content>
+      <categories>
+        <category>leetcode</category>
+      </categories>
+      <tags>
+        <tag>八股文</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>leetcode11-23</title>
+    <url>/2023/11/23/leetcode11-23/</url>
+    <content><![CDATA[<h2 id="leetcode每日一天（11-23）"><a href="#leetcode每日一天（11-23）" class="headerlink" title="leetcode每日一天（11.23）"></a>leetcode每日一天（11.23）</h2><p><a class="link" href="https://leetcode.cn/problems/html-entity-parser/">1410. HTML 实体解析器<i class="fas fa-external-link-alt"></i></a></p>
+<p>「HTML 实体解析器」 是一种特殊的解析器，它将 HTML 代码作为输入，并用字符本身替换掉所有这些特殊的字符实体。</p>
+<p>HTML 里这些特殊字符和它们对应的字符实体包括：</p>
+<ul>
+<li><strong>双引号：</strong>字符实体为 <code>&quot;</code> ，对应的字符是 <code>&quot;</code> 。</li>
+<li><strong>单引号：</strong>字符实体为 <code>&#39;</code> ，对应的字符是 <code>&#39;</code> 。</li>
+<li><strong>与符号：</strong>字符实体为 <code>&amp;</code> ，对应对的字符是 <code>&amp;</code> 。</li>
+<li><strong>大于号：</strong>字符实体为 <code>&gt;</code> ，对应的字符是 <code>&gt;</code> 。</li>
+<li><strong>小于号：</strong>字符实体为 <code>&lt;</code> ，对应的字符是 <code>&lt;</code> 。</li>
+<li><strong>斜线号：</strong>字符实体为 <code>⁄</code> ，对应的字符是 <code>/</code> 。</li>
+</ul>
+<p>给你输入字符串 <code>text</code> ，请你实现一个 HTML 实体解析器，返回解析器解析后的结果。</p>
+<p><strong>示例 1：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">输入：text = &quot;&amp;amp; is an HTML entity but &amp;ambassador; is not.&quot;</span><br><span class="line">输出：&quot;&amp; is an HTML entity but &amp;ambassador; is not.&quot;</span><br><span class="line">解释：解析器把字符实体 &amp;amp; 用 &amp; 替换</span><br></pre></td></tr></table></figure>
+
+<p><strong>示例 2：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">输入：text = &quot;and I quote: &amp;quot;...&amp;quot;&quot;</span><br><span class="line">输出：&quot;and I quote: \&quot;...\&quot;&quot;</span><br></pre></td></tr></table></figure>
+
+<p><strong>示例 3：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">输入：text = &quot;Stay home! Practice on Leetcode :)&quot;</span><br><span class="line">输出：&quot;Stay home! Practice on Leetcode :)&quot;</span><br></pre></td></tr></table></figure>
+
+<p><strong>示例 4：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">输入：text = &quot;x &amp;gt; y &amp;amp;&amp;amp; x &amp;lt; y is always false&quot;</span><br><span class="line">输出：&quot;x &gt; y &amp;&amp; x &lt; y is always false&quot;</span><br></pre></td></tr></table></figure>
+
+<p><strong>示例 5：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">输入：text = &quot;leetcode.com&amp;frasl;problemset&amp;frasl;all&quot;</span><br><span class="line">输出：&quot;leetcode.com/problemset/all&quot;</span><br></pre></td></tr></table></figure>
+
+<p><strong>提示：</strong></p>
+<ul>
+<li><code>1 &lt;= text.length &lt;= 10^5</code></li>
+<li>字符串可能包含 256 个ASCII 字符中的任意字符。</li>
+</ul>
+<hr>
+<h2 id="解答"><a href="#解答" class="headerlink" title="解答"></a>解答</h2><h6 id="思想："><a href="#思想：" class="headerlink" title="思想："></a>思想：</h6><p>这是一道很简单的字符串操作的题目。这里我为了温故以前学习的map而特意使用了他，如果想更便捷的抒写代码可以使用官网提供的题解使用二维字符串数组则可以轻松的AC。</p>
+<p>大概思路：观察需要替换的字符串的共同点发现都以**&amp;<strong>开头和都以</strong>；**结尾，因此可以依次作为根据判断是否是需要进行更换的字符串。</p>
+<p>注意：</p>
+<p><strong>在遍历是否为需替换字符串时，应该注意到最长替换字符串长度为7，因此在大于最长长度应该截至并且应考虑数组越界的可能</strong></p>
+<p>知识：</p>
+<p>稳固了字符串的相关操作，例如：compare函数和substr函数。</p>
+<h6 id="代码："><a href="#代码：" class="headerlink" title="代码："></a>代码：</h6><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">string <span class="title">entityParser</span><span class="params">(string text)</span> </span>&#123;</span><br><span class="line">        <span class="type">int</span> len = text.<span class="built_in">size</span>();</span><br><span class="line">        string output;</span><br><span class="line"></span><br><span class="line">        map&lt;string,string&gt; m;</span><br><span class="line">        map&lt;string,string&gt;::iterator *it;</span><br><span class="line">        m.<span class="built_in">insert</span>(<span class="built_in">make_pair</span>(<span class="string">&quot;&amp;apos;&quot;</span>,<span class="string">&quot;\&#x27;&quot;</span>));</span><br><span class="line">        m.<span class="built_in">insert</span>(<span class="built_in">make_pair</span>(<span class="string">&quot;&amp;amp;&quot;</span>,<span class="string">&quot;&amp;&quot;</span>));</span><br><span class="line">        m.<span class="built_in">insert</span>(<span class="built_in">make_pair</span>(<span class="string">&quot;&amp;quot;&quot;</span>,<span class="string">&quot;\&quot;&quot;</span>));</span><br><span class="line">        m.<span class="built_in">insert</span>(<span class="built_in">make_pair</span>(<span class="string">&quot;&amp;gt;&quot;</span>,<span class="string">&quot;&gt;&quot;</span>));</span><br><span class="line">        m.<span class="built_in">insert</span>(<span class="built_in">make_pair</span>(<span class="string">&quot;&amp;lt;&quot;</span>,<span class="string">&quot;&lt;&quot;</span>));</span><br><span class="line">        m.<span class="built_in">insert</span>(<span class="built_in">make_pair</span>(<span class="string">&quot;&amp;frasl;&quot;</span>,<span class="string">&quot;/&quot;</span>));</span><br><span class="line">        vector&lt;string&gt; first=&#123;<span class="string">&quot;&amp;apos;&quot;</span>,<span class="string">&quot;&amp;amp;&quot;</span>,<span class="string">&quot;&amp;quot;&quot;</span>,<span class="string">&quot;&amp;gt;&quot;</span>,<span class="string">&quot;&amp;lt;&quot;</span>,<span class="string">&quot;&amp;frasl;&quot;</span>&#125;;</span><br><span class="line">        <span class="comment">// cout&lt;&lt;m[&quot;&amp;l&quot;]&lt;&lt;endl;</span></span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span> ;i&lt;len;i++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(text[i]==<span class="string">&#x27;&amp;&#x27;</span>)&#123;</span><br><span class="line">                <span class="type">bool</span> flag = <span class="literal">false</span>;</span><br><span class="line">                <span class="type">int</span> endIndex=i;</span><br><span class="line">                <span class="keyword">for</span>(<span class="type">int</span> j=i;j&lt;i+<span class="number">7</span>&amp;&amp;j&lt;len;j++)</span><br><span class="line">                    <span class="keyword">if</span>(text[j]==<span class="string">&#x27;;&#x27;</span>)&#123;</span><br><span class="line">                        endIndex=j;</span><br><span class="line">                        string t=text.<span class="built_in">substr</span>(i,j-i+<span class="number">1</span>);</span><br><span class="line">                        cout&lt;&lt;t&lt;&lt;endl;</span><br><span class="line">                        <span class="keyword">for</span>(<span class="type">int</span> k=<span class="number">0</span>;k&lt;<span class="number">6</span>;k++)&#123;</span><br><span class="line">                            <span class="keyword">if</span>(t.<span class="built_in">compare</span>(first[k])==<span class="number">0</span>)&#123;</span><br><span class="line">                                output+=m[first[k]];</span><br><span class="line">                                i=j;</span><br><span class="line">                                flag=<span class="literal">true</span>;</span><br><span class="line">                                <span class="keyword">break</span>;</span><br><span class="line">                            &#125;</span><br><span class="line">                        &#125;</span><br><span class="line">                        <span class="keyword">break</span>;</span><br><span class="line">                    &#125;</span><br><span class="line">                <span class="keyword">if</span>(flag)</span><br><span class="line">                    <span class="keyword">continue</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            output+=text[i];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> output;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>leetcode</category>
+      </categories>
+      <tags>
+        <tag>八股文</tag>
+      </tags>
   </entry>
   <entry>
     <title>leetcode6-27</title>
@@ -814,24 +871,6 @@
       </tags>
   </entry>
   <entry>
-    <title>leetcode9.20</title>
-    <url>/2022/09/20/leetcode9-20/</url>
-    <content><![CDATA[<h2 id="leetcode每日一天（9-20）"><a href="#leetcode每日一天（9-20）" class="headerlink" title="leetcode每日一天（9.20）"></a>leetcode每日一天（9.20）</h2><p><a class="link" href="https://leetcode.cn/problems/partition-to-k-equal-sum-subsets/">题目：698. 划分为k个相等的子集<i class="fas fa-external-link-alt"></i></a><br>给定一个整数数组  nums 和一个正整数 k，找出是否有可能把这个数组分成 k 个非空子集，其总和都相等。</p>
-<h6 id="示例1"><a href="#示例1" class="headerlink" title="示例1"></a>示例1</h6><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">输入： nums = [4, 3, 2, 3, 5, 2, 1], k = 4</span><br><span class="line">输出： True</span><br><span class="line">说明： 有可能将其分成 4 个子集（5），（1,4），（2,3），（2,3）等于总和。</span><br></pre></td></tr></table></figure>
-<h6 id="示例2"><a href="#示例2" class="headerlink" title="示例2"></a>示例2</h6><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">输入: nums = [1,2,3,4], k = 3</span><br><span class="line">输出: <span class="literal">false</span></span><br></pre></td></tr></table></figure>
-<h6 id="提示"><a href="#提示" class="headerlink" title="提示"></a>提示</h6><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">1 &lt;= k &lt;= len(nums) &lt;= 16</span><br><span class="line">0 &lt; nums[i] &lt; 10000</span><br><span class="line">每个元素的频率在 [1,4] 范围内</span><br></pre></td></tr></table></figure>
-<hr>
-<h2 id="解答"><a href="#解答" class="headerlink" title="解答"></a>解答</h2><h6 id="思想："><a href="#思想：" class="headerlink" title="思想："></a>思想：</h6><p>我们可以把每个集合看做一个桶，然后我们可以通过dfs和剪枝来模拟每个数值入桶和出桶。</p>
-<h6 id="剪枝："><a href="#剪枝：" class="headerlink" title="剪枝："></a>剪枝：</h6><p>因为我们需要有k个桶且每个桶的值是相等的。以此可以推出给定的值相加一定是桶的值的倍速，并且不会存在比桶值大的数值。最关键的剪枝为，我们在dfs遍历一个桶是否可以装满，如果回溯的时候发现这个桶回到了初始值，则证明这个桶是装不满的。然而，每个桶都是一样的，这个桶装不满则其他桶一样装不满。</p>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">bool</span> <span class="title">canPartitionKSubsets</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; nums, <span class="type">int</span> k)</span> </span>&#123;</span><br><span class="line">    <span class="type">int</span> sum=<span class="number">0</span>,size=nums.<span class="built_in">size</span>();</span><br><span class="line">    <span class="type">int</span> maxN=<span class="number">-1</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;size;i++)</span><br><span class="line">        sum+=nums[i],maxN=<span class="built_in">max</span>(maxN,nums[i]);</span><br><span class="line">    <span class="keyword">if</span>(sum%k!=<span class="number">0</span>||maxN&gt;sum/k)</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    sum=sum/k;</span><br><span class="line">    <span class="built_in">sort</span>(nums.<span class="built_in">begin</span>(), nums.<span class="built_in">end</span>());</span><br><span class="line">  <span class="comment">//  cout&lt;&lt;nums[0];</span></span><br><span class="line">    <span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">arr</span><span class="params">(k,sum)</span></span>;</span><br><span class="line">    <span class="type">bool</span> t=<span class="literal">false</span>;</span><br><span class="line">    t=<span class="built_in">dfs</span>(nums,arr,size<span class="number">-1</span>,k,size,sum);</span><br><span class="line">    <span class="keyword">return</span> t;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//nums给定数组 arr模拟每一个桶  cur以此遍历每个数值 k一共有几个桶 size原数组大小 sum每个桶的值</span></span><br><span class="line"><span class="function"><span class="type">bool</span> <span class="title">dfs</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; nums,vector&lt;<span class="type">int</span>&gt;&amp; arr,<span class="type">int</span> cur,<span class="type">int</span> k,<span class="type">int</span> size,<span class="type">int</span> sum)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(cur &lt; <span class="number">0</span>)&#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;k;i++)</span><br><span class="line">            <span class="keyword">if</span>(arr[i]!=<span class="number">0</span>)</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;k;i++)&#123;</span><br><span class="line">        <span class="keyword">if</span>(arr[i]-nums[cur]&lt;nums[<span class="number">0</span>]&amp;&amp;arr[i]!=nums[cur])</span><br><span class="line">            <span class="keyword">continue</span>;</span><br><span class="line">        arr[i] -= nums[cur];</span><br><span class="line">        <span class="comment">// for(int j=0;j&lt;k;j++)</span></span><br><span class="line">        <span class="comment">//     cout&lt;&lt;arr[i]&lt;&lt;&quot; &quot;;</span></span><br><span class="line">        <span class="comment">// cout&lt;&lt;endl;</span></span><br><span class="line">        <span class="keyword">if</span>(<span class="built_in">dfs</span>(nums,arr,cur<span class="number">-1</span>,k,size,sum))</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">        arr[i] += nums[cur];</span><br><span class="line">        <span class="keyword">if</span>(arr[i]==sum)</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>leetcode</category>
-      </categories>
-      <tags>
-        <tag>八股文</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>leetcode9-23</title>
     <url>/2022/09/23/leetcode9-23/</url>
     <content><![CDATA[<h2 id="leetcode每日一天（9-23）"><a href="#leetcode每日一天（9-23）" class="headerlink" title="leetcode每日一天（9.23）"></a>leetcode每日一天（9.23）</h2><p><a class="link" href="https://leetcode.cn/problems/design-linked-list/">707. 设计链表<i class="fas fa-external-link-alt"></i></a><br>设计链表的实现。您可以选择使用单链表或双链表。单链表中的节点应该具有两个属性：<code>val</code> 和 <code>next</code>。<code>val</code> 是当前节点的值，<code>next</code> 是指向下一个节点的指针&#x2F;引用。如果要使用双向链表，则还需要一个属性 <code>prev</code> 以指示链表中的上一个节点。假设链表中的所有节点都是 0-index 的。<br>在链表类中实现这些功能：</p>
@@ -848,6 +887,24 @@
 <h2 id="解答"><a href="#解答" class="headerlink" title="解答"></a>解答</h2><h6 id="思想："><a href="#思想：" class="headerlink" title="思想："></a>思想：</h6><p>这是一道水题目，主要是用到数据结构里面的链表，我是用的c++里面的ListNode来解答这题比较轻松。题目要求有三处增加函数，实质上在首部添加数值和在尾部添加数值的操作可以归纳为addAtIndex，则我们在addAtHead和addAtTail可以直接调用addAtIndex用来减少我们的代码量。</p>
 <h6 id="ListNode的结构："><a href="#ListNode的结构：" class="headerlink" title="ListNode的结构："></a>ListNode的结构：</h6><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">struct ListNode &#123;</span><br><span class="line">      int val;  //当前结点的值</span><br><span class="line">      ListNode *next;  //指向下一个结点的指针</span><br><span class="line">      ListNode(int x) : val(x), next(NULL) &#123;&#125;  //初始化当前结点值为x,指针为空</span><br><span class="line">  &#125;;</span><br><span class="line"></span><br><span class="line">ListNode *p=new ListNode(0); //新增一个节点</span><br><span class="line">delete p; //删除一个节点，释放内存</span><br></pre></td></tr></table></figure>
 <h6 id="代码："><a href="#代码：" class="headerlink" title="代码："></a>代码：</h6><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">MyLinkedList</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="built_in">MyLinkedList</span>() &#123;</span><br><span class="line">        <span class="keyword">this</span>-&gt;size = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">this</span>-&gt;head = <span class="keyword">new</span> <span class="built_in">ListNode</span>(<span class="number">0</span>); <span class="comment">//首节点，值无意义</span></span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">get</span><span class="params">(<span class="type">int</span> index)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(index&lt;<span class="number">0</span>||index&gt;=size)</span><br><span class="line">            <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">        ListNode *cur = head;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt;= index; i++) &#123;</span><br><span class="line">            cur = cur-&gt;next;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> cur-&gt;val;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">addAtHead</span><span class="params">(<span class="type">int</span> val)</span> </span>&#123;</span><br><span class="line">        <span class="built_in">addAtIndex</span>(<span class="number">0</span>, val);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">addAtTail</span><span class="params">(<span class="type">int</span> val)</span> </span>&#123;</span><br><span class="line">        <span class="built_in">addAtIndex</span>(size,val);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">addAtIndex</span><span class="params">(<span class="type">int</span> index, <span class="type">int</span> val)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(index&gt;size)</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        index=<span class="built_in">max</span>(<span class="number">0</span>,index);</span><br><span class="line">        ListNode *cur=head;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;index;i++)</span><br><span class="line">            cur=cur-&gt;next;</span><br><span class="line">        ListNode *toAdd = <span class="keyword">new</span> <span class="built_in">ListNode</span>(val);</span><br><span class="line">        toAdd-&gt;next = cur-&gt;next;</span><br><span class="line">        cur-&gt;next = toAdd;</span><br><span class="line">        size++;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">deleteAtIndex</span><span class="params">(<span class="type">int</span> index)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(index&lt;<span class="number">0</span>||index&gt;=size)</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        ListNode *cur=head;</span><br><span class="line">        size--;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;index;i++)</span><br><span class="line">            cur=cur-&gt;next;</span><br><span class="line">        ListNode *p = cur-&gt;next;</span><br><span class="line">        cur-&gt;next = cur-&gt;next-&gt;next;</span><br><span class="line">        <span class="keyword">delete</span> p;</span><br><span class="line">    &#125;</span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">    <span class="type">int</span> size;</span><br><span class="line">    ListNode *head;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Your MyLinkedList object will be instantiated and called as such:</span></span><br><span class="line"><span class="comment"> * MyLinkedList* obj = new MyLinkedList();</span></span><br><span class="line"><span class="comment"> * int param_1 = obj-&gt;get(index);</span></span><br><span class="line"><span class="comment"> * obj-&gt;addAtHead(val);</span></span><br><span class="line"><span class="comment"> * obj-&gt;addAtTail(val);</span></span><br><span class="line"><span class="comment"> * obj-&gt;addAtIndex(index,val);</span></span><br><span class="line"><span class="comment"> * obj-&gt;deleteAtIndex(index);</span></span><br><span class="line"><span class="comment"> */</span></span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>leetcode</category>
+      </categories>
+      <tags>
+        <tag>八股文</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>leetcode9.20</title>
+    <url>/2022/09/20/leetcode9-20/</url>
+    <content><![CDATA[<h2 id="leetcode每日一天（9-20）"><a href="#leetcode每日一天（9-20）" class="headerlink" title="leetcode每日一天（9.20）"></a>leetcode每日一天（9.20）</h2><p><a class="link" href="https://leetcode.cn/problems/partition-to-k-equal-sum-subsets/">题目：698. 划分为k个相等的子集<i class="fas fa-external-link-alt"></i></a><br>给定一个整数数组  nums 和一个正整数 k，找出是否有可能把这个数组分成 k 个非空子集，其总和都相等。</p>
+<h6 id="示例1"><a href="#示例1" class="headerlink" title="示例1"></a>示例1</h6><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">输入： nums = [4, 3, 2, 3, 5, 2, 1], k = 4</span><br><span class="line">输出： True</span><br><span class="line">说明： 有可能将其分成 4 个子集（5），（1,4），（2,3），（2,3）等于总和。</span><br></pre></td></tr></table></figure>
+<h6 id="示例2"><a href="#示例2" class="headerlink" title="示例2"></a>示例2</h6><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">输入: nums = [1,2,3,4], k = 3</span><br><span class="line">输出: <span class="literal">false</span></span><br></pre></td></tr></table></figure>
+<h6 id="提示"><a href="#提示" class="headerlink" title="提示"></a>提示</h6><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">1 &lt;= k &lt;= len(nums) &lt;= 16</span><br><span class="line">0 &lt; nums[i] &lt; 10000</span><br><span class="line">每个元素的频率在 [1,4] 范围内</span><br></pre></td></tr></table></figure>
+<hr>
+<h2 id="解答"><a href="#解答" class="headerlink" title="解答"></a>解答</h2><h6 id="思想："><a href="#思想：" class="headerlink" title="思想："></a>思想：</h6><p>我们可以把每个集合看做一个桶，然后我们可以通过dfs和剪枝来模拟每个数值入桶和出桶。</p>
+<h6 id="剪枝："><a href="#剪枝：" class="headerlink" title="剪枝："></a>剪枝：</h6><p>因为我们需要有k个桶且每个桶的值是相等的。以此可以推出给定的值相加一定是桶的值的倍速，并且不会存在比桶值大的数值。最关键的剪枝为，我们在dfs遍历一个桶是否可以装满，如果回溯的时候发现这个桶回到了初始值，则证明这个桶是装不满的。然而，每个桶都是一样的，这个桶装不满则其他桶一样装不满。</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">bool</span> <span class="title">canPartitionKSubsets</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; nums, <span class="type">int</span> k)</span> </span>&#123;</span><br><span class="line">    <span class="type">int</span> sum=<span class="number">0</span>,size=nums.<span class="built_in">size</span>();</span><br><span class="line">    <span class="type">int</span> maxN=<span class="number">-1</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;size;i++)</span><br><span class="line">        sum+=nums[i],maxN=<span class="built_in">max</span>(maxN,nums[i]);</span><br><span class="line">    <span class="keyword">if</span>(sum%k!=<span class="number">0</span>||maxN&gt;sum/k)</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    sum=sum/k;</span><br><span class="line">    <span class="built_in">sort</span>(nums.<span class="built_in">begin</span>(), nums.<span class="built_in">end</span>());</span><br><span class="line">  <span class="comment">//  cout&lt;&lt;nums[0];</span></span><br><span class="line">    <span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">arr</span><span class="params">(k,sum)</span></span>;</span><br><span class="line">    <span class="type">bool</span> t=<span class="literal">false</span>;</span><br><span class="line">    t=<span class="built_in">dfs</span>(nums,arr,size<span class="number">-1</span>,k,size,sum);</span><br><span class="line">    <span class="keyword">return</span> t;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//nums给定数组 arr模拟每一个桶  cur以此遍历每个数值 k一共有几个桶 size原数组大小 sum每个桶的值</span></span><br><span class="line"><span class="function"><span class="type">bool</span> <span class="title">dfs</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; nums,vector&lt;<span class="type">int</span>&gt;&amp; arr,<span class="type">int</span> cur,<span class="type">int</span> k,<span class="type">int</span> size,<span class="type">int</span> sum)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(cur &lt; <span class="number">0</span>)&#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;k;i++)</span><br><span class="line">            <span class="keyword">if</span>(arr[i]!=<span class="number">0</span>)</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;k;i++)&#123;</span><br><span class="line">        <span class="keyword">if</span>(arr[i]-nums[cur]&lt;nums[<span class="number">0</span>]&amp;&amp;arr[i]!=nums[cur])</span><br><span class="line">            <span class="keyword">continue</span>;</span><br><span class="line">        arr[i] -= nums[cur];</span><br><span class="line">        <span class="comment">// for(int j=0;j&lt;k;j++)</span></span><br><span class="line">        <span class="comment">//     cout&lt;&lt;arr[i]&lt;&lt;&quot; &quot;;</span></span><br><span class="line">        <span class="comment">// cout&lt;&lt;endl;</span></span><br><span class="line">        <span class="keyword">if</span>(<span class="built_in">dfs</span>(nums,arr,cur<span class="number">-1</span>,k,size,sum))</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">        arr[i] += nums[cur];</span><br><span class="line">        <span class="keyword">if</span>(arr[i]==sum)</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
       <categories>
         <category>leetcode</category>
       </categories>
