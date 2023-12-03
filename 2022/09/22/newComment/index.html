@@ -248,15 +248,13 @@
 <ol>
 <li>新建函数，函数名称填写：<code>twikoo</code>，创建方式选择：<code>空白函数</code>，运行环境选择：<code>Nodejs 10.15</code>（选择最靠近你的运行环境的版本），函数内存请选择：<code>128MB</code></li>
 <li>点击下一步，修改函数代码：<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">exports.main = require(<span class="string">&#x27;twikoo-func&#x27;</span>).main</span><br></pre></td></tr></table></figure></li>
-<li>确定完成后，点击刚才创建的twikoo函数，点击函数代码，创建<code> package.json</code><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123; <span class="string">&quot;dependencies&quot;</span>: &#123; <span class="string">&quot;twikoo-func&quot;</span>: <span class="string">&quot;1.4.9&quot;</span> &#125; &#125;</span><br></pre></td></tr></table></figure>
-twikoo-func填写最新的版本</li>
-</ol>
-<h4 id="命令行环境部署"><a href="#命令行环境部署" class="headerlink" title="命令行环境部署"></a>命令行环境部署</h4><p>以下操作部署，可使用任意环境面板部署，这里使用的是git进行部署</p>
-<ol>
+<li>确定完成后，点击刚才创建的twikoo函数，点击函数代码，创建<code>package.json</code><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123; <span class="string">&quot;dependencies&quot;</span>: &#123; <span class="string">&quot;twikoo-func&quot;</span>: <span class="string">&quot;1.4.9&quot;</span> &#125; &#125;</span><br></pre></td></tr></table></figure>
+twikoo-func填写最新的版本<h4 id="命令行环境部署"><a href="#命令行环境部署" class="headerlink" title="命令行环境部署"></a>命令行环境部署</h4>以下操作部署，可使用任意环境面板部署，这里使用的是git进行部署</li>
 <li>克隆本仓库<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/imaegoo/twikoo.git</span><br><span class="line"><span class="built_in">cd</span> twikoo</span><br></pre></td></tr></table></figure></li>
 <li>安装依赖项<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm install -g yarn <span class="comment"># 已安装 yarn 可以跳过此步</span></span><br><span class="line">yarn install</span><br></pre></td></tr></table></figure></li>
 <li>授权云开发环境（会自动跳转到授权界面，点击授权即可）<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yarn run login</span><br></pre></td></tr></table></figure></li>
-<li>自动部署<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yarn deploy -e 您的环境<span class="built_in">id</span> (就是之前你复制的)</span><br></pre></td></tr></table></figure></li>
+<li>自动部署<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yarn deploy -e 您的环境<span class="built_in">id</span> (就是之前你复制的)</span><br></pre></td></tr></table></figure>
+</li>
 </ol>
 <h4 id="在-Hexo-中使用"><a href="#在-Hexo-中使用" class="headerlink" title="在 Hexo 中使用"></a>在 Hexo 中使用</h4><ol>
 <li>在主题的配置文件中找到comment<br>enable改为true，use为twikoo<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">comment:</span><br><span class="line">  <span class="built_in">enable</span>: <span class="literal">true</span></span><br><span class="line">  use: twikoo <span class="comment"># values: valine | gitalk | twikoo</span></span><br></pre></td></tr></table></figure></li>
@@ -268,7 +266,7 @@ twikoo-func填写最新的版本</li>
 <ol>
 <li><a class="link" target="_blank" rel="noopener" href="https://www.mongodb.com/zh-cn/cloud/atlas/register">注册MongoDB账号<i class="fas fa-external-link-alt"></i></a></li>
 <li>创建免费数据库，类型选择<code>Shared</code>，区域选择 <code>AWS / N. Virginia (us-east-1)</code> </li>
-<li>点击<code>Connect</code>按钮，键入 0.0.0.0&#x2F;0 以允许所有 IP 地址的连接，并创建数据库用户</li>
+<li>点击<code>Connect</code>按钮，键入 0.0.0.0/0 以允许所有 IP 地址的连接，并创建数据库用户</li>
 <li>连接方式选择中间的<code>Connect your application</code></li>
 <li>记录下连接字符串，等下使用时记得将其中的 <password> 修改为刚刚设置的用户密码（<password>需要整体替换）</password></password></li>
 </ol>
@@ -287,23 +285,13 @@ twikoo-func填写最新的版本</li>
 <li>他会给出解析配置，你就去改你的域名解析就好了（在你购买域名的官网会有一个域名解析）</li>
 <li>最后去主题配置文件里更新这个新地址就行</li>
 </ol>
-<h4 id="主题文件配置"><a href="#主题文件配置" class="headerlink" title="主题文件配置"></a>主题文件配置</h4><p>在主题文件中找到配置文件keep\layout_partial\comment</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">twikoo:</span><br><span class="line">  env_id:  你的域名  <span class="comment">#https://www.sunset148.top/ Tencent Cloud environment id</span></span><br><span class="line">  region: ap-shanghai <span class="comment"># environment region. If select Guangzhou, fill in &quot;ap-guangzhou&quot;.</span></span><br></pre></td></tr></table></figure>
-<p>重启Hexo，就能可以看到了。</p>
+<h4 id="主题文件配置"><a href="#主题文件配置" class="headerlink" title="主题文件配置"></a>主题文件配置</h4><p>在主题文件中找到配置文件keep\layout_partial\comment<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">twikoo:</span><br><span class="line">  env_id:  你的域名  <span class="comment">#https://www.sunset148.top/ Tencent Cloud environment id</span></span><br><span class="line">  region: ap-shanghai <span class="comment"># environment region. If select Guangzhou, fill in &quot;ap-guangzhou&quot;.</span></span><br></pre></td></tr></table></figure><br>重启Hexo，就能可以看到了。</p>
 <hr>
 <h3 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h3><p>但很有可能你的评论系统打不开，很有可能是因为<code>Butterfly</code>版本过低的问题。<br>博主试了几个Butterfly依旧开不开评论系统，转而投向了keep</p>
-<h5 id="keep安装"><a href="#keep安装" class="headerlink" title="keep安装"></a>keep安装</h5><p>如果你在使用 Hexo 5.0 或更高版本，最简单的安装方式是通过 npm：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> hexo-site</span><br><span class="line">$ npm install hexo-theme-keep</span><br></pre></td></tr></table></figure>
-<p>或者使用 git 克隆整个仓库：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> hexo-site</span><br><span class="line">$ git <span class="built_in">clone</span> https://github.com/XPoet/hexo-theme-keep themes/keep</span><br></pre></td></tr></table></figure>
-<h5 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h5><p>安装完成后，在 Hexo 配置文件中将<code>theme</code>设置为<code> keep</code>。<br>Keep 不定期发布新版本，你可以通过如下命令更新 Keep。</p>
-<h5 id="更新"><a href="#更新" class="headerlink" title="更新"></a>更新</h5><p>通过 npm 安装最新版本：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> hexo-site</span><br><span class="line">$ npm update hexo-theme-keep</span><br></pre></td></tr></table></figure>
-<p>通过 git 更新到最新的 master 分支：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> themes/keep</span><br><span class="line">$ git pull</span><br></pre></td></tr></table></figure>
-<h5 id="Twikoo-1"><a href="#Twikoo-1" class="headerlink" title="Twikoo"></a>Twikoo</h5><p>另外在keep里面的keep\layout_partial\comment的twikoo.ejs里面的版本号更改为最新的就是</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;script &lt;%= theme.pjax.enable === <span class="literal">true</span> ? <span class="string">&#x27;data-pjax&#x27;</span> : <span class="string">&#x27;&#x27;</span> %&gt;                src=<span class="string">&quot;//cdn.jsdelivr.net/npm/twikoo@1.6.7/dist/twikoo.all.min.js&quot;</span>&gt;&lt;/script&gt;</span><br></pre></td></tr></table></figure>
-<p><a class="link" target="_blank" rel="noopener" href="https://keep-docs.xpoet.cn/usage-tutorial/quick-start.html">keep官方文档<i class="fas fa-external-link-alt"></i></a></p>
+<h5 id="keep安装"><a href="#keep安装" class="headerlink" title="keep安装"></a>keep安装</h5><p>如果你在使用 Hexo 5.0 或更高版本，最简单的安装方式是通过 npm：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> hexo-site</span><br><span class="line">$ npm install hexo-theme-keep</span><br></pre></td></tr></table></figure><br>或者使用 git 克隆整个仓库：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> hexo-site</span><br><span class="line">$ git <span class="built_in">clone</span> https://github.com/XPoet/hexo-theme-keep themes/keep</span><br></pre></td></tr></table></figure></p>
+<h5 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h5><p>安装完成后，在 Hexo 配置文件中将<code>theme</code>设置为<code>keep</code>。<br>Keep 不定期发布新版本，你可以通过如下命令更新 Keep。</p>
+<h5 id="更新"><a href="#更新" class="headerlink" title="更新"></a>更新</h5><p>通过 npm 安装最新版本：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> hexo-site</span><br><span class="line">$ npm update hexo-theme-keep</span><br></pre></td></tr></table></figure><br>通过 git 更新到最新的 master 分支：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> themes/keep</span><br><span class="line">$ git pull</span><br></pre></td></tr></table></figure></p>
+<h5 id="Twikoo-1"><a href="#Twikoo-1" class="headerlink" title="Twikoo"></a>Twikoo</h5><p>另外在keep里面的keep\layout_partial\comment的twikoo.ejs里面的版本号更改为最新的就是<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;script &lt;%= theme.pjax.enable === <span class="literal">true</span> ? <span class="string">&#x27;data-pjax&#x27;</span> : <span class="string">&#x27;&#x27;</span> %&gt;                src=<span class="string">&quot;//cdn.jsdelivr.net/npm/twikoo@1.6.7/dist/twikoo.all.min.js&quot;</span>&gt;&lt;/script&gt;</span><br></pre></td></tr></table></figure><br><a class="link" target="_blank" rel="noopener" href="https://keep-docs.xpoet.cn/usage-tutorial/quick-start.html">keep官方文档<i class="fas fa-external-link-alt"></i></a></p>
 
         </div>
 
