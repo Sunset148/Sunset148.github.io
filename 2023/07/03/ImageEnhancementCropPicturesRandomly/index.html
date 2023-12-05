@@ -231,8 +231,11 @@
         
 
         <div class="article-content markdown-body">
-            <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>在深度学习图片分割领域，经常使用数据增强的方法扩充自己的数据集。然而在语义分割中需要保证img和lable所随机裁剪的区域相同。所以我们需要设定随机种子</p>
-<h2 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">seed = torch.random.seed()</span><br><span class="line"><span class="comment"># 用该方法获取一个随机种子</span></span><br><span class="line">seed = torch.random.seed()</span><br><span class="line"><span class="comment"># 该方法设置随机种子</span></span><br><span class="line">torch.random.manual_seed(seed)</span><br><span class="line">cropped_image = self.transform(image)</span><br><span class="line">torch.random.manual_seed(seed)</span><br><span class="line">cropped_label = self.transform(label)</span><br></pre></td></tr></table></figure>
+            <h2 id="前言">前言</h2>
+<p>在深度学习图片分割领域，经常使用数据增强的方法扩充自己的数据集。然而在语义分割中需要保证img和lable所随机裁剪的区域相同。所以我们需要设定随机种子</p>
+<h2 id="代码实现">代码实现</h2>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">seed = torch.random.seed()</span><br><span class="line"><span class="comment"># 用该方法获取一个随机种子</span></span><br><span class="line">seed = torch.random.seed()</span><br><span class="line"><span class="comment"># 该方法设置随机种子</span></span><br><span class="line">torch.random.manual_seed(seed)</span><br><span class="line">cropped_image = self.transform(image)</span><br><span class="line">torch.random.manual_seed(seed)</span><br><span class="line">cropped_label = self.transform(label)</span><br></pre></td></tr></table></figure>
+
         </div>
 
         

@@ -235,140 +235,138 @@
         
 
         <div class="article-content markdown-body">
-            <h3 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h3><h3 id="简介-1"><a href="#简介-1" class="headerlink" title="简介"></a>简介</h3><div class="table-container">
-<table>
+            <h3 id="简介">简介</h3>
+<h3 id="简介-1">简介</h3>
+<table style="width:62%;">
+<colgroup>
+<col style="width: 16%">
+<col style="width: 13%">
+<col style="width: 31%">
+</colgroup>
 <thead>
-<tr>
+<tr class="header">
 <th>数据集名称</th>
 <th>数据集下载地址</th>
 <th>数据集详细情况</th>
 </tr>
 </thead>
 <tbody>
-<tr>
+<tr class="odd">
 <td>CHN6-CUG Road Dataset</td>
-<td>链接：<a class="link" target="_blank" rel="noopener" href="https://pan.baidu.com/share/init?surl=hHwUfwGvqb_5kM-3dpyM_g">https://pan.baidu.com/share/init?surl=hHwUfwGvqb_5kM-3dpyM_g<i class="fas fa-external-link-alt"></i></a>  提取码：urs6</td>
+<td>链接：https://pan.baidu.com/share/init?surl=hHwUfwGvqb_5kM-3dpyM_g 提取码：urs6</td>
 <td>CHN6-CUG 包含 4511 张 512×512 大小的标记图像，分为 3608 张用于模型训练的图像和 903 张用于测试和结果评估的图像，分辨率为 50 厘米/像素。原始数据集采用.jpg格式，道路标记图采用.png格式</td>
 </tr>
-<tr>
+<tr class="even">
 <td>DeepGlobe 道路提取数据集</td>
-<td><a class="link" target="_blank" rel="noopener" href="https://bj.bcebos.com/ai-studio-online/bae42d32d39b46059783791e327bea12b2716d64cf654be08aa0c11bd670ef21?authorization=bce-auth-v1%2F5cfe9a5e1454405eb2a975c43eace6ec%2F2022-09-04T15%3A26%3A45Z%2F-1%2F%2F3dc55e6d32d46b7c21406ee098d7c08c1eeba23e90082aa3da9a0b140abbc87d&amp;responseContentDisposition=attachment%3B%20filename%3DDeepGlobe.zip">https://bj.bcebos.com/ai-studio-online/bae42d32d39b46059783791e327bea12b2716d64cf654be08aa0c11bd670ef21?authorization=bce-auth-v1%2F5cfe9a5e1454405eb2a975c43eace6ec%2F2022-09-04T15%3A26%3A45Z%2F-1%2F%2F3dc55e6d32d46b7c21406ee098d7c08c1eeba23e90082aa3da9a0b140abbc87d&amp;responseContentDisposition=attachment%3B%20filename%3DDeepGlobe.zip<i class="fas fa-external-link-alt"></i></a></td>
+<td>https://bj.bcebos.com/ai-studio-online/bae42d32d39b46059783791e327bea12b2716d64cf654be08aa0c11bd670ef21?authorization=bce-auth-v1%2F5cfe9a5e1454405eb2a975c43eace6ec%2F2022-09-04T15%3A26%3A45Z%2F-1%2F%2F3dc55e6d32d46b7c21406ee098d7c08c1eeba23e90082aa3da9a0b140abbc87d&amp;responseContentDisposition=attachment%3B%20filename%3DDeepGlobe.zip</td>
 <td>6226 张 RGB 卫星图像，大小为 1024x1024。该图像具有 50 厘米像素分辨率，由 DigitalGlobe 的卫星收集。该数据集包含 1243 个验证图像和 1101 个测试图像（但没有掩码）每个卫星图像都与道路标签的蒙版图像配对。蒙版是灰度图像，白色代表道路像素，黑色代表背景。卫星图像和相应蒙版图像的文件名是id _sat.jpg 和id _mask.png。id是一个随机整数。</td>
 </tr>
-<tr>
+<tr class="odd">
 <td>Leveraging Crowdsourced GPS Data for Road Extraction from Aerial Imagery</td>
-<td>以Python的Pickle格式发布数据集，可以直接加载，如下所示：import pandas import picklegps_data = pickle.load(open(‘beijing_gps_dir_speed_interval_sorted.pkl’, ‘rb’))</td>
+<td>以Python的Pickle格式发布数据集，可以直接加载，如下所示：import pandas import picklegps_data = pickle.load(open('beijing_gps_dir_speed_interval_sorted.pkl', 'rb'))</td>
 <td>GPS 数据集包含从北京约 280000 辆汽车收集的约 50 米行 GPS 记录</td>
 </tr>
-<tr>
+<tr class="even">
 <td>RoadNet</td>
-<td>链接：<a class="link" target="_blank" rel="noopener" href="https://pan.baidu.com/s/1l9RZvyYfLgTOx_k4LQRyhQ">https://pan.baidu.com/s/1l9RZvyYfLgTOx_k4LQRyhQ<i class="fas fa-external-link-alt"></i></a> 提取码：h2zt</td>
+<td>链接：https://pan.baidu.com/s/1l9RZvyYfLgTOx_k4LQRyhQ 提取码：h2zt</td>
 <td>我们从谷歌地球收集了加拿大渥太华的几个典型城市地区。图像每像素的空间分辨率为0.21m（缩放级别为19）。Training files:2,3,4,5,6,7,8,9,10,11,12,13,14,15 Testing files:1,16,17,18,19,20</td>
 </tr>
-<tr>
+<tr class="odd">
 <td>Generative Graph Transformer</td>
 <td>generative-graph-transformer/download_dataset.sh at master · davide-belli/generative-graph-transformer (github.com)</td>
 <td>图卢兹路网数据集，用于从卫星图像的语义分割中提取道路网</td>
 </tr>
-<tr>
+<tr class="even">
 <td>road_connectivity</td>
 <td>road_connectivity/data at master · anilbatra2185/road_connectivity (github.com)</td>
 <td>提出了一个名为方向学习的连接任务，其动机是人类通过在特定方向跟踪道路来注释道路的行为。我们还开发了一个堆叠的多分支卷积模块，以有效地利用方向学习和分割任务之间的相互信息</td>
 </tr>
-<tr>
+<tr class="odd">
 <td>DeepGlobeRoad</td>
-<td>链接：<a class="link" target="_blank" rel="noopener" href="https://pan.baidu.com/s/1aG1qdTFEcIwzh2YruBGUNA">https://pan.baidu.com/s/1aG1qdTFEcIwzh2YruBGUNA<i class="fas fa-external-link-alt"></i></a> 提取码：podb</td>
+<td>链接：https://pan.baidu.com/s/1aG1qdTFEcIwzh2YruBGUNA 提取码：podb</td>
 <td>比赛数据集包含6226张训练图像，1243张验证图像，以及1101张测试图像。所有的图像尺寸均为1024*1024，图像来源于泰国、印度、印度尼西亚，图像场景包括城市、乡村、荒郊、海滨、热带雨林等多个场景。</td>
 </tr>
-<tr>
+<tr class="even">
 <td>DeepWindow</td>
-<td><a class="link" target="_blank" rel="noopener" href="https://github.com/rob-lian/DeepWindow/tree/master/resources">https://github.com/rob-lian/DeepWindow/tree/master/resources<i class="fas fa-external-link-alt"></i></a></td>
+<td>https://github.com/rob-lian/DeepWindow/tree/master/resources</td>
 <td>用于从遥感影像手动采样道路中心点的工具</td>
 </tr>
-<tr>
+<tr class="odd">
 <td>Sat2Graph</td>
-<td><a class="link" target="_blank" rel="noopener" href="https://github.com/songtaohe/Sat2Graph/tree/master/figures">https://github.com/songtaohe/Sat2Graph/tree/master/figures<i class="fas fa-external-link-alt"></i></a></td>
+<td>https://github.com/songtaohe/Sat2Graph/tree/master/figures</td>
 <td>20个美国城市覆盖720平方公里区域的大型城市数据集和流行的空间网道路数据集的评估中，Sat2Graph在广泛使用的地形相似度度量上超过了最先进的方法。</td>
 </tr>
-<tr>
+<tr class="even">
 <td>SPIN Road Mapper: Extracting Roads from Aerial Images via Spatial and Interaction Space Graph Reasoning for Autonomous Driving</td>
-<td><a class="link" target="_blank" rel="noopener" href="https://github.com/wgcban/SPIN_RoadMapper/tree/main/images">https://github.com/wgcban/SPIN_RoadMapper/tree/main/images<i class="fas fa-external-link-alt"></i></a></td>
+<td>https://github.com/wgcban/SPIN_RoadMapper/tree/main/images</td>
 <td>整个图像中被分叉，并且经常被地形、云或其他天气条件遮挡。</td>
 </tr>
-<tr>
+<tr class="odd">
 <td>CoANet: Connectivity Attention Network for Road Extraction from Satellite Imagery</td>
-<td><a class="link" target="_blank" rel="noopener" href="https://github.com/mj129/CoANet/tree/main/figures">https://github.com/mj129/CoANet/tree/main/figures<i class="fas fa-external-link-alt"></i></a></td>
+<td>https://github.com/mj129/CoANet/tree/main/figures</td>
 <td>由于其他物体造成的遮挡和复杂的交通环境，基于像素的方法往往会产生破碎的道路的图像</td>
 </tr>
-<tr>
+<tr class="even">
 <td>Split Depth-wise Separable Graph Convolution Network for Road Extraction in Complex Environment from High-resolution Remote Sensing Imagery（TGRS）</td>
-<td><a class="link" target="_blank" rel="noopener" href="https://github.com/tist0bsc/SGCN">https://github.com/tist0bsc/SGCN<i class="fas fa-external-link-alt"></i></a></td>
+<td>https://github.com/tist0bsc/SGCN</td>
 <td>高分辨率遥感图像的道路信息检测柏油路封闭或树木覆盖的道路</td>
 </tr>
-<tr>
+<tr class="odd">
 <td>Topo-boundary: A Benchmark Dataset on Topological Road-boundary Detection Using Aerial Images for Autonomous Driving</td>
-<td><a class="link" target="_blank" rel="noopener" href="https://roadmaps.csail.mit.edu/roadtracer/">https://roadmaps.csail.mit.edu/roadtracer/<i class="fas fa-external-link-alt"></i></a></td>
+<td>https://roadmaps.csail.mit.edu/roadtracer/</td>
 <td>数据集包含25,295 1000张×1000大小的4通道航空图像。每个图像提供8个不同子任务的训练标签。用于自动驾驶</td>
 </tr>
-<tr>
+<tr class="even">
 <td>LoveDA</td>
-<td>链接：<a class="link" href="https://link.zhihu.com/?target=https%3A//pan.baidu.com/s/1YrU1Y4Y0dS0f_OOHXpzspQ">https://link.zhihu.com/?target=https%3A//pan.baidu.com/s/1YrU1Y4Y0dS0f_OOHXpzspQ<i class="fas fa-external-link-alt"></i></a> 提取码：27vc</td>
+<td>链接：https://link.zhihu.com/?target=https%3A//pan.baidu.com/s/1YrU1Y4Y0dS0f_OOHXpzspQ 提取码：27vc</td>
 <td>用于域自适应语义分割的遥感土地覆盖数据集。5987 个图像芯片（Google Earth），7 个土地覆盖类别，166768 个标签，包含中国 3 个城市。论文：Wang et al., 2021 背景 - 1，建筑 - 2，道路 - 3，水 - 4，贫瘠 - 5，森林 - 6，农业 - 7。无数据区域分配为 0，应忽略。</td>
 </tr>
-<tr>
+<tr class="odd">
 <td>SpaceNet 5：自动道路网络提取和路线旅行时间估计 （CosmiQ Works、Maxar、英特尔、AWS，2019 年 9 月)</td>
-<td><a class="link" target="_blank" rel="noopener" href="https://spacenet.ai/sn5-challenge/">https://spacenet.ai/sn5-challenge/<i class="fas fa-external-link-alt"></i></a></td>
+<td>https://spacenet.ai/sn5-challenge/</td>
 <td>2300 个图像芯片，带有位置、形状和预计旅行时间的街道几何图形，3/8 波段 Worldview-3 图像（0.3m res.)，4 个全球城市，1 个用于排行榜评估的保留城市， APLS指标，基线模型</td>
 </tr>
-<tr>
+<tr class="even">
 <td>RoadNet （武汉，2018 年 10 月）</td>
-<td>链接：<a class="link" href="https://link.zhihu.com/?target=https%3A//pan.baidu.com/s/1l9RZvyYfLgTOx_k4LQRyhQ">https://link.zhihu.com/?target=https%3A//pan.baidu.com/s/1l9RZvyYfLgTOx_k4LQRyhQ<i class="fas fa-external-link-alt"></i></a> 提取码：h2zt</td>
+<td>链接：https://link.zhihu.com/?target=https%3A//pan.baidu.com/s/1l9RZvyYfLgTOx_k4LQRyhQ 提取码：h2zt</td>
 <td>道路网络标签，高分辨率谷歌地球图像，21 个区域</td>
 </tr>
-<tr>
+<tr class="odd">
 <td>SpaceNet 3：道路网络检测 （CosmiQ Works，Radiant Solutions，2018 年 2 月）</td>
-<td><a class="link" href="https://link.zhihu.com/?target=https%3A//spacenet.ai/spacenet-roads-dataset/">https://link.zhihu.com/?target=https%3A//spacenet.ai/spacenet-roads-dataset/<i class="fas fa-external-link-alt"></i></a></td>
+<td>https://link.zhihu.com/?target=https%3A//spacenet.ai/spacenet-roads-dataset/</td>
 <td>5 个城市的 8000 公里道路，3/8 波段 Worldview-3 图像（0.3m 分辨率），SpaceNet 挑战资产库</td>
 </tr>
-<tr>
+<tr class="even">
 <td>Massachusetts Roads Dataset 马萨诸塞州道路数据集</td>
-<td>源地址：<a class="link" target="_blank" rel="noopener" href="https://www.cs.toronto.edu/~vmnih/data/">https://www.cs.toronto.edu/~vmnih/data/<i class="fas fa-external-link-alt"></i></a>  阿里云天池：<a class="link" target="_blank" rel="noopener" href="https://tianchi.aliyun.com/dataset/dataDetail?dataId=94570#1">https://tianchi.aliyun.com/dataset/dataDetail?dataId=94570#1<i class="fas fa-external-link-alt"></i></a> （1是testing data，2是val data，3/6/7/8/9/10是training data）</td>
+<td>源地址：https://www.cs.toronto.edu/~vmnih/data/ 阿里云天池：https://tianchi.aliyun.com/dataset/dataDetail?dataId=94570#1 （1是testing data，2是val data，3/6/7/8/9/10是training data）</td>
 <td>马萨诸塞州道路数据集包含马萨诸塞州的1171个航拍图像。每张图像的尺寸为1500×1500像素，占地2.25平方公里。我们将数据随机分为1108张图像的训练集，14张图像的验证集和49张图像的测试集。该数据集涵盖了各种各样的城市，郊区和农村地区，面积超过2600平方公里。仅测试仪就覆盖110平方公里。目标地图是通过栅格化从OpenStreetMap项目获得的道路中心线生成的。产生7像素的线宽且不进行平滑处理。将所有图像重新缩放为每平方米1像素的分辨率。</td>
 </tr>
-<tr>
+<tr class="odd">
 <td>DeepGlobe Road Extraction Dataset</td>
-<td><a class="link" target="_blank" rel="noopener" href="https://www.kaggle.com/balraj98/deepglobe-road-extraction-dataset?select=train">https://www.kaggle.com/balraj98/deepglobe-road-extraction-dataset?select=train<i class="fas fa-external-link-alt"></i></a></td>
+<td>https://www.kaggle.com/balraj98/deepglobe-road-extraction-dataset?select=train</td>
 <td>包含 8570 张 1024×1024 大小的标记图像，分为 6226 张用于模型训练的图像和 1101 张用于测试和结果评估的图像</td>
 </tr>
-<tr>
+<tr class="even">
 <td>AICrowd</td>
-<td>链接：<a class="link" target="_blank" rel="noopener" href="https://pan.baidu.com/s/1oGMFcksEZ1dbKxc6YRhdug">https://pan.baidu.com/s/1oGMFcksEZ1dbKxc6YRhdug<i class="fas fa-external-link-alt"></i></a> 提取码：6666</td>
+<td>链接：https://pan.baidu.com/s/1oGMFcksEZ1dbKxc6YRhdug 提取码：6666</td>
 <td>包含 3000 张 1024×1024 大小的标记图像，分为 3000 张用于模型训练的图像和 1000 张用于测试和结果评估的图像</td>
 </tr>
 </tbody>
 </table>
-</div>
-<h3 id="Massachusetts-建筑"><a href="#Massachusetts-建筑" class="headerlink" title="Massachusetts-建筑"></a>Massachusetts-建筑</h3><h5 id="数据集详细情况"><a href="#数据集详细情况" class="headerlink" title="数据集详细情况"></a>数据集详细情况</h5><p>项目简介：麻萨诸塞州的航空影像，协助机器学习航空影像标签,包括了建筑和道路的影像与标签文件。本文我们介绍其中的建筑数据集。<br>数据介绍：马萨诸塞州建筑物数据集由波士顿地区的 151 张航拍图像组成，每张图像的大小为 1500 × 1500 像素，面积为 2.25 平方公里。因此，整个数据集大约覆盖 340 平方公里。我们将数据随机分成 137 张图像的训练集、10 张图像的测试集和 4 张图像的验证集。目标地图是通过栅格化从 OpenStreetMap 项目获得的建筑物覆盖区获得的。这些数据仅限于平均遗漏噪声水平约为 5% 或更低的区域。之所以能够收集到如此大量的高质量建筑足迹数据，是因为波士顿市为 OpenStreetMap 项目贡献了整个城市的建筑足迹。该数据集主要涵盖城市和郊区，各种规模的建筑物，包括个人房屋和车库，都包含在标签中。</p>
-<h5 id="数据集下载地址"><a href="#数据集下载地址" class="headerlink" title="数据集下载地址"></a>数据集下载地址</h5><p>项目地址：<a class="link" target="_blank" rel="noopener" href="https://www.cs.toronto.edu/~vmnih/data/">https://www.cs.toronto.edu/~vmnih/data/<i class="fas fa-external-link-alt"></i></a><br>数据集下载： 链接： <a class="link" target="_blank" rel="noopener" href="https://pan.baidu.com/s/1Y9yk8P26TGpxmiCsYSjfHw">https://pan.baidu.com/s/1Y9yk8P26TGpxmiCsYSjfHw<i class="fas fa-external-link-alt"></i></a><br>           提取码：zfal</p>
+<h3 id="massachusetts-建筑">Massachusetts-建筑</h3>
+<h5 id="数据集详细情况">数据集详细情况</h5>
+<p>项目简介：麻萨诸塞州的航空影像，协助机器学习航空影像标签,包括了建筑和道路的影像与标签文件。本文我们介绍其中的建筑数据集。 数据介绍：马萨诸塞州建筑物数据集由波士顿地区的 151 张航拍图像组成，每张图像的大小为 1500 × 1500 像素，面积为 2.25 平方公里。因此，整个数据集大约覆盖 340 平方公里。我们将数据随机分成 137 张图像的训练集、10 张图像的测试集和 4 张图像的验证集。目标地图是通过栅格化从 OpenStreetMap 项目获得的建筑物覆盖区获得的。这些数据仅限于平均遗漏噪声水平约为 5% 或更低的区域。之所以能够收集到如此大量的高质量建筑足迹数据，是因为波士顿市为 OpenStreetMap 项目贡献了整个城市的建筑足迹。该数据集主要涵盖城市和郊区，各种规模的建筑物，包括个人房屋和车库，都包含在标签中。 ##### 数据集下载地址 项目地址：https://www.cs.toronto.edu/~vmnih/data/ 数据集下载： 链接： https://pan.baidu.com/s/1Y9yk8P26TGpxmiCsYSjfHw 提取码：zfal</p>
 <p>出处：<a class="link" target="_blank" rel="noopener" href="https://blog.csdn.net/u014311125/article/details/121627540?spm=1001.2014.3001.5501">(44条消息) 遥感影像公开数据集:Massachusetts-建筑_GHZhao_GIS_RS的博客-CSDN博客_massachusetts道路数据集<i class="fas fa-external-link-alt"></i></a></p>
-<h3 id="CHN6-CUG-Road-Dataset"><a href="#CHN6-CUG-Road-Dataset" class="headerlink" title="CHN6-CUG Road Dataset"></a>CHN6-CUG Road Dataset</h3><h5 id="数据集详细情况-1"><a href="#数据集详细情况-1" class="headerlink" title="数据集详细情况"></a>数据集详细情况</h5><p>CHN6-CUG Road Dataset是中国代表性城市的新型大型卫星图像数据集。其遥感影像底图来自谷歌地球。选取了6个城市化程度、城市规模、发展程度、城市结构、历史文化程度不同的城市，包括北京朝阳区、上海杨浦区、武汉市中心、深圳南山区、香港沙田地区、澳门。研究区域如图1所示。标记道路由有盖道路和无盖道路组成，具体取决于道路覆盖程度。根据地理因素的物理观点，标记道路包括铁路、高速公路、城市道路和农村道路等。<br>CHN6-CUG 包含 4511 张 512×512 大小的标记图像，分为 3608 张用于模型训练的图像和 903 张用于测试和结果评估的图像，分辨率为 50 厘米/像素。原始数据集采用.jpg格式，道路标记图采用.png格式。压缩的数据量为 175MB。<br>CHN6-CUG 道路数据集中研究区域的概述<br>中国化学烷基化学道路数据集样本</p>
-<h5 id="数据集下载地址-1"><a href="#数据集下载地址-1" class="headerlink" title="数据集下载地址"></a>数据集下载地址</h5><p>数据集下载：  链接：<a class="link" target="_blank" rel="noopener" href="https://pan.baidu.com/share/init?surl=hHwUfwGvqb_5kM-3dpyM_g">百度网盘 请输入提取码 (baidu.com)<i class="fas fa-external-link-alt"></i></a><br>提取码：urs6</p>
-<p>出处：<a class="link" target="_blank" rel="noopener" href="http://grzy.cug.edu.cn/zhuqiqi/zh_CN/yjgk/32368/list/index.htm">朱祺琪 中文主页 公开数据共享 中国地质大学（武汉）教师个人主页系统 (cug.edu.cn)<i class="fas fa-external-link-alt"></i></a></p>
-<h3 id="SOS-Deep-SAR-Oil-Spill-Dataset"><a href="#SOS-Deep-SAR-Oil-Spill-Dataset" class="headerlink" title="SOS: Deep-SAR Oil Spill Dataset"></a>SOS: Deep-SAR Oil Spill Dataset</h3><h5 id="数据集详细情况-2"><a href="#数据集详细情况-2" class="headerlink" title="数据集详细情况"></a>数据集详细情况</h5><p>SOS 数据集有两个研究区域：墨西哥湾漏油区和波斯湾漏油区。图1显示了墨西哥湾漏油的位置以及所选ALOS卫星图像的典型子集。图2给出了波斯湾漏油的位置和选定的Sentinel-1A卫星图像的典型子集。因此，使用数据增强技术来扩展原始数据集。裁剪、旋转、添加杂色和其他操作都在原始灰度地图上进行。最后，共使用了来自墨西哥石油泄漏地区的3101张图像进行训练，776张图像用于测试。共有3354张来自波斯湾漏油区的图像用于训练，839张图像用于测试。<br>图例.1. 墨西哥湾漏油的位置。（a）4月25日拍摄的NASA /MODIS卫星图像，显示了深水地平线灾难的浮油。（资料来源：约翰·阿莫斯 2010 [1]）（b） 选定的“海洋法”卫星图像的典型子集。<br>图例.2. 波斯湾漏油的位置。（a） Sentinel-2多光谱卫星图像显示，2017年8月11日，浮油在科威特海岸的Al Khiran附近登陆。（资料来源：约翰·阿莫斯 2017 [2]）。（b） 选定的哨兵-1A卫星图像的典型子集。</p>
-<h5 id="数据集下载地址-2"><a href="#数据集下载地址-2" class="headerlink" title="数据集下载地址"></a>数据集下载地址</h5><p>数据集下载：  <a class="link" target="_blank" rel="noopener" href="https://pan.baidu.com/share/init?surl=TcbtGt7qp-IL0dALQ9HBlg">链接：百度网盘 请输入提取码 (baidu.com)<i class="fas fa-external-link-alt"></i></a><br>提取码：urs6<br>出处：<a class="link" target="_blank" rel="noopener" href="http://grzy.cug.edu.cn/zhuqiqi/zh_CN/yjgk/32368/list/index.htm">朱祺琪 中文主页 公开数据共享 中国地质大学（武汉）教师个人主页系统 (cug.edu.cn)<i class="fas fa-external-link-alt"></i></a></p>
-<h3 id="DeepGlobe-道路提取数据集"><a href="#DeepGlobe-道路提取数据集" class="headerlink" title="DeepGlobe 道路提取数据集"></a>DeepGlobe 道路提取数据集</h3><h5 id="数据集详细情况-3"><a href="#数据集详细情况-3" class="headerlink" title="数据集详细情况"></a>数据集详细情况</h5><p>Road Challenge 的训练数据包含 6226 张 RGB 卫星图像，大小为 1024x1024。<br>该图像具有 50 厘米像素分辨率，由 DigitalGlobe 的卫星收集。<br>该数据集包含 1243 个验证图像和 1101 个测试图像（但没有掩码）。<br>标签<br>每个卫星图像都与道路标签的蒙版图像配对。蒙版是灰度图像，白色代表道路像素，黑色代表背景。<br>卫星图像和相应蒙版图像的文件名是id _sat.jpg 和id _mask.png。id是一个随机整数。<br>请注意：遮罩图像的值可能不是纯0和255，转换为标签时，请在阈值128处进行二值化。<br>由于注释分割掩码的成本，标签并不完美，特别是在农村地区。此外，我们故意没有标注农田内的小路。</p>
-<h5 id="数据集下载地址-3"><a href="#数据集下载地址-3" class="headerlink" title="数据集下载地址"></a>数据集下载地址</h5><p>数据集下载：  链接：<br><a class="link" target="_blank" rel="noopener" href="https://bj.bcebos.com/ai-studio-online/bae42d32d39b46059783791e327bea12b2716d64cf654be08aa0c11bd670ef21?authorization=bce-auth-v1%2F5cfe9a5e1454405eb2a975c43eace6ec%2F2022-09-04T15%3A26%3A45Z%2F-1%2F%2F3dc55e6d32d46b7c21406ee098d7c08c1eeba23e90082aa3da9a0b140abbc87d&amp;responseContentDisposition=attachment%3B%20filename%3DDeepGlobe.zip">https://bj.bcebos.com/ai-studio-online/bae42d32d39b46059783791e327bea12b2716d64cf654be08aa0c11bd670ef21?authorization=bce-auth-v1%2F5cfe9a5e1454405eb2a975c43eace6ec%2F2022-09-04T15%3A26%3A45Z%2F-1%2F%2F3dc55e6d32d46b7c21406ee098d7c08c1eeba23e90082aa3da9a0b140abbc87d&amp;responseContentDisposition=attachment%3B%20filename%3DDeepGlobe.zip<i class="fas fa-external-link-alt"></i></a><br>出处：<a class="link" target="_blank" rel="noopener" href="https://aistudio.baidu.com/aistudio/datasetdetail/102399">DeepGlobe 道路提取数据集 - 飞桨AI Studio (baidu.com)<i class="fas fa-external-link-alt"></i></a></p>
-<h3 id="Leveraging-Crowdsourced-GPS-Data-for-Road-Extraction-from-Aerial-Imagery"><a href="#Leveraging-Crowdsourced-GPS-Data-for-Road-Extraction-from-Aerial-Imagery" class="headerlink" title="Leveraging Crowdsourced GPS Data for Road Extraction from Aerial Imagery"></a>Leveraging Crowdsourced GPS Data for Road Extraction from Aerial Imagery</h3><h5 id="数据集详细情况-4"><a href="#数据集详细情况-4" class="headerlink" title="数据集详细情况"></a>数据集详细情况</h5><p>GPS 数据集包含从北京约 280000 辆汽车收集的约 50 米行 GPS 记录。<br>数据集下载地址<br>数据集下载：  为了节省加载时间，我们以Python的Pickle格式发布数据集，可以直接加载，如下所示：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">import pandas</span><br><span class="line">import pickle</span><br><span class="line">gps_data = pickle.load(open(<span class="string">&#x27;beijing_gps_dir_speed_interval_sorted.pkl&#x27;</span>, <span class="string">&#x27;rb&#x27;</span>))</span><br></pre></td></tr></table></figure><br>出处：1.<a class="link" target="_blank" rel="noopener" href="https://github.com/suniique/Leveraging-Crowdsourced-GPS-Data-for-Road-Extraction-from-Aerial-Imagery">suniique/利用-众包-GPS-用于从航空图像中提取道路的数据：CVPR 2019年论文“利用众包GPS数据从航空图像中提取道路”的源代码 (github.com)<i class="fas fa-external-link-alt"></i></a><br>2.<a class="link" target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_42990464/article/details/113699960">(44条消息) 基于遥感影像的道路提取论文、开源代码和数据集汇总_点PY的博客-CSDN博客_道路提取
-<i class="fas fa-external-link-alt"></i></a></p>
-<h3 id="RoadNet"><a href="#RoadNet" class="headerlink" title="RoadNet"></a>RoadNet</h3><h5 id="数据集详细情况-5"><a href="#数据集详细情况-5" class="headerlink" title="数据集详细情况"></a>数据集详细情况</h5><p>我们从谷歌地球收集了加拿大渥太华的几个典型城市地区。图像每像素的空间分辨率为0.21m（缩放级别为19）。<br>Training files:<br>2,3,4,5,6,7,8,9,10,11,12,13,14,15<br>Testing files:<br>1,16,17,18,19,20<br>我们以文件名1为例<br>|文件名    |解释|<br>| —————- | —————- |<br>|Ottawa-1.tif    |原始图像|<br>|segmentation.png    |手动清除路面|<br>|edge.png    |手动标注道路边缘|<br>|centerline.png|    道路中心线的手动注释|<br>|extra.png|    用单个像素宽度的画笔粗略标记异质区域（红色）|<br>|extra-Ottawa-1.tif    |覆盖着Ottawa-1.tifextra.png|</p>
-<h5 id="数据集下载地址-4"><a href="#数据集下载地址-4" class="headerlink" title="数据集下载地址"></a>数据集下载地址</h5><p>数据集下载： 链接：<a class="link" target="_blank" rel="noopener" href="https://pan.baidu.com/s/1l9RZvyYfLgTOx_k4LQRyhQ">https://pan.baidu.com/s/1l9RZvyYfLgTOx_k4LQRyhQ<i class="fas fa-external-link-alt"></i></a><br>             提取码：h2zt</p>
-<p>出处：1. <a class="link" target="_blank" rel="noopener" href="https://github.com/mitroadmaps/roadtagger">https://github.com/mitroadmaps/roadtagger<i class="fas fa-external-link-alt"></i></a><br>2.<a class="link" target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_42990464/article/details/113699960">(44条消息) 基于遥感影像的道路提取论文、开源代码和数据集汇总_点PY的博客-CSDN博客_道路提取<i class="fas fa-external-link-alt"></i></a></p>
-<h3 id="Generative-Graph-Transformer"><a href="#Generative-Graph-Transformer" class="headerlink" title="Generative Graph Transformer"></a>Generative Graph Transformer</h3><h5 id="数据集详细情况-6"><a href="#数据集详细情况-6" class="headerlink" title="数据集详细情况"></a>数据集详细情况</h5><p>图卢兹道路网络数据集。如果运行该脚本，将下载我们论文中介绍的数据集（图卢兹道路网络数据集）。<br>图卢兹路网数据集，用于从卫星图像的语义分割中提取道路网</p>
-<h5 id="数据集下载地址-5"><a href="#数据集下载地址-5" class="headerlink" title="数据集下载地址"></a>数据集下载地址</h5><p>数据集下载： generative-graph-transformer/download_dataset.sh at master · davide-belli/generative-graph-transformer (github.com)<br>出处：1. <a class="link" target="_blank" rel="noopener" href="https://github.com/davide-belli/generative-graph-transformer">https://github.com/davide-belli/generative-graph-transformer<i class="fas fa-external-link-alt"></i></a><br>2.<a class="link" target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_42990464/article/details/113699960">(44条消息) 基于遥感影像的道路提取论文、开源代码和数据集汇总_点PY的博客-CSDN博客_道路提取<i class="fas fa-external-link-alt"></i></a></p>
-<h3 id="road-connectivity"><a href="#road-connectivity" class="headerlink" title="road_connectivity"></a>road_connectivity</h3><h5 id="数据集详细情况-7"><a href="#数据集详细情况-7" class="headerlink" title="数据集详细情况"></a>数据集详细情况</h5><p>在本文中，我们提出了一个名为方向学习的连接任务，其动机是人类通过在特定方向跟踪道路来注释道路的行为。我们还开发了一个堆叠的多分支卷积模块，以有效地利用方向学习和分割任务之间的相互信息。</p>
-<h5 id="数据集下载地址-6"><a href="#数据集下载地址-6" class="headerlink" title="数据集下载地址"></a>数据集下载地址</h5><p>数据集下载： road_connectivity/data at master · anilbatra2185/road_connectivity (github.com)<br>出处：1. <a class="link" target="_blank" rel="noopener" href="https://github.com/anilbatra2185/road_connectivity">https://github.com/anilbatra2185/road_connectivity<i class="fas fa-external-link-alt"></i></a><br>2.(44条消息) 基于遥感影像的道路提取论文、开源代码和数据集汇总_点PY的博客-CSDN博客_道路提取</p>
-<h3 id="DeepGlobeRoad"><a href="#DeepGlobeRoad" class="headerlink" title="DeepGlobeRoad"></a>DeepGlobeRoad</h3><h5 id="数据集详细情况-8"><a href="#数据集详细情况-8" class="headerlink" title="数据集详细情况"></a>数据集详细情况</h5><p>比赛数据集包含6226张训练图像，1243张验证图像，以及1101张测试图像。所有的图像尺寸均为1024*1024，图像来源于泰国、印度、印度尼西亚，图像场景包括城市、乡村、荒郊、海滨、热带雨林等多个场景。</p>
-<h5 id="数据集下载地址-7"><a href="#数据集下载地址-7" class="headerlink" title="数据集下载地址"></a>数据集下载地址</h5><p>数据集下载： 链接：<a class="link" target="_blank" rel="noopener" href="https://pan.baidu.com/s/1aG1qdTFEcIwzh2YruBGUNA">https://pan.baidu.com/s/1aG1qdTFEcIwzh2YruBGUNA<i class="fas fa-external-link-alt"></i></a><br>             提取码：podb<br>出处：<a class="link" target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_42990464/article/details/113699960">(44条消息) 基于遥感影像的道路提取论文、开源代码和数据集汇总_点PY的博客-CSDN博客_道路提取<i class="fas fa-external-link-alt"></i></a></p>
+<h3 id="chn6-cug-road-dataset">CHN6-CUG Road Dataset</h3>
+<h5 id="数据集详细情况-1">数据集详细情况</h5>
+<p>CHN6-CUG Road Dataset是中国代表性城市的新型大型卫星图像数据集。其遥感影像底图来自谷歌地球。选取了6个城市化程度、城市规模、发展程度、城市结构、历史文化程度不同的城市，包括北京朝阳区、上海杨浦区、武汉市中心、深圳南山区、香港沙田地区、澳门。研究区域如图1所示。标记道路由有盖道路和无盖道路组成，具体取决于道路覆盖程度。根据地理因素的物理观点，标记道路包括铁路、高速公路、城市道路和农村道路等。 CHN6-CUG 包含 4511 张 512×512 大小的标记图像，分为 3608 张用于模型训练的图像和 903 张用于测试和结果评估的图像，分辨率为 50 厘米/像素。原始数据集采用.jpg格式，道路标记图采用.png格式。压缩的数据量为 175MB。 CHN6-CUG 道路数据集中研究区域的概述 中国化学烷基化学道路数据集样本 ##### 数据集下载地址 数据集下载： 链接：<a class="link" target="_blank" rel="noopener" href="https://pan.baidu.com/share/init?surl=hHwUfwGvqb_5kM-3dpyM_g">百度网盘 请输入提取码 (baidu.com)<i class="fas fa-external-link-alt"></i></a><br>
+提取码：urs6</p>
+<p>出处：<a class="link" target="_blank" rel="noopener" href="http://grzy.cug.edu.cn/zhuqiqi/zh_CN/yjgk/32368/list/index.htm">朱祺琪 中文主页 公开数据共享 中国地质大学（武汉）教师个人主页系统 (cug.edu.cn)<i class="fas fa-external-link-alt"></i></a> ### SOS: Deep-SAR Oil Spill Dataset ##### 数据集详细情况 SOS 数据集有两个研究区域：墨西哥湾漏油区和波斯湾漏油区。图1显示了墨西哥湾漏油的位置以及所选ALOS卫星图像的典型子集。图2给出了波斯湾漏油的位置和选定的Sentinel-1A卫星图像的典型子集。因此，使用数据增强技术来扩展原始数据集。裁剪、旋转、添加杂色和其他操作都在原始灰度地图上进行。最后，共使用了来自墨西哥石油泄漏地区的3101张图像进行训练，776张图像用于测试。共有3354张来自波斯湾漏油区的图像用于训练，839张图像用于测试。 图例.1. 墨西哥湾漏油的位置。（a）4月25日拍摄的NASA /MODIS卫星图像，显示了深水地平线灾难的浮油。（资料来源：约翰·阿莫斯 2010 [1]）（b） 选定的“海洋法”卫星图像的典型子集。 图例.2. 波斯湾漏油的位置。（a） Sentinel-2多光谱卫星图像显示，2017年8月11日，浮油在科威特海岸的Al Khiran附近登陆。（资料来源：约翰·阿莫斯 2017 [2]）。（b） 选定的哨兵-1A卫星图像的典型子集。 ##### 数据集下载地址 数据集下载： <a class="link" target="_blank" rel="noopener" href="https://pan.baidu.com/share/init?surl=TcbtGt7qp-IL0dALQ9HBlg">链接：百度网盘 请输入提取码 (baidu.com)<i class="fas fa-external-link-alt"></i></a><br>
+提取码：urs6 出处：<a class="link" target="_blank" rel="noopener" href="http://grzy.cug.edu.cn/zhuqiqi/zh_CN/yjgk/32368/list/index.htm">朱祺琪 中文主页 公开数据共享 中国地质大学（武汉）教师个人主页系统 (cug.edu.cn)<i class="fas fa-external-link-alt"></i></a> ### DeepGlobe 道路提取数据集 ##### 数据集详细情况 Road Challenge 的训练数据包含 6226 张 RGB 卫星图像，大小为 1024x1024。 该图像具有 50 厘米像素分辨率，由 DigitalGlobe 的卫星收集。 该数据集包含 1243 个验证图像和 1101 个测试图像（但没有掩码）。 标签 每个卫星图像都与道路标签的蒙版图像配对。蒙版是灰度图像，白色代表道路像素，黑色代表背景。 卫星图像和相应蒙版图像的文件名是id _sat.jpg 和id _mask.png。id是一个随机整数。 请注意：遮罩图像的值可能不是纯0和255，转换为标签时，请在阈值128处进行二值化。 由于注释分割掩码的成本，标签并不完美，特别是在农村地区。此外，我们故意没有标注农田内的小路。 ##### 数据集下载地址 数据集下载： 链接： https://bj.bcebos.com/ai-studio-online/bae42d32d39b46059783791e327bea12b2716d64cf654be08aa0c11bd670ef21?authorization=bce-auth-v1%2F5cfe9a5e1454405eb2a975c43eace6ec%2F2022-09-04T15%3A26%3A45Z%2F-1%2F%2F3dc55e6d32d46b7c21406ee098d7c08c1eeba23e90082aa3da9a0b140abbc87d&amp;responseContentDisposition=attachment%3B%20filename%3DDeepGlobe.zip 出处：<a class="link" target="_blank" rel="noopener" href="https://aistudio.baidu.com/aistudio/datasetdetail/102399">DeepGlobe 道路提取数据集 - 飞桨AI Studio (baidu.com)<i class="fas fa-external-link-alt"></i></a> ### Leveraging Crowdsourced GPS Data for Road Extraction from Aerial Imagery ##### 数据集详细情况 GPS 数据集包含从北京约 280000 辆汽车收集的约 50 米行 GPS 记录。 数据集下载地址 数据集下载： 为了节省加载时间，我们以Python的Pickle格式发布数据集，可以直接加载，如下所示： <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">import pandas</span><br><span class="line">import pickle</span><br><span class="line">gps_data = pickle.load(open(<span class="string">&#x27;beijing_gps_dir_speed_interval_sorted.pkl&#x27;</span>, <span class="string">&#x27;rb&#x27;</span>))</span><br></pre></td></tr></table></figure> 出处：1.<a class="link" target="_blank" rel="noopener" href="https://github.com/suniique/Leveraging-Crowdsourced-GPS-Data-for-Road-Extraction-from-Aerial-Imagery">suniique/利用-众包-GPS-用于从航空图像中提取道路的数据：CVPR 2019年论文“利用众包GPS数据从航空图像中提取道路”的源代码 (github.com)<i class="fas fa-external-link-alt"></i></a> 2.<a class="link" target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_42990464/article/details/113699960">(44条消息) 基于遥感影像的道路提取论文、开源代码和数据集汇总_点PY的博客-CSDN博客_道路提取<i class="fas fa-external-link-alt"></i></a> ### RoadNet ##### 数据集详细情况 我们从谷歌地球收集了加拿大渥太华的几个典型城市地区。图像每像素的空间分辨率为0.21m（缩放级别为19）。 Training files: 2,3,4,5,6,7,8,9,10,11,12,13,14,15 Testing files: 1,16,17,18,19,20 我们以文件名1为例 |文件名 |解释| | ----------- | ----------- | |Ottawa-1.tif |原始图像| |segmentation.png |手动清除路面| |edge.png |手动标注道路边缘| |centerline.png| 道路中心线的手动注释| |extra.png| 用单个像素宽度的画笔粗略标记异质区域（红色）| |extra-Ottawa-1.tif |覆盖着Ottawa-1.tifextra.png| ##### 数据集下载地址 数据集下载： 链接：https://pan.baidu.com/s/1l9RZvyYfLgTOx_k4LQRyhQ 提取码：h2zt</p>
+<p>出处：1. https://github.com/mitroadmaps/roadtagger 2.<a class="link" target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_42990464/article/details/113699960">(44条消息) 基于遥感影像的道路提取论文、开源代码和数据集汇总_点PY的博客-CSDN博客_道路提取<i class="fas fa-external-link-alt"></i></a></p>
+<h3 id="generative-graph-transformer">Generative Graph Transformer</h3>
+<h5 id="数据集详细情况-2">数据集详细情况</h5>
+<p>图卢兹道路网络数据集。如果运行该脚本，将下载我们论文中介绍的数据集（图卢兹道路网络数据集）。 图卢兹路网数据集，用于从卫星图像的语义分割中提取道路网 ##### 数据集下载地址 数据集下载： generative-graph-transformer/download_dataset.sh at master · davide-belli/generative-graph-transformer (github.com) 出处：1. https://github.com/davide-belli/generative-graph-transformer 2.<a class="link" target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_42990464/article/details/113699960">(44条消息) 基于遥感影像的道路提取论文、开源代码和数据集汇总_点PY的博客-CSDN博客_道路提取<i class="fas fa-external-link-alt"></i></a> ### road_connectivity ##### 数据集详细情况 在本文中，我们提出了一个名为方向学习的连接任务，其动机是人类通过在特定方向跟踪道路来注释道路的行为。我们还开发了一个堆叠的多分支卷积模块，以有效地利用方向学习和分割任务之间的相互信息。 ##### 数据集下载地址 数据集下载： road_connectivity/data at master · anilbatra2185/road_connectivity (github.com) 出处：1. https://github.com/anilbatra2185/road_connectivity 2.(44条消息) 基于遥感影像的道路提取论文、开源代码和数据集汇总_点PY的博客-CSDN博客_道路提取 ### DeepGlobeRoad ##### 数据集详细情况 比赛数据集包含6226张训练图像，1243张验证图像，以及1101张测试图像。所有的图像尺寸均为1024*1024，图像来源于泰国、印度、印度尼西亚，图像场景包括城市、乡村、荒郊、海滨、热带雨林等多个场景。 ##### 数据集下载地址 数据集下载： 链接：https://pan.baidu.com/s/1aG1qdTFEcIwzh2YruBGUNA 提取码：podb 出处：<a class="link" target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_42990464/article/details/113699960">(44条消息) 基于遥感影像的道路提取论文、开源代码和数据集汇总_点PY的博客-CSDN博客_道路提取<i class="fas fa-external-link-alt"></i></a></p>
 
         </div>
 
@@ -603,7 +601,7 @@
         <aside class="page-aside">
             <div class="post-toc-wrap">
     <div class="post-toc">
-        <ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AE%80%E4%BB%8B"><span class="nav-text">简介</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AE%80%E4%BB%8B-1"><span class="nav-text">简介</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Massachusetts-%E5%BB%BA%E7%AD%91"><span class="nav-text">Massachusetts-建筑</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E9%9B%86%E8%AF%A6%E7%BB%86%E6%83%85%E5%86%B5"><span class="nav-text">数据集详细情况</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E9%9B%86%E4%B8%8B%E8%BD%BD%E5%9C%B0%E5%9D%80"><span class="nav-text">数据集下载地址</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CHN6-CUG-Road-Dataset"><span class="nav-text">CHN6-CUG Road Dataset</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E9%9B%86%E8%AF%A6%E7%BB%86%E6%83%85%E5%86%B5-1"><span class="nav-text">数据集详细情况</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E9%9B%86%E4%B8%8B%E8%BD%BD%E5%9C%B0%E5%9D%80-1"><span class="nav-text">数据集下载地址</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#SOS-Deep-SAR-Oil-Spill-Dataset"><span class="nav-text">SOS: Deep-SAR Oil Spill Dataset</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E9%9B%86%E8%AF%A6%E7%BB%86%E6%83%85%E5%86%B5-2"><span class="nav-text">数据集详细情况</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E9%9B%86%E4%B8%8B%E8%BD%BD%E5%9C%B0%E5%9D%80-2"><span class="nav-text">数据集下载地址</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#DeepGlobe-%E9%81%93%E8%B7%AF%E6%8F%90%E5%8F%96%E6%95%B0%E6%8D%AE%E9%9B%86"><span class="nav-text">DeepGlobe 道路提取数据集</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E9%9B%86%E8%AF%A6%E7%BB%86%E6%83%85%E5%86%B5-3"><span class="nav-text">数据集详细情况</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E9%9B%86%E4%B8%8B%E8%BD%BD%E5%9C%B0%E5%9D%80-3"><span class="nav-text">数据集下载地址</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Leveraging-Crowdsourced-GPS-Data-for-Road-Extraction-from-Aerial-Imagery"><span class="nav-text">Leveraging Crowdsourced GPS Data for Road Extraction from Aerial Imagery</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E9%9B%86%E8%AF%A6%E7%BB%86%E6%83%85%E5%86%B5-4"><span class="nav-text">数据集详细情况</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#RoadNet"><span class="nav-text">RoadNet</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E9%9B%86%E8%AF%A6%E7%BB%86%E6%83%85%E5%86%B5-5"><span class="nav-text">数据集详细情况</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E9%9B%86%E4%B8%8B%E8%BD%BD%E5%9C%B0%E5%9D%80-4"><span class="nav-text">数据集下载地址</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Generative-Graph-Transformer"><span class="nav-text">Generative Graph Transformer</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E9%9B%86%E8%AF%A6%E7%BB%86%E6%83%85%E5%86%B5-6"><span class="nav-text">数据集详细情况</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E9%9B%86%E4%B8%8B%E8%BD%BD%E5%9C%B0%E5%9D%80-5"><span class="nav-text">数据集下载地址</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#road-connectivity"><span class="nav-text">road_connectivity</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E9%9B%86%E8%AF%A6%E7%BB%86%E6%83%85%E5%86%B5-7"><span class="nav-text">数据集详细情况</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E9%9B%86%E4%B8%8B%E8%BD%BD%E5%9C%B0%E5%9D%80-6"><span class="nav-text">数据集下载地址</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#DeepGlobeRoad"><span class="nav-text">DeepGlobeRoad</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E9%9B%86%E8%AF%A6%E7%BB%86%E6%83%85%E5%86%B5-8"><span class="nav-text">数据集详细情况</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E9%9B%86%E4%B8%8B%E8%BD%BD%E5%9C%B0%E5%9D%80-7"><span class="nav-text">数据集下载地址</span></a></li></ol></li></ol></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AE%80%E4%BB%8B"><span class="nav-text">简介</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AE%80%E4%BB%8B-1"><span class="nav-text">简介</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#massachusetts-%E5%BB%BA%E7%AD%91"><span class="nav-text">Massachusetts-建筑</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E9%9B%86%E8%AF%A6%E7%BB%86%E6%83%85%E5%86%B5"><span class="nav-text">数据集详细情况</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#chn6-cug-road-dataset"><span class="nav-text">CHN6-CUG Road Dataset</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E9%9B%86%E8%AF%A6%E7%BB%86%E6%83%85%E5%86%B5-1"><span class="nav-text">数据集详细情况</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#generative-graph-transformer"><span class="nav-text">Generative Graph Transformer</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E9%9B%86%E8%AF%A6%E7%BB%86%E6%83%85%E5%86%B5-2"><span class="nav-text">数据集详细情况</span></a></li></ol></li></ol></li></ol>
     </div>
 </div>
         </aside>

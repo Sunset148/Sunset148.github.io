@@ -9,7 +9,7 @@
     
     <title>
         
-            leetcode12-1 |
+            leetcode12-5 |
         
         BBlog
     </title>
@@ -280,7 +280,7 @@ mjx-container[display="true"] + br {
     <div class="article-content-container">
 
         <div class="article-title">
-            <span class="title-hover-animation">leetcode12-1</span>
+            <span class="title-hover-animation">leetcode12-5</span>
         </div>
 
         
@@ -299,8 +299,8 @@ mjx-container[display="true"] + br {
                         <div class="article-meta-info">
     <span class="article-date article-meta-item">
         <i class="fas fa-edit"></i>&nbsp;
-        <span class="pc">2023-12-01 16:36:10</span>
-        <span class="mobile">2023-12-01 16:36</span>
+        <span class="pc">2023-12-05 14:06:49</span>
+        <span class="mobile">2023-12-05 14:06</span>
     </span>
     
         <span class="article-categories article-meta-item">
@@ -343,33 +343,42 @@ mjx-container[display="true"] + br {
         
 
         <div class="article-content markdown-body">
-            <h2 id="leetcode每日一天12.1">leetcode每日一天（12.1）</h2>
-<p><a class="link" target="_blank" rel="noopener" href="https://leetcode.cn/problems/first-completely-painted-row-or-column/">2661. 找出叠涂元素<i class="fas fa-external-link-alt"></i></a></p>
-<p>给你一个下标从 <strong>0</strong> 开始的整数数组 <code>arr</code> 和一个 <code>m x n</code> 的整数 <strong>矩阵</strong> <code>mat</code> 。<code>arr</code> 和 <code>mat</code> 都包含范围 <code>[1，m * n]</code> 内的 <strong>所有</strong> 整数。</p>
-<p>从下标 <code>0</code> 开始遍历 <code>arr</code> 中的每个下标 <code>i</code> ，并将包含整数 <code>arr[i]</code> 的 <code>mat</code> 单元格涂色。</p>
-<p>请你找出 <code>arr</code> 中在 <code>mat</code> 的某一行或某一列上都被涂色且下标最小的元素，并返回其下标 <code>i</code> 。</p>
+            <h2 id="leetcode每日一天12.5">leetcode每日一天（12.5）</h2>
+<p><a class="link" target="_blank" rel="noopener" href="https://leetcode.cn/problems/minimum-fuel-cost-to-report-to-the-capital/">2477. 到达首都的最少油耗<i class="fas fa-external-link-alt"></i></a></p>
+<p>给你一棵 <code>n</code> 个节点的树（一个无向、连通、无环图），每个节点表示一个城市，编号从 <code>0</code> 到 <code>n - 1</code> ，且恰好有 <code>n - 1</code> 条路。<code>0</code> 是首都。给你一个二维整数数组 <code>roads</code> ，其中 <code>roads[i] = [ai, bi]</code> ，表示城市 <code>ai</code> 和 <code>bi</code> 之间有一条 <strong>双向路</strong> 。</p>
+<p>每个城市里有一个代表，他们都要去首都参加一个会议。</p>
+<p>每座城市里有一辆车。给你一个整数 <code>seats</code> 表示每辆车里面座位的数目。</p>
+<p>城市里的代表可以选择乘坐所在城市的车，或者乘坐其他城市的车。相邻城市之间一辆车的油耗是一升汽油。</p>
+<p>请你返回到达首都最少需要多少升汽油。</p>
 <p><strong>示例 1：</strong></p>
-<p><img src="/2023/12/01/leetcode12-1/leetcode12-1\grid1.jpg"></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">输入：arr = [1,3,4,2], mat = [[1,4],[2,3]]</span><br><span class="line">输出：2</span><br><span class="line">解释：遍历如上图所示，arr[2] 在矩阵中的第一行或第二列上都被涂色。</span><br></pre></td></tr></table></figure>
+<p><img src="/2023/12/05/leetcode12-5/leetcode12-5\1.png"></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">输入：roads = [[0,1],[0,2],[0,3]], seats = 5</span><br><span class="line">输出：3</span><br><span class="line">解释：</span><br><span class="line">- 代表 1 直接到达首都，消耗 1 升汽油。</span><br><span class="line">- 代表 2 直接到达首都，消耗 1 升汽油。</span><br><span class="line">- 代表 3 直接到达首都，消耗 1 升汽油。</span><br><span class="line">最少消耗 3 升汽油。</span><br></pre></td></tr></table></figure>
 <p><strong>示例 2：</strong></p>
-<p><img src="/2023/12/01/leetcode12-1/leetcode12-1\grid2.jpg"></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">输入：arr = [2,8,7,4,1,3,5,6,9], mat = [[3,2,5],[1,4,6],[8,7,9]]</span><br><span class="line">输出：3</span><br><span class="line">解释：遍历如上图所示，arr[3] 在矩阵中的第二列上都被涂色。</span><br></pre></td></tr></table></figure>
+<p><img src="/2023/12/05/leetcode12-5/leetcode12-5\2.png"></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">输入：roads = [[3,1],[3,2],[1,0],[0,4],[0,5],[4,6]], seats = 2</span><br><span class="line">输出：7</span><br><span class="line">解释：</span><br><span class="line">- 代表 2 到达城市 3 ，消耗 1 升汽油。</span><br><span class="line">- 代表 2 和代表 3 一起到达城市 1 ，消耗 1 升汽油。</span><br><span class="line">- 代表 2 和代表 3 一起到达首都，消耗 1 升汽油。</span><br><span class="line">- 代表 1 直接到达首都，消耗 1 升汽油。</span><br><span class="line">- 代表 5 直接到达首都，消耗 1 升汽油。</span><br><span class="line">- 代表 6 到达城市 4 ，消耗 1 升汽油。</span><br><span class="line">- 代表 4 和代表 6 一起到达首都，消耗 1 升汽油。</span><br><span class="line">最少消耗 7 升汽油。</span><br></pre></td></tr></table></figure>
+<p><strong>示例 3：</strong></p>
+<p><img src="/2023/12/05/leetcode12-5/leetcode12-5\3.png"></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">输入：roads = [], seats = 1</span><br><span class="line">输出：0</span><br><span class="line">解释：没有代表需要从别的城市到达首都。</span><br></pre></td></tr></table></figure>
 <p><strong>提示：</strong></p>
 <ul>
-<li><code>m == mat.length</code></li>
-<li><code>n = mat[i].length</code></li>
-<li><code>arr.length == m * n</code></li>
-<li><code>1 &lt;= m, n &lt;= 105</code></li>
-<li><code>1 &lt;= m * n &lt;= 105</code></li>
-<li><code>1 &lt;= arr[i], mat[r][c] &lt;= m * n</code></li>
-<li><code>arr</code> 中的所有整数 <strong>互不相同</strong></li>
-<li><code>mat</code> 中的所有整数 <strong>互不相同</strong></li>
+<li><p><code>1 &lt;= n &lt;= 105</code></p></li>
+<li><p><code>roads.length == n - 1</code></p></li>
+<li><p><code>roads[i].length == 2</code></p></li>
+<li><p><code>0 &lt;= ai, bi &lt; n</code></p></li>
+<li><p><code>ai != bi</code></p></li>
+<li><p><code>roads</code> 表示一棵合法的树。</p></li>
+<li><p><code>1 &lt;= seats &lt;= 105</code></p>
+<hr></li>
 </ul>
 <h2 id="解答">解答</h2>
 <h6 id="思想">思想：</h6>
-<p>由于矩阵 <code>mat</code> 中每一个元素都不同，并且都在数组 <code>arr</code> 中，所以首先我们用一个哈希表来存储 <code>mat</code> 中每一个元素的位置信息（即行列信息）。然后用一个长度为 <code>n</code> 的数组 <code>rowCnt</code> 来表示每一行中已经被涂色的个数，用一个长度为 <code>m</code> 的数组 <code>colCnt</code> 来表示每一列中已经被涂色的个数，其中若出现某一行 <code>i</code> 有<code>rowCnt[i]=m</code> 或者某一列 <code>j</code> 有 <code>colCnt[j]=n</code>，则表示第 <code>i</code> 行或 <code>j</code> 列已被全部涂色。 接着我们遍历数组 <code>arr</code>，对于遍历到的 <code>arr[i]</code>，从哈希表中得到该元素的行列信息，并更新数组 <code>rowCnt</code> 和 <code>colCnt</code>，如果出现某一行或某一列被全部涂色，则返回该元素的下标 <code>i</code>。</p>
+<h6 id="贪心-深度优先搜索">贪心 + 深度优先搜索</h6>
+<h3 id="思路与算法">思路与算法</h3>
+<p>题目等价于给出了一棵以节点 000 为根结点的树，并且初始树上的每一个节点上都有一个人，现在所有人都需要通过「车子」向结点 0 移动。</p>
+<p>对于某一个节点 x，x ≠ 0，其父节点为 y。因为以节点 x为根结点的子树上的人都需要通过边 x → y 向节点 000 移动，所以为了使这条边上的「车子」利用率最高，我们贪心地让 xxx 的全部子节点上的人到了节点 xxx 后再一起坐车向上移动，我们不妨设以节点 xxx 为根节点的子树大小为 <span class="math display"><mjx-container class="MathJax" jax="SVG" display="true"><svg style="vertical-align: -1.909ex;" xmlns="http://www.w3.org/2000/svg" width="7.803ex" height="4.83ex" role="img" focusable="false" viewbox="0 -1291 3449 2134.8"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mo"><path data-c="2308" d="M174 734Q178 746 190 750H298H369Q400 750 411 747T422 730T411 713T372 709Q365 709 345 709T310 710H214V-235Q206 -248 196 -250Q192 -250 189 -249T184 -247T180 -244T178 -241T176 -237T174 -234V734Z"/></g><g data-mml-node="mfrac" transform="translate(444,0)"><g data-mml-node="mtext" transform="translate(220,676)"><path data-c="73" d="M295 316Q295 356 268 385T190 414Q154 414 128 401Q98 382 98 349Q97 344 98 336T114 312T157 287Q175 282 201 278T245 269T277 256Q294 248 310 236T342 195T359 133Q359 71 321 31T198 -10H190Q138 -10 94 26L86 19L77 10Q71 4 65 -1L54 -11H46H42Q39 -11 33 -5V74V132Q33 153 35 157T45 162H54Q66 162 70 158T75 146T82 119T101 77Q136 26 198 26Q295 26 295 104Q295 133 277 151Q257 175 194 187T111 210Q75 227 54 256T33 318Q33 357 50 384T93 424T143 442T187 447H198Q238 447 268 432L283 424L292 431Q302 440 314 448H322H326Q329 448 335 442V310L329 304H301Q295 310 295 316Z"/><path data-c="65" d="M28 218Q28 273 48 318T98 391T163 433T229 448Q282 448 320 430T378 380T406 316T415 245Q415 238 408 231H126V216Q126 68 226 36Q246 30 270 30Q312 30 342 62Q359 79 369 104L379 128Q382 131 395 131H398Q415 131 415 121Q415 117 412 108Q393 53 349 21T250 -11Q155 -11 92 58T28 218ZM333 275Q322 403 238 411H236Q228 411 220 410T195 402T166 381T143 340T127 274V267H333V275Z" transform="translate(394,0)"/><path data-c="61" d="M137 305T115 305T78 320T63 359Q63 394 97 421T218 448Q291 448 336 416T396 340Q401 326 401 309T402 194V124Q402 76 407 58T428 40Q443 40 448 56T453 109V145H493V106Q492 66 490 59Q481 29 455 12T400 -6T353 12T329 54V58L327 55Q325 52 322 49T314 40T302 29T287 17T269 6T247 -2T221 -8T190 -11Q130 -11 82 20T34 107Q34 128 41 147T68 188T116 225T194 253T304 268H318V290Q318 324 312 340Q290 411 215 411Q197 411 181 410T156 406T148 403Q170 388 170 359Q170 334 154 320ZM126 106Q126 75 150 51T209 26Q247 26 276 49T315 109Q317 116 318 175Q318 233 317 233Q309 233 296 232T251 223T193 203T147 166T126 106Z" transform="translate(838,0)"/><path data-c="74" d="M27 422Q80 426 109 478T141 600V615H181V431H316V385H181V241Q182 116 182 100T189 68Q203 29 238 29Q282 29 292 100Q293 108 293 146V181H333V146V134Q333 57 291 17Q264 -10 221 -10Q187 -10 162 2T124 33T105 68T98 100Q97 107 97 248V385H18V422H27Z" transform="translate(1338,0)"/><path data-c="73" d="M295 316Q295 356 268 385T190 414Q154 414 128 401Q98 382 98 349Q97 344 98 336T114 312T157 287Q175 282 201 278T245 269T277 256Q294 248 310 236T342 195T359 133Q359 71 321 31T198 -10H190Q138 -10 94 26L86 19L77 10Q71 4 65 -1L54 -11H46H42Q39 -11 33 -5V74V132Q33 153 35 157T45 162H54Q66 162 70 158T75 146T82 119T101 77Q136 26 198 26Q295 26 295 104Q295 133 277 151Q257 175 194 187T111 210Q75 227 54 256T33 318Q33 357 50 384T93 424T143 442T187 447H198Q238 447 268 432L283 424L292 431Q302 440 314 448H322H326Q329 448 335 442V310L329 304H301Q295 310 295 316Z" transform="translate(1727,0)"/></g><g data-mml-node="msub" transform="translate(342.3,-686)"><g data-mml-node="mtext"><path data-c="63" d="M370 305T349 305T313 320T297 358Q297 381 312 396Q317 401 317 402T307 404Q281 408 258 408Q209 408 178 376Q131 329 131 219Q131 137 162 90Q203 29 272 29Q313 29 338 55T374 117Q376 125 379 127T395 129H409Q415 123 415 120Q415 116 411 104T395 71T366 33T318 2T249 -11Q163 -11 99 53T34 214Q34 318 99 383T250 448T370 421T404 357Q404 334 387 320Z"/><path data-c="6E" d="M41 46H55Q94 46 102 60V68Q102 77 102 91T102 122T103 161T103 203Q103 234 103 269T102 328V351Q99 370 88 376T43 385H25V408Q25 431 27 431L37 432Q47 433 65 434T102 436Q119 437 138 438T167 441T178 442H181V402Q181 364 182 364T187 369T199 384T218 402T247 421T285 437Q305 442 336 442Q450 438 463 329Q464 322 464 190V104Q464 66 466 59T477 49Q498 46 526 46H542V0H534L510 1Q487 2 460 2T422 3Q319 3 310 0H302V46H318Q379 46 379 62Q380 64 380 200Q379 335 378 343Q372 371 358 385T334 402T308 404Q263 404 229 370Q202 343 195 315T187 232V168V108Q187 78 188 68T191 55T200 49Q221 46 249 46H265V0H257L234 1Q210 2 183 2T145 3Q42 3 33 0H25V46H41Z" transform="translate(444,0)"/><path data-c="74" d="M27 422Q80 426 109 478T141 600V615H181V431H316V385H181V241Q182 116 182 100T189 68Q203 29 238 29Q282 29 292 100Q293 108 293 146V181H333V146V134Q333 57 291 17Q264 -10 221 -10Q187 -10 162 2T124 33T105 68T98 100Q97 107 97 248V385H18V422H27Z" transform="translate(1000,0)"/></g><g data-mml-node="mi" transform="translate(1422,-150) scale(0.707)"><path data-c="1D465" d="M52 289Q59 331 106 386T222 442Q257 442 286 424T329 379Q371 442 430 442Q467 442 494 420T522 361Q522 332 508 314T481 292T458 288Q439 288 427 299T415 328Q415 374 465 391Q454 404 425 404Q412 404 406 402Q368 386 350 336Q290 115 290 78Q290 50 306 38T341 26Q378 26 414 59T463 140Q466 150 469 151T485 153H489Q504 153 504 145Q504 144 502 134Q486 77 440 33T333 -11Q263 -11 227 52Q186 -10 133 -10H127Q78 -10 57 16T35 71Q35 103 54 123T99 143Q142 143 142 101Q142 81 130 66T107 46T94 41L91 40Q91 39 97 36T113 29T132 26Q168 26 194 71Q203 87 217 139T245 247T261 313Q266 340 266 352Q266 380 251 392T217 404Q177 404 142 372T93 290Q91 281 88 280T72 278H58Q52 284 52 289Z"/></g></g><rect width="2321" height="60" x="120" y="220"/></g><g data-mml-node="mo" transform="translate(3005,0)"><path data-c="2309" d="M21 717T21 730T32 746T75 750H147H256Q266 742 269 735V-235Q262 -248 251 -250Q247 -250 244 -249T239 -247T235 -244T233 -241T231 -237T229 -234V710H133Q119 710 99 710T71 709Q43 709 32 713Z"/></g></g></g></svg></mjx-container></span> ，其中 seats 为一辆车的给定座位数。那么我们可以通过从根结点 000 往下进行「深度优先搜索」，每一条边上「车子」的数目即为该条边上汽油的开销，统计全部边上汽油的开销即为最终答案。</p>
+<p>从后遍历，然后回溯即可。</p>
 <p>代码：</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> {</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">firstCompleteIndex</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; arr, vector&lt;vector&lt;<span class="type">int</span>&gt;&gt;&amp; mat)</span> </span>{</span><br><span class="line">        <span class="type">int</span> m=mat.<span class="built_in">size</span>(),n=mat[<span class="number">0</span>].<span class="built_in">size</span>();</span><br><span class="line">        <span class="type">int</span> len = m*n;</span><br><span class="line">        <span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">row</span><span class="params">(m+<span class="number">1</span>,<span class="number">0</span>)</span>,<span class="title">col</span><span class="params">(n+<span class="number">1</span>,<span class="number">0</span>)</span></span>;</span><br><span class="line">        map&lt;<span class="type">int</span>,pair&lt;<span class="type">int</span>,<span class="type">int</span>&gt;&gt; poj;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;m;i++)</span><br><span class="line">            <span class="keyword">for</span>(<span class="type">int</span> j=<span class="number">0</span>;j&lt;n;j++){</span><br><span class="line">                <span class="comment">// cout&lt;&lt;mat[i][j]&lt;&lt;":"&lt;&lt;i&lt;&lt;" "&lt;&lt;j&lt;&lt;endl;</span></span><br><span class="line">                pair&lt;<span class="type">int</span>,pair&lt;<span class="type">int</span>,<span class="type">int</span>&gt;&gt; <span class="built_in">p</span>(mat[i][j],<span class="built_in">pair</span>&lt;<span class="type">int</span>,<span class="type">int</span>&gt;(i,j));</span><br><span class="line">                poj.<span class="built_in">insert</span>(p);</span><br><span class="line">            }</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;len;i++){</span><br><span class="line">            row[poj[arr[i]].first]++;</span><br><span class="line">            col[poj[arr[i]].second]++;</span><br><span class="line">            cout&lt;&lt;arr[i]&lt;&lt;<span class="string">":"</span>&lt;&lt;poj[arr[i]].first&lt;&lt;<span class="string">" "</span>&lt;&lt;poj[arr[i]].second&lt;&lt;endl;</span><br><span class="line">            <span class="keyword">if</span>(row[poj[arr[i]].first]==n||col[poj[arr[i]].second]==m)</span><br><span class="line">                <span class="keyword">return</span> i;                </span><br><span class="line">        }</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    }</span><br><span class="line">};</span><br></pre></td></tr></table></figure>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> {</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">long</span> <span class="type">long</span> <span class="title">minimumFuelCost</span><span class="params">(vector&lt;vector&lt;<span class="type">int</span>&gt;&gt;&amp; roads, <span class="type">int</span> seats)</span> </span>{</span><br><span class="line">        <span class="type">int</span> n = roads.<span class="built_in">size</span>();</span><br><span class="line">        vector&lt;vector&lt;<span class="type">int</span>&gt;&gt; <span class="built_in">g</span>(n + <span class="number">1</span>);</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">auto</span> &amp;e : roads) {</span><br><span class="line">            g[e[<span class="number">0</span>]].<span class="built_in">push_back</span>(e[<span class="number">1</span>]);</span><br><span class="line">            g[e[<span class="number">1</span>]].<span class="built_in">push_back</span>(e[<span class="number">0</span>]);</span><br><span class="line">        }</span><br><span class="line">        <span class="type">long</span> <span class="type">long</span> res = <span class="number">0</span>;</span><br><span class="line">        function&lt;<span class="type">int</span>(<span class="type">int</span>, <span class="type">int</span>)&gt; dfs = [&amp;](<span class="type">int</span> cur, <span class="type">int</span> fa) -&gt; <span class="type">int</span> {</span><br><span class="line">            <span class="type">int</span> peopleSum = <span class="number">1</span>;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">auto</span> ne : g[cur]) {</span><br><span class="line">                <span class="keyword">if</span> (ne != fa) {</span><br><span class="line">                    <span class="type">int</span> peopleCnt = <span class="built_in">dfs</span>(ne, cur);</span><br><span class="line">                    peopleSum += peopleCnt;</span><br><span class="line">                    res += (peopleCnt + seats - <span class="number">1</span>) / seats;</span><br><span class="line">                }</span><br><span class="line">            }</span><br><span class="line">            <span class="keyword">return</span> peopleSum;</span><br><span class="line">        };</span><br><span class="line">        <span class="built_in">dfs</span>(<span class="number">0</span>, <span class="number">-1</span>);</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    }</span><br><span class="line">};</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
         </div>
 
@@ -377,11 +386,11 @@ mjx-container[display="true"] + br {
             <div class="post-copyright-info">
                 <div class="article-copyright-info-container">
     <ul>
-        <li>本文标题：leetcode12-1</li>
+        <li>本文标题：leetcode12-5</li>
         <li>本文作者：warrior</li>
-        <li>创建时间：2023-12-01 16:36:10</li>
+        <li>创建时间：2023-12-05 14:06:49</li>
         <li>
-            本文链接：https://sunset148.github.io/2023/12/01/leetcode12-1/
+            本文链接：https://sunset148.github.io/2023/12/05/leetcode12-5/
         </li>
         <li>
             版权声明：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
@@ -405,29 +414,14 @@ mjx-container[display="true"] + br {
         
             <div class="article-nav">
                 
-                    <div class="article-prev">
-                        <a class="prev"
-                           rel="prev"
-                           href="/2023/12/02/leetcode12-2/"
-                        >
-                            <span class="left arrow-icon flex-center">
-                              <i class="fas fa-chevron-left"></i>
-                            </span>
-                            <span class="title flex-center">
-                                <span class="post-nav-title-item">leetcode12-2</span>
-                                <span class="post-nav-item">上一篇</span>
-                            </span>
-                        </a>
-                    </div>
-                
                 
                     <div class="article-next">
                         <a class="next"
                            rel="next"
-                           href="/2023/11/28/leetcode11-28/"
+                           href="/2023/12/04/leetcode12-4/"
                         >
                             <span class="title flex-center">
-                                <span class="post-nav-title-item">leetcode11-28</span>
+                                <span class="post-nav-title-item">leetcode12-4</span>
                                 <span class="post-nav-item">下一篇</span>
                             </span>
                             <span class="right arrow-icon flex-center">
@@ -600,7 +594,7 @@ mjx-container[display="true"] + br {
         <aside class="page-aside">
             <div class="post-toc-wrap">
     <div class="post-toc">
-        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#leetcode%E6%AF%8F%E6%97%A5%E4%B8%80%E5%A4%A912.1"><span class="nav-text">leetcode每日一天（12.1）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A7%A3%E7%AD%94"><span class="nav-text">解答</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#%E6%80%9D%E6%83%B3"><span class="nav-text">思想：</span></a></li></ol></li></ol></li></ol></li></ol></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#leetcode%E6%AF%8F%E6%97%A5%E4%B8%80%E5%A4%A912.5"><span class="nav-text">leetcode每日一天（12.5）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A7%A3%E7%AD%94"><span class="nav-text">解答</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#%E6%80%9D%E6%83%B3"><span class="nav-text">思想：</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#%E8%B4%AA%E5%BF%83-%E6%B7%B1%E5%BA%A6%E4%BC%98%E5%85%88%E6%90%9C%E7%B4%A2"><span class="nav-text">贪心 + 深度优先搜索</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%80%9D%E8%B7%AF%E4%B8%8E%E7%AE%97%E6%B3%95"><span class="nav-text">思路与算法</span></a></li></ol></li></ol>
     </div>
 </div>
         </aside>
