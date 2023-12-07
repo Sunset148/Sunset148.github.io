@@ -6,7 +6,7 @@
   <link href="https://sunset148.github.io/atom.xml" rel="self"/>
   
   <link href="https://sunset148.github.io/"/>
-  <updated>2023-12-06T06:56:49.870Z</updated>
+  <updated>2023-12-07T10:31:54.693Z</updated>
   <id>https://sunset148.github.io/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>leetcode12-7</title>
+    <link href="https://sunset148.github.io/2023/12/07/leetcode12-7/"/>
+    <id>https://sunset148.github.io/2023/12/07/leetcode12-7/</id>
+    <published>2023-12-07T10:25:55.000Z</published>
+    <updated>2023-12-07T10:31:54.693Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="leetcode每日一天12.6">leetcode每日一天（12.6）</h2><p><a class="link" href="https://leetcode.cn/problems/reorder-routes-to-make-all-paths-lead-to-the-city-zero/">1466. 重新规划路线<i class="fas fa-external-link-alt"></i></a></p><p><code>n</code> 座城市，从 <code>0</code> 到 <code>n-1</code> 编号，其间共有 <code>n-1</code> 条路线。因此，要想在两座不同城市之间旅行只有唯一一条路线可供选择（路线网形成一颗树）。去年，交通运输部决定重新规划路线，以改变交通拥堵的状况。</p><p>路线用 <code>connections</code> 表示，其中 <code>connections[i] = [a, b]</code> 表示从城市 <code>a</code> 到 <code>b</code> 的一条有向路线。</p><p>今年，城市 0 将会举办一场大型比赛，很多游客都想前往城市 0 。</p><p>请你帮助重新规划路线方向，使每个城市都可以访问城市 0 。返回需要变更方向的最小路线数。</p><p>题目数据 <strong>保证</strong> 每个城市在重新规划路线方向后都能到达城市 0 。</p><p><strong>示例 1：</strong></p><p><img src="/leetcode12-7/sample_1_1819.png"></p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">输入：n = 6, connections = [[0,1],[1,3],[2,3],[4,0],[4,5]]</span><br><span class="line">输出：3</span><br><span class="line">解释：更改以红色显示的路线的方向，使每个城市都可以到达城市 0 。</span><br></pre></td></tr></table></figure><p><strong>示例 2：</strong></p><p><img src="/leetcode12-7/sample_2_1819.png"></p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">输入：n = 5, connections = [[1,0],[1,2],[3,2],[3,4]]</span><br><span class="line">输出：2</span><br><span class="line">解释：更改以红色显示的路线的方向，使每个城市都可以到达城市 0 。</span><br></pre></td></tr></table></figure><p><strong>示例 3：</strong></p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入：n = 3, connections = [[1,0],[2,0]]</span><br><span class="line">输出：0</span><br></pre></td></tr></table></figure><p><strong>提示：</strong></p><ul><li><code>2 &lt;= n &lt;= 5 * 10^4</code></li><li><code>connections.length == n-1</code></li><li><code>connections[i].length == 2</code></li><li><code>0 &lt;= connections[i][0], connections[i][1] &lt;= n-1</code></li><li><code>connections[i][0] != connections[i][1]</code></li></ul><hr><h2 id="解答">解答</h2><h6 id="思想">思想：</h6><p>该题较为简单，只用考虑到是否根节点遍历到所有节点即可，如果是反方向则需要重新规划路线，如果不是则继续搜索。</p><p>代码：</p><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> {</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">minReorder</span><span class="params">(<span class="type">int</span> n, vector&lt;vector&lt;<span class="type">int</span>&gt;&gt;&amp; connections)</span> </span>{</span><br><span class="line">        vector&lt;vector&lt;pair&lt;<span class="type">int</span>,<span class="type">int</span>&gt;&gt;&gt;  <span class="built_in">v</span>(n);</span><br><span class="line">        <span class="type">int</span> len = connections.<span class="built_in">size</span>();</span><br><span class="line">        <span class="type">int</span> ans = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;len;i++){</span><br><span class="line">            v[connections[i][<span class="number">0</span>]].<span class="built_in">push_back</span>(<span class="built_in">pair</span>&lt;<span class="type">int</span>,<span class="type">int</span>&gt;(connections[i][<span class="number">1</span>],<span class="number">1</span>));</span><br><span class="line">            v[connections[i][<span class="number">1</span>]].<span class="built_in">push_back</span>(<span class="built_in">pair</span>&lt;<span class="type">int</span>,<span class="type">int</span>&gt;(connections[i][<span class="number">0</span>],<span class="number">0</span>));</span><br><span class="line">        }</span><br><span class="line">        <span class="function">vector&lt;<span class="type">bool</span>&gt; <span class="title">vis</span><span class="params">(n,<span class="literal">false</span>)</span></span>;</span><br><span class="line">        vis[<span class="number">0</span>] = <span class="literal">true</span>;</span><br><span class="line">        queue&lt;<span class="type">int</span>&gt; q;</span><br><span class="line">        q.<span class="built_in">push</span>(<span class="number">0</span>);</span><br><span class="line">        <span class="keyword">while</span>(!q.<span class="built_in">empty</span>()){</span><br><span class="line">            <span class="type">int</span> x = q.<span class="built_in">front</span>();</span><br><span class="line">            q.<span class="built_in">pop</span>();</span><br><span class="line">            <span class="type">int</span> xlen = v[x].<span class="built_in">size</span>();</span><br><span class="line">            <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;xlen;i++){</span><br><span class="line">                pair&lt;<span class="type">int</span>,<span class="type">int</span>&gt; p = v[x][i];</span><br><span class="line">                <span class="keyword">if</span>(!vis[p.first]){</span><br><span class="line">                    q.<span class="built_in">push</span>(p.first);</span><br><span class="line">                    cout&lt;&lt;p.first&lt;&lt;<span class="string">" "</span>;</span><br><span class="line">                    vis[p.first] = <span class="literal">true</span>;</span><br><span class="line">                    <span class="keyword">if</span>(p.second==<span class="number">1</span>){</span><br><span class="line">                        ans++;</span><br><span class="line">                    }</span><br><span class="line">                }</span><br><span class="line">            }            </span><br><span class="line">        }</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    }</span><br><span class="line">};</span><br></pre></td></tr></table></figure>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h2 id=&quot;leetcode每日一天12.6&quot;&gt;leetcode每日一天（12.6）&lt;/h2&gt;
+&lt;p&gt;&lt;a class=&quot;link&quot; href=&quot;https://leetcode.cn/problems/reorder-routes-to-make-all-paths-le</summary>
+      
+    
+    
+    
+    <category term="leetcode" scheme="https://sunset148.github.io/categories/leetcode/"/>
+    
+    
+    <category term="八股文" scheme="https://sunset148.github.io/tags/%E5%85%AB%E8%82%A1%E6%96%87/"/>
+    
+  </entry>
   
   <entry>
     <title>leetcode12-6</title>
@@ -494,31 +519,6 @@
     <category term="hexo" scheme="https://sunset148.github.io/tags/hexo/"/>
     
     <category term="hexo新增图片" scheme="https://sunset148.github.io/tags/hexo%E6%96%B0%E5%A2%9E%E5%9B%BE%E7%89%87/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>机器学习课程竞赛心得</title>
-    <link href="https://sunset148.github.io/2023/06/27/MachineLearningCourseCompetition/"/>
-    <id>https://sunset148.github.io/2023/06/27/MachineLearningCourseCompetition/</id>
-    <published>2023-06-27T07:44:09.000Z</published>
-    <updated>2023-06-27T08:08:19.765Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="前言">前言</h3><p>课程竞赛 狗狗分类（20分类任务） 狗狗分类（20分类任务） - 第一阶段：4月19日 至 4月30日（2周，占25%） 模型训练、主干网络、调参与调优tricks等基础知识 - 第二阶段：5月1日 至 5月14日（2周，占20%） 数据增强、图像编辑、调参与调优tricks等 - 第三阶段：5月15日 至 5月28日（2周，占20%） 网络攻防、数据增强等 提交验证地址：http://cuit.osmagic.com:8888 学号登录，初始密码“123” 期末提交测试代码及模型（占5%），供结果验证 按阶段准确率高低计分，最高者100分，最低者40分</p><h3 id="心得">心得</h3>在第一阶段和第二阶段中我们使用的是Resnet，将epch和leaning rate更改了就提交代码了。在第三阶段在读论文时候发现了新模型Visual Attention Network(VAN)它是22年cvpr发表的。该模型在图像分类、物体检测、语义分割、实例分割、姿势估计等任务都取得了不错的成绩。其中的VAN-B6在ImageNet基准测试中取得了87.8%的准确率，并为全景分割创造了新的最先进的性能（58.PQ）。此外，VAN-B2在ADE20K基准上的语义分割超过Swin-T 4% mIoU（50.1 vs. 46.1），在COCO数据集上的物体检测超过2.6% AP（48.8 vs. 46.2）。因此决定使用该模型在第三阶段测试性能。<div data-align="center"><p><img src="/2023/06/27/MachineLearningCourseCompetition/1.jpg" width="400"> <img src="/2023/06/27/MachineLearningCourseCompetition/2.jpg" width="400"></p></div>在训练中发现，所提供的数据集较少，在经过几个epch的训练后训练集的Acc指标可以达到100%且不波动，然而在提交后发现指标却非常低。因此出现了非常严重的过拟合现象。而VAN提供在ImageNet1k上训练的权重，所以我们加载训练权重后训练提交所得到的大概在92%。因VAN提供了多个版本可供选择，我使用了B0-B3发现在使用B3时候达到了94%，证明该model在数据集上参数量越大所取得的效果越好。但遗憾的是作者只提供了B0-B3在ImageNet1k上训练的权重。学生有使用B6在老师提供的数据集上训练3k轮所取得的效果非常糟糕。如果使用B6的权重训练应该会取得不错的成果。<div data-align="center"><p><img src="/2023/06/27/MachineLearningCourseCompetition/3.jpg" width="900"></p></div><p>模型选择完毕就是炼丹了。因数据集小炼丹相对容易。因数据集较小，为了扩充数据集，减少过拟合，添加了数据增强中的随机水平翻转和随机选择以及随机颜色调整。又因为考虑到训练集很快就过拟合了，因此降低了学习率为1e-5。最后在第三轮取得了96.64%。</p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h3 id=&quot;前言&quot;&gt;前言&lt;/h3&gt;
-&lt;p&gt;课程竞赛 狗狗分类（20分类任务） 狗狗分类（20分类任务） - 第一阶段：4月19日 至 4月30日（2周，占25%） 模型训练、主干网络、调参与调优tricks等基础知识 - 第二阶段：5月1日 至 5月14日（2周，占20%）</summary>
-      
-    
-    
-    
-    <category term="科研" scheme="https://sunset148.github.io/categories/%E7%A7%91%E7%A0%94/"/>
-    
-    
-    <category term="机器学习" scheme="https://sunset148.github.io/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
     
   </entry>
   

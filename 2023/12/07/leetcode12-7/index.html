@@ -9,7 +9,7 @@
     
     <title>
         
-            pytorch安装 |
+            leetcode12-7 |
         
         BBlog
     </title>
@@ -26,7 +26,119 @@
     KEEP.theme_config = {"toc":{"enable":true,"number":false,"expand_all":false,"init_open":true},"style":{"primary_color":"#0066CC","avatar":"/source/img/favicon.jpg","favicon":"/source/img/favicon.jpg","article_img_align":"left","left_side_width":"260px","content_max_width":"920px","hover":{"shadow":true,"scale":false},"first_screen":{"enable":true,"background_img":"/source/img/bg.svg","description":"I can do all things."},"scroll":{"progress_bar":{"enable":false},"percent":{"enable":true}}},"local_search":{"enable":true,"preload":true},"code_copy":{"enable":true,"style":"default"},"pjax":{"enable":false},"lazyload":{"enable":false},"version":"3.4.5"};
     KEEP.language_ago = {"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 个月前","year":"%s 年前"};
   </script>
-<meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="BBlog" type="application/atom+xml">
+<meta name="generator" content="Hexo 6.3.0"><style>mjx-container[jax="SVG"] {
+  direction: ltr;
+}
+
+mjx-container[jax="SVG"] > svg {
+  overflow: visible;
+}
+
+mjx-container[jax="SVG"][display="true"] {
+  display: block;
+  text-align: center;
+  margin: 1em 0;
+}
+
+mjx-container[jax="SVG"][justify="left"] {
+  text-align: left;
+}
+
+mjx-container[jax="SVG"][justify="right"] {
+  text-align: right;
+}
+
+g[data-mml-node="merror"] > g {
+  fill: red;
+  stroke: red;
+}
+
+g[data-mml-node="merror"] > rect[data-background] {
+  fill: yellow;
+  stroke: none;
+}
+
+g[data-mml-node="mtable"] > line[data-line] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > rect[data-frame] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > .mjx-dashed {
+  stroke-dasharray: 140;
+}
+
+g[data-mml-node="mtable"] > .mjx-dotted {
+  stroke-linecap: round;
+  stroke-dasharray: 0,140;
+}
+
+g[data-mml-node="mtable"] > svg {
+  overflow: visible;
+}
+
+[jax="SVG"] mjx-tool {
+  display: inline-block;
+  position: relative;
+  width: 0;
+  height: 0;
+}
+
+[jax="SVG"] mjx-tool > mjx-tip {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+mjx-tool > mjx-tip {
+  display: inline-block;
+  padding: .2em;
+  border: 1px solid #888;
+  font-size: 70%;
+  background-color: #F8F8F8;
+  color: black;
+  box-shadow: 2px 2px 5px #AAAAAA;
+}
+
+g[data-mml-node="maction"][data-toggle] {
+  cursor: pointer;
+}
+
+mjx-status {
+  display: block;
+  position: fixed;
+  left: 1em;
+  bottom: 1em;
+  min-width: 25%;
+  padding: .2em .4em;
+  border: 1px solid #888;
+  font-size: 90%;
+  background-color: #F8F8F8;
+  color: black;
+}
+
+foreignObject[data-mjx-xml] {
+  font-family: initial;
+  line-height: normal;
+  overflow: visible;
+}
+
+.MathJax path {
+  stroke-width: 3;
+}
+
+mjx-container[display="true"] {
+  overflow: auto hidden;
+}
+
+mjx-container[display="true"] + br {
+  display: none;
+}
+</style><link rel="alternate" href="/atom.xml" title="BBlog" type="application/atom+xml">
 </head>
 
 
@@ -168,7 +280,7 @@
     <div class="article-content-container">
 
         <div class="article-title">
-            <span class="title-hover-animation">pytorch安装</span>
+            <span class="title-hover-animation">leetcode12-7</span>
         </div>
 
         
@@ -187,8 +299,8 @@
                         <div class="article-meta-info">
     <span class="article-date article-meta-item">
         <i class="fas fa-edit"></i>&nbsp;
-        <span class="pc">2022-10-02 13:25:29</span>
-        <span class="mobile">2022-10-02 13:25</span>
+        <span class="pc">2023-12-07 18:25:55</span>
+        <span class="mobile">2023-12-07 18:25</span>
     </span>
     
         <span class="article-categories article-meta-item">
@@ -196,7 +308,7 @@
             <ul>
                 
                     <li>
-                        <a href="/categories/pytorch/">pytorch</a>&nbsp;
+                        <a href="/categories/leetcode/">leetcode</a>&nbsp;
                     </li>
                 
             </ul>
@@ -208,11 +320,7 @@
             <ul>
                 
                     <li>
-                        <a href="/tags/pytorch%E5%AE%89%E8%A3%85/">pytorch安装</a>&nbsp;
-                    </li>
-                
-                    <li>
-                        | <a href="/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E6%A1%86%E6%9E%B6/">深度学习框架</a>&nbsp;
+                        <a href="/tags/%E5%85%AB%E8%82%A1%E6%96%87/">八股文</a>&nbsp;
                     </li>
                 
             </ul>
@@ -235,19 +343,35 @@
         
 
         <div class="article-content markdown-body">
-            <h2 id="anaconda的安装以及使用清华源镜像安装pytorch">Anaconda的安装以及使用清华源镜像安装pytorch</h2>
-<h3 id="anaconda的安装">Anaconda的安装</h3>
-<p>因为在他官网的安装速度缓慢，所以我们选择在清华源镜像站安装 这里我选择的是Anaconda3-5.3.1-Windows-x86_64.exe<a class="link" target="_blank" rel="noopener" href="https://mirrors.tuna.tsinghua.edu.cn/anaconda/archive/Anaconda3-5.3.1-Windows-x86_64.exe">清华源镜像站anaconda安装包<i class="fas fa-external-link-alt"></i></a> 其实也可以选择官网然后复制下载链接去迅雷下载 下载好安装包之后，双击运行。将会出现下图，点击<code>Next</code>即可： 也是点击<code>I Agree</code>即可 接下来需要选择<code>All Users</code>，点击<code>Next</code> 接下来选择自己想要安装的地址，点击<code>Browse</code>，再点击<code>Next</code>即可接下来就是如下图,上面的是环境变量可以勾选，再点击<code>Install</code> ### 安装pytorch ##### 创建Pytorch虚拟环境 打开Anaconda Prompt,输入下列命令：（版本号可以改为自己需要的） <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda create -n pytorch python=3.8</span><br></pre></td></tr></table></figure> 启用创建的环境： <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda activate pytorch</span><br></pre></td></tr></table></figure> ##### 其他：Anaconda重命名canda虚拟环境（通过复制和删除操作实现） 首先对要需要重命名的conda环境进行复制 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 这是简化的命令形式</span></span><br><span class="line">conda create -n conda-new --<span class="built_in">clone</span> conda-old</span><br><span class="line"><span class="comment"># 下面是完整的命令形式</span></span><br><span class="line">conda create --name conda-new --<span class="built_in">clone</span> conda-old</span><br></pre></td></tr></table></figure> 然后删除原有的conda环境： <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda remove -n conda-old --all</span><br></pre></td></tr></table></figure> --all：表示删除整个conda环境；</p>
-<h5 id="pytorch官网选择配置">PyTorch官网选择配置</h5>
+            <h2 id="leetcode每日一天12.6">leetcode每日一天（12.6）</h2>
+<p><a class="link" target="_blank" rel="noopener" href="https://leetcode.cn/problems/reorder-routes-to-make-all-paths-lead-to-the-city-zero/">1466. 重新规划路线<i class="fas fa-external-link-alt"></i></a></p>
+<p><code>n</code> 座城市，从 <code>0</code> 到 <code>n-1</code> 编号，其间共有 <code>n-1</code> 条路线。因此，要想在两座不同城市之间旅行只有唯一一条路线可供选择（路线网形成一颗树）。去年，交通运输部决定重新规划路线，以改变交通拥堵的状况。</p>
+<p>路线用 <code>connections</code> 表示，其中 <code>connections[i] = [a, b]</code> 表示从城市 <code>a</code> 到 <code>b</code> 的一条有向路线。</p>
+<p>今年，城市 0 将会举办一场大型比赛，很多游客都想前往城市 0 。</p>
+<p>请你帮助重新规划路线方向，使每个城市都可以访问城市 0 。返回需要变更方向的最小路线数。</p>
+<p>题目数据 <strong>保证</strong> 每个城市在重新规划路线方向后都能到达城市 0 。</p>
+<p><strong>示例 1：</strong></p>
+<p><img src="/leetcode12-7/sample_1_1819.png"></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">输入：n = 6, connections = [[0,1],[1,3],[2,3],[4,0],[4,5]]</span><br><span class="line">输出：3</span><br><span class="line">解释：更改以红色显示的路线的方向，使每个城市都可以到达城市 0 。</span><br></pre></td></tr></table></figure>
+<p><strong>示例 2：</strong></p>
+<p><img src="/leetcode12-7/sample_2_1819.png"></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">输入：n = 5, connections = [[1,0],[1,2],[3,2],[3,4]]</span><br><span class="line">输出：2</span><br><span class="line">解释：更改以红色显示的路线的方向，使每个城市都可以到达城市 0 。</span><br></pre></td></tr></table></figure>
+<p><strong>示例 3：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入：n = 3, connections = [[1,0],[2,0]]</span><br><span class="line">输出：0</span><br></pre></td></tr></table></figure>
+<p><strong>提示：</strong></p>
 <ul>
-<li>先看你的显卡版本，再去下载Pytorch版本 <code>win</code>+<code>r</code>打开CMD命令行输入<code>nvidia-smi</code>可以查看自己的版本驱动，务必保证驱动版本大于396.26，且看到自己的CUDA版本号是10.2</li>
-<li>打开Anaconda Prompt 在cmd中以此输入一下代码来添加清华镜像源 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/</span><br><span class="line">conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main/</span><br><span class="line">conda config --<span class="built_in">set</span> show_channel_urls <span class="built_in">yes</span></span><br><span class="line">conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/pytorch/ </span><br></pre></td></tr></table></figure> 查看否修改到通道，输入： <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda config --show channels</span><br></pre></td></tr></table></figure></li>
-<li>可以试试使用conda安装/升级pip <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda install pip</span><br></pre></td></tr></table></figure></li>
-<li>查看当前环境 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda info --envs</span><br></pre></td></tr></table></figure></li>
-<li>在Pytorch网站查询需要安装的版本，<a class="link" target="_blank" rel="noopener" href="https://pytorch.org/get-started/locally/">官网<i class="fas fa-external-link-alt"></i></a> 在选择PyTorch Build 中我们一般选择Stable OS 选择你需要装在电脑的系统 Package 我使用Conda一直安装不成功，我使用是的Pip Language 自然选择Python Computer Platform CUDA的版本要根据你的显卡来选择，要选择与你版本最近而不超过的 到此时就会出来一段命令。但我们直接输入此命令往往会下载很久且没有结果。这里建议加上清华的镜像网站会快很多。具体操作如下：</li>
+<li><code>2 &lt;= n &lt;= 5 * 10^4</code></li>
+<li><code>connections.length == n-1</code></li>
+<li><code>connections[i].length == 2</code></li>
+<li><code>0 &lt;= connections[i][0], connections[i][1] &lt;= n-1</code></li>
+<li><code>connections[i][0] != connections[i][1]</code></li>
 </ul>
-<h5 id="使用国内源下载pytorch">使用国内源下载Pytorch</h5>
-<p>我们需要在上步骤的那一段命令加上一句 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">-i https://pypi.tuna.tsinghua.edu.cn/simple some-package</span><br></pre></td></tr></table></figure> 最后我们运行的命令为： <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip3 install torch torchvision torchaudio --extra-index-url https://download.pytorch.org/whl/cu113 -i https://pypi.tuna.tsinghua.edu.cn/simple some-package</span><br></pre></td></tr></table></figure> 我下载的差不多又六分钟，最后显示下载成功。 当然，我们安装其他库是也可以使用这个命令进行快速下载！！！ <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install xxx -i https://pypi.tuna.tsinghua.edu.cn/simple</span><br></pre></td></tr></table></figure> 如果这个不成功，就再试试这个！ <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install 包名 -i http://pypi.douban.com/simple/ --trusted-host pypi.douban.com</span><br></pre></td></tr></table></figure> 把xxx,替换成我们需要的库名就好啦！ ###### 最后验证是否安装成功 - 命令行输入python - 输入import torch - 输入torch.cuda.is_available() - 如果显示为True则安装成功了</p>
+<hr>
+<h2 id="解答">解答</h2>
+<h6 id="思想">思想：</h6>
+<p>该题较为简单，只用考虑到是否根节点遍历到所有节点即可，如果是反方向则需要重新规划路线，如果不是则继续搜索。</p>
+<p>代码：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> {</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">minReorder</span><span class="params">(<span class="type">int</span> n, vector&lt;vector&lt;<span class="type">int</span>&gt;&gt;&amp; connections)</span> </span>{</span><br><span class="line">        vector&lt;vector&lt;pair&lt;<span class="type">int</span>,<span class="type">int</span>&gt;&gt;&gt;  <span class="built_in">v</span>(n);</span><br><span class="line">        <span class="type">int</span> len = connections.<span class="built_in">size</span>();</span><br><span class="line">        <span class="type">int</span> ans = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;len;i++){</span><br><span class="line">            v[connections[i][<span class="number">0</span>]].<span class="built_in">push_back</span>(<span class="built_in">pair</span>&lt;<span class="type">int</span>,<span class="type">int</span>&gt;(connections[i][<span class="number">1</span>],<span class="number">1</span>));</span><br><span class="line">            v[connections[i][<span class="number">1</span>]].<span class="built_in">push_back</span>(<span class="built_in">pair</span>&lt;<span class="type">int</span>,<span class="type">int</span>&gt;(connections[i][<span class="number">0</span>],<span class="number">0</span>));</span><br><span class="line">        }</span><br><span class="line">        <span class="function">vector&lt;<span class="type">bool</span>&gt; <span class="title">vis</span><span class="params">(n,<span class="literal">false</span>)</span></span>;</span><br><span class="line">        vis[<span class="number">0</span>] = <span class="literal">true</span>;</span><br><span class="line">        queue&lt;<span class="type">int</span>&gt; q;</span><br><span class="line">        q.<span class="built_in">push</span>(<span class="number">0</span>);</span><br><span class="line">        <span class="keyword">while</span>(!q.<span class="built_in">empty</span>()){</span><br><span class="line">            <span class="type">int</span> x = q.<span class="built_in">front</span>();</span><br><span class="line">            q.<span class="built_in">pop</span>();</span><br><span class="line">            <span class="type">int</span> xlen = v[x].<span class="built_in">size</span>();</span><br><span class="line">            <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;xlen;i++){</span><br><span class="line">                pair&lt;<span class="type">int</span>,<span class="type">int</span>&gt; p = v[x][i];</span><br><span class="line">                <span class="keyword">if</span>(!vis[p.first]){</span><br><span class="line">                    q.<span class="built_in">push</span>(p.first);</span><br><span class="line">                    cout&lt;&lt;p.first&lt;&lt;<span class="string">" "</span>;</span><br><span class="line">                    vis[p.first] = <span class="literal">true</span>;</span><br><span class="line">                    <span class="keyword">if</span>(p.second==<span class="number">1</span>){</span><br><span class="line">                        ans++;</span><br><span class="line">                    }</span><br><span class="line">                }</span><br><span class="line">            }            </span><br><span class="line">        }</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    }</span><br><span class="line">};</span><br></pre></td></tr></table></figure>
 
         </div>
 
@@ -255,11 +379,11 @@
             <div class="post-copyright-info">
                 <div class="article-copyright-info-container">
     <ul>
-        <li>本文标题：pytorch安装</li>
+        <li>本文标题：leetcode12-7</li>
         <li>本文作者：warrior</li>
-        <li>创建时间：2022-10-02 13:25:29</li>
+        <li>创建时间：2023-12-07 18:25:55</li>
         <li>
-            本文链接：https://sunset148.github.io/2022/10/02/pytorchsetup/
+            本文链接：https://sunset148.github.io/2023/12/07/leetcode12-7/
         </li>
         <li>
             版权声明：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
@@ -274,11 +398,7 @@
             <ul class="post-tags-box">
                 
                     <li class="tag-item">
-                        <a href="/tags/pytorch%E5%AE%89%E8%A3%85/">#pytorch安装</a>&nbsp;
-                    </li>
-                
-                    <li class="tag-item">
-                        <a href="/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E6%A1%86%E6%9E%B6/">#深度学习框架</a>&nbsp;
+                        <a href="/tags/%E5%85%AB%E8%82%A1%E6%96%87/">#八股文</a>&nbsp;
                     </li>
                 
             </ul>
@@ -287,29 +407,14 @@
         
             <div class="article-nav">
                 
-                    <div class="article-prev">
-                        <a class="prev"
-                           rel="prev"
-                           href="/2023/06/26/IntranetPenetration/"
-                        >
-                            <span class="left arrow-icon flex-center">
-                              <i class="fas fa-chevron-left"></i>
-                            </span>
-                            <span class="title flex-center">
-                                <span class="post-nav-title-item">使用 cPolar 实现内网穿透</span>
-                                <span class="post-nav-item">上一篇</span>
-                            </span>
-                        </a>
-                    </div>
-                
                 
                     <div class="article-next">
                         <a class="next"
                            rel="next"
-                           href="/2022/09/29/roadDataset/"
+                           href="/2023/12/06/leetcode12-6/"
                         >
                             <span class="title flex-center">
-                                <span class="post-nav-title-item">遥感影像的路网识别、提取的数据集</span>
+                                <span class="post-nav-title-item">leetcode12-6</span>
                                 <span class="post-nav-item">下一篇</span>
                             </span>
                             <span class="right arrow-icon flex-center">
@@ -482,7 +587,7 @@
         <aside class="page-aside">
             <div class="post-toc-wrap">
     <div class="post-toc">
-        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#anaconda%E7%9A%84%E5%AE%89%E8%A3%85%E4%BB%A5%E5%8F%8A%E4%BD%BF%E7%94%A8%E6%B8%85%E5%8D%8E%E6%BA%90%E9%95%9C%E5%83%8F%E5%AE%89%E8%A3%85pytorch"><span class="nav-text">Anaconda的安装以及使用清华源镜像安装pytorch</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#anaconda%E7%9A%84%E5%AE%89%E8%A3%85"><span class="nav-text">Anaconda的安装</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#pytorch%E5%AE%98%E7%BD%91%E9%80%89%E6%8B%A9%E9%85%8D%E7%BD%AE"><span class="nav-text">PyTorch官网选择配置</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8%E5%9B%BD%E5%86%85%E6%BA%90%E4%B8%8B%E8%BD%BDpytorch"><span class="nav-text">使用国内源下载Pytorch</span></a></li></ol></li></ol></li></ol></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#leetcode%E6%AF%8F%E6%97%A5%E4%B8%80%E5%A4%A912.6"><span class="nav-text">leetcode每日一天（12.6）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A7%A3%E7%AD%94"><span class="nav-text">解答</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#%E6%80%9D%E6%83%B3"><span class="nav-text">思想：</span></a></li></ol></li></ol></li></ol></li></ol></li></ol>
     </div>
 </div>
         </aside>
