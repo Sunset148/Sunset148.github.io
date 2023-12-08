@@ -26,7 +26,8 @@
     KEEP.theme_config = {"toc":{"enable":true,"number":false,"expand_all":false,"init_open":true},"style":{"primary_color":"#0066CC","avatar":"/source/img/favicon.jpg","favicon":"/source/img/favicon.jpg","article_img_align":"left","left_side_width":"260px","content_max_width":"920px","hover":{"shadow":true,"scale":false},"first_screen":{"enable":true,"background_img":"/source/img/bg.svg","description":"I can do all things."},"scroll":{"progress_bar":{"enable":false},"percent":{"enable":true}}},"local_search":{"enable":true,"preload":true},"code_copy":{"enable":true,"style":"default"},"pjax":{"enable":false},"lazyload":{"enable":false},"version":"3.4.5"};
     KEEP.language_ago = {"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 个月前","year":"%s 年前"};
   </script>
-<meta name="generator" content="Hexo 6.3.0"><style>mjx-container[jax="SVG"] {
+<meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="BBlog" type="application/atom+xml">
+<style>mjx-container[jax="SVG"] {
   direction: ltr;
 }
 
@@ -138,8 +139,7 @@ mjx-container[display="true"] {
 mjx-container[display="true"] + br {
   display: none;
 }
-</style><link rel="alternate" href="/atom.xml" title="BBlog" type="application/atom+xml">
-</head>
+</style></head>
 
 
 <body>
@@ -343,8 +343,7 @@ mjx-container[display="true"] + br {
         
 
         <div class="article-content markdown-body">
-            <h2 id="leetcode每日一天12.3">leetcode每日一天（12.3）</h2>
-<p><a class="link" target="_blank" rel="noopener" href="https://leetcode.cn/problems/maximum-points-you-can-obtain-from-cards/">1423. 可获得的最大点数<i class="fas fa-external-link-alt"></i></a></p>
+            <h2 id="leetcode每日一天（12-3）"><a href="#leetcode每日一天（12-3）" class="headerlink" title="leetcode每日一天（12.3）"></a>leetcode每日一天（12.3）</h2><p><a class="link" target="_blank" rel="noopener" href="https://leetcode.cn/problems/maximum-points-you-can-obtain-from-cards/">1423. 可获得的最大点数<i class="fas fa-external-link-alt"></i></a></p>
 <p>几张卡牌 <strong>排成一行</strong>，每张卡牌都有一个对应的点数。点数由整数数组 <code>cardPoints</code> 给出。</p>
 <p>每次行动，你可以从行的开头或者末尾拿一张卡牌，最终你必须正好拿 <code>k</code> 张卡牌。</p>
 <p>你的点数就是你拿到手中的所有卡牌的点数之和。</p>
@@ -365,9 +364,7 @@ mjx-container[display="true"] + br {
 <li><code>1 &lt;= cardPoints[i] &lt;= 10^4</code></li>
 <li><code>1 &lt;= k &lt;= cardPoints.length</code></li>
 </ul>
-<h2 id="解答">解答</h2>
-<h6 id="思想">思想：</h6>
-<p><strong>注意：</strong> dfs的思路实现没有问题，但是时间复杂度是<code>O(K!)</code>会超时！</p>
+<h2 id="解答"><a href="#解答" class="headerlink" title="解答"></a>解答</h2><h6 id="思想："><a href="#思想：" class="headerlink" title="思想："></a>思想：</h6><p><strong>注意：</strong> dfs的思路实现没有问题，但是时间复杂度是<code>O(K!)</code>会超时！</p>
 <p><strong>正确思路</strong>：</p>
 <p>模拟一个<code>滑动窗口</code>在左侧先遍历完一个从下标<code>0</code>到<code>k</code>的数组，然后在从右侧依次出左侧最右元素，入栈右侧最左元素。依次模拟完则得到全部结果答案，最后输出最大结果值即可。</p>
 <p>代码：</p>
@@ -602,7 +599,7 @@ mjx-container[display="true"] + br {
         <aside class="page-aside">
             <div class="post-toc-wrap">
     <div class="post-toc">
-        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#leetcode%E6%AF%8F%E6%97%A5%E4%B8%80%E5%A4%A912.3"><span class="nav-text">leetcode每日一天（12.3）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A7%A3%E7%AD%94"><span class="nav-text">解答</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#%E6%80%9D%E6%83%B3"><span class="nav-text">思想：</span></a></li></ol></li></ol></li></ol></li></ol></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#leetcode%E6%AF%8F%E6%97%A5%E4%B8%80%E5%A4%A9%EF%BC%8812-3%EF%BC%89"><span class="nav-text">leetcode每日一天（12.3）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A7%A3%E7%AD%94"><span class="nav-text">解答</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#%E6%80%9D%E6%83%B3%EF%BC%9A"><span class="nav-text">思想：</span></a></li></ol></li></ol></li></ol></li></ol></li></ol>
     </div>
 </div>
         </aside>
@@ -687,6 +684,22 @@ mjx-container[display="true"] + br {
 </div>
 
 
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="//cdn.bootcss.com/mathjax/2.7.3/MathJax.js?config=TeX-MML-AM_CHTML"></script>
 
 </body>
 </html>

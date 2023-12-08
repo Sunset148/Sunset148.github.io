@@ -231,18 +231,22 @@
         
 
         <div class="article-content markdown-body">
-            <h3 id="前言">前言</h3>
-<p>课程竞赛 狗狗分类（20分类任务） 狗狗分类（20分类任务） - 第一阶段：4月19日 至 4月30日（2周，占25%） 模型训练、主干网络、调参与调优tricks等基础知识 - 第二阶段：5月1日 至 5月14日（2周，占20%） 数据增强、图像编辑、调参与调优tricks等 - 第三阶段：5月15日 至 5月28日（2周，占20%） 网络攻防、数据增强等 提交验证地址：http://cuit.osmagic.com:8888 学号登录，初始密码“123” 期末提交测试代码及模型（占5%），供结果验证 按阶段准确率高低计分，最高者100分，最低者40分</p>
-<h3 id="心得">心得</h3>
-在第一阶段和第二阶段中我们使用的是Resnet，将epch和leaning rate更改了就提交代码了。在第三阶段在读论文时候发现了新模型Visual Attention Network(VAN)它是22年cvpr发表的。该模型在图像分类、物体检测、语义分割、实例分割、姿势估计等任务都取得了不错的成绩。其中的VAN-B6在ImageNet基准测试中取得了87.8%的准确率，并为全景分割创造了新的最先进的性能（58.PQ）。此外，VAN-B2在ADE20K基准上的语义分割超过Swin-T 4% mIoU（50.1 vs. 46.1），在COCO数据集上的物体检测超过2.6% AP（48.8 vs. 46.2）。因此决定使用该模型在第三阶段测试性能。
-<div data-align="center">
-<p><img src="/2023/06/27/MachineLearningCourseCompetition/1.jpg" width="400"> <img src="/2023/06/27/MachineLearningCourseCompetition/2.jpg" width="400"></p>
+            <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>课程竞赛<br>狗狗分类（20分类任务）<br>狗狗分类（20分类任务）</p>
+<ul>
+<li>第一阶段：4月19日 至 4月30日（2周，占25%）<br> 模型训练、主干网络、调参与调优tricks等基础知识</li>
+<li>第二阶段：5月1日 至 5月14日（2周，占20%）<br> 数据增强、图像编辑、调参与调优tricks等</li>
+<li>第三阶段：5月15日 至 5月28日（2周，占20%）<br> 网络攻防、数据增强等<br>提交验证地址：<a class="link" target="_blank" rel="noopener" href="http://cuit.osmagic.com:8888">http://cuit.osmagic.com:8888<i class="fas fa-external-link-alt"></i></a><br> 学号登录，初始密码“123”<br>期末提交测试代码及模型（占5%），供结果验证<br>按阶段准确率高低计分，最高者100分，最低者40分</li>
+</ul>
+<h3 id="心得"><a href="#心得" class="headerlink" title="心得"></a>心得</h3><p>在第一阶段和第二阶段中我们使用的是Resnet，将epch和leaning rate更改了就提交代码了。在第三阶段在读论文时候发现了新模型Visual Attention Network(VAN)它是22年cvpr发表的。该模型在图像分类、物体检测、语义分割、实例分割、姿势估计等任务都取得了不错的成绩。其中的VAN-B6在ImageNet基准测试中取得了87.8%的准确率，并为全景分割创造了新的最先进的性能（58.PQ）。此外，VAN-B2在ADE20K基准上的语义分割超过Swin-T 4% mIoU（50.1 vs. 46.1），在COCO数据集上的物体检测超过2.6% AP（48.8 vs. 46.2）。因此决定使用该模型在第三阶段测试性能。</p>
+<div align="center">
+<img src="/2023/06/27/MachineLearningCourseCompetition/1.jpg" width="400">
+<img src="/2023/06/27/MachineLearningCourseCompetition/2.jpg" width="400">
 </div>
-在训练中发现，所提供的数据集较少，在经过几个epch的训练后训练集的Acc指标可以达到100%且不波动，然而在提交后发现指标却非常低。因此出现了非常严重的过拟合现象。而VAN提供在ImageNet1k上训练的权重，所以我们加载训练权重后训练提交所得到的大概在92%。因VAN提供了多个版本可供选择，我使用了B0-B3发现在使用B3时候达到了94%，证明该model在数据集上参数量越大所取得的效果越好。但遗憾的是作者只提供了B0-B3在ImageNet1k上训练的权重。学生有使用B6在老师提供的数据集上训练3k轮所取得的效果非常糟糕。如果使用B6的权重训练应该会取得不错的成果。
-<div data-align="center">
-<p><img src="/2023/06/27/MachineLearningCourseCompetition/3.jpg" width="900"></p>
-</div>
-<p>模型选择完毕就是炼丹了。因数据集小炼丹相对容易。因数据集较小，为了扩充数据集，减少过拟合，添加了数据增强中的随机水平翻转和随机选择以及随机颜色调整。又因为考虑到训练集很快就过拟合了，因此降低了学习率为1e-5。最后在第三轮取得了96.64%。</p>
+
+<p>在训练中发现，所提供的数据集较少，在经过几个epch的训练后训练集的Acc指标可以达到100%且不波动，然而在提交后发现指标却非常低。因此出现了非常严重的过拟合现象。而VAN提供在ImageNet1k上训练的权重，所以我们加载训练权重后训练提交所得到的大概在92%。因VAN提供了多个版本可供选择，我使用了B0-B3发现在使用B3时候达到了94%，证明该model在数据集上参数量越大所取得的效果越好。但遗憾的是作者只提供了B0-B3在ImageNet1k上训练的权重。学生有使用B6在老师提供的数据集上训练3k轮所取得的效果非常糟糕。如果使用B6的权重训练应该会取得不错的成果。</p>
+<p><div align="center">
+<img src="/2023/06/27/MachineLearningCourseCompetition/3.jpg" width="900">
+</div><br>  模型选择完毕就是炼丹了。因数据集小炼丹相对容易。因数据集较小，为了扩充数据集，减少过拟合，添加了数据增强中的随机水平翻转和随机选择以及随机颜色调整。又因为考虑到训练集很快就过拟合了，因此降低了学习率为1e-5。最后在第三轮取得了96.64%。</p>
 
         </div>
 
@@ -558,6 +562,22 @@
 </div>
 
 
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="//cdn.bootcss.com/mathjax/2.7.3/MathJax.js?config=TeX-MML-AM_CHTML"></script>
 
 </body>
 </html>
