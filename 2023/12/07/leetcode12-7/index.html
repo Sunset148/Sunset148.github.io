@@ -26,8 +26,7 @@
     KEEP.theme_config = {"toc":{"enable":true,"number":false,"expand_all":false,"init_open":true},"style":{"primary_color":"#0066CC","avatar":"/source/img/favicon.jpg","favicon":"/source/img/favicon.jpg","article_img_align":"left","left_side_width":"260px","content_max_width":"920px","hover":{"shadow":true,"scale":false},"first_screen":{"enable":true,"background_img":"/source/img/bg.svg","description":"I can do all things."},"scroll":{"progress_bar":{"enable":false},"percent":{"enable":true}}},"local_search":{"enable":true,"preload":true},"code_copy":{"enable":true,"style":"default"},"pjax":{"enable":false},"lazyload":{"enable":false},"version":"3.4.5"};
     KEEP.language_ago = {"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 个月前","year":"%s 年前"};
   </script>
-<meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="BBlog" type="application/atom+xml">
-<style>mjx-container[jax="SVG"] {
+<meta name="generator" content="Hexo 6.3.0"><style>mjx-container[jax="SVG"] {
   direction: ltr;
 }
 
@@ -139,7 +138,8 @@ mjx-container[display="true"] {
 mjx-container[display="true"] + br {
   display: none;
 }
-</style></head>
+</style><link rel="alternate" href="/atom.xml" title="BBlog" type="application/atom+xml">
+</head>
 
 
 <body>
@@ -343,17 +343,18 @@ mjx-container[display="true"] + br {
         
 
         <div class="article-content markdown-body">
-            <h2 id="leetcode每日一天（12-6）"><a href="#leetcode每日一天（12-6）" class="headerlink" title="leetcode每日一天（12.6）"></a>leetcode每日一天（12.6）</h2><p><a class="link" target="_blank" rel="noopener" href="https://leetcode.cn/problems/reorder-routes-to-make-all-paths-lead-to-the-city-zero/">1466. 重新规划路线<i class="fas fa-external-link-alt"></i></a></p>
+            <h2 id="leetcode每日一天12.6">leetcode每日一天（12.6）</h2>
+<p><a class="link" target="_blank" rel="noopener" href="https://leetcode.cn/problems/reorder-routes-to-make-all-paths-lead-to-the-city-zero/">1466. 重新规划路线<i class="fas fa-external-link-alt"></i></a></p>
 <p><code>n</code> 座城市，从 <code>0</code> 到 <code>n-1</code> 编号，其间共有 <code>n-1</code> 条路线。因此，要想在两座不同城市之间旅行只有唯一一条路线可供选择（路线网形成一颗树）。去年，交通运输部决定重新规划路线，以改变交通拥堵的状况。</p>
 <p>路线用 <code>connections</code> 表示，其中 <code>connections[i] = [a, b]</code> 表示从城市 <code>a</code> 到 <code>b</code> 的一条有向路线。</p>
 <p>今年，城市 0 将会举办一场大型比赛，很多游客都想前往城市 0 。</p>
 <p>请你帮助重新规划路线方向，使每个城市都可以访问城市 0 。返回需要变更方向的最小路线数。</p>
 <p>题目数据 <strong>保证</strong> 每个城市在重新规划路线方向后都能到达城市 0 。</p>
 <p><strong>示例 1：</strong></p>
-<p><img src="/leetcode12-7/sample_1_1819.png" alt></p>
+<p><img src="/leetcode12-7/sample_1_1819.png"></p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">输入：n = 6, connections = [[0,1],[1,3],[2,3],[4,0],[4,5]]</span><br><span class="line">输出：3</span><br><span class="line">解释：更改以红色显示的路线的方向，使每个城市都可以到达城市 0 。</span><br></pre></td></tr></table></figure>
 <p><strong>示例 2：</strong></p>
-<p><img src="/leetcode12-7/sample_2_1819.png" alt></p>
+<p><img src="/leetcode12-7/sample_2_1819.png"></p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">输入：n = 5, connections = [[1,0],[1,2],[3,2],[3,4]]</span><br><span class="line">输出：2</span><br><span class="line">解释：更改以红色显示的路线的方向，使每个城市都可以到达城市 0 。</span><br></pre></td></tr></table></figure>
 <p><strong>示例 3：</strong></p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入：n = 3, connections = [[1,0],[2,0]]</span><br><span class="line">输出：0</span><br></pre></td></tr></table></figure>
@@ -366,7 +367,9 @@ mjx-container[display="true"] + br {
 <li><code>connections[i][0] != connections[i][1]</code></li>
 </ul>
 <hr>
-<h2 id="解答"><a href="#解答" class="headerlink" title="解答"></a>解答</h2><h6 id="思想："><a href="#思想：" class="headerlink" title="思想："></a>思想：</h6><p>该题较为简单，只用考虑到是否根节点遍历到所有节点即可，如果是反方向则需要重新规划路线，如果不是则继续搜索。</p>
+<h2 id="解答">解答</h2>
+<h6 id="思想">思想：</h6>
+<p>该题较为简单，只用考虑到是否根节点遍历到所有节点即可，如果是反方向则需要重新规划路线，如果不是则继续搜索。</p>
 <p>代码：</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> {</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">minReorder</span><span class="params">(<span class="type">int</span> n, vector&lt;vector&lt;<span class="type">int</span>&gt;&gt;&amp; connections)</span> </span>{</span><br><span class="line">        vector&lt;vector&lt;pair&lt;<span class="type">int</span>,<span class="type">int</span>&gt;&gt;&gt;  <span class="built_in">v</span>(n);</span><br><span class="line">        <span class="type">int</span> len = connections.<span class="built_in">size</span>();</span><br><span class="line">        <span class="type">int</span> ans = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;len;i++){</span><br><span class="line">            v[connections[i][<span class="number">0</span>]].<span class="built_in">push_back</span>(<span class="built_in">pair</span>&lt;<span class="type">int</span>,<span class="type">int</span>&gt;(connections[i][<span class="number">1</span>],<span class="number">1</span>));</span><br><span class="line">            v[connections[i][<span class="number">1</span>]].<span class="built_in">push_back</span>(<span class="built_in">pair</span>&lt;<span class="type">int</span>,<span class="type">int</span>&gt;(connections[i][<span class="number">0</span>],<span class="number">0</span>));</span><br><span class="line">        }</span><br><span class="line">        <span class="function">vector&lt;<span class="type">bool</span>&gt; <span class="title">vis</span><span class="params">(n,<span class="literal">false</span>)</span></span>;</span><br><span class="line">        vis[<span class="number">0</span>] = <span class="literal">true</span>;</span><br><span class="line">        queue&lt;<span class="type">int</span>&gt; q;</span><br><span class="line">        q.<span class="built_in">push</span>(<span class="number">0</span>);</span><br><span class="line">        <span class="keyword">while</span>(!q.<span class="built_in">empty</span>()){</span><br><span class="line">            <span class="type">int</span> x = q.<span class="built_in">front</span>();</span><br><span class="line">            q.<span class="built_in">pop</span>();</span><br><span class="line">            <span class="type">int</span> xlen = v[x].<span class="built_in">size</span>();</span><br><span class="line">            <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;xlen;i++){</span><br><span class="line">                pair&lt;<span class="type">int</span>,<span class="type">int</span>&gt; p = v[x][i];</span><br><span class="line">                <span class="keyword">if</span>(!vis[p.first]){</span><br><span class="line">                    q.<span class="built_in">push</span>(p.first);</span><br><span class="line">                    cout&lt;&lt;p.first&lt;&lt;<span class="string">" "</span>;</span><br><span class="line">                    vis[p.first] = <span class="literal">true</span>;</span><br><span class="line">                    <span class="keyword">if</span>(p.second==<span class="number">1</span>){</span><br><span class="line">                        ans++;</span><br><span class="line">                    }</span><br><span class="line">                }</span><br><span class="line">            }            </span><br><span class="line">        }</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    }</span><br><span class="line">};</span><br></pre></td></tr></table></figure>
 
@@ -500,7 +503,7 @@ mjx-container[display="true"] + br {
               <span>2022</span>
               -
             
-            2023&nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;<a href="/">warrior</a>
+            2024&nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;<a href="/">warrior</a>
         </div>
         
             <script async  src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
@@ -599,7 +602,7 @@ mjx-container[display="true"] + br {
         <aside class="page-aside">
             <div class="post-toc-wrap">
     <div class="post-toc">
-        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#leetcode%E6%AF%8F%E6%97%A5%E4%B8%80%E5%A4%A9%EF%BC%8812-6%EF%BC%89"><span class="nav-text">leetcode每日一天（12.6）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A7%A3%E7%AD%94"><span class="nav-text">解答</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#%E6%80%9D%E6%83%B3%EF%BC%9A"><span class="nav-text">思想：</span></a></li></ol></li></ol></li></ol></li></ol></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#leetcode%E6%AF%8F%E6%97%A5%E4%B8%80%E5%A4%A912.6"><span class="nav-text">leetcode每日一天（12.6）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A7%A3%E7%AD%94"><span class="nav-text">解答</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#%E6%80%9D%E6%83%B3"><span class="nav-text">思想：</span></a></li></ol></li></ol></li></ol></li></ol></li></ol>
     </div>
 </div>
         </aside>

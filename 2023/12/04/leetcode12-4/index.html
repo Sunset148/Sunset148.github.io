@@ -26,8 +26,7 @@
     KEEP.theme_config = {"toc":{"enable":true,"number":false,"expand_all":false,"init_open":true},"style":{"primary_color":"#0066CC","avatar":"/source/img/favicon.jpg","favicon":"/source/img/favicon.jpg","article_img_align":"left","left_side_width":"260px","content_max_width":"920px","hover":{"shadow":true,"scale":false},"first_screen":{"enable":true,"background_img":"/source/img/bg.svg","description":"I can do all things."},"scroll":{"progress_bar":{"enable":false},"percent":{"enable":true}}},"local_search":{"enable":true,"preload":true},"code_copy":{"enable":true,"style":"default"},"pjax":{"enable":false},"lazyload":{"enable":false},"version":"3.4.5"};
     KEEP.language_ago = {"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 个月前","year":"%s 年前"};
   </script>
-<meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="BBlog" type="application/atom+xml">
-<style>mjx-container[jax="SVG"] {
+<meta name="generator" content="Hexo 6.3.0"><style>mjx-container[jax="SVG"] {
   direction: ltr;
 }
 
@@ -139,7 +138,8 @@ mjx-container[display="true"] {
 mjx-container[display="true"] + br {
   display: none;
 }
-</style></head>
+</style><link rel="alternate" href="/atom.xml" title="BBlog" type="application/atom+xml">
+</head>
 
 
 <body>
@@ -343,7 +343,8 @@ mjx-container[display="true"] + br {
         
 
         <div class="article-content markdown-body">
-            <h2 id="leetcode每日一天（12-4）"><a href="#leetcode每日一天（12-4）" class="headerlink" title="leetcode每日一天（12.4）"></a>leetcode每日一天（12.4）</h2><p><a class="link" target="_blank" rel="noopener" href="https://leetcode.cn/problems/binary-search-tree-to-greater-sum-tree/">1038. 从二叉搜索树到更大和树<i class="fas fa-external-link-alt"></i></a></p>
+            <h2 id="leetcode每日一天12.4">leetcode每日一天（12.4）</h2>
+<p><a class="link" target="_blank" rel="noopener" href="https://leetcode.cn/problems/binary-search-tree-to-greater-sum-tree/">1038. 从二叉搜索树到更大和树<i class="fas fa-external-link-alt"></i></a></p>
 <p>给定一个二叉搜索树 <code>root</code> (BST)，请将它的每个节点的值替换成树中大于或者等于该节点值的所有节点值之和。</p>
 <p>提醒一下， <em>二叉搜索树</em> 满足下列约束条件：</p>
 <ul>
@@ -352,7 +353,7 @@ mjx-container[display="true"] + br {
 <li>左右子树也必须是二叉搜索树。</li>
 </ul>
 <p><strong>示例 1：</strong></p>
-<p><img src="/2023/12/04/leetcode12-4/leetcode12-4\tree.png" alt></p>
+<p><img src="/2023/12/04/leetcode12-4/leetcode12-4\tree.png"></p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入：[4,1,6,0,2,5,7,null,null,null,3,null,null,null,8]</span><br><span class="line">输出：[30,36,21,36,35,26,15,null,null,null,33,null,null,null,8]</span><br></pre></td></tr></table></figure>
 <p><strong>示例 2：</strong></p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入：root = [0,null,1]</span><br><span class="line">输出：[1,null,1]</span><br></pre></td></tr></table></figure>
@@ -362,11 +363,11 @@ mjx-container[display="true"] + br {
 <li><code>0 &lt;= Node.val &lt;= 100</code></li>
 <li>树中的所有值均 <strong>不重复</strong> 。</li>
 </ul>
-<h2 id="解答"><a href="#解答" class="headerlink" title="解答"></a>解答</h2><h6 id="思想："><a href="#思想：" class="headerlink" title="思想："></a>思想：</h6><ul>
-<li><p>主要考点在于<code>二叉搜索树</code>的遍历问题，主要使用递归完成二叉搜索树的递归。并且考察了<code>二叉搜索树</code>的基本特征。-</p>
-</li>
-<li><p>其次首先定义一个变量，保存已经遍历到的节点，将变量更新到正在遍历的节点即可。</p>
-</li>
+<h2 id="解答">解答</h2>
+<h6 id="思想">思想：</h6>
+<ul>
+<li><p>主要考点在于<code>二叉搜索树</code>的遍历问题，主要使用递归完成二叉搜索树的递归。并且考察了<code>二叉搜索树</code>的基本特征。-</p></li>
+<li><p>其次首先定义一个变量，保存已经遍历到的节点，将变量更新到正在遍历的节点即可。</p></li>
 </ul>
 <p>代码：</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for a binary tree node.</span></span><br><span class="line"><span class="comment"> * struct TreeNode {</span></span><br><span class="line"><span class="comment"> *     int val;</span></span><br><span class="line"><span class="comment"> *     TreeNode *left;</span></span><br><span class="line"><span class="comment"> *     TreeNode *right;</span></span><br><span class="line"><span class="comment"> *     TreeNode() : val(0), left(nullptr), right(nullptr) {}</span></span><br><span class="line"><span class="comment"> *     TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}</span></span><br><span class="line"><span class="comment"> *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}</span></span><br><span class="line"><span class="comment"> * };</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> {</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="type">int</span> value=<span class="number">0</span>;</span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">print</span><span class="params">(TreeNode *root)</span></span>{</span><br><span class="line">        <span class="keyword">if</span>(root-&gt;right!=<span class="literal">nullptr</span>)</span><br><span class="line">            <span class="built_in">print</span>(root-&gt;right);</span><br><span class="line">        cout&lt;&lt;root-&gt;val&lt;&lt;<span class="string">" "</span>;</span><br><span class="line">        root-&gt;val += value;</span><br><span class="line">        value = root-&gt;val;</span><br><span class="line">        cout&lt;&lt;root-&gt;val&lt;&lt;endl;</span><br><span class="line">        <span class="keyword">if</span>(root-&gt;left!=<span class="literal">nullptr</span>)</span><br><span class="line">            <span class="built_in">print</span>(root-&gt;left);</span><br><span class="line">    }</span><br><span class="line">    <span class="function">TreeNode* <span class="title">bstToGst</span><span class="params">(TreeNode* root)</span> </span>{</span><br><span class="line">        <span class="built_in">print</span>(root);</span><br><span class="line">        <span class="keyword">return</span> root;</span><br><span class="line">    }</span><br><span class="line">};</span><br></pre></td></tr></table></figure>
@@ -501,7 +502,7 @@ mjx-container[display="true"] + br {
               <span>2022</span>
               -
             
-            2023&nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;<a href="/">warrior</a>
+            2024&nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;<a href="/">warrior</a>
         </div>
         
             <script async  src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
@@ -600,7 +601,7 @@ mjx-container[display="true"] + br {
         <aside class="page-aside">
             <div class="post-toc-wrap">
     <div class="post-toc">
-        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#leetcode%E6%AF%8F%E6%97%A5%E4%B8%80%E5%A4%A9%EF%BC%8812-4%EF%BC%89"><span class="nav-text">leetcode每日一天（12.4）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A7%A3%E7%AD%94"><span class="nav-text">解答</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#%E6%80%9D%E6%83%B3%EF%BC%9A"><span class="nav-text">思想：</span></a></li></ol></li></ol></li></ol></li></ol></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#leetcode%E6%AF%8F%E6%97%A5%E4%B8%80%E5%A4%A912.4"><span class="nav-text">leetcode每日一天（12.4）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A7%A3%E7%AD%94"><span class="nav-text">解答</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#%E6%80%9D%E6%83%B3"><span class="nav-text">思想：</span></a></li></ol></li></ol></li></ol></li></ol></li></ol>
     </div>
 </div>
         </aside>

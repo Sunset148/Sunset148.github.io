@@ -24,8 +24,7 @@
     KEEP.theme_config = {"toc":{"enable":true,"number":false,"expand_all":false,"init_open":true},"style":{"primary_color":"#0066CC","avatar":"/source/img/favicon.jpg","favicon":"/source/img/favicon.jpg","article_img_align":"left","left_side_width":"260px","content_max_width":"920px","hover":{"shadow":true,"scale":false},"first_screen":{"enable":true,"background_img":"/source/img/bg.svg","description":"I can do all things."},"scroll":{"progress_bar":{"enable":false},"percent":{"enable":true}}},"local_search":{"enable":true,"preload":true},"code_copy":{"enable":true,"style":"default"},"pjax":{"enable":false},"lazyload":{"enable":false},"version":"3.4.5"};
     KEEP.language_ago = {"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 个月前","year":"%s 年前"};
   </script>
-<meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="BBlog" type="application/atom+xml">
-<style>mjx-container[jax="SVG"] {
+<meta name="generator" content="Hexo 6.3.0"><style>mjx-container[jax="SVG"] {
   direction: ltr;
 }
 
@@ -137,7 +136,8 @@ mjx-container[display="true"] {
 mjx-container[display="true"] + br {
   display: none;
 }
-</style></head>
+</style><link rel="alternate" href="/atom.xml" title="BBlog" type="application/atom+xml">
+</head>
 
 
 <body>
@@ -328,6 +328,60 @@ mjx-container[display="true"] + br {
                 
 
                 <h3 class="home-article-title">
+                    <a href="/2024/04/08/ThreadPool/">
+                        C语言 线程池
+                    </a>
+                </h3>
+
+                <div class="home-article-content markdown-body">
+                    
+                        线程池原理
+我们使用线程的时候就去创建一个线程，这样实现起来非常简便，但是就会有一个问题：如果并发的线程数量很多，并且每个线程都是执行一个时间很短的任务就结束了，这样频繁创建线程就会大大降低系统的效率，因为频繁创建线程和销毁线程需要时间。
+那么有...
+                    
+                </div>
+
+                <div class="home-article-meta-info-container">
+    <div class="home-article-meta-info">
+        <span><i class="fas fa-history"></i>&nbsp;<span class="home-article-date" data-date="Mon Apr 08 2024 11:04:58 GMT+0800">2024-04-08</span></span>
+        
+            <span class="home-article-category"><i class="fas fa-folder"></i>&nbsp;
+                <ul>
+                    
+                        <li>
+                            
+                            <a href="/categories/C/">C</a>&nbsp;
+                        </li>
+                    
+                    
+                </ul>
+            </span>
+        
+        
+            <span class="home-article-tag">
+                <i class="fas fa-tags"></i>&nbsp;
+                <ul>
+                    
+                        <li>
+                            
+                            <a href="/tags/C%E7%BA%BF%E7%A8%8B%E6%B1%A0/">C线程池</a>&nbsp;
+                        </li>
+                    
+                </ul>
+            </span>
+        
+    </div>
+
+    <a href="/2024/04/08/ThreadPool/">阅读全文&nbsp;<i class="fas fa-angle-right"></i></a>
+</div>
+
+            </li>
+        
+            <li class="home-article-item">
+
+                
+
+                <h3 class="home-article-title">
                     <a href="/2023/12/08/leetcode12-8/">
                         leetcode12-8
                     </a>
@@ -335,10 +389,10 @@ mjx-container[display="true"] + br {
 
                 <div class="home-article-content markdown-body">
                     
-                        leetcode每日一天（12.8）2008. 出租车的最大盈利
+                        leetcode每日一天（12.8）
+2008. 出租车的最大盈利
 
-你驾驶出租车行驶在一条有 n 个地点的路上。这 n 个地点从近到远编号为 1 到 n ，你想要从 1 开到 n ，通过接乘客订单盈利。你只能沿着编号递增的方向前进，不能改变方向。
-乘...
+你驾驶出租车行驶在一条有 n 个地点的路上。这 n 个地点从近到远编号为 1 到 n ，你想要从 1 开到 n ，通过接乘客订单盈利。你只能沿着编号递增的方向前进，不能改变方...
                     
                 </div>
 
@@ -390,8 +444,9 @@ mjx-container[display="true"] + br {
 
                 <div class="home-article-content markdown-body">
                     
-                        leetcode每日一天（12.6）1466. 重新规划路线
-n 座城市，从 0 到 n-1 编号，其间共有 n-1 条路线。因此，要想在两座不同城市之间旅行只有唯一一条路线可供选择（路线网形成一颗树）。去年，交通运输部决定重新规划路线，以改变交通拥...
+                        leetcode每日一天（12.6）
+1466. 重新规划路线
+n 座城市，从 0 到 n-1 编号，其间共有 n-1 条路线。因此，要想在两座不同城市之间旅行只有唯一一条路线可供选择（路线网形成一颗树）。去年，交通运输部决定重新规划路线，以改变...
                     
                 </div>
 
@@ -443,8 +498,9 @@ n 座城市，从 0 到 n-1 编号，其间共有 n-1 条路线。因此，要�
 
                 <div class="home-article-content markdown-body">
                     
-                        leetcode每日一天（12.6）2646. 最小化旅行的价格总和
-现有一棵无向、无根的树，树中有 n 个节点，按从 0 到 n - 1 编号。给你一个整数 n 和一个长度为 n - 1 的二维整数数组 edges ，其中 edges[i] = [...
+                        leetcode每日一天（12.6）
+2646. 最小化旅行的价格总和
+现有一棵无向、无根的树，树中有 n 个节点，按从 0 到 n - 1 编号。给你一个整数 n 和一个长度为 n - 1 的二维整数数组 edges ，其中 edges[i] ...
                     
                 </div>
 
@@ -496,8 +552,9 @@ n 座城市，从 0 到 n-1 编号，其间共有 n-1 条路线。因此，要�
 
                 <div class="home-article-content markdown-body">
                     
-                        leetcode每日一天（12.5）2477. 到达首都的最少油耗
-给你一棵 n 个节点的树（一个无向、连通、无环图），每个节点表示一个城市，编号从 0 到 n - 1 ，且恰好有 n - 1 条路。0 是首都。给你一个二维整数数组 roads ，其...
+                        leetcode每日一天（12.5）
+2477. 到达首都的最少油耗
+给你一棵 n 个节点的树（一个无向、连通、无环图），每个节点表示一个城市，编号从 0 到 n - 1 ，且恰好有 n - 1 条路。0 是首都。给你一个二维整数数组 roads...
                     
                 </div>
 
@@ -549,11 +606,12 @@ n 座城市，从 0 到 n-1 编号，其间共有 n-1 条路线。因此，要�
 
                 <div class="home-article-content markdown-body">
                     
-                        leetcode每日一天（12.4）1038. 从二叉搜索树到更大和树
+                        leetcode每日一天（12.4）
+1038. 从二叉搜索树到更大和树
 给定一个二叉搜索树 root (BST)，请将它的每个节点的值替换成树中大于或者等于该节点值的所有节点值之和。
 提醒一下， 二叉搜索树 满足下列约束条件：
 
-节点的左子树仅包含键...
+节点的左...
                     
                 </div>
 
@@ -605,10 +663,11 @@ n 座城市，从 0 到 n-1 编号，其间共有 n-1 条路线。因此，要�
 
                 <div class="home-article-content markdown-body">
                     
-                        leetcode每日一天（12.3）1423. 可获得的最大点数
+                        leetcode每日一天（12.3）
+1423. 可获得的最大点数
 几张卡牌 排成一行，每张卡牌都有一个对应的点数。点数由整数数组 cardPoints 给出。
 每次行动，你可以从行的开头或者末尾拿一张卡牌，最终你必须正好拿 k 张卡牌。
-你的点数就是...
+你...
                     
                 </div>
 
@@ -661,8 +720,9 @@ n 座城市，从 0 到 n-1 编号，其间共有 n-1 条路线。因此，要�
                 <div class="home-article-content markdown-body">
                     
                         leetcode每日一天（12.2）
+
 车上最初有 capacity 个空座位。车 只能 向一个方向行驶（也就是说，不允许掉头或改变方向）
-给定整数 capacity 和一个数组 trips ,  trip[i] = [numPassengersi, ...
+给定整数 capacity 和一个数组 trips , trip[i] = [numPassengers...
                     
                 </div>
 
@@ -714,9 +774,10 @@ n 座城市，从 0 到 n-1 编号，其间共有 n-1 条路线。因此，要�
 
                 <div class="home-article-content markdown-body">
                     
-                        leetcode每日一天（12.1）2661. 找出叠涂元素
+                        leetcode每日一天（12.1）
+2661. 找出叠涂元素
 给你一个下标从 0 开始的整数数组 arr 和一个 m x n 的整数 矩阵 mat 。arr 和 mat 都包含范围 [1，m * n] 内的 所有 整数。
-从下标 0 开始遍历 arr...
+从下标 0 开始遍历...
                     
                 </div>
 
@@ -768,13 +829,13 @@ n 座城市，从 0 到 n-1 编号，其间共有 n-1 条路线。因此，要�
 
                 <div class="home-article-content markdown-body">
                     
-                        leetcode每日一天（11.28）1670. 设计前中后队列
+                        leetcode每日一天（11.28）
+1670. 设计前中后队列
 
 请你设计一个队列，支持在前，中，后三个位置的 push 和 pop 操作。
 请你完成 FrontMiddleBack 类：
 
-FrontMiddleBack() 初始化队列。
-voi...
+FrontMiddleBack() 初始化...
                     
                 </div>
 
@@ -814,64 +875,6 @@ voi...
 
             </li>
         
-            <li class="home-article-item">
-
-                
-
-                <h3 class="home-article-title">
-                    <a href="/2023/11/27/leetcode11-27/">
-                        leetcode11-27
-                    </a>
-                </h3>
-
-                <div class="home-article-content markdown-body">
-                    
-                        leetcode每日一天（11.27）907. 子数组的最小值之和
-
-给定一个整数数组 arr，找到 min(b) 的总和，其中 b 的范围为 arr 的每个（连续）子数组。
-由于答案可能很大，因此 返回答案模 10^9 + 7 。
-
-
-  示例 1...
-                    
-                </div>
-
-                <div class="home-article-meta-info-container">
-    <div class="home-article-meta-info">
-        <span><i class="fas fa-history"></i>&nbsp;<span class="home-article-date" data-date="Mon Nov 27 2023 21:39:36 GMT+0800">2023-11-27</span></span>
-        
-            <span class="home-article-category"><i class="fas fa-folder"></i>&nbsp;
-                <ul>
-                    
-                        <li>
-                            
-                            <a href="/categories/leetcode/">leetcode</a>&nbsp;
-                        </li>
-                    
-                    
-                </ul>
-            </span>
-        
-        
-            <span class="home-article-tag">
-                <i class="fas fa-tags"></i>&nbsp;
-                <ul>
-                    
-                        <li>
-                            
-                            <a href="/tags/%E5%85%AB%E8%82%A1%E6%96%87/">八股文</a>&nbsp;
-                        </li>
-                    
-                </ul>
-            </span>
-        
-    </div>
-
-    <a href="/2023/11/27/leetcode11-27/">阅读全文&nbsp;<i class="fas fa-angle-right"></i></a>
-</div>
-
-            </li>
-        
     </ul>
 
     <div class="home-paginator">
@@ -903,7 +906,7 @@ voi...
               <span>2022</span>
               -
             
-            2023&nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;<a href="/">warrior</a>
+            2024&nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;<a href="/">warrior</a>
         </div>
         
             <script async  src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
